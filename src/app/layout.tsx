@@ -4,6 +4,7 @@ import "./globals.css";
 import { Providers } from "@/components/providers";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { Toast } from "@/components/ui/Toast";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Header />
           <div className="flex-1">{children}</div>
           <Footer />
+          <Toast />
         </Providers>
       </body>
     </html>
