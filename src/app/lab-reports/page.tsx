@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { LabReportsClient } from "./LabReportsClient";
 import { Skeleton } from "@/components/ui/Skeleton";
+import { provider } from "@/lib/api/provider";
 
 export const metadata: Metadata = {
   title: "Lab Reports",
@@ -9,7 +10,12 @@ export const metadata: Metadata = {
     "Batch-specific Certificates of Analysis for every TROO Bio-Labs compound — published before purchase.",
 };
 
-export default function LabReportsPage() {
+export default async function LabReportsPage() {
+  const [products, categories] = await Promise.all([
+    provider.getProducts(),
+    provider.getCategories(),
+  ]);
+
   return (
     <Suspense
       fallback={
@@ -20,7 +26,7 @@ export default function LabReportsPage() {
         </main>
       }
     >
-      <LabReportsClient />
+      <LabReportsClient initialData={{ products, categories }} />
     </Suspense>
   );
 }

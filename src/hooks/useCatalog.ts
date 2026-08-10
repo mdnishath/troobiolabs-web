@@ -3,12 +3,12 @@
 import { useQuery } from "@tanstack/react-query";
 import type { Category, Product } from "@/lib/types";
 
-interface CatalogResponse {
+export interface CatalogResponse {
   products: Product[];
   categories: Category[];
 }
 
-export function useCatalog() {
+export function useCatalog(initialData?: CatalogResponse) {
   return useQuery<CatalogResponse>({
     queryKey: ["catalog"],
     queryFn: async () => {
@@ -16,6 +16,7 @@ export function useCatalog() {
       if (!res.ok) throw new Error("Failed to load catalog");
       return res.json();
     },
+    initialData,
   });
 }
 

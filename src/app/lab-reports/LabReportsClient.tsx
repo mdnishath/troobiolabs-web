@@ -1,20 +1,27 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Search, FlaskConical, Activity, FileText } from "lucide-react";
-import { useCatalog } from "@/hooks/useCatalog";
+import { useCatalog, type CatalogResponse } from "@/hooks/useCatalog";
+import { useHash } from "@/hooks/useHash";
 import { Skeleton } from "@/components/ui/Skeleton";
 
-export function LabReportsClient() {
-  const { data, isLoading } = useCatalog();
-  const [q, setQ] = useState("");
+export function LabReportsClient({
+  initialData,
+}: {
+  initialData?: CatalogResponse;
+}) {
+  const { data, isLoading } = useCatalog(initialData);
+  const hash = useHash();
+  const [qState, setQState] = useState<string | null>(null);
 
-  /* deep link: /lab-reports#lot=XYZ */
-  useEffect(() => {
-    const h = window.location.hash;
-    if (h.startsWith("#lot=")) setQ(decodeURIComponent(h.slice(5)));
-  }, []);
+  /* deep link: /lab-reports#lot=XYZ — typed input takes over once touched */
+  const hashLot = hash.startsWith("#lot=")
+    ? decodeURIComponent(hash.slice(5))
+    : "";
+  const q = qState ?? hashLot;
+  const setQ = setQState;
 
   const products = (data?.products ?? []).filter((p) => p.cat !== "supplies");
   const categories = data?.categories ?? [];

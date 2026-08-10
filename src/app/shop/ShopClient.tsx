@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
-import { useCatalog } from "@/hooks/useCatalog";
+import { useCatalog, type CatalogResponse } from "@/hooks/useCatalog";
 import { minPrice, type Product } from "@/lib/types";
 import { ProductCard } from "@/components/shop/ProductCard";
 import { ProductGridSkeleton } from "@/components/ui/Skeleton";
@@ -14,24 +14,18 @@ type SortKey = "featured" | "price-asc" | "price-desc" | "name";
 const score = (p: Product) =>
   (p.featured ? 2 : 0) + (p.popular ? 1 : 0) + p.rating;
 
-export function ShopClient() {
+export function ShopClient({ initialData }: { initialData?: CatalogResponse }) {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const { data, isLoading } = useCatalog();
-  const [cat, setCat] = useState("all");
+  const { data, isLoading } = useCatalog(initialData);
+  /* the URL is the single source of truth for the selected category */
+  const cat = searchParams.get("cat") ?? "all";
   const [sort, setSort] = useState<SortKey>("featured");
-
-  /* sync category from ?cat= (footer/area links) */
-  useEffect(() => {
-    const q = searchParams.get("cat");
-    if (q) setCat(q);
-  }, [searchParams]);
 
   const categories = data?.categories ?? [];
   const products = data?.products ?? [];
 
   const pick = (id: string) => {
-    setCat(id);
     router.replace(id === "all" ? "/shop" : `/shop?cat=${id}`, {
       scroll: false,
     });

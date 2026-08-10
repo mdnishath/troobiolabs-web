@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Mail, MessageCircle, FileText, Check } from "lucide-react";
+import { useHash } from "@/hooks/useHash";
 
 const INPUT =
   "rounded-[10px] border-[1.5px] border-line px-[18px] py-[13px] text-[13.5px] text-ink outline-none placeholder:text-icon focus:border-brand-blue";
@@ -22,13 +23,18 @@ interface ChatMsg {
 }
 
 export function ContactClient() {
+  const hash = useHash();
   const [form, setForm] = useState({
     name: "",
     email: "",
-    topic: "General inquiry",
+    topic: "",
     order: "",
     msg: "",
   });
+  /* #ticket deep link pre-selects the Support ticket topic until the user picks one */
+  const topic =
+    form.topic ||
+    (hash.includes("ticket") ? "Support ticket" : "General inquiry");
   const [sent, setSent] = useState<{ ref: string; email: string } | null>(null);
   const [chatOpen, setChatOpen] = useState(false);
   const [draft, setDraft] = useState("");
@@ -41,9 +47,6 @@ export function ContactClient() {
   const botTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    if (window.location.hash.includes("ticket")) {
-      setForm((f) => ({ ...f, topic: "Support ticket" }));
-    }
     return () => {
       if (botTimer.current) clearTimeout(botTimer.current);
     };
@@ -54,7 +57,7 @@ export function ContactClient() {
 
   const send = () => {
     if (!valid) return;
-    const isTicket = form.topic === "Support ticket";
+    const isTicket = topic === "Support ticket";
     const ref =
       (isTicket ? "Ticket #TB-" : "Ref #TR-") +
       Math.floor(1000 + Math.random() * 9000);
@@ -210,7 +213,7 @@ export function ContactClient() {
               </div>
               <div className="mt-3 grid grid-cols-[repeat(auto-fit,minmax(min(100%,200px),1fr))] gap-3">
                 <select
-                  value={form.topic}
+                  value={topic}
                   onChange={(e) => setForm((f) => ({ ...f, topic: e.target.value }))}
                   className="rounded-[10px] border-[1.5px] border-line bg-white px-4 py-[13px] text-[13.5px] text-ink outline-none"
                 >
