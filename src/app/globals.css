@@ -1,26 +1,98 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --font-sans: var(--font-montserrat), Verdana, sans-serif;
+
+  /* Neutrals (extracted from design bundle) */
+  --color-ink: #151515;
+  --color-body: #4c5866;
+  --color-slate: #3d4753;
+  --color-steel: #33404d;
+  --color-muted: #5a6572;
+  --color-faint: #7a8694;
+  --color-ghost: #8b95a1;
+  --color-icon: #9aa6b2;
+  --color-line: #dce3ea;
+  --color-line-soft: #e6ebf1;
+  --color-line-faint: #eef1f4;
+  --color-line-ghost: #ecf0f4;
+  --color-surface: #f7f8fa;
+  --color-surface-2: #eff1f4;
+  --color-surface-3: #eef2f5;
+
+  /* Brand palette */
+  --color-brand-pink: #d9368a;
+  --color-brand-purple: #8d43b8;
+  --color-brand-blue: #1486c9;
+  --color-brand-orange: #f47b2a;
+  --color-brand-green: #73b84a;
+  --color-brand-indigo: #5a55d6;
+  --color-brand-cyan: #14b8c9;
+  --color-brand-royal: #2e5bd7;
+  --color-brand-sky: #7fd0ff;
+  --color-brand-leaf: #4e8a2c;
+
+  /* Breakpoint used by the design's header (920px) */
+  --breakpoint-dt: 57.5rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: #fff;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+@layer utilities {
+  /* 5-color brand rule / bars */
+  .bg-gradient-brand {
+    background-image: linear-gradient(
+      90deg,
+      #d9368a,
+      #8d43b8,
+      #1486c9,
+      #f47b2a,
+      #73b84a
+    );
+  }
+
+  /* Headline gradient text (stop positions from design) */
+  .text-gradient-brand {
+    background-image: linear-gradient(
+      90deg,
+      #d9368a,
+      #8d43b8 30%,
+      #1486c9 55%,
+      #f47b2a 80%,
+      #73b84a
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  /* Primary CTA gradient */
+  .bg-gradient-cta {
+    background-image: linear-gradient(90deg, #14b8c9, #1486c9 55%, #2e5bd7);
+  }
+
+  .bg-gradient-cta-70 {
+    background-image: linear-gradient(90deg, #14b8c9, #1486c9 70%, #2e5bd7);
+  }
+
+  /* Soft multicolor wash used by newsletter band */
+  .bg-gradient-wash {
+    background-image: linear-gradient(
+      120deg,
+      #fdedf5,
+      #eef1fd 45%,
+      #fef3ea 78%,
+      #f0f8ea
+    );
+  }
 }
