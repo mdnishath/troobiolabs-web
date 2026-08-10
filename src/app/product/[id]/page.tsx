@@ -1,12 +1,14 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import catalog from "@/data/catalog.json";
-import type { Catalog, Product } from "@/lib/types";
+import type { Product } from "@/lib/types";
+import { provider } from "@/lib/api/provider";
 import { ProductDetail } from "@/components/product/ProductDetail";
 
-const { products, categories } = catalog as Catalog;
+/* refresh WP-managed content every 5 minutes without a rebuild */
+export const revalidate = 300;
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const products = await provider.getProducts();
   return products.map((p) => ({ id: p.id }));
 }
 
@@ -14,7 +16,7 @@ export async function generateMetadata({
   params,
 }: PageProps<"/product/[id]">): Promise<Metadata> {
   const { id } = await params;
-  const p = products.find((x) => x.id === id);
+  const p = await provider.getProduct(id);
   if (!p) return { title: "Product not found" };
   return {
     title: p.name,
@@ -22,8 +24,8 @@ export async function generateMetadata({
   };
 }
 
-function pickRelated(p: Product): Product[] {
-  const pool = products.filter(
+function pickRelated(all: Product[], p: Product): Product[] {
+  const pool = all.filter(
     (x) => x.id !== p.id && x.status === "active" && x.images.length > 0,
   );
   const sameCat = pool.filter((x) => x.cat === p.cat);
@@ -41,14 +43,18 @@ export default async function ProductPage({
   params,
 }: PageProps<"/product/[id]">) {
   const { id } = await params;
-  const product = products.find((x) => x.id === id);
+  const [product, all, categories] = await Promise.all([
+    provider.getProduct(id),
+    provider.getProducts(),
+    provider.getCategories(),
+  ]);
   if (!product) notFound();
 
   return (
     <ProductDetail
       product={product}
       category={categories.find((c) => c.id === product.cat)}
-      related={pickRelated(product)}
+      related={pickRelated(all, product)}
     />
   );
 }

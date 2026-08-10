@@ -1,5 +1,4 @@
-import catalog from "@/data/catalog.json";
-import type { Catalog } from "@/lib/types";
+import { provider } from "@/lib/api/provider";
 import { AREAS } from "@/lib/home-data";
 import { Hero } from "@/components/home/Hero";
 import { Collection } from "@/components/home/Collection";
@@ -28,11 +27,13 @@ const COLLECTION_IDS = [
   "cjc-1295-no-dac-plus-ipamorelin",
 ];
 
-export default function Home() {
-  const { products } = catalog as Catalog;
-  const collection = COLLECTION_IDS.map(
-    (id) => products.find((p) => p.id === id)!,
-  ).filter(Boolean);
+export const revalidate = 300;
+
+export default async function Home() {
+  const products = await provider.getProducts();
+  const collection = COLLECTION_IDS.map((id) =>
+    products.find((p) => p.id === id),
+  ).filter((p): p is NonNullable<typeof p> => Boolean(p));
   const compoundCount = products.filter(
     (p) => p.status === "active" && p.cat !== "supplies",
   ).length;

@@ -63,6 +63,29 @@ WordPress/WooCommerce backend:
 > the Local site. In woo mode, `npm run build` needs the WordPress site
 > running (shop/lab-reports prerender from it).
 
+### Fully WP-managed products
+
+In woo mode **everything** on the storefront is served live from WordPress —
+names, prices/sale prices, size variations, images (WP Media Library), rich
+descriptions, mechanism of action, references, scientific specs, COA PDFs,
+badges and display ratings. The client edits it all in wp-admin:
+
+- **ACF field group** (`wordpress/mu-plugins/troo-product-fields.php`, deployed
+  to `wp-content/mu-plugins/`) adds tabbed fields on the product edit screen:
+  General / Descriptions / Research / Scientific Specs / Lab Report (COA).
+  The plain-English long description is the standard WooCommerce Description
+  editor; "Featured" is the standard WooCommerce featured toggle.
+- **Media**: `npx tsx scripts/upload-media.ts` uploads product images + COA
+  PDFs to the Media Library and attaches them to products/variations
+  (idempotent).
+- **Instant updates**: WooCommerce webhooks (product created/updated/deleted)
+  call `/api/revalidate?secret=REVALIDATE_SECRET`, purging the storefront's
+  `catalog` fetch-cache tag — wp-admin edits go live within seconds (60s ISR
+  as fallback). When deploying, update the webhook delivery URLs to the
+  production domain.
+- `next.config.ts` whitelists the WordPress hostname (from `WC_API_URL`) for
+  `next/image`.
+
 ## Structure
 
 ```
