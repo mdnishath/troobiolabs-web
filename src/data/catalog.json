@@ -1,0 +1,1507 @@
+{
+  "categories": [
+    {
+      "id": "tissue",
+      "name": "Tissue Repair & Recovery",
+      "color": "#D9368A",
+      "blurb": "Compounds studied in wound-healing, angiogenesis and recovery models."
+    },
+    {
+      "id": "metabolic",
+      "name": "Metabolic & GLP-1",
+      "color": "#1486C9",
+      "blurb": "Incretin analogs studied in metabolic, glycemic and appetite research."
+    },
+    {
+      "id": "endocrine",
+      "name": "Endocrine & GH",
+      "color": "#F47B2A",
+      "blurb": "GHRH analogs and secretagogues for endocrine-axis research."
+    },
+    {
+      "id": "cellular",
+      "name": "Cellular & Longevity",
+      "color": "#73B84A",
+      "blurb": "Compounds studied in cellular aging and mitochondrial models."
+    },
+    {
+      "id": "neural",
+      "name": "Neural & Cognitive",
+      "color": "#8D43B8",
+      "blurb": "Neuropeptides studied in cognition and stress-response models."
+    },
+    {
+      "id": "supplies",
+      "name": "Lab Supplies",
+      "color": "#5A55D6",
+      "blurb": "Solvents and consumables for reconstitution and lab protocols."
+    }
+  ],
+  "products": [
+    {
+      "id": "wolverine-blend-bpc-157-tb-500",
+      "name": "WOLVERINE Blend (BPC-157 + TB-500)",
+      "sub": "BPC-157 + TB-500",
+      "cat": "tissue",
+      "featured": true,
+      "popular": true,
+      "images": [
+        "/images/products/wolverine-blend-bpc-157-tb-500/1.webp"
+      ],
+      "sizes": [
+        {
+          "size": "10mg",
+          "price": 55,
+          "compareAt": 70,
+          "image": "/images/products/wolverine-blend-bpc-157-tb-500/1.webp"
+        },
+        {
+          "size": "20mg",
+          "price": 90,
+          "compareAt": 115,
+          "image": null
+        }
+      ],
+      "rating": 4.6,
+      "reviews": 210,
+      "shortDesc": "Two well-studied peptides, BPC-157 and TB-500, pre-mixed in fixed amounts and freeze-dried into one vial so labs don't have to combine them by hand. ≥98% pure (HPLC). For research use only.",
+      "longDescPlain": "<p>Two well-studied peptides, BPC-157 and TB-500, pre-mixed in fixed amounts and</p><p>freeze-dried into one vial so labs don't have to combine them by hand. ≥98% pure</p><p>(HPLC). For research use only.</p>",
+      "longDescSci": "<p>Research-grade lyophilized peptide blend containing BPC-157 and TB-500, investigated for complementary modulation of growth factor signaling, actin-mediated cell migration, angiogenesis, and extracellular matrix remodeling. Lyophilized blend · ≥98% purity (HPLC) · studied in preclinical models of tissue repair signaling, regenerative biology, collagen remodeling, vascular biology, and coordinated cellular repair pathways.</p>",
+      "moaPlain": "<p>A ready-made blend of two repair-signaling peptides — BPC-157 and TB-500 — for</p><p>studies that look at how they work together.</p>",
+      "moaSci": "<p>Combined formulation for multi-compound tissue research protocols investigating</p><p>complementary repair signaling pathways.</p>",
+      "researchStudies": "<p><em><strong>Complementary mechanisms of BPC-157 and thymosin beta-4 in tendon and musculoskeletal repair</strong></em></p><p>— evidence for synergistic wound healing activity[<a href=\"doi:10.2174/0929867323666160321115504\" target=\"_blank\" rel=\"noopener noreferrer\">1</a>]</p><p>This preclinical study evaluated the individual and combined administration of BPC-157 and</p><p>thymosin beta-4 in a rat Achilles tendon transection model to assess whether dual-peptide</p><p>protocols produce additive or synergistic healing effects. Animals in the combination group</p><p>received both peptides at half the individually effective concentration, allowingconcentration-equivalence comparison. Histological scoring of tendon organization, collagen</p><p>cross-linking density, and vascularization at 21 days showed significantly greater improvement</p><p>in the combination group than in either single-peptide group, consistent with pharmacological</p><p>synergy. Mechanistic analysis suggested complementary activity: BPC-157's growth factor</p><p>upregulation (VEGF, EGF) combined with TB-4's actin-mediated cell migration and NF-kB</p><p>suppression addressed distinct phases of the tissue repair cascade.</p><p>Last verified: 2026-04-03</p><p>Thymosin beta-4 and BPC-157 act on distinct and complementary angiogenic pathways in wound</p><p>healing — VEGF-dependent and VEGF-independent mechanisms[<a href=\"2004. doi:10.1196/annals.1296.068\" target=\"_blank\" rel=\"noopener noreferrer\">2</a>]</p><p>This in vitro and in vivo study systematically characterized the angiogenic signaling</p><p>contributions of BPC-157 and thymosin beta-4 in endothelial cell tube formation assays and a</p><p>rodent dorsal window chamber model. BPC-157 promoted angiogenesis through VEGFR2 and</p><p>FAK phosphorylation pathways, as shown by pharmacological inhibitor experiments with</p><p>bevacizumab and PF-573228. TB-4's angiogenic activity was retained in VEGF-neutralized</p><p>conditions and mapped to a distinct pathway involving integrin alphavbeta3 and Akt-eNOS</p><p>signaling via the LKKTETQ active domain. When combined, the peptides produced additive tube</p><p>formation in HUVEC assays across a range of concentrations, supporting the mechanistic</p><p>rationale for the combination protocol in musculoskeletal repair research.</p><p>Last verified: 2026-04-03</p>",
+      "references": "<p>[1]Sikiric P , Seiwerth S, Rucman R, et al. Current Medicinal Chemistry. 2017.</p><p><a href=\"doi:10.2174/0929867323666160321115504\" target=\"_blank\" rel=\"noopener noreferrer\">doi:10.2174/0929867323666160321115504</a></p><p>[2]Philp D, Nguyen M, Scheremeta B, et al. Annals of the New York Academy of Sciences.</p><p><a href=\"2004. doi:10.1196/annals.1296.068\" target=\"_blank\" rel=\"noopener noreferrer\">2004. doi:10.1196/annals.1296.068</a></p>",
+      "applications": [
+        "Multi-compound tissue repair models",
+        "Pathway interaction studies",
+        "Combination protocol research"
+      ],
+      "specs": {
+        "altNames": "BPC-157: Body Protection Compound 157, PL-10, Bepecin, TB-500: Thymosin Beta-4, Tβ4, TB4",
+        "cas": "BPC-157: 137525-51-0, TB-500 (Thymosin Beta-4): 77591-33-4",
+        "form": "Lyophilized Blend",
+        "formula": "BPC-157: C₆₂H₉₈N₁₆O₂₂, TB-500 (Thymosin Beta-4): C₂₁₂H₃₅₀N₅₆O₇₈S",
+        "mw": "BPC-157: 1419.53 Da, TB-500 (Thymosin Beta-4): 4963.44 Da",
+        "purity": "≥99%",
+        "sequence": "",
+        "storage": "-20°C, protected from light and moisture"
+      },
+      "coa": {
+        "file": "/docs/coa/AARLL-2917829-P%20-%20BPC-157%20%2B%20TB-500%20-%20Purity.pdf",
+        "label": "AARLL-2917829-P"
+      },
+      "status": "active"
+    },
+    {
+      "id": "acetic-acid-0-6",
+      "name": "Acetic Acid 0.6%",
+      "sub": "0.6% Sterile Solution",
+      "cat": "supplies",
+      "featured": false,
+      "popular": false,
+      "images": [],
+      "sizes": [
+        {
+          "size": "10mg",
+          "price": 15,
+          "compareAt": 18,
+          "image": null
+        }
+      ],
+      "rating": 4.8,
+      "reviews": 77,
+      "shortDesc": "A sterile 0.6% acetic acid solution used in laboratory protocols for peptide preparation, solubilization, and pH adjustment.",
+      "longDescPlain": "<p>A sterile 0.6% acetic acid solution commonly used in laboratory settings for peptide solubilization, pH adjustment, and preparation of research compounds. Suitable for use in compatible laboratory protocols requiring a mildly acidic aqueous solution. For research use only.</p>",
+      "longDescSci": "<p>Sterile 0.6% (v/v) acetic acid solution intended for laboratory applications including peptide solubilization, pH adjustment, and preparation of compatible research materials. Prepared as a dilute acidic aqueous reagent for research use only.</p>",
+      "moaPlain": "<p>Provides a mildly acidic environment that helps dissolve and stabilize certain research compounds during laboratory preparation and reconstitution procedures.</p>",
+      "moaSci": "<p>Functions as a dilute acidic aqueous reagent that lowers solution pH to facilitate the solubilization, preparation, and handling of compatible laboratory compounds. The acidic environment may improve dissolution characteristics and support standardized laboratory preparation protocols for select research materials.</p>",
+      "researchStudies": "",
+      "references": "",
+      "applications": [],
+      "specs": {
+        "altNames": "Ethanoic Acid, Dilute Acetic Acid Solution, Acetic Acid 0.6% Aqueous Solution",
+        "cas": "64-19-7",
+        "form": "",
+        "formula": "CH₃COOH",
+        "mw": "60.05 g/mol.",
+        "purity": "0.6% Acetic Acid in Purified Water (Research Grade)",
+        "sequence": "",
+        "storage": "Room Temperature"
+      },
+      "coa": null,
+      "status": "active"
+    },
+    {
+      "id": "aod-9604",
+      "name": "AOD-9604",
+      "sub": "hGH Fragment 176-191",
+      "cat": "metabolic",
+      "featured": false,
+      "popular": false,
+      "images": [
+        "/images/products/aod-9604/1.webp"
+      ],
+      "sizes": [
+        {
+          "size": "5mg",
+          "price": 50,
+          "compareAt": 60,
+          "image": "/images/products/aod-9604/1.webp"
+        }
+      ],
+      "rating": 4.6,
+      "reviews": 18,
+      "shortDesc": "A small piece of human growth hormone (residues 177–191), studied in the lab for fat-metabolism signaling. Freeze-dried powder, ≥98% pure (HPLC). For research use only",
+      "longDescPlain": "<p>A small piece of human growth hormone (residues 177–191), studied in the lab for fat-metabolism signaling. Freeze-dried powder, ≥98% pure (HPLC). For research use only.</p>",
+      "longDescSci": "<p>Synthetic C-terminal human growth hormone fragment (residues 176–191) investigated for modulation of lipid metabolism independent of full-length growth hormone activity. Lyophilized powder · ≥98% purity (HPLC) · studied in preclinical models of adipocyte biology, lipolytic signaling, metabolic homeostasis, cartilage metabolism, and growth hormone fragment pharmacology.</p>",
+      "moaPlain": "<p>A growth-hormone fragment studied for its effect on lipid metabolism without raising IGF-1.</p>",
+      "moaSci": "<p>hGH fragment (177-191) investigated for lipolytic activity independent of IGF-1 elevation.</p>",
+      "researchStudies": "<p><em>A growth hormone fragment, hGH(176-191), reduces body fat and stimulates lipolysis in obese mice and rats</em>[1]</p><p>This preclinical study characterized the lipolytic and anti-lipogenic activity of the C-terminal GH fragment (residues 176-191), the sequence present in AOD-9604, using diet-induced obese mice and genetically obese Zucker rats. Daily subcutaneous injection of the fragment at 0.5-2 mg/kg for six weeks produced significant reductions in body weight and adipose tissue mass compared to vehicle-treated controls, without affecting lean mass or elevating blood glucose or IGF-1 concentrations. Fat pad lipolysis assays confirmed that the fragment activated hormone-sensitive lipase in visceral adipose tissue at concentrations that had no effect on GH receptor binding, establishing pharmacological separation from full-length GH.</p><p>Last verified: 2026-04-03</p><p><em>AOD-9604 modulates cartilage metabolism and demonstrates chondroprotective effects in an osteoarthritis model</em>[2]</p><p>Beyond its originally characterized lipolytic activity, this study investigated AOD-9604's effects on chondrocyte metabolism using human osteoarthritic cartilage explants and a rat surgical OA model. AOD-9604 at 1-10 uM inhibited IL-1beta-induced matrix metalloproteinase (MMP-3 and MMP-13) production in chondrocytes and reduced aggrecan degradation as measured by ELISA. In the rat OA model, intra-articular injection of AOD-9604 reduced cartilage erosion scores and preserved glycosaminoglycan content compared to saline-injected controls at 12 weeks. These findings suggested potential research applications for AOD-9604 in joint research models distinct from its metabolic profile.</p><p>Last verified: 2026-04-03</p>",
+      "references": "<ul><li>[1]Ng FM, Sun J, Sharma L, Libinaka R, Jiang WJ, Gianello R. Journal of Endocrinology. 2000. <a href=\"https://pubmed.ncbi.nlm.nih.gov/10942122\" target=\"_blank\" rel=\"noopener noreferrer\">PMID:10942122</a></li><li>[2]Cai B, Grone A, Ong CT, Chong PS, Ng YK, Tay SS. Endocrinology. 2013. <a href=\"https://doi.org/10.1210/en.2013-1019\" target=\"_blank\" rel=\"noopener noreferrer\">doi:10.1210/en.2013-1019</a></li></ul>",
+      "applications": [
+        "Lipolytic pathway research",
+        "Adipose tissue biology",
+        "GH fragment mechanism studies"
+      ],
+      "specs": {
+        "altNames": "AOD 9604, hGH Fragment 176–191, Growth Hormone Fragment 176–191, C-terminal GH fragment",
+        "cas": "221231-10-3",
+        "form": "Lyophilized Blend",
+        "formula": "C₇₈H₁₂₃N₂₃O₂₃S₂",
+        "mw": "1815.08 Da",
+        "purity": "≥99%",
+        "sequence": "YLRIVQCRSVEGSCGF",
+        "storage": "-20°C, protected from light and moisture"
+      },
+      "coa": null,
+      "status": "active"
+    },
+    {
+      "id": "bacteriostatic-water",
+      "name": "Bacteriostatic Water",
+      "sub": "Reconstitution Solvent",
+      "cat": "supplies",
+      "featured": false,
+      "popular": false,
+      "images": [],
+      "sizes": [
+        {
+          "size": "3ml",
+          "price": 8,
+          "compareAt": 10,
+          "image": null
+        },
+        {
+          "size": "10ml",
+          "price": 15,
+          "compareAt": 18,
+          "image": null
+        },
+        {
+          "size": "30ml",
+          "price": 25,
+          "compareAt": 30,
+          "image": null
+        }
+      ],
+      "rating": 4.8,
+      "reviews": 149,
+      "shortDesc": "Bacteriostatic water for laboratory reconstitution — Hospira 10mL multi-dose vial, USP-grade, preserved with 0.9% benzyl alcohol. Sold as a single or a 5-pack; one bottle is included free with qualifying orders.",
+      "longDescPlain": "<p>A sterile, non-pyrogenic water solution containing 0.9% benzyl alcohol as a bacteriostatic preservative. Commonly used in laboratory settings for the reconstitution and dilution of lyophilized research compounds when multiple withdrawals from the same vial are required. For research use only.</p>",
+      "longDescSci": "<p>Sterile Water for Injection, USP, containing 0.9% (9 mg/mL) benzyl alcohol as a bacteriostatic preservative · intended for laboratory reconstitution and dilution of lyophilized research materials · multiple-dose formulation · research use only.</p>",
+      "moaPlain": "<p>Provides a sterile aqueous vehicle for dissolving and diluting compatible lyophilized research compounds. The benzyl alcohol preservative helps inhibit bacterial growth within the solution during repeated laboratory withdrawals.</p>",
+      "moaSci": "<p>Functions as a sterile aqueous diluent for the reconstitution and preparation of compatible lyophilized laboratory materials. Benzyl alcohol (0.9%) serves as a bacteriostatic preservative by inhibiting microbial proliferation, supporting multiple-dose laboratory handling under appropriate aseptic techniques.</p>",
+      "researchStudies": "",
+      "references": "",
+      "applications": [],
+      "specs": {
+        "altNames": "BWFI, Bacteriostatic Water for Research, Preserved Sterile Water",
+        "cas": "Water (7732-18-5), Benzyl Alcohol (100-51-6)",
+        "form": "Lyophilized Blend",
+        "formula": "H₂O (Water), C₇H₈O (Benzyl Alcohol)",
+        "mw": "Water: 18.015 g/mol, Benzyl Alcohol: 108.140 g/mol",
+        "purity": "≥99%",
+        "sequence": "",
+        "storage": "Room Temperature"
+      },
+      "coa": null,
+      "status": "active"
+    },
+    {
+      "id": "bpc-157",
+      "name": "BPC-157 (Body Protection Compound)",
+      "sub": "Body Protection Compound",
+      "cat": "tissue",
+      "featured": false,
+      "popular": true,
+      "images": [
+        "/images/products/bpc-157/1.webp",
+        "/images/products/bpc-157/2.webp"
+      ],
+      "sizes": [
+        {
+          "size": "5mg",
+          "price": 30,
+          "compareAt": 36,
+          "image": "/images/products/bpc-157/1.webp"
+        },
+        {
+          "size": "10mg",
+          "price": 55,
+          "compareAt": 66,
+          "image": "/images/products/bpc-157/2.webp"
+        }
+      ],
+      "rating": 4.8,
+      "reviews": 213,
+      "shortDesc": "A short peptide originally identified in stomach fluid, used in the lab to study how it affects tissue repair. Freeze-dried powder, ≥98% pure (HPLC). For research use only.",
+      "longDescPlain": "<p>A synthetic 15-amino-acid peptide originally derived from a naturally occurring gastric protein, studied in laboratory models for its role in tissue repair, angiogenesis, extracellular matrix remodeling, and cellular signaling. Freeze-dried powder, ≥98% purity (HPLC). For research use only.</p>",
+      "longDescSci": "<p>Synthetic pentadecapeptide investigated for regulation of growth factor signaling, angiogenesis, and extracellular matrix remodeling. Lyophilized powder · ≥98% purity (HPLC) · studied in laboratory models of VEGF and EGF signaling, fibroblast activity, cell migration, cytoprotection, and regenerative biology.</p>",
+      "moaPlain": "<p>A peptide studied for how it influences cellular repair processes by supporting growth factor signaling, blood vessel formation, and communication between cells involved in tissue maintenance and regeneration.</p>",
+      "moaSci": "<p>Pentadecapeptide investigated for modulation of vascular endothelial growth factor (VEGF) and epidermal growth factor (EGF) signaling pathways, nitric oxide system regulation, focal adhesion kinase (FAK) activation, and extracellular matrix remodeling associated with angiogenesis, cell migration, and tissue repair signaling.</p>",
+      "researchStudies": "<p><strong>Stable gastric pentadecapeptide BPC-157 demonstrates cytoprotective and regenerative signaling across multiple preclinical tissue injury models.[1]</strong></p><p>This investigation evaluated BPC-157 in rodent models of gastric injury, tendon transection, intestinal anastomosis, and soft-tissue damage. Administration of BPC-157 was associated with accelerated tissue organization, increased angiogenic activity, and enhanced extracellular matrix remodeling compared with control groups. Mechanistic analyses suggested involvement of VEGF- and EGF-associated signaling together with nitric oxide pathway modulation, supporting continued investigation of BPC-157 in regenerative biology research.</p><p><strong>Last verified:</strong> 2026-04-03</p><p><strong>BPC-157 promotes tendon repair through focal adhesion kinase (FAK)-paxillin signaling and regulation of cell migration.[2]</strong></p><p>Researchers evaluated BPC-157 in an Achilles tendon transection model to investigate molecular pathways involved in tissue remodeling. Histological analyses demonstrated improved collagen organization and tendon architecture compared with untreated controls. Molecular studies identified increased phosphorylation of focal adhesion kinase (FAK) and paxillin, supporting investigation of BPC-157 in cellular adhesion, migration, extracellular matrix remodeling, and regenerative signaling pathways.</p><p><strong>Last verified:</strong> 2026-04-03</p>",
+      "references": "<p><strong>[1]</strong> Sikiric P, Seiwerth S, Rucman R, et al. <em>Stable gastric pentadecapeptide BPC-157 in inflammatory bowel disease and wound healing research.</em> Current Pharmaceutical Design. 2011. doi:10.2174/138161211798157432</p><p><strong>[2]</strong> Chang CH, Tsai WC, Lin MS, Hsu YH, Pang JH. <em>Accelerated healing of tendon injury by BPC-157 through FAK-paxillin signaling.</em> Journal of Orthopaedic Translation. 2011. doi:10.1016/j.jot.2011.03.002</p>",
+      "applications": [
+        "Tissue repair signaling pathways",
+        "Cytoprotective mechanism studies",
+        "Nitric oxide system modulation",
+        "Growth factor expression models"
+      ],
+      "specs": {
+        "altNames": "Body Protection Compound 157, PL-10, PL 14736, Bepecin, Gastric pentadecapeptide BPC-157",
+        "cas": "137525-51-0",
+        "form": "Lyophilized Blend",
+        "formula": "C₆₂H₉₈N₁₆O₂₂",
+        "mw": "1419.53 Da",
+        "purity": "≥99%",
+        "sequence": "GEPPPGKPADDAGLV",
+        "storage": "-20°C, protected from light and moisture"
+      },
+      "coa": {
+        "file": "/docs/coa/AARLL-3548854-P%20-%20BPC-157%20-%20Purity.pdf",
+        "label": "AARLL-3548854-P"
+      },
+      "status": "active"
+    },
+    {
+      "id": "cagrilintide",
+      "name": "Cagrilintide",
+      "sub": "Long-Acting Amylin Analog",
+      "cat": "metabolic",
+      "featured": false,
+      "popular": false,
+      "images": [
+        "/images/products/cagrilintide/1.webp"
+      ],
+      "sizes": [
+        {
+          "size": "10mg",
+          "price": 70,
+          "compareAt": 84,
+          "image": "/images/products/cagrilintide/1.webp"
+        }
+      ],
+      "rating": 4.8,
+      "reviews": 129,
+      "shortDesc": "Cagrilintide is the first long-acting amylin analogue being investigated for weight management as a once-weekly treatment",
+      "longDescPlain": "<p>Cagrilintide is the first long-acting amylin analogue being investigated for weight management as a once-weekly treatment, typically studied in combination with semaglutide. </p>",
+      "longDescSci": "<p>Synthetic amylin receptor agonist investigated for modulation of amylin (AMYR) and calcitonin receptor (CTR) signaling through receptor activity-modifying protein (RAMP)-associated complexes. Lyophilized powder · ≥99% purity (HPLC) · studied in preclinical models of metabolic regulation, glucose-dependent endocrine signaling, energy balance, receptor pharmacology, and pancreatic hormone biology.</p>",
+      "moaPlain": "<p>Cagrilintide acts as a nonselective agonist at amylin receptors (AMYR) and the calcitonin receptor (CTR).</p>",
+      "moaSci": "<p>Cagrilintide acts as a nonselective agonist at amylin receptors (AMYR) and the calcitonin receptor (CTR). It mimics natural amylin, a hormone normally co-secreted with insulin from pancreatic beta cells, which signals satiety through both the body's basic hunger-regulation centers and reward-related brain regions. </p>",
+      "researchStudies": "<p><em><strong>Long-acting amylin analog Cagrilintide demonstrates sustained amylin receptor activation and metabolic signaling in preclinical research models.[1]</strong></em></p><p>This preclinical investigation evaluated Cagrilintide in rodent models to characterize its pharmacological activity at amylin receptor complexes and its effects on metabolic signaling. Compared with native amylin, the modified peptide demonstrated prolonged receptor engagement and extended biological activity resulting from structural modifications that enhance stability. Investigators observed sustained activation of amylin receptor pathways involved in energy homeostasis, glucose regulation, and neuroendocrine signaling, supporting its use as a research tool for studying long-acting amylin receptor agonism.</p><p><strong>Last verified:</strong> 2026-04-03</p><p><em><strong>Combined amylin and GLP-1 receptor agonism produces complementary metabolic signaling in preclinical obesity models.[2]</strong></em></p><p>This mechanistic study examined the interaction between long-acting amylin receptor agonism and GLP-1 receptor activation in diet-induced obesity models. Dual pathway activation produced greater improvements in glucose-dependent metabolic signaling and energy homeostasis than either pathway alone. Molecular analyses demonstrated complementary engagement of central and peripheral signaling networks regulating appetite, pancreatic hormone secretion, and metabolic physiology, supporting investigation of combination incretin-amylin receptor agonism in metabolic research.</p><p><strong>Last verified:</strong> 2026-04-03</p>",
+      "references": "<p><strong>[1]</strong> Lau DCW, Erichsen L, Francisco AM, et al. <em>A randomized, phase 1 study of the long-acting amylin analogue cagrilintide: pharmacokinetics, pharmacodynamics, safety, and tolerability.</em> Clinical Pharmacology in Drug Development. 2021.</p><p><strong>[2]</strong> Enebo LB, Berthelsen KK, Kankam M, et al. <em>Safety, tolerability, pharmacokinetics, and pharmacodynamics of the long-acting amylin analogue cagrilintide alone and in combination with semaglutide in adults with overweight or obesity.</em> The Lancet. 2021. doi:10.1016/S2213-8587(21)00181-9</p>",
+      "applications": [
+        "Obesity and weight-loss pharmacology",
+        "Amylin/calcitonin receptor signaling",
+        "Combination therapy with GLP-1 receptor agonists"
+      ],
+      "specs": {
+        "altNames": "INN: Cagrilintide, AM833 (development code), Long-acting amylin analog, CTR/RAMP agonist",
+        "cas": "1415456-99-3",
+        "form": "Lyophilized Blend",
+        "formula": "C₁₉₄H₃₁₂N₅₄O₅₉S₂",
+        "mw": "~4,409.0 g/mol",
+        "purity": "≥99%",
+        "sequence": "",
+        "storage": "-20°C, protected from light and moisture"
+      },
+      "coa": null,
+      "status": "active"
+    },
+    {
+      "id": "cjc-1295-no-dac-plus-ipamorelin",
+      "name": "CJC-1295 (NO DAC) + Ipamorelin",
+      "sub": "GHRH + GHRP Blend",
+      "cat": "endocrine",
+      "featured": false,
+      "popular": true,
+      "images": [
+        "/images/products/cjc-1295-no-dac-plus-ipamorelin/1.webp"
+      ],
+      "sizes": [
+        {
+          "size": "10mg",
+          "price": 50,
+          "compareAt": 60,
+          "image": "/images/products/cjc-1295-no-dac-plus-ipamorelin/1.webp"
+        }
+      ],
+      "rating": 4.7,
+      "reviews": 131,
+      "shortDesc": "Two growth-hormone-axis peptides, CJC-1295 (No-DAC) and Ipamorelin, combined in one freeze-dried vial since research often studies this pairing together. For research use only; not for human consumption.",
+      "longDescPlain": "<p>Two growth-hormone-axis peptides, CJC-1295 (No-DAC) and Ipamorelin, combined in one freeze-dried vial since research often studies this pairing together. For research use only; not for human consumption.</p>",
+      "longDescSci": "<p>Research-grade lyophilized peptide blend combining CJC-1295 (No DAC), a growth hormone-releasing hormone (GHRH) analog, and Ipamorelin, a selective growth hormone secretagogue receptor (GHS-R1a) agonist. Lyophilized blend · ≥98% purity (HPLC) · studied in laboratory models of pulsatile growth hormone secretion, growth hormone-releasing hormone receptor (GHRHR) and ghrelin receptor signaling, insulin-like growth factor-1 (IGF-1) regulation, pituitary physiology, and endocrine signaling pathways.</p>",
+      "moaPlain": "<p>A two-peptide blend — CJC-1295 plus Ipamorelin — for studying how the growth-hormone system responds when both are used together.</p>",
+      "moaSci": "<p>Two-compound GH-axis blend pairing the GHRH analog CJC-1295 (No-DAC) with the selective GHS-R1a agonist Ipamorelin — investigated for synergistic growth-hormone-axis signaling in pharmacology research.</p>",
+      "researchStudies": "<p><em><strong>Combined GHRH receptor activation and ghrelin receptor agonism produces complementary regulation of pulsatile growth hormone secretion in preclinical models.[1]</strong></em></p><p>This preclinical investigation evaluated the combined administration of a growth hormone-releasing hormone (GHRH) analog and the selective growth hormone secretagogue receptor (GHS-R1a) agonist Ipamorelin to characterize complementary signaling within the growth hormone axis. Co-administration produced greater pulsatile growth hormone release than either compound alone while preserving physiologic secretory patterns. Molecular analyses demonstrated coordinated activation of GHRHR- and GHS-R1a-mediated pathways involved in pituitary somatotroph function, insulin-like growth factor-1 (IGF-1) regulation, and endocrine signaling.</p><p><strong>Last verified:</strong> 2026-04-03</p><p><em><strong>Dual activation of GHRHR and GHS-R1a enhances growth hormone axis signaling through complementary receptor pathways.[2]</strong></em></p><p>This mechanistic study investigated the interaction between GHRH receptor stimulation and ghrelin receptor agonism using pituitary cell preparations and animal models of endocrine regulation. Simultaneous activation of both receptor systems produced greater cAMP-dependent signaling and pulsatile growth hormone secretion than selective activation of either pathway alone. The findings support investigation of combined GHRH analogs and selective GHS-R1a agonists as complementary research tools for studying growth hormone physiology, pituitary signaling, and neuroendocrine regulation.</p><p><strong>Last verified:</strong> 2026-04-03</p>",
+      "references": "<p><strong>[1]</strong> Jaffe CA, DeMott-Friberg R, Barkan AL. <em>Combined administration of growth hormone-releasing hormone and growth hormone secretagogues enhances pulsatile growth hormone secretion in humans.</em> Journal of Clinical Endocrinology &amp; Metabolism. 1996.</p><p><strong>[2]</strong> Johansen PB, Segev Y, Landau D, Phillip M, Flyvbjerg A. <em>Effects of Ipamorelin alone and in combination with growth hormone-releasing hormone analogs on growth hormone secretion in experimental models.</em> Growth Hormone &amp; IGF Research. 2005. doi:10.1016/j.ghir.2004.09.001</p>",
+      "applications": [
+        "GH-axis synergy research",
+        "GHRH receptor binding studies",
+        "GHS-R1a receptor binding studies",
+        "Combination-blend pharmacology"
+      ],
+      "specs": {
+        "altNames": "CJC-1295 (No DAC): Modified GRF(1-29), Mod GRF 1-29 Sermorelin analog, Ipamorelin: NNC 26-0161 Ipamorelin acetate, GHRH/GHRP combination blend",
+        "cas": "CJC-1295 (No DAC): 446262-90-4 Ipamorelin: 170851-70-4",
+        "form": "Lyophilized Blend",
+        "formula": "CJC-1295 (No DAC): C₁₄₉H₂₄₆N₄₄O₄₂ , Ipamorelin: C₃₈H₄₉N₉O₅",
+        "mw": "CJC-1295 (No DAC): ~3367.95 g/mol, Ipamorelin: 711.86 g/mol",
+        "purity": "≥99%",
+        "sequence": "",
+        "storage": "-20°C, protected from light and moisture"
+      },
+      "coa": {
+        "file": "/docs/coa/AARLL-4328886-P%20-%20Ipamorelin%20%2B%20CJC-1295%20-%20Purity.pdf",
+        "label": "AARLL-4328886-P"
+      },
+      "status": "active"
+    },
+    {
+      "id": "dsip",
+      "name": "DSIP - (Delta Sleep Inducing Peptide)",
+      "sub": "Delta Sleep-Inducing Peptide",
+      "cat": "neural",
+      "featured": false,
+      "popular": false,
+      "images": [],
+      "sizes": [
+        {
+          "size": "10mg",
+          "price": 35,
+          "compareAt": 42,
+          "image": null
+        }
+      ],
+      "rating": 4.8,
+      "reviews": 200,
+      "shortDesc": "A naturally occurring neuropeptide investigated in laboratory models for its role in sleep regulation, stress-response signaling, and central nervous system pathways.",
+      "longDescPlain": "<p>A naturally occurring nonapeptide studied in laboratory models for its role in neuroendocrine signaling, neurotransmitter regulation, stress-response pathways, and central nervous system physiology. Lyophilized powder · ≥98% purity (HPLC). For research use only.</p>",
+      "longDescSci": "<p>Naturally occurring nonapeptide investigated for modulation of neuroendocrine signaling and central nervous system communication. Lyophilized powder · ≥98% purity (HPLC) · studied in laboratory models of hypothalamic-pituitary axis regulation, neurotransmitter signaling, stress-response pathways, neuronal communication, and neurophysiology.</p>",
+      "moaPlain": "<p><strong>A neuropeptide studied for how it influences communication between the brain and endocrine system by regulating neurotransmitter activity, stress-response signaling, and neuroendocrine pathways.</strong></p>",
+      "moaSci": "<p>Nonapeptide investigated for modulation of hypothalamic-pituitary axis signaling, neurotransmitter regulation, and neuroendocrine communication. Studied in laboratory models of GABAergic and monoaminergic signaling, stress-response pathways, neuronal signaling, and central nervous system physiology.</p>",
+      "researchStudies": "<p><em><strong>Delta Sleep-Inducing Peptide (DSIP) modulates neuroendocrine signaling and stress-response pathways in preclinical models.[1]</strong></em></p><p>This investigation evaluated DSIP in rodent models to characterize its effects on neuroendocrine regulation and central nervous system signaling. Administration of DSIP was associated with modulation of hypothalamic activity, altered stress hormone responses, and changes in sleep-associated electrophysiological patterns. Mechanistic analyses suggested involvement of neurotransmitter systems and hypothalamic-pituitary axis signaling, supporting continued investigation of DSIP in neurophysiology and neuroendocrine research.</p><p><strong>Last verified:</strong> 2026-04-03</p><p><em><strong>DSIP influences neurotransmitter regulation and hypothalamic-pituitary signaling in experimental neurobiology models.[2]</strong></em></p><p>This mechanistic study investigated the effects of DSIP on central neurotransmitter pathways and neuroendocrine regulation using animal and cellular models. Researchers observed changes in GABAergic and monoaminergic signaling together with modulation of hypothalamic peptide activity and endocrine responses. The findings support investigation of DSIP as a research tool for studying neurochemical communication, stress physiology, and central nervous system signaling pathways.</p><p><strong>Last verified:</strong> 2026-04-03</p>",
+      "references": "<p><strong>[1]</strong> Graf MV, Kastin AJ. <em>Delta Sleep-Inducing Peptide (DSIP): chemistry, physiology, and biological activity.</em> Neuroscience &amp; Biobehavioral Reviews. 1986.</p><p><strong>[2]</strong> Monnier M, Schoenenberger GA. <em>Delta Sleep-Inducing Peptide: biological properties and neuroendocrine effects.</em> Experientia. 1977.</p>",
+      "applications": [
+        "Neuroendocrine signaling research",
+        "Hypothalamic-pituitary axis studies",
+        "Neurotransmitter regulation models",
+        "Stress-response signaling research",
+        "Sleep physiology investigations",
+        "Central nervous system signaling"
+      ],
+      "specs": {
+        "altNames": "Emideltide, WAGGDASGE",
+        "cas": "62568-57-4",
+        "form": "Lyophilized Blend",
+        "formula": "C₃₅H₄₈N₁₀O₁₅",
+        "mw": "848.8 g/mol",
+        "purity": "≥99%",
+        "sequence": "WAGGDASGE",
+        "storage": "-20°C, protected from light and moisture"
+      },
+      "coa": null,
+      "status": "active"
+    },
+    {
+      "id": "ghk-cu",
+      "name": "GHK-Cu",
+      "sub": "Copper Tripeptide-1",
+      "cat": "tissue",
+      "featured": false,
+      "popular": false,
+      "images": [
+        "/images/products/ghk-cu/1.webp",
+        "/images/products/ghk-cu/2.webp"
+      ],
+      "sizes": [
+        {
+          "size": "50mg",
+          "price": 60,
+          "compareAt": 72,
+          "image": "/images/products/ghk-cu/1.webp"
+        },
+        {
+          "size": "100mg",
+          "price": 110,
+          "compareAt": 132,
+          "image": "/images/products/ghk-cu/2.webp"
+        }
+      ],
+      "rating": 4.7,
+      "reviews": 23,
+      "shortDesc": "A small peptide bound to copper, first found in human plasma, studied for how it affects collagen and the extracellular matrix. Freeze-dried powder, ≥98% pure (HPLC). For research use only.",
+      "longDescPlain": "<p>A small peptide bound to copper, first found in human plasma, studied for how it affects collagen and the extracellular matrix. Freeze-dried powder, ≥98% pure (HPLC). For research use only.</p>",
+      "longDescSci": "<p>Copper-binding tripeptide (Gly-His-Lys:Cu²⁺) investigated for modulation of extracellular matrix signaling and copper-dependent biological pathways. Lyophilized powder · ≥98% purity (HPLC) · studied in preclinical models of collagen synthesis, fibroblast activity, angiogenesis, antioxidant defense, tissue remodeling, and regenerative biology.</p>",
+      "moaPlain": "<p>A copper-carrying peptide studied for its role in collagen production and rebuilding the support structure around cells.</p>",
+      "moaSci": "<p>Copper-binding tripeptide investigated for collagen synthesis and extracellular matrix remodeling signaling.</p>",
+      "researchStudies": "<p><em>GHK-Cu modulates expression of genes associated with tissue remodeling, inflammation, and antioxidant defense in human fibroblasts</em>[1]</p><p>Using gene array analysis in human dermal fibroblasts, this study examined GHK-Cu's broad transcriptional activity across over 4,000 expressed genes. GHK-Cu at physiologically relevant concentrations (10 nM-1 uM) upregulated collagen I, III, and V synthesis genes alongside metalloproteinase regulators involved in extracellular matrix remodeling. Concurrently, genes associated with inflammatory signaling (TNF-alpha pathway, IL-6) were suppressed, and antioxidant response genes including SOD1 and glutathione peroxidase were upregulated. The authors proposed that GHK-Cu acts as a broad tissue-reset signal by resetting gene expression patterns toward a more regenerative state.</p><p>Last verified: 2026-04-03</p><p><em>The human tripeptide GHK-Cu in prevention of oxidative stress and degenerative conditions of aging — implications for cognitive health</em>[2]</p><p>This review synthesized evidence for GHK-Cu's neuroprotective and antioxidative properties from published in vitro, animal, and preclinical data. GHK-Cu demonstrated significant free radical scavenging activity and upregulation of superoxide dismutase in neural tissue models. In aged rodent brains, GHK-Cu was associated with reduced lipid peroxidation and improved spatial memory performance in maze tests. The authors highlighted GHK-Cu's dual role as both a copper chelator (preventing redox-active free copper accumulation) and a gene expression modulator as mechanistically distinct from conventional antioxidants.</p><p>Last verified: 2026-04-03</p>",
+      "references": "<ul><li>[1]Pickart L, Vasquez-Soltero JM, Margolina A. BioMed Research International. 2015. <a href=\"https://doi.org/10.1155/2015/648108\" target=\"_blank\" rel=\"noopener noreferrer\">doi:10.1155/2015/648108</a></li><li>[2]Pickart L, Margolina A. Oxidative Medicine and Cellular Longevity. 2018. <a href=\"https://doi.org/10.1155/2018/1546795\" target=\"_blank\" rel=\"noopener noreferrer\">doi:10.1155/2018/1546795</a></li></ul>",
+      "applications": [
+        "Collagen synthesis studies",
+        "Extracellular matrix remodeling",
+        "Copper-dependent enzymatic research"
+      ],
+      "specs": {
+        "altNames": "Copper Peptide, Copper Tripeptide-1, GHK, Glycyl-L-histidyl-L-lysine:Cu²⁺",
+        "cas": "49557-75-7",
+        "form": "Lyophilized Blend",
+        "formula": "C₁₄H₂₃CuN₆O₄",
+        "mw": "403.93 Da",
+        "purity": "≥99%",
+        "sequence": "GHK",
+        "storage": "-20°C, protected from light and moisture"
+      },
+      "coa": {
+        "file": "/docs/coa/AARLL-6057169-P%20-%20GHK-Cu%20-%20Purity.pdf",
+        "label": "AARLL-6057169-P"
+      },
+      "status": "active"
+    },
+    {
+      "id": "glow-blend",
+      "name": "GLOW Blend (GHK-Cu + BPC-157 + TB-500)",
+      "sub": "GHK-Cu + BPC-157 + TB-500",
+      "cat": "tissue",
+      "featured": false,
+      "popular": false,
+      "images": [
+        "/images/products/glow-blend/1.webp"
+      ],
+      "sizes": [
+        {
+          "size": "70mg",
+          "price": 120,
+          "compareAt": 144,
+          "image": "/images/products/glow-blend/1.webp"
+        }
+      ],
+      "rating": 4.7,
+      "reviews": 51,
+      "shortDesc": "Three of the most-studied repair peptides — GHK-Cu, BPC-157, and TB-500 — combined in a single freeze-dried vial for regenerative-biology research. For research use only; not for human consumption.",
+      "longDescPlain": "<p>Three of the most-studied repair peptides — GHK-Cu, BPC-157, and TB-500 — combined in a single freeze-dried vial for regenerative-biology research. For research use only; not for human consumption.</p>",
+      "longDescSci": "<p>Research-grade lyophilized peptide blend combining GHK-Cu, BPC-157, and TB-500, investigated for complementary activity across extracellular matrix remodeling, angiogenesis, cytoskeletal organization, and tissue repair signaling pathways. Lyophilized blend · ≥98% purity (HPLC) · studied in laboratory models of collagen synthesis, cell migration, regenerative biology, wound repair, and multi-pathway tissue remodeling.</p>",
+      "moaPlain": "<p>A three-peptide blend — GHK-Cu, BPC-157, and TB-500 — for studies on tissue repair, blood-vessel growth, and collagen signaling.</p>",
+      "moaSci": "<p>Three-peptide tissue-research blend pairing GHK-Cu, BPC-157, and TB-500 — investigated across regenerative biology models for angiogenesis, extracellular matrix, and collagen synthesis signaling.</p>",
+      "researchStudies": "<p><em><strong>Component-level research supports investigation of GHK-Cu, BPC-157, and TB-500 in complementary tissue-remodeling models.[1–3]</strong></em></p><p>Research involving the individual components of the GLOW Blend has identified distinct biological pathways relevant to regenerative-biology research. GHK-Cu has been studied for its influence on collagen synthesis, fibroblast activity, extracellular matrix remodeling, antioxidant signaling, and gene-expression patterns associated with tissue maintenance.</p><p>BPC-157 has been investigated in preclinical models involving growth-factor signaling, nitric oxide regulation, focal adhesion kinase activity, angiogenesis, cell migration, and tissue-repair processes. Thymosin beta-4–related peptides have separately been studied for actin-binding activity, cytoskeletal organization, endothelial cell migration, angiogenesis, and wound-remodeling pathways.</p><p>These component-level findings provide a scientific rationale for investigating the combination in laboratory models involving collagen organization, cellular migration, vascular signaling, extracellular matrix turnover, and coordinated tissue-remodeling processes. However, additive or synergistic activity of the complete three-component formulation has not been established through direct comparative research.</p><p><strong>Last reviewed:</strong> July 12, 2026</p><p><em><strong>GHK-Cu, BPC-157, and thymosin beta-4–related peptides act through distinct signaling mechanisms relevant to multi-pathway regenerative research.[1–4]</strong></em></p><p>GHK-Cu has been associated with copper-dependent enzymatic activity, collagen regulation, and extracellular matrix signaling. BPC-157 has been examined for modulation of VEGF-associated angiogenic pathways, nitric oxide signaling, and FAK-paxillin activity involved in cellular adhesion and migration. Thymosin beta-4–related peptides have been investigated for actin sequestration, endothelial cell movement, inflammatory modulation, and vascular remodeling.</p><p>The mechanistic differences among these components make the GLOW Blend suitable for exploratory laboratory models designed to examine interactions among fibroblast activity, angiogenesis, cytoskeletal dynamics, collagen synthesis, and extracellular matrix remodeling. Direct conclusions regarding the safety, efficacy, or synergy of the combined formulation require dedicated blend-specific studies.</p><p><strong>Last reviewed:</strong> July 12, 2026</p>",
+      "references": "<p><strong>[1]</strong> Pickart L, Vasquez-Soltero JM, Margolina A. GHK peptide as a natural modulator of multiple cellular pathways in skin and tissue remodeling. <em>BioMed Research International.</em> 2015;2015:648108. doi:10.1155/2015/648108</p><p><strong>[2]</strong> Sikiric P, Seiwerth S, Rucman R, et al. Stable gastric pentadecapeptide BPC-157 in gastrointestinal, vascular, and tissue-repair research models. <em>Current Pharmaceutical Design.</em> 2011;17(16):1612–1632. doi:10.2174/138161211798157432</p><p><strong>[3]</strong> Malinda KM, Sidhu GS, Mani H, et al. Thymosin beta-4 accelerates wound healing. <em>Journal of Investigative Dermatology.</em> 1999;113(3):364–368.</p><p><strong>[4]</strong> Philp D, Nguyen M, Scheremeta B, et al. Thymosin beta-4 increases hair growth by activation of hair follicle stem cells. <em>FASEB Journal.</em> 2004;18(2):385–387.</p><p><em><strong>Additional Notes</strong></em></p><p>No direct peer-reviewed study was identified for the exact combination of GHK-Cu, BPC-157, and TB-500. The research rationale above is based on published studies of the individual components and should not be interpreted as evidence of confirmed synergy, efficacy, or safety for the complete GLOW Blend.</p>",
+      "applications": [
+        "Multi-mechanism tissue repair models",
+        "Angiogenesis pathway research",
+        "Extracellular matrix remodeling studies",
+        "Collagen synthesis signaling"
+      ],
+      "specs": {
+        "altNames": "GHK-Cu: Copper Tripeptide-1, Copper Peptide, Glycyl-L-histidyl-L-lysine copper complex, BPC-157: Body Protection Compound 157, PL-10, Bepecin TB-500: Thymosin Beta-4, Tβ4, TB4, GLOW Blend (proprietary combination designation)",
+        "cas": "GHK-Cu: 49557-75-7, BPC-157: 137525-51-0, TB-500: 77591-33-4",
+        "form": "Lyophilized Blend",
+        "formula": "GHK-Cu: C₁₄H₂₃CuN₆O₄, BPC-157: C₆₂H₉₈N₁₆O₂₂, TB-500: C₂₁₂H₃₅₀N₅₆O₇₈S",
+        "mw": "GHK-Cu: 403.92 Da, BPC-157:1419.53 Da, TB-500: 4963.44 Da",
+        "purity": "≥99%",
+        "sequence": "",
+        "storage": "-20°C, protected from light and moisture"
+      },
+      "coa": {
+        "file": "/docs/coa/AARLL-9004218-P%20-%20GLOW%20-%20Purity.pdf",
+        "label": "AARLL-9004218-P"
+      },
+      "status": "active"
+    },
+    {
+      "id": "glp-1-s",
+      "name": "GLP-1 (S)",
+      "sub": "GLP-1 Receptor Agonist",
+      "cat": "metabolic",
+      "featured": false,
+      "popular": true,
+      "images": [
+        "/images/products/glp-1-s/1.webp",
+        "/images/products/glp-1-s/2.webp"
+      ],
+      "sizes": [
+        {
+          "size": "5mg",
+          "price": 50,
+          "compareAt": 60,
+          "image": "/images/products/glp-1-s/1.webp"
+        },
+        {
+          "size": "10mg",
+          "price": 90,
+          "compareAt": 108,
+          "image": "/images/products/glp-1-s/2.webp"
+        }
+      ],
+      "rating": 4.7,
+      "reviews": 103,
+      "shortDesc": "Biologically active form of glucagon-like peptide-1 (residues 7–36, amidated) · lyophilized powder · ≥98% purity (HPLC) · MW 3297.68 Da.",
+      "longDescPlain": "<p>The active form of glucagon-like peptide-1, a natural 'incretin' hormone, studied for its role in glucose-dependent insulin signaling. Freeze-dried powder, ≥98% pure (HPLC). For research use only.</p>",
+      "longDescSci": "<p>Biologically active glucagon-like peptide-1 (GLP-1) receptor agonist investigated for selective activation of glucagon-like peptide-1 receptors (GLP-1R). Lyophilized powder · ≥98% purity (HPLC) · studied in laboratory models of incretin signaling, glucose-dependent insulin secretion, pancreatic islet biology, metabolic regulation, and energy homeostasis.</p>",
+      "moaPlain": "<p>A natural gut hormone studied for how it triggers insulin release in response to glucose.</p>",
+      "moaSci": "<p>Endogenous incretin peptide investigated for GLP-1 receptor activation and glucose-dependent insulin signaling._</p>",
+      "researchStudies": "<p><em>Defining the GLP-1 receptor signaling network within pancreatic beta-cells: an analysis of glucose-mediated insulinotropic pathways</em>[1]</p><p>This investigation analyzed the signal transduction following GLP-1 receptor activation in pancreatic islet models and beta-cell lines. Physiological doses of GLP-1(7-36) amide triggered adenylyl cyclase via Gs-protein interaction, resulting in rapid cAMP elevation and PKA activation within a minute. Crucially, the insulinotropic effect remained contingent upon glucose levels; GLP-1 failed to induce secretion without glucose concentrations exceeding 5.5 mM. Researchers determined that cAMP-driven insulin exocytosis is facilitated by the modulation of KATP and L-type calcium channels.</p><p>Last verified: 2026-04-03</p><p><em>The role of paracrine somatostatin signaling in GLP-1-mediated glucagon suppression within pancreatic alpha-cells</em>[2]</p><p>The pathways through which GLP-1 inhibits glucagon release were explored in pancreatic perfusion and alpha-cell models. While alpha-cells express GLP-1R, direct GLP-1 application did not lower glucagon levels, pointing toward a paracrine function. Antagonizing somatostatin signaling effectively blocked the inhibitory effect of GLP-1 on glucagon, indicating that the mechanism is mediated by delta-cell somatostatin secretion. These results clarify the indirect nature of incretin influence on alpha-cell activity in metabolic research contexts.</p><p>Last verified: 2026-04-03</p>",
+      "references": "<ul><li>[1]Drucker DJ, Philippe J, Mojsov S, Chick WL, Habener JF. Proceedings of the National Academy of Sciences. 1987. <a href=\"https://doi.org/10.1073/pnas.84.10.3434\" target=\"_blank\" rel=\"noopener noreferrer\">doi:10.1073/pnas.84.10.3434</a></li><li>[2]de Heer J, Rasmussen C, Coy DH, Holst JJ. Diabetologia. 2008. <a href=\"https://doi.org/10.1007/s00125-007-0914-0\" target=\"_blank\" rel=\"noopener noreferrer\">doi:10.1007/s00125-007-0914-0</a></li></ul>",
+      "applications": [
+        "GLP-1 receptor characterization",
+        "Insulin secretion pathway research",
+        "Incretin signaling studies"
+      ],
+      "specs": {
+        "altNames": "GLP-1, Glucagon-Like Peptide-1, GLP-1(7-36) amide, GLP-1(7-37) Incretin hormone",
+        "cas": "107444-51-9",
+        "form": "Lyophilized Blend",
+        "formula": "C₁₄₉H₂₂₅N₄₃O₄₇",
+        "mw": "3297.68 Da",
+        "purity": "≥99%",
+        "sequence": "HAEGTFTSDVSSYLEGQAAKEFIAWLVKGRG",
+        "storage": "-20°C, protected from light and moisture"
+      },
+      "coa": null,
+      "status": "active"
+    },
+    {
+      "id": "glp-1-gip-t",
+      "name": "GLP-1 / GIP (T)",
+      "sub": "GIP / GLP-1 Dual Agonist",
+      "cat": "metabolic",
+      "featured": false,
+      "popular": true,
+      "images": [
+        "/images/products/glp-1-gip-t/1.webp",
+        "/images/products/glp-1-gip-t/2.webp",
+        "/images/products/glp-1-gip-t/3.webp",
+        "/images/products/glp-1-gip-t/4.webp"
+      ],
+      "sizes": [
+        {
+          "size": "10mg",
+          "price": 75,
+          "compareAt": 90,
+          "image": "/images/products/glp-1-gip-t/1.webp"
+        },
+        {
+          "size": "15mg",
+          "price": 95,
+          "compareAt": 114,
+          "image": "/images/products/glp-1-gip-t/2.webp"
+        },
+        {
+          "size": "30mg",
+          "price": 140,
+          "compareAt": 168,
+          "image": "/images/products/glp-1-gip-t/3.webp"
+        }
+      ],
+      "rating": 4.8,
+      "reviews": 177,
+      "shortDesc": "A 33-amino-acid peptide made by cells in the gut, studied for its role in intestinal-lining signaling. Freeze-dried powder, ≥98% pure (HPLC). For research use only.",
+      "longDescPlain": "<p>A dual incretin receptor agonist studied in laboratory models for its role in GLP-1 and GIP receptor signaling, metabolic regulation, and glucose-dependent endocrine pathways. Freeze-dried powder, ≥98% purity (HPLC). For research use only.</p>",
+      "longDescSci": "<p>Synthetic dual incretin receptor agonist peptide investigated for simultaneous activation of glucagon-like peptide-1 (GLP-1R) and glucose-dependent insulinotropic polypeptide (GIPR) receptors. Lyophilized powder · ≥98% purity (HPLC) · studied in laboratory models of incretin signaling, glucose-dependent insulin secretion, pancreatic islet biology, metabolic regulation, and energy homeostasis.</p>",
+      "moaPlain": "<p>A dual-incretin peptide studied for how it activates both GLP-1 and GIP receptors to investigate metabolic signaling, insulin secretion, and energy regulation.</p>",
+      "moaSci": "<p>Dual incretin receptor agonist investigated for activation of glucagon-like peptide-1 (GLP-1R) and glucose-dependent insulinotropic polypeptide (GIPR) receptors, promoting cAMP-dependent intracellular signaling involved in glucose-dependent insulin secretion, metabolic regulation, and energy homeostasis.</p>",
+      "researchStudies": "<p><em><strong>Dual GLP-1/GIP receptor agonism improves metabolic signaling and glucose homeostasis in preclinical obesity models[1]</strong></em></p><p>This preclinical investigation evaluated the effects of dual GLP-1/GIP receptor agonism in rodent models of diet-induced obesity and insulin resistance. Compared with selective GLP-1 receptor agonism, dual receptor activation produced greater improvements in glucose tolerance, insulin sensitivity, and body-weight regulation. Mechanistic studies demonstrated enhanced glucose-dependent insulin secretion together with improved pancreatic beta-cell function and metabolic efficiency. These findings support investigation of dual incretin receptor agonists as tools for studying complementary GLP-1 and GIP signaling pathways.</p><p><strong>Last verified:</strong> 2026-04-03</p><p><em><strong>Combined GLP-1 and GIP receptor activation enhances pancreatic beta-cell signaling and metabolic regulation[2]</strong></em></p><p>This mechanistic study examined intracellular signaling following simultaneous GLP-1 and GIP receptor activation in isolated pancreatic islets and cellular models. Dual agonism produced greater cAMP generation and downstream protein kinase A activation than selective receptor stimulation alone, resulting in enhanced glucose-dependent insulin secretion and improved beta-cell responsiveness. These findings provide mechanistic evidence supporting complementary incretin receptor signaling in metabolic research.</p><p><strong>Last verified:</strong> 2026-04-03</p>",
+      "references": "<p><strong>[1]</strong> Finan B, Ma T, Ottaway N, et al. <em>Unimolecular dual incretins maximize metabolic benefits in rodent models of obesity and diabetes.</em> Nature Medicine. 2013. doi:10.1038/nm.3145</p><p><strong>[2]</strong> Frias JP, Nauck MA, Van J, et al. <em>Efficacy and safety of the dual GIP/GLP-1 receptor agonist tirzepatide in type 2 diabetes.</em> New England Journal of Medicine. 2021. doi:10.1056/NEJMoa2107519</p>",
+      "applications": [
+        "GLP-2 receptor characterization",
+        "Intestinal epithelial biology",
+        "Mucosal adaptation studies"
+      ],
+      "specs": {
+        "altNames": "Tirzepatide, GLP-1/GIP dual agonist, LY3298176 (development code), Mounjaro (pharmaceutical formulation — not supplied here)",
+        "cas": "2023788-19-2",
+        "form": "Lyophilized Blend",
+        "formula": "C₂₂₅H₃₄₈N₄₈O₆₈",
+        "mw": "4813.5 g/mol",
+        "purity": "≥99%",
+        "sequence": "",
+        "storage": "-20°C, protected from light and moisture"
+      },
+      "coa": {
+        "file": "/docs/coa/AARLL-8597576-P%20-%20Tirzepatide%20-%20Purity.pdf",
+        "label": "AARLL-8597576-P"
+      },
+      "status": "active"
+    },
+    {
+      "id": "glp-3-r",
+      "name": "GLP-3 (R)",
+      "sub": "Triple Receptor Agonist",
+      "cat": "metabolic",
+      "featured": false,
+      "popular": false,
+      "images": [
+        "/images/products/glp-3-r/1.webp",
+        "/images/products/glp-3-r/2.webp",
+        "/images/products/glp-3-r/3.webp"
+      ],
+      "sizes": [
+        {
+          "size": "10mg",
+          "price": 95,
+          "compareAt": 114,
+          "image": "/images/products/glp-3-r/1.webp"
+        },
+        {
+          "size": "15mg",
+          "price": 135,
+          "compareAt": 162,
+          "image": "/images/products/glp-3-r/2.webp"
+        },
+        {
+          "size": "30mg",
+          "price": 180,
+          "compareAt": 216,
+          "image": "/images/products/glp-3-r/3.webp"
+        }
+      ],
+      "rating": 4.8,
+      "reviews": 24,
+      "shortDesc": "A 'triple agonist' peptide that engages the GLP-1, GIP, and glucagon receptors together, studied in metabolic research. Freeze-dried powder, ≥98% pure (HPLC). For research use only.",
+      "longDescPlain": "<p>A 'triple agonist' peptide that engages the GLP-1, GIP, and glucagon receptors together, studied in metabolic research. Freeze-dried powder, ≥98% pure (HPLC). For research use only.</p>",
+      "longDescSci": "<p>Synthetic triple receptor agonist peptide investigated for simultaneous activation of glucagon-like peptide-1 (GLP-1R), glucose-dependent insulinotropic polypeptide (GIPR), and glucagon (GCGR) receptors. Lyophilized powder · ≥98% purity (HPLC) · studied in laboratory models of incretin receptor signaling, glucose metabolism, energy homeostasis, pancreatic islet biology, and metabolic regulation.</p>",
+      "moaPlain": "<p>A peptide studied for engaging three metabolic receptors at once — GLP-1, GIP, and glucagon</p>",
+      "moaSci": "<p>Multi-receptor agonist peptide investigated for simultaneous GLP-1, GIP, and glucagon receptor engagement.</p>",
+      "researchStudies": "<p><em>Identification and characterization of glucagon-like peptide-3 as a product of proglucagon processing in the intestine</em>[1]</p><p>This biochemical study characterized GLP-3 as a product of tissue-specific proglucagon processing, distinct from the well-characterized GLP-1 and GLP-2 products. Using intestinal L-cell preparations and radioimmunoassay with sequence-specific antisera, the authors detected GLP-3 immunoreactivity in human intestinal extracts and portal blood following nutrient challenge. GLP-3 derived from the third of three glucagon-related peptide sequences encoded within proglucagon, but its receptor binding profile and signaling activity differed from GLP-1R and GLP-2R. The study established GLP-3 as a biologically distinct peptide within the proglucagon family warranting further receptor pharmacology characterization.</p><p>Last verified: 2026-04-03</p><p><em>Structure-activity relationships within the glucagon peptide family: differential receptor selectivity of GLP-1, GLP-2, and GLP-3 analogs</em>[2]</p><p>This structure-activity study systematically examined the receptor binding and functional potency of synthetic peptides corresponding to GLP-1, GLP-2, and GLP-3 sequences at their cognate and cross-reactive receptors. GLP-3 peptide demonstrated negligible activity at GLP-1R and GLP-2R at concentrations up to 1 uM in cAMP accumulation assays, consistent with low receptor promiscuity within the glucagon peptide family. Chimeric peptide experiments identified the N-terminal histidine and positions 2-7 as the primary receptor selectivity determinants shared across family members. The study provided a quantitative framework for distinguishing the pharmacology of GLP family peptides used in metabolic and gastrointestinal research.</p><p>Last verified: 2026-04-03</p>",
+      "references": "<ul><li>[1]Holst JJ, Orskov C, Nielsen OV, Schwartz TW. FEBS Letters. 1987. <a href=\"https://doi.org/10.1016/0014-5793(87)80111-7\" target=\"_blank\" rel=\"noopener noreferrer\">doi:10.1016/0014-5793(87)80111-7</a></li><li>[2]Hjorth SA, Adelhorst K, Pedersen BB, Kirk O, Schwartz TW. Journal of Biological Chemistry. 1994. <a href=\"https://pubmed.ncbi.nlm.nih.gov/8300574\" target=\"_blank\" rel=\"noopener noreferrer\">PMID:8300574</a></li></ul>",
+      "applications": [
+        "Multi-receptor agonism research",
+        "Incretin pathway studies",
+        "Metabolic signaling models"
+      ],
+      "specs": {
+        "altNames": "Retatrutide, LY3437943 (development code), GLP-1/GIP/Glucagon triple agonist, Triple incretin receptor agonist",
+        "cas": "2381089-83-2",
+        "form": "Lyophilized Blend",
+        "formula": "C₂₂₁H₃₄₂N₄₆O₆₈",
+        "mw": "~4731 g/mol",
+        "purity": "≥99%",
+        "sequence": "",
+        "storage": "-20°C, protected from light and moisture"
+      },
+      "coa": {
+        "file": "/docs/coa/AARLL-9759917-P%20-%20Retatrutide%20-%20Purity.pdf",
+        "label": "AARLL-9759917-P"
+      },
+      "status": "active"
+    },
+    {
+      "id": "hexarelin",
+      "name": "Hexarelin",
+      "sub": "GH Secretagogue",
+      "cat": "endocrine",
+      "featured": false,
+      "popular": false,
+      "images": [
+        "/images/products/hexarelin/1.webp"
+      ],
+      "sizes": [
+        {
+          "size": "10mg",
+          "price": 100,
+          "compareAt": 120,
+          "image": "/images/products/hexarelin/1.webp"
+        }
+      ],
+      "rating": 4.6,
+      "reviews": 194,
+      "shortDesc": "Primarily in research for studying growth hormone release, ghrelin receptor (GHS-R1a) signaling",
+      "longDescPlain": "<p>Primarily in research for studying growth hormone release, ghrelin receptor (GHS-R1a) signaling</p>",
+      "longDescSci": "<p>Synthetic hexapeptide growth hormone secretagogue investigated for selective activation of the growth hormone secretagogue receptor (GHS-R1a). Lyophilized powder · ≥98% purity (HPLC) · studied in laboratory models of ghrelin receptor pharmacology, pulsatile growth hormone secretion, pituitary signaling, insulin-like growth factor-1 (IGF-1) regulation, and endocrine physiology.</p>",
+      "moaPlain": "<p>acts by binding to and activating the growth hormone secretagogue receptor (GHS-R1a), stimulating pituitary growth hormone release while modulating ghrelin-mediated signaling pathways involved in IGF-1 production, tissue repair, and cellular metabolic regulation.</p>",
+      "moaSci": "<p>acts by binding to and activating the growth hormone secretagogue receptor (GHS-R1a), stimulating pituitary growth hormone release while modulating ghrelin-mediated signaling pathways involved in IGF-1 production, tissue repair, and cellular metabolic regulation.</p>",
+      "researchStudies": "<p><strong>“Growth hormone-releasing activity of Hexarelin in humans: A dose-response study” (Imbimbo et al., 1994)\n</strong> Demonstrated that <strong>intravenous Hexarelin caused a significant dose-dependent increase in growth hormone secretion in healthy human subjects</strong>, helping establish its potency as a GH secretagogue.</p><p><strong>“Growth hormone-independent cardioprotective effects of Hexarelin in the rat heart” (Locatelli et al., 1999)\n</strong> Found that <strong>Hexarelin reduced ischemia-reperfusion cardiac damage through direct cardiac receptor activity independent of growth hormone release</strong>, highlighting potential cardioprotective mechanisms.</p>",
+      "references": "<p><strong>Imbimbo BP, Grottoli S, Deghenghi R, et al.</strong> <em>Growth hormone-releasing activity of hexarelin in humans: A dose-response study.</em> <strong>European Journal of Clinical Pharmacology.</strong> 1994;46(5):423–426. PMID: 7957536.</p><p><strong>Locatelli V, Rossoni G, Schweiger F, et al.</strong> <em>Growth hormone-independent cardioprotective effects of hexarelin in the rat heart.</em> <strong>Endocrinology.</strong> 1999;140(9):4024–4031. PMID: 10465272.</p>",
+      "applications": [
+        "Growth Hormone & IGF-1 Research",
+        "Muscle Growth & Recovery Research",
+        "Cardiovascular Protection Research"
+      ],
+      "specs": {
+        "altNames": "Hex, Examorelin (INN), GHRP-His (informal designation in select research literature)",
+        "cas": "140703-51-1",
+        "form": "Lyophilized Blend",
+        "formula": "C₄₇H₅₈N₁₂O₆",
+        "mw": "887.04 g/mol",
+        "purity": "≥99%",
+        "sequence": "His-D-2-Me-Trp-Ala-Trp-D-Phe-Lys-NH₂",
+        "storage": "-20°C, protected from light and moisture"
+      },
+      "coa": {
+        "file": "/docs/coa/AARLL-7132129-P%20-%20Hexarelin%20-%20Purity.pdf",
+        "label": "AARLL-7132129-P"
+      },
+      "status": "active"
+    },
+    {
+      "id": "ipamorelin",
+      "name": "Ipamorelin",
+      "sub": "Selective GH Secretagogue",
+      "cat": "endocrine",
+      "featured": false,
+      "popular": false,
+      "images": [
+        "/images/products/ipamorelin/1.webp"
+      ],
+      "sizes": [
+        {
+          "size": "10mg",
+          "price": 70,
+          "compareAt": 84,
+          "image": "/images/products/ipamorelin/1.webp"
+        }
+      ],
+      "rating": 4.8,
+      "reviews": 100,
+      "shortDesc": "A five-amino-acid peptide that selectively switches on the ghrelin receptor, studied for triggering growth-hormone release with few off-target hormone effects. For research use only.",
+      "longDescPlain": "<p>A five-amino-acid peptide that selectively switches on the ghrelin receptor, studied for triggering growth-hormone release with few off-target hormone effects. For research use only.</p>",
+      "longDescSci": "<p>Synthetic pentapeptide growth hormone secretagogue investigated for selective activation of the growth hormone secretagogue receptor (GHS-R1a). Lyophilized powder · ≥98% purity (HPLC) · studied in laboratory models of growth hormone secretion, ghrelin receptor pharmacology, pituitary signaling, insulin-like growth factor-1 (IGF-1) regulation, and endocrine physiology.</p>",
+      "moaPlain": "<p>A peptide studied for prompting growth-hormone release while leaving other hormones like cortisol largely untouched.</p>",
+      "moaSci": "<p>Selective GHS-R agonist studied for GH release without significant cortisol or prolactin effects.</p>",
+      "researchStudies": "<p><em>Ipamorelin, the first selective growth hormone secretagogue, stimulates growth hormone secretion without affecting prolactin, ACTH, or cortisol</em>[1]</p><p>This landmark pharmacological study characterized ipamorelin as a novel, highly selective GH secretagogue in rats and swine. In concentration-response studies, ipamorelin stimulated concentration-dependent GH release with an ED50 in the picomolar range at the pituitary level. In contrast to GHRP-6 and GHRP-2, ipamorelin did not significantly elevate cortisol, ACTH, aldosterone, or prolactin at any GH-releasing concentration tested. The selectivity was attributed to ipamorelin's binding profile at GHS-R subtypes -- functional activity was concentrated at the GHSR-1a receptor subtype responsible for somatotroph GH release.</p><p>Last verified: 2026-04-03</p><p><em>Effects of ipamorelin alone and in combination with a GHRH analog on growth hormone secretion and bone density in rodent models</em>[2]</p><p>This study evaluated ipamorelin's effects on GH pulsatility and bone mineral density in aged, GH-deficient rats over 12 weeks of subcutaneous administration. Ipamorelin significantly increased GH pulse amplitude and mean 24-hour GH concentrations without affecting pulse frequency, a pattern consistent with physiologic GH secretion. Dual-energy X-ray absorptiometry demonstrated significantly increased bone mineral density in the femur and tibia of ipamorelin-evaluated animals compared to vehicle controls. When combined with a GHRH analog, synergistic GH release was observed, supporting the utility of combined secretagogue protocols in research settings.</p><p>Last verified: 2026-04-03</p>",
+      "references": "<ul><li>[1]Raun K, Hansen BS, Johansen NL, et al. European Journal of Endocrinology. 1998. <a href=\"https://doi.org/10.1530/eje.0.1390552\" target=\"_blank\" rel=\"noopener noreferrer\">doi:10.1530/eje.0.1390552</a></li><li>[2]Johansen PB, Segev Y, Landau D, Phillip M, Flyvbjerg A. Growth Hormone &amp; IGF Research. 2005. <a href=\"https://doi.org/10.1016/j.ghir.2004.09.001\" target=\"_blank\" rel=\"noopener noreferrer\">doi:10.1016/j.ghir.2004.09.001</a></li></ul>",
+      "applications": [
+        "GHS-R selectivity studies",
+        "Growth hormone secretion modeling",
+        "Receptor binding assays"
+      ],
+      "specs": {
+        "altNames": "NNC 26-0161, Ipamorelin acetate (salt form in some preparations)",
+        "cas": "170851-70-4",
+        "form": "Lyophilized Blend",
+        "formula": "C₃₈H₄₉N₉O₅",
+        "mw": "711.85 Da",
+        "purity": "≥99%",
+        "sequence": "Aib-His-D-2-Nal-D-Phe-Lys-NH₂",
+        "storage": "-20°C, protected from light and moisture"
+      },
+      "coa": null,
+      "status": "active"
+    },
+    {
+      "id": "kisspeptin",
+      "name": "Kisspeptin",
+      "sub": "KISS1 Neuropeptide",
+      "cat": "endocrine",
+      "featured": false,
+      "popular": false,
+      "images": [
+        "/images/products/kisspeptin/1.webp"
+      ],
+      "sizes": [
+        {
+          "size": "10mg",
+          "price": 65,
+          "compareAt": 78,
+          "image": "/images/products/kisspeptin/1.webp"
+        }
+      ],
+      "rating": 4.6,
+      "reviews": 62,
+      "shortDesc": "A peptide made from the KISS1 gene, studied for its role in activating the neurons that drive the reproductive hormone system. For research use only.",
+      "longDescPlain": "<p>A peptide made from the KISS1 gene, studied for its role in activating the neurons that drive the reproductive hormone system. For research use only.</p>",
+      "longDescSci": "<p>Synthetic kisspeptin peptide investigated for activation of the G protein-coupled kisspeptin receptor (KISS1R/GPR54) and downstream neuroendocrine signaling. Lyophilized powder · ≥98% purity (HPLC) · studied in laboratory models of hypothalamic-pituitary-gonadal (HPG) axis regulation, gonadotropin-releasing hormone (GnRH) secretion, reproductive endocrinology, and neuroendocrine signaling pathways.</p>",
+      "moaPlain": "<p>A signaling peptide studied for how it switches on the brain circuits that control reproductive hormones.</p>",
+      "moaSci": "<p>KISS1 gene product investigated for GnRH neuron activation and reproductive endocrine axis regulation.</p>",
+      "researchStudies": "<p><em>Kisspeptin-10 is a potent stimulator of LH and FSH release through hypothalamic GnRH neurons in both male and female rodents</em>[1]</p><p>This study established kisspeptin-10's position as the most potent known activator of the HPG axis by characterizing its concentration-response relationship for LH and FSH secretion in male and female rats. Intravenous kisspeptin-10 at concentrations as low as 1 nmol/kg elicited robust LH surges within five minutes, exceeding the LH response to equipotent concentrations of GnRH. The response was blocked by a GnRH receptor antagonist (cetrorelix), confirming that kisspeptin-10 acts upstream of GnRH neurons rather than directly on pituitary gonadotrophs. Hypothalamic GnRH release measured by push-pull perfusion increased 3- to 5-fold following kisspeptin-10, consistent with a hypothalamic site of action.</p><p>Last verified: 2026-04-03</p><p><em>Loss-of-function mutations in KISS1R cause autosomal recessive hypogonadotropic hypogonadism, establishing kisspeptin as an essential HPG regulator</em>[2]</p><p>This landmark genetic study identified homozygous loss-of-function mutations in the KISS1R gene (encoding the kisspeptin receptor GPR54) in consanguineous families presenting with idiopathic hypogonadotropic hypogonadism and failure to undergo puberty. Affected individuals had low LH, FSH, and sex steroid levels despite normal GnRH neuronal anatomy and normal pituitary responses to exogenous GnRH. Heterologous expression of mutant KISS1R in HEK293 cells confirmed complete loss of kisspeptin-10 binding and downstream IP3 signaling. The causal link between KISS1R loss and pubertal failure provided definitive evidence that kisspeptin signaling is essential for HPG axis activation.</p><p>Last verified: 2026-04-03</p>",
+      "references": "<ul><li>[1]Gottsch ML, Cunningham MJ, Smith JT, et al. Endocrinology. 2004. <a href=\"https://doi.org/10.1210/en.2004-0431\" target=\"_blank\" rel=\"noopener noreferrer\">doi:10.1210/en.2004-0431</a></li><li>[2]de Roux N, Genin E, Carel JC, Matsuda F, Chaussain JL, Milgrom E. Proceedings of the National Academy of Sciences. 2003. <a href=\"https://doi.org/10.1073/pnas.0337600100\" target=\"_blank\" rel=\"noopener noreferrer\">doi:10.1073/pnas.0337600100</a></li></ul>",
+      "applications": [
+        "Hypothalamic-pituitary-gonadal (HPG) axis research",
+        "Kisspeptin receptor (KISS1R/GPR54) signaling studies",
+        "Gonadotropin-releasing hormone (GnRH) regulation models",
+        "Reproductive endocrinology research",
+        "Neuroendocrine signaling investigations",
+        "Puberty and reproductive physiology studies"
+      ],
+      "specs": {
+        "altNames": "KP-10, Kisspeptin-10 human, Metastin (45–54), Kiss-1 (112–121) human, Kisspeptin-13 (4–13) human, KISS1 gene product C-terminal fragment, H-YNWNSFGLRF-NH2",
+        "cas": "374675-21-5",
+        "form": "Lyophilized Blend",
+        "formula": "C₆₃H₈₃N₁₇O₁₄",
+        "mw": "1302.49 Da",
+        "purity": "≥99%",
+        "sequence": "YNWNSFGLRF",
+        "storage": "-20°C, protected from light and moisture"
+      },
+      "coa": null,
+      "status": "active"
+    },
+    {
+      "id": "klow-blend",
+      "name": "KLOW Blend (GHK-Cu + TB-500 + BPC-157 + KPV)",
+      "sub": "GHK-Cu + TB-500 + BPC-157 + KPV",
+      "cat": "tissue",
+      "featured": false,
+      "popular": false,
+      "images": [
+        "/images/products/klow-blend/1.webp"
+      ],
+      "sizes": [
+        {
+          "size": "80mg",
+          "price": 135,
+          "compareAt": 162,
+          "image": "/images/products/klow-blend/1.webp"
+        }
+      ],
+      "rating": 4.7,
+      "reviews": 31,
+      "shortDesc": "The three-peptide Glow blend with a fourth peptide, KPV, added for inflammation-pathway research — four well-studied peptides in one freeze-dried vial. For research use only; not for human consumption.",
+      "longDescPlain": "<p>A research-grade blend combining GHK-Cu, TB-500, BPC-157, and KPV, studied in laboratory models for complementary roles in tissue repair signaling, extracellular matrix remodeling, inflammatory pathways, angiogenesis, and cellular communication. Lyophilized blend · ≥98% purity (HPLC). For research use only.</p>",
+      "longDescSci": "<p>Research-grade lyophilized peptide blend combining GHK-Cu, TB-500, BPC-157, and KPV, investigated for complementary modulation of extracellular matrix remodeling, growth factor signaling, actin-mediated cell migration, angiogenesis, inflammatory signaling, and epithelial biology. Lyophilized blend · ≥98% purity (HPLC) · studied in laboratory models of regenerative biology, collagen synthesis, cytokine regulation, wound repair signaling, and multi-mechanism tissue remodeling.</p>",
+      "moaPlain": "<p>A four-peptide blend studied for how multiple signaling pathways work together to regulate tissue repair, collagen production, blood vessel formation, inflammatory signaling, and communication between cells involved in tissue maintenance and regeneration.</p>",
+      "moaSci": "<p>Multi-peptide formulation investigated for complementary modulation of vascular endothelial growth factor (VEGF) signaling, extracellular matrix remodeling, actin-mediated cytoskeletal dynamics, NF-κB-dependent inflammatory signaling, cytokine regulation, and collagen synthesis. Studied in laboratory models of angiogenesis, fibroblast biology, epithelial barrier function, cell migration, and regenerative signaling pathways.</p>",
+      "researchStudies": "<p><em><strong>Complementary regenerative-signaling mechanisms of GHK-Cu, TB-500, and BPC-157 support investigation in multi-pathway tissue-remodeling models.[1–3]</strong></em></p><p>Research involving the individual components of the KLOW Blend has identified distinct but potentially complementary biological pathways. GHK-Cu has been studied for regulation of collagen synthesis, fibroblast activity, antioxidant signaling, and extracellular matrix remodeling. Thymosin beta-4–related peptides have been investigated for actin-binding activity, endothelial cell migration, angiogenesis, and cytoskeletal organization. BPC-157 has been examined in preclinical models for effects on growth-factor signaling, focal adhesion kinase activity, nitric oxide pathways, and tissue-repair processes.</p><p>Together, these component-level findings provide a scientific rationale for investigating the combination in laboratory models involving collagen organization, cell migration, angiogenic signaling, extracellular matrix turnover, and coordinated tissue-remodeling pathways. However, the complete four-component KLOW formulation has not been established as producing additive or synergistic effects.</p><p><strong>Last reviewed:</strong> July 12, 2026</p><p><em><strong>KPV provides a distinct inflammatory-signaling component through modulation of cytokine, NF-κB, and epithelial-response pathways.[4–5]</strong></em></p><p>KPV, the C-terminal tripeptide fragment of alpha-melanocyte-stimulating hormone, has been investigated in cellular and animal models of inflammatory and epithelial biology. Published research has associated KPV with reduced pro-inflammatory cytokine expression, modulation of NF-κB-dependent signaling, and altered epithelial inflammatory responses.</p><p>Within the KLOW Blend, KPV provides a mechanistically distinct research component compared with the tissue-remodeling and cell-migration pathways associated with GHK-Cu, TB-500, and BPC-157. This creates a rationale for studying the formulation in multi-mechanism models that examine the interaction between inflammatory signaling, epithelial biology, extracellular matrix remodeling, angiogenesis, and cellular migration. Direct conclusions about the complete blend require dedicated formulation-specific research.</p><p><strong>Last reviewed:</strong> July 12, 2026</p>",
+      "references": "<p><strong>[1]</strong> Pickart L, Vasquez-Soltero JM, Margolina A. GHK peptide as a natural modulator of multiple cellular pathways in skin and tissue remodeling. <em>BioMed Research International.</em> 2015;2015:648108.</p><p><strong>[2]</strong> Malinda KM, Sidhu GS, Mani H, et al. Thymosin beta-4 accelerates wound healing. <em>Journal of Investigative Dermatology.</em> 1999;113(3):364–368.</p><p><strong>[3]</strong> Sikiric P, Seiwerth S, Rucman R, et al. Stable gastric pentadecapeptide BPC-157 and its activity in gastrointestinal, vascular, and tissue-repair research models. <em>Current Pharmaceutical Design.</em> 2011;17(16):1612–1632.</p><p><strong>[4]</strong> Catania A, Gatti S, Colombo G, Lipton JM. Targeting melanocortin receptors as a strategy for controlling inflammatory signaling. <em>Pharmacological Reviews.</em> 2004;56(1):1–29.</p><p><strong>[5]</strong> Dalmasso G, Charrier-Hisamuddin L, Nguyen HTT, et al. The alpha-melanocyte-stimulating hormone–derived tripeptide KPV modulates intestinal inflammation and epithelial responses in experimental models. <em>Gastroenterology.</em> 2008.</p><p><em><strong>Additional Notes</strong></em></p><p>No direct peer-reviewed study was identified for the exact four-component combination of GHK-Cu, TB-500, BPC-157, and KPV. The research rationale above is based on studies of the individual components and should not be interpreted as evidence of confirmed synergy, efficacy, or safety for the combined formulation.</p>",
+      "applications": [
+        "Multi-Mechanism Tissue Repair Modeling",
+        "Collagen Synthesis and ECM Remodeling",
+        "Dual-Mechanism Angiogenesis Research",
+        "Cell Migration and Cytoskeletal Studies",
+        "Anti-Inflammatory Signaling Research",
+        "Skin Biology and Keratinocyte Research"
+      ],
+      "specs": {
+        "altNames": "BPC-157: Body Protection Compound 157, PL-10, Bepecin TB-500: Thymosin Beta-4, Tβ4, TB4 KPV: Lys-Pro-Val, α-MSH C-terminal tripeptide KLOW Blend (proprietary combination designation)",
+        "cas": "GHK-Cu: 49557-75-7, BPC-157: 137525-51-0, TB-500: 77591-33-4, KPV: 66172-75-6",
+        "form": "Lyophilized Blend",
+        "formula": "GHK-Cu: C₁₄H₂₃CuN₆O₄, BPC-157: C₆₂H₉₈N₁₆O₂₂, TB-500: C₂₁₂H₃₅₀N₅₆O₇₈S, KPV: C₁₆H₃₀N₄O₄",
+        "mw": "GHK-Cu: 403.92 Da, BPC-157: 1419.53 Da, TB-500: 4963.44 Da, KPV: 358.44 Da",
+        "purity": "≥99%",
+        "sequence": "",
+        "storage": "-20°C, protected from light and moisture"
+      },
+      "coa": {
+        "file": "/docs/coa/AARLL-4436937-P%20-%20KLOW%20-%20Purity.pdf",
+        "label": "AARLL-4436937-P"
+      },
+      "status": "active"
+    },
+    {
+      "id": "kpv",
+      "name": "KPV",
+      "sub": "α-MSH Fragment (Lys-Pro-Val)",
+      "cat": "tissue",
+      "featured": false,
+      "popular": false,
+      "images": [],
+      "sizes": [
+        {
+          "size": "10mg",
+          "price": 45,
+          "compareAt": 54,
+          "image": null
+        }
+      ],
+      "rating": 4.7,
+      "reviews": 35,
+      "shortDesc": "A naturally occurring tripeptide fragment of alpha-melanocyte-stimulating hormone (α-MSH) studied for its role in inflammatory signaling, immune response pathways, and epithelial biology.",
+      "longDescPlain": "<p>A naturally occurring tripeptide fragment of alpha-melanocyte-stimulating hormone (α-MSH), studied in laboratory models for its role in inflammatory signaling, immune regulation, epithelial biology, and cellular communication. Freeze-dried powder, ≥98% purity (HPLC). For research use only.</p>",
+      "longDescSci": "<p>Synthetic α-melanocyte-stimulating hormone (α-MSH)-derived tripeptide investigated for modulation of inflammatory signaling and immune regulatory pathways. Lyophilized powder · ≥98% purity (HPLC) · studied in laboratory models of cytokine regulation, NF-κB signaling, epithelial barrier biology, innate immune communication, and cellular inflammatory responses.</p>",
+      "moaPlain": "<p>A tripeptide studied for how it influences inflammatory signaling by regulating communication between immune and epithelial cells and supporting balanced cytokine activity during laboratory investigations.</p>",
+      "moaSci": "<p>α-Melanocyte-stimulating hormone (α-MSH)-derived tripeptide investigated for modulation of NF-κB-dependent inflammatory signaling, pro-inflammatory cytokine expression, and innate immune communication. Studied in laboratory models of epithelial barrier function, cytokine regulation, and immune signaling pathways.</p>",
+      "researchStudies": "<p><em><strong>KPV modulates inflammatory signaling and cytokine responses in preclinical models of epithelial biology.[1]</strong></em></p><p>This preclinical investigation evaluated the tripeptide KPV in cellular and animal models of inflammatory signaling. Administration of KPV was associated with reduced activation of pro-inflammatory cytokine pathways, including tumor necrosis factor-alpha (TNF-α) and nuclear factor kappa B (NF-κB), together with preservation of epithelial barrier integrity. Mechanistic analyses suggested that KPV regulates innate immune signaling independently of the parent α-melanocyte-stimulating hormone (α-MSH) peptide, supporting continued investigation of KPV in inflammatory biology and epithelial tissue research.</p><p><strong>Last verified:</strong> 2026-04-03</p><p><em><strong>KPV demonstrates anti-inflammatory activity through modulation of NF-κB-dependent signaling pathways in experimental models.[2]</strong></em></p><p>This mechanistic study investigated KPV using cultured epithelial cells and murine models of inflammatory disease. Researchers observed reduced expression of pro-inflammatory cytokines and chemokines together with attenuation of NF-κB activation following KPV administration. Additional analyses demonstrated maintenance of epithelial barrier function and reduced inflammatory cell infiltration, supporting investigation of KPV in laboratory models of immune regulation, cytokine signaling, and mucosal biology.</p><p><strong>Last verified:</strong> 2026-04-03</p>",
+      "references": "<p><strong>[1]</strong> Catania A, Cutuli M, Garofalo L, Carlin A. <em>The α-melanocyte-stimulating hormone peptide KPV: mechanisms of anti-inflammatory activity and therapeutic potential.</em> Peptides. 2004.</p><p><strong>[2]</strong> Muceniece R, Krigere L, Vaickovska J, et al. <em>Anti-inflammatory effects of the α-MSH-derived tripeptide KPV in experimental models of inflammatory disease.</em> Peptides. 2006.</p>",
+      "applications": [
+        "Inflammatory Pathway Research",
+        "Cytokine Signaling Studies",
+        "Gastrointestinal Barrier Function Research",
+        "Skin Biology and Barrier Function Research",
+        "Wound Healing Research Models",
+        "Immunomodulatory Peptide Research"
+      ],
+      "specs": {
+        "altNames": "α-MSH(11-13)",
+        "cas": "67727-97-3",
+        "form": "Lyophilized Blend",
+        "formula": "C₁₆H₃₀N₄O₄",
+        "mw": "342.43 g/mol",
+        "purity": "≥99%",
+        "sequence": "KPV",
+        "storage": "-20°C, protected from light and moisture"
+      },
+      "coa": null,
+      "status": "active"
+    },
+    {
+      "id": "l-glutathione",
+      "name": "L-Glutathione",
+      "sub": "Reduced Glutathione (GSH)",
+      "cat": "cellular",
+      "featured": false,
+      "popular": false,
+      "images": [],
+      "sizes": [
+        {
+          "size": "500mg",
+          "price": 45,
+          "compareAt": 54,
+          "image": null
+        }
+      ],
+      "rating": 4.7,
+      "reviews": 39,
+      "shortDesc": "A naturally occurring tripeptide composed of glutamine, cysteine, and glycine, studied for its role in antioxidant defense, cellular redox balance, and detoxification pathways.",
+      "longDescPlain": "<p>A naturally occurring tripeptide composed of glutamate, cysteine, and glycine, studied in laboratory models for its role in antioxidant defense, cellular redox balance, detoxification pathways, and mitochondrial function. Freeze-dried powder, ≥98% purity (HPLC). For research use only.</p>",
+      "longDescSci": "<p>Naturally occurring tripeptide investigated for regulation of cellular redox homeostasis and antioxidant defense mechanisms. Lyophilized powder · ≥98% purity (HPLC) · studied in laboratory models of glutathione-dependent enzymatic activity, reactive oxygen species (ROS) regulation, mitochondrial function, detoxification pathways, and cellular metabolism.</p>",
+      "moaPlain": "<p>A naturally occurring antioxidant peptide studied for how it helps maintain cellular redox balance by neutralizing reactive oxygen species and supporting antioxidant enzyme systems involved in cellular protection and metabolism.</p>",
+      "moaSci": "<p>Tripeptide investigated for regulation of intracellular redox homeostasis through glutathione-dependent enzymatic pathways, including glutathione peroxidase and glutathione reductase systems. Studied for modulation of reactive oxygen species (ROS), maintenance of thiol redox balance, mitochondrial function, and cellular antioxidant signaling.</p>",
+      "researchStudies": "<p><em><strong>L-Glutathione regulates cellular redox homeostasis and protects against oxidative stress in preclinical models.[1]</strong></em></p><p>This investigation evaluated reduced L-glutathione in cellular and animal models to characterize its role in antioxidant defense and redox regulation. Administration of glutathione was associated with maintenance of intracellular thiol balance, reduction of reactive oxygen species (ROS), and preservation of mitochondrial function under oxidative stress conditions. Mechanistic analyses demonstrated support for glutathione-dependent enzymatic pathways involved in detoxification, cellular metabolism, and maintenance of redox homeostasis.</p><p><strong>Last verified:</strong> 2026-04-03</p><p><em><strong>Glutathione-dependent antioxidant systems regulate mitochondrial function and cellular stress-response signaling.[2]</strong></em></p><p>This mechanistic study investigated glutathione metabolism in cultured cells and experimental animal models subjected to oxidative stress. Researchers observed that intracellular glutathione availability influenced glutathione peroxidase and glutathione reductase activity, reduced oxidative damage to proteins and lipids, and supported mitochondrial bioenergetics. These findings support investigation of L-glutathione in laboratory models of antioxidant biology, redox signaling, cellular metabolism, and mitochondrial physiology.</p><p><strong>Last verified:</strong> 2026-04-03</p>",
+      "references": "<p><strong>[1]</strong> Wu G, Fang YZ, Yang S, Lupton JR, Turner ND. <em>Glutathione metabolism and its implications for health.</em> Journal of Nutrition. 2004. doi:10.1093/jn/134.3.489</p><p><strong>[2]</strong> Forman HJ, Zhang H, Rinna A. <em>Glutathione: overview of its protective roles, measurement, and biosynthesis.</em> Molecular Aspects of Medicine. 2009. doi:10.1016/j.mam.2008.08.006</p>",
+      "applications": [
+        "Oxidative Stress Modeling",
+        "Redox Biology Research",
+        "Phase II Detoxification Studies",
+        "Protein Purification Workflows",
+        "Antioxidant Enzyme Studies",
+        "Xenobiotic Metabolism Research"
+      ],
+      "specs": {
+        "altNames": "GSH, Reduced Glutathione, gamma-L-Glutamyl-L-cysteinylglycine, L-gamma-Glutamyl-L-cysteinylglycine",
+        "cas": "170-18-8",
+        "form": "Lyophilized Blend",
+        "formula": "C₁₀H₁₇N₃O₆S",
+        "mw": "307.32 g/mol",
+        "purity": "≥99%",
+        "sequence": "ECG",
+        "storage": "-20°C, protected from light and moisture"
+      },
+      "coa": null,
+      "status": "active"
+    },
+    {
+      "id": "melanotan-ii",
+      "name": "Melanotan II",
+      "sub": "Melanocortin Agonist",
+      "cat": "endocrine",
+      "featured": false,
+      "popular": false,
+      "images": [],
+      "sizes": [
+        {
+          "size": "10mg",
+          "price": 50,
+          "compareAt": 60,
+          "image": null
+        }
+      ],
+      "rating": 4.8,
+      "reviews": 20,
+      "shortDesc": "A synthetic cyclic analog of alpha-MSH. Studied for non-selective agonist activity at multiple melanocortin receptor subtypes (MC1R through MC5R) and downstream cAMP signaling.",
+      "longDescPlain": "<p>A synthetic cyclic analog of alpha-MSH. Studied for non-selective agonist activity at multiple melanocortin receptor subtypes (MC1R through MC5R) and downstream cAMP signaling.</p>",
+      "longDescSci": "<p>Synthetic cyclic alpha-melanocyte-stimulating hormone (α-MSH) analog investigated for non-selective activation of melanocortin receptor subtypes (MC1R–MC5R). Lyophilized powder · ≥98% purity (HPLC) · studied in laboratory models of melanocortin receptor pharmacology, cAMP-mediated intracellular signaling, neuroendocrine regulation, pigmentation biology, energy homeostasis, and central nervous system signaling.</p>",
+      "moaPlain": "<p>A peptide studied for how it binds the whole family of melanocortin receptors, including the one tied to pigment signaling.</p>",
+      "moaSci": "<p>Non-selective melanocortin receptor agonist studied for MC1R-MC5R binding characteristics</p>",
+      "researchStudies": "<p><em>Melanotan-II is a non-selective melanocortin receptor agonist with activity at MC1R, MC3R, and MC4R — receptor binding and signaling characterization</em>[1]</p><p>This in vitro pharmacological study characterized Melanotan-II's receptor binding affinity and functional potency at all five melanocortin receptor subtypes (MC1R-MC5R) using radioligand competition assays and cAMP accumulation in heterologous expression systems. Melanotan-II demonstrated high affinity at MC1R (Ki ~0.2 nM), MC3R (Ki ~0.3 nM), and MC4R (Ki ~0.6 nM), with substantially lower affinity at MC2R and MC5R. Functional cAMP assays confirmed that Melanotan-II acts as a full agonist at MC1R and MC4R and a partial agonist at MC3R. The non-selectivity profile and cyclic structure were noted as distinguishing features relative to the linear parent peptide alpha-MSH, and the data supported Melanotan-II's use as a tool compound for melanocortin receptor biology research.</p><p>Last verified: 2026-04-03</p><p><em>MC1R-mediated melanogenesis and the role of Melanotan-II in preclinical pigmentation research</em>[2]</p><p>This study evaluated the melanogenic activity of Melanotan-II in B16-F10 melanoma cells and primary human melanocytes to characterize MC1R-dependent melanin synthesis. Melanotan-II at 1-100 nM significantly increased intracellular melanin content as measured by spectrophotometric absorbance, with an EC50 approximately 10-fold lower than alpha-MSH. Upstream signaling analysis confirmed cAMP accumulation and PKA-dependent phosphorylation of CREB, which transactivated the MITF promoter and subsequently upregulated tyrosinase, the rate-limiting enzyme in melanin biosynthesis. The authors used Melanotan-II as a pharmacological tool to dissect MC1R pathway stoichiometry in melanocyte biology, noting its utility as a potent and stable MC1R agonist for in vitro pigmentation research.</p><p>Last verified: 2026-04-03</p>",
+      "references": "<ul><li>[1]Hruby VJ, Lu D, Sharma SD, et al. Journal of Medicinal Chemistry. 1995. <a href=\"https://doi.org/10.1021/jm00008a029\" target=\"_blank\" rel=\"noopener noreferrer\">doi:10.1021/jm00008a029</a></li><li>[2]Donatien PD, Hunt G, Pieron C, Lunec J, Modjtahedi H, Thody AJ. British Journal of Dermatology. 1992. <a href=\"https://doi.org/10.1111/j.1365-2133.1992.tb00088.x\" target=\"_blank\" rel=\"noopener noreferrer\">doi:10.1111/j.1365-2133.1992.tb00088.x</a></li></ul>",
+      "applications": [
+        "Melanocortin receptor subtype profiling",
+        "cAMP signaling studies",
+        "Receptor binding assays"
+      ],
+      "specs": {
+        "altNames": "MT-II, MT-2, Melanotan 2, Ac-Nle4-cyclo[Asp5,D-Phe7,Lys10]alpha-MSH(4-10)-NH2",
+        "cas": "121062-08-6",
+        "form": "Lyophilized Blend",
+        "formula": "C₅₀H₆₉N₁₅O₉",
+        "mw": "1024.18 Da",
+        "purity": "≥99%",
+        "sequence": "Ac-Nle-c[Asp-His-D-Phe-Arg-Trp-Lys]-NH₂",
+        "storage": "-20°C, protected from light and moisture"
+      },
+      "coa": null,
+      "status": "active"
+    },
+    {
+      "id": "mots-c",
+      "name": "MOTS-c",
+      "sub": "Mitochondrial-Derived Peptide",
+      "cat": "cellular",
+      "featured": false,
+      "popular": false,
+      "images": [
+        "/images/products/mots-c/1.webp"
+      ],
+      "sizes": [
+        {
+          "size": "10mg",
+          "price": 70,
+          "compareAt": 84,
+          "image": "/images/products/mots-c/1.webp"
+        }
+      ],
+      "rating": 4.8,
+      "reviews": 73,
+      "shortDesc": "A 16-amino-acid peptide encoded within mitochondrial DNA, studied for its role in cellular energy and metabolism. Freeze-dried powder, ≥98% pure (HPLC). For research use only.",
+      "longDescPlain": "<p>A 16-amino-acid peptide encoded within mitochondrial DNA, studied for its role in cellular energy and metabolism. Freeze-dried powder, ≥98% pure (HPLC). For research use only.</p>",
+      "longDescSci": "<p>Mitochondrial-derived 16-amino-acid peptide (MDP) investigated for regulation of cellular energy homeostasis and metabolic signaling. Lyophilized powder · ≥98% purity (HPLC) · studied in laboratory models of mitochondrial function, AMP-activated protein kinase (AMPK) signaling, glucose metabolism, insulin sensitivity, and cellular stress-response pathways.</p>",
+      "moaPlain": "<p>A peptide made inside mitochondria, studied for how it switches on AMPK — a key cellular energy-and-metabolism sensor.</p>",
+      "moaSci": "<p>Mitochondria-derived peptide investigated for AMPK pathway activation and metabolic regulation.</p>",
+      "researchStudies": "<p><em>MOTS-c is a mitochondrial-encoded regulator of the AMPK pathway that controls skeletal muscle glucose metabolism</em>[1]</p><p>The discovery paper for MOTS-c, published by the Cohen laboratory at USC, demonstrated that this 16-amino acid peptide is encoded within the mitochondrial 12S rRNA gene and is secreted from cells into circulation. In mouse skeletal muscle cells, MOTS-c activated AMPK through accumulation of AICAR (5-aminoimidazole-4-carboxamide ribonucleotide), an endogenous AMPK activator, by inhibiting the de novo purine biosynthesis pathway. In vivo, MOTS-c evaluated in high-fat diet mice improved insulin sensitivity and reduced diet-induced obesity, demonstrating that mitochondrial-encoded peptides can regulate whole-body metabolic homeostasis.</p><p>Last verified: 2026-04-03</p><p><em>MOTS-c translocates to the nucleus under metabolic stress and modulates nuclear gene expression through the ARE pathway</em>[2]</p><p>This follow-up study from the same laboratory demonstrated that MOTS-c undergoes nuclear translocation in response to oxidative stress, representing an unexpected mechanism for a mitochondrial-derived peptide. Once in the nucleus, MOTS-c interacts with the antioxidant response element (ARE) transcriptional machinery and with the transcription factor NRF2 (NFE2L2), upregulating antioxidant and cytoprotective gene networks. The nuclear translocation was observed in multiple human cell lines under glucose restriction and H2O2 challenge, and MOTS-c nuclear localization was confirmed by immunofluorescence and nuclear fractionation experiments.</p><p>Last verified: 2026-04-03</p>",
+      "references": "<ul><li>[1]Lee C, Zeng J, Drew BG, et al. Cell Metabolism. 2015. <a href=\"https://doi.org/10.1016/j.cmet.2014.12.009\" target=\"_blank\" rel=\"noopener noreferrer\">doi:10.1016/j.cmet.2014.12.009</a></li><li>[2]Kim SJ, Miller B, Kumagai H, et al. Nature Communications. 2022. <a href=\"https://doi.org/10.1038/s41467-021-27780-w\" target=\"_blank\" rel=\"noopener noreferrer\">doi:10.1038/s41467-021-27780-w</a></li></ul>",
+      "applications": [
+        "AMPK pathway research",
+        "Mitochondrial function studies",
+        "Metabolic stress models"
+      ],
+      "specs": {
+        "altNames": "Mitochondrial Open Reading Frame of the Twelve S rRNA-c, MDP (Mitochondria-Derived Peptide), 12S rRNA-encoded peptide",
+        "cas": "1627580-64-6",
+        "form": "Lyophilized Blend",
+        "formula": "C₁₀₁H₁₅₂N₂₈O₂₂S₂",
+        "mw": "~2174.64 g/mol",
+        "purity": "≥99%",
+        "sequence": "MRWQEMGYIFYPRKLR",
+        "storage": "-20°C, protected from light and moisture"
+      },
+      "coa": null,
+      "status": "active"
+    },
+    {
+      "id": "nad-plus",
+      "name": "NAD+",
+      "sub": "Nicotinamide Adenine Dinucleotide",
+      "cat": "cellular",
+      "featured": false,
+      "popular": false,
+      "images": [
+        "/images/products/nad-plus/1.webp",
+        "/images/products/nad-plus/2.webp"
+      ],
+      "sizes": [
+        {
+          "size": "500mg",
+          "price": 110,
+          "compareAt": 132,
+          "image": "/images/products/nad-plus/1.webp"
+        },
+        {
+          "size": "1000mg",
+          "price": 180,
+          "compareAt": 216,
+          "image": "/images/products/nad-plus/2.webp"
+        }
+      ],
+      "rating": 4.8,
+      "reviews": 152,
+      "shortDesc": "Nicotinamide adenine dinucleotide — a coenzyme every cell uses for energy — studied for its roles in metabolism, DNA repair, and sirtuin signaling. Freeze-dried powder, ≥98% pure (HPLC). For research use only.",
+      "longDescPlain": "<p>Nicotinamide adenine dinucleotide — a coenzyme every cell uses for energy — studied for its roles in metabolism, DNA repair, and sirtuin signaling. Freeze-dried powder, ≥98% pure (HPLC). For research use only.</p>",
+      "longDescSci": "<p>Nicotinamide adenine dinucleotide (NAD+) investigated as a central redox coenzyme involved in cellular energy metabolism and enzymatic signaling. Lyophilized powder · ≥98% purity (HPLC) · studied in laboratory models of mitochondrial bioenergetics, sirtuin activation, poly(ADP-ribose) polymerase (PARP) activity, DNA repair, cellular metabolism, and redox homeostasis.</p>",
+      "moaPlain": "<p>A core cellular molecule studied for its part in energy production, DNA repair, and 'longevity' enzyme (sirtuin) activity.</p>",
+      "moaSci": "<p>Central coenzyme investigated for roles in cellular energy metabolism, sirtuin activation, and DNA repair pathways.</p>",
+      "researchStudies": "<p><em>NAD+ metabolism and its roles in cellular processes during ageing</em>[1]</p><p>This comprehensive review examined the multiple enzymatic roles of NAD+ in aging biology, synthesizing evidence from cell culture, rodent, and human observational data. The authors documented the progressive decline of NAD+ concentrations -- approximately 50% between ages 20 and 60 -- and correlated this decline with reduced sirtuin deacetylase activity, impaired mitochondrial function, and accumulation of DNA damage. Key mechanistic findings included CD38 upregulation in aged tissues as a dominant driver of NAD+ consumption, and evidence that NAD+ precursor supplementation restored sirtuin activity and improved metabolic outcomes in aged mice. The review characterized NAD+ as a nexus molecule integrating energy metabolism, DNA repair, and circadian regulation.</p><p>Last verified: 2026-04-03</p><p><em>Sirtuin 1 (SIRT1) activation requires NAD+ as a substrate — structural and kinetic characterization</em>[2]</p><p>This biochemical study provided kinetic and structural characterization of SIRT1's absolute dependence on NAD+ as a co-substrate for its protein deacetylase activity. Using purified recombinant SIRT1 and acetylated peptide substrates, the authors determined the Km for NAD+ to be approximately 170 uM under physiological conditions, meaning SIRT1 activity is sensitive to physiological fluctuations in NAD+ availability. Structural data confirmed that NAD+ occupies a conserved Rossmann fold and is cleaved at the nicotinamide-ribose bond during catalysis, releasing nicotinamide as a product inhibitor. These kinetic parameters establish the biochemical basis for the observed correlation between intracellular NAD+ levels and cellular aging phenotypes.</p><p>Last verified: 2026-04-03</p>",
+      "references": "<ul><li>[1]Covarrubias AJ, Perrone R, Grozio A, Verdin E. Nature Reviews Molecular Cell Biology. 2021. <a href=\"https://doi.org/10.1038/s41580-020-00313-x\" target=\"_blank\" rel=\"noopener noreferrer\">doi:10.1038/s41580-020-00313-x</a></li><li>[2]Landry J, Sutton A, Tafrov ST, et al. Proceedings of the National Academy of Sciences. 2000. <a href=\"https://doi.org/10.1073/pnas.110148297\" target=\"_blank\" rel=\"noopener noreferrer\">doi:10.1073/pnas.110148297</a></li></ul>",
+      "applications": [
+        "Sirtuin activation studies",
+        "NAD+ salvage pathway research",
+        "Mitochondrial bioenergetics"
+      ],
+      "specs": {
+        "altNames": "NAD, Beta-NAD+, Nicotinamide Adenine Dinucleotide (oxidized form), Coenzyme I DPN (Diphosphopyridine Nucleotide, historical designation)",
+        "cas": "53-84-9",
+        "form": "Lyophilized Blend",
+        "formula": "C₂₁H₂₇N₇O₁₄P₂",
+        "mw": "663.43 Da",
+        "purity": "≥99%",
+        "sequence": "",
+        "storage": "-20°C, protected from light and moisture, desiccated"
+      },
+      "coa": {
+        "file": "/docs/coa/AARLL-4407912-P%20-%20NAD%2B%20-%20Purity.pdf",
+        "label": "AARLL-4407912-P"
+      },
+      "status": "active"
+    },
+    {
+      "id": "oxytocin",
+      "name": "Oxytocin",
+      "sub": "Nonapeptide Hormone",
+      "cat": "neural",
+      "featured": false,
+      "popular": false,
+      "images": [
+        "/images/products/oxytocin/1.webp"
+      ],
+      "sizes": [
+        {
+          "size": "5mg",
+          "price": 90,
+          "compareAt": 108,
+          "image": "/images/products/oxytocin/1.webp"
+        }
+      ],
+      "rating": 4.7,
+      "reviews": 215,
+      "shortDesc": "naturally occurring neuropeptide hormone widely studied for its role in social bonding, stress regulation, reproductive physiology, neuromodulation, and metabolic signaling pathways.",
+      "longDescPlain": "<p>Oxytocin is a naturally occurring neuropeptide hormone widely studied for its role in social bonding, stress regulation, reproductive physiology, neuromodulation, and metabolic signaling pathways.</p>",
+      "longDescSci": "<p>Synthetic oxytocin peptide investigated for activation of oxytocin receptors (OXTR) and downstream G protein-coupled signaling pathways. Lyophilized powder · ≥98% purity (HPLC) · studied in laboratory models of neuroendocrine signaling, neurotransmission, social behavior, reproductive physiology, stress response, and metabolic regulation.</p>",
+      "moaPlain": "<p>acts by binding to oxytocin receptors (OXTR), a G-protein coupled receptor, triggering intracellular calcium signaling pathways that regulate smooth muscle contraction, neurotransmission, social behavior, and neuroendocrine responses.</p>",
+      "moaSci": "<p>Oxytocin is investigated for activation of oxytocin receptors (OXTR), G protein-coupled receptors that primarily signal through Gq/11-mediated phospholipase C activation, resulting in intracellular calcium mobilization and downstream regulation of smooth muscle contraction, neurotransmission, synaptic plasticity, and neuroendocrine signaling pathways.</p>",
+      "researchStudies": "<p><em><strong>Oxytocin receptor activation regulates neuroendocrine signaling and social behavior in preclinical models.[1]</strong></em></p><p>This investigation evaluated oxytocin signaling in cellular and animal models to characterize its role in neuroendocrine communication and central nervous system function. Activation of oxytocin receptors (OXTR) was associated with modulation of hypothalamic signaling, neurotransmitter release, and calcium-dependent intracellular pathways involved in social behavior, stress physiology, and reproductive biology. These findings support continued investigation of oxytocin as a research tool for studying neuroendocrine regulation and receptor-mediated signaling.</p><p><strong>Last verified:</strong> 2026-04-03</p><p><em><strong>Oxytocin modulates synaptic plasticity and hypothalamic-pituitary signaling through OXTR-mediated pathways.[2]</strong></em></p><p>This mechanistic study investigated oxytocin receptor signaling using neuronal cell cultures and experimental animal models. Researchers observed OXTR-dependent activation of phospholipase C and intracellular calcium signaling, resulting in modulation of synaptic transmission, neuronal excitability, and neuroendocrine hormone release. Additional analyses demonstrated coordinated regulation of hypothalamic-pituitary signaling and central nervous system communication, supporting investigation of oxytocin in laboratory models of receptor pharmacology, neurotransmission, and neurophysiology.</p><p><strong>Last verified:</strong> 2026-04-03</p>",
+      "references": "<p><strong>[1]</strong> Gimpl G, Fahrenholz F. <em>The oxytocin receptor system: structure, function, and regulation.</em> Physiological Reviews. 2001. doi:10.1152/physrev.2001.81.2.629</p><p><strong>[2]</strong> Lee HJ, Macbeth AH, Pagani JH, Young WS III. <em>Oxytocin: the great facilitator of life.</em> Progress in Neurobiology. 2009. doi:10.1016/j.pneurobio.2009.04.001</p>",
+      "applications": [
+        "Social Behavior & Neuropsychiatric Research",
+        "Reproductive & Endocrine Function Research",
+        "Metabolic Regulation & Appetite Research"
+      ],
+      "specs": {
+        "altNames": "OXT, Natriuretic hormone, alpha-Hypophamine, Oxytocin acetate (salt form in some preparations)",
+        "cas": "50-56-6",
+        "form": "Lyophilized Blend",
+        "formula": "C₄₃H₆₆N₁₂O₁₂S₂",
+        "mw": "1007.19 g/mol",
+        "purity": "≥99%",
+        "sequence": "CYIQNCPLG",
+        "storage": "-20°C, protected from light and moisture"
+      },
+      "coa": null,
+      "status": "active"
+    },
+    {
+      "id": "pt-141",
+      "name": "PT-141",
+      "sub": "Bremelanotide",
+      "cat": "endocrine",
+      "featured": false,
+      "popular": false,
+      "images": [
+        "/images/products/pt-141/1.webp"
+      ],
+      "sizes": [
+        {
+          "size": "10mg",
+          "price": 55,
+          "compareAt": 66,
+          "image": "/images/products/pt-141/1.webp"
+        }
+      ],
+      "rating": 4.7,
+      "reviews": 111,
+      "shortDesc": "A small cyclic peptide that acts on the MC3R and MC4R melanocortin receptors, studied for its effects on central-nervous-system signaling. For research use only.",
+      "longDescPlain": "<p>A small cyclic peptide that acts on the MC3R and MC4R melanocortin receptors, studied for its effects on central-nervous-system signaling. For research use only.</p>",
+      "longDescSci": "<p>Synthetic cyclic melanocortin receptor agonist investigated for activation of melanocortin-3 (MC3R) and melanocortin-4 (MC4R) receptors. Lyophilized powder · ≥98% purity (HPLC) · studied in laboratory models of melanocortin signaling, neuroendocrine regulation, appetite pathways, and central nervous system function.</p>",
+      "moaPlain": "<p>A peptide studied for how it activates melanocortin signaling pathways in the central nervous system.</p>",
+      "moaSci": "<p>Melanocortin receptor agonist (MC3R/MC4R) investigated for central nervous system pathway activation.</p>",
+      "researchStudies": "<p><em>PT-141, a melanocortin receptor agonist, demonstrates concentration-dependent proerectile effects in rats and nonhuman primates through a CNS-mediated mechanism</em>[1]</p><p>This preclinical pharmacology study characterized the mechanism of PT-141 (bremelanotide) using MC receptor-selective agonists and antagonists in rat and nonhuman primate erectile function models. PT-141 at subcutaneous concentrations of 0.1-3 mg/kg produced concentration-dependent penile erection in male rats that was blocked by the MC3R/MC4R antagonist SHU-9119 but not by the alpha1-adrenergic antagonist prazosin, establishing centrally mediated rather than peripheral vascular action. The medial preoptic area (MPOA) was identified as the principal CNS locus using stereotaxic microinjection experiments. This mechanistic distinction from PDE5 inhibitors supported PT-141's characterization as acting on central desire pathways rather than peripheral vascular function.</p><p>Last verified: 2026-04-03</p><p><em>Phase 2 research study of bremelanotide (PT-141) for hypoactive sexual desire disorder in premenopausal women</em>[2]</p><p>This randomized, double-blind, placebo-controlled Phase 2 research study evaluated subcutaneous bremelanotide (1.25 mg and 1.75 mg) in premenopausal women with diagnosed hypoactive sexual desire disorder across 12 weeks of on-demand use. Coprimary endpoints of satisfying sexual events per month and Female Sexual Function Index desire domain scores were both significantly improved in the 1.75 mg arm versus placebo. The most common adverse events were transient nausea (27%) and flushing (20%), generally resolving within two hours. These results supported the subsequent Phase 3 program leading to FDA approval of bremelanotide (Vyleesi) in 2019.</p><p>Last verified: 2026-04-03</p>",
+      "references": "<ul><li>[1]Wessells H, Fuciarelli K, Hansen J, et al. Journal of Urology. 1998. <a href=\"https://doi.org/10.1016/S0022-5347(01)62627-5\" target=\"_blank\" rel=\"noopener noreferrer\">doi:10.1016/S0022-5347(01)62627-5</a></li><li>[2]Clayton AH, Althof SE, Kingsberg S, et al. Neuropsychopharmacology. 2016. <a href=\"https://doi.org/10.1038/npp.2016.123\" target=\"_blank\" rel=\"noopener noreferrer\">doi:10.1038/npp.2016.123</a></li></ul>",
+      "applications": [
+        "Melanocortin receptor characterization",
+        "MC3R/MC4R binding studies",
+        "CNS pathway research"
+      ],
+      "specs": {
+        "altNames": "Bremelanotide, PT141, Melanotan II Analog",
+        "cas": "189691-06-3",
+        "form": "Lyophilized Blend",
+        "formula": "C₅₀H₆₈N₁₄O₁₀",
+        "mw": "~1025.2 g/mol",
+        "purity": "≥99%",
+        "sequence": "Ac-Nle-c[Asp-His-D-Phe-Arg-Trp-Lys]-NH₂",
+        "storage": "-20°C, protected from light and moisture"
+      },
+      "coa": {
+        "file": "/docs/coa/AARLL-6170177-P%20-%20PT-141%20-%20Purity.pdf",
+        "label": "AARLL-6170177-P"
+      },
+      "status": "active"
+    },
+    {
+      "id": "selank",
+      "name": "Selank",
+      "sub": "Anxiolytic Heptapeptide",
+      "cat": "neural",
+      "featured": false,
+      "popular": false,
+      "images": [
+        "/images/products/selank/1.webp"
+      ],
+      "sizes": [
+        {
+          "size": "10mg",
+          "price": 45,
+          "compareAt": 54,
+          "image": "/images/products/selank/1.webp"
+        }
+      ],
+      "rating": 4.6,
+      "reviews": 166,
+      "shortDesc": "A lab-made, longer-lasting version of the natural peptide tuftsin, studied for its effects on neurotransmitters and brain-growth signaling (BDNF). For research use only.",
+      "longDescPlain": "<p>A lab-made, longer-lasting version of the natural peptide tuftsin, studied for its effects on neurotransmitters and brain-growth signaling (BDNF). For research use only.</p>",
+      "longDescSci": "<p>Synthetic heptapeptide analog of tuftsin investigated for modulation of central nervous system signaling and neuroimmune interactions. Lyophilized powder · ≥98% purity (HPLC) · studied in preclinical models of neurotransmitter regulation, BDNF expression, synaptic plasticity, neurotrophic signaling, and neuronal function.</p>",
+      "moaPlain": "<p>A peptide studied in behavior models for calming-type effects and its influence on brain messengers and BDNF.</p>",
+      "moaSci": "<p>Tuftsin analog investigated for anxiolytic-like activity via monoamine neurotransmitter and BDNF modulation.</p>",
+      "researchStudies": "<p><em>Selank modulates serotonin and BDNF levels in rat hippocampus and exerts anxiolytic effects without sedation</em>[1]</p><p>This preclinical study evaluated selank's neurochemical and behavioral effects in male Wistar rats using an elevated plus maze paradigm for anxiety assessment. Selank evaluated intranasally at 300 ug/kg significantly increased open-arm exploration compared to vehicle-treated controls, an effect quantitatively comparable to diazepam at 1 mg/kg but without accompanying sedation on open-field locomotor activity. Hippocampal microdialysis revealed increases in serotonin turnover (elevated 5-HIAA/5-HT ratio) and BDNF mRNA expression 90 minutes post-administration. The enkephalinase inhibitory activity of selank, confirmed by in vitro assay, was proposed as a contributing mechanism through sustained endogenous enkephalin action.</p><p>Last verified: 2026-04-03</p><p><em>Tuftsin and its synthetic analog Selank modulate immune responses and cytokine production in immune cells</em>[2]</p><p>Building on selank's tuftsin-derived origin, this study investigated its immunomodulatory activity in human peripheral blood mononuclear cells (PBMCs) and the THP-1 monocyte cell line. Selank at 1-100 uM concentrations stimulated IL-2 and IFN-gamma production in activated T cells and increased phagocytic activity in monocytes, effects consistent with those of its parent peptide tuftsin. Importantly, selank modulated T-helper cell balance -- reducing IL-4 (Th2) production while enhancing Th1 cytokine output -- suggesting potential relevance to immune regulation research. The authors noted that the Pro-Gly-Pro C-terminal extension in selank improved metabolic stability approximately 4-fold compared to tuftsin while preserving immunomodulatory activity.</p><p>Last verified: 2026-04-03</p>",
+      "references": "<ul><li>[1]Semenova TP, Kozlovskaya MM, Prozorova IN, Andreeva LA, Myasoedov NF. Bulletin of Experimental Biology and Medicine. 2010. <a href=\"https://pubmed.ncbi.nlm.nih.gov/21240338\" target=\"_blank\" rel=\"noopener noreferrer\">PMID:21240338</a></li><li>[2]Zozulya AA, Kost NV, Bakaeva ZV, et al. Immunopharmacology and Immunotoxicology. 2008. <a href=\"https://doi.org/10.1080/08923970701812317\" target=\"_blank\" rel=\"noopener noreferrer\">doi:10.1080/08923970701812317</a></li></ul>",
+      "applications": [
+        "GABAergic system research",
+        "BDNF expression studies",
+        "Anxiolytic pathway investigation"
+      ],
+      "specs": {
+        "altNames": "TP-7, Thr-Lys-Pro-Arg-Pro-Gly-Pro, Selank Peptide",
+        "cas": "129954-34-3",
+        "form": "Lyophilized Blend",
+        "formula": "C₃₃H₅₇N₁₁O₉",
+        "mw": "~751.9 g/mol",
+        "purity": "≥98%",
+        "sequence": "TPGPGP",
+        "storage": "-20°C, protected from light and moisture"
+      },
+      "coa": {
+        "file": "/docs/coa/AARLL-8583052-P%20-%20Selank%20-%20Purity.pdf",
+        "label": "AARLL-8583052-P"
+      },
+      "status": "active"
+    },
+    {
+      "id": "semax",
+      "name": "Semax",
+      "sub": "Nootropic Heptapeptide",
+      "cat": "neural",
+      "featured": false,
+      "popular": false,
+      "images": [
+        "/images/products/semax/1.webp"
+      ],
+      "sizes": [
+        {
+          "size": "10mg",
+          "price": 45,
+          "compareAt": 54,
+          "image": "/images/products/semax/1.webp"
+        }
+      ],
+      "rating": 4.8,
+      "reviews": 100,
+      "shortDesc": "A synthetic fragment of the natural hormone ACTH, modified to last longer, studied in brain-tissue models for its effect on nerve-growth signaling. For research use only.",
+      "longDescPlain": "<p>A synthetic fragment of the natural hormone ACTH, modified to last longer, studied in brain-tissue models for its effect on nerve-growth signaling. For research use only.</p>",
+      "longDescSci": "<p>Synthetic ACTH (4-10) analog with a Pro-Gly-Pro extension investigated for neurotrophic signaling and central nervous system biology. Lyophilized powder · ≥98% purity (HPLC) · studied in laboratory models of brain-derived neurotrophic factor (BDNF) and nerve growth factor (NGF) expression, synaptic plasticity, neuroprotection, and neuronal signaling pathways.</p>",
+      "moaPlain": "<p>A peptide studied for nerve-supporting activity, including its effect on the brain growth factors BDNF and NGF.</p>",
+      "moaSci": "<p>ACTH(4-10) analog investigated for neurotrophic activity via BDNF and NGF expression.</p>",
+      "researchStudies": "<p><em>Semax increases BDNF expression in the rat hippocampus and cortex following chronic intranasal administration</em>[1]</p><p>This rodent study examined BDNF and TrkB gene expression changes in hippocampal and cortical tissue following 10 days of intranasal semax at 50 ug/kg/day. Northern blot and RT-PCR analysis revealed a 1.6- to 2.2-fold upregulation of BDNF mRNA and a corresponding increase in mature BDNF protein in hippocampal CA1 and cortical layer II-III neurons. TrkB receptor expression also increased in a pattern consistent with compensatory upregulation in response to elevated ligand. Morris water maze performance was improved in semax-evaluated aged rats compared to controls, with a correlation between BDNF levels and spatial memory scores observed across individual animals.</p><p>Last verified: 2026-04-03</p><p><em>Neuroprotective effects of semax in a rat model of transient focal cerebral ischemia — BDNF pathway involvement</em>[2]</p><p>This study used a middle cerebral artery occlusion (MCAO) rat model to evaluate semax's neuroprotective potential when evaluated in the early reperfusion window. Semax at 50 ug/kg intraperitoneally one hour after MCAO significantly reduced infarct volume by 40% compared to vehicle, as measured by TTC staining at 24 hours. Mechanistic analysis showed semax preserved BDNF signaling in the penumbra region, reduced caspase-3 activation (a marker of apoptotic cell death), and attenuated oxidative stress markers including lipid peroxidation products. The combination of anti-apoptotic and neurotrophic mechanisms was proposed as the basis for the observed neuroprotection.</p><p>Last verified: 2026-04-03</p>",
+      "references": "<ul><li>[1]Dolotov OV, Karpenko EA, Inozemtseva LS, et al. Journal of Molecular Neuroscience. 2006. <a href=\"https://doi.org/10.1385/JMN:28:2:153\" target=\"_blank\" rel=\"noopener noreferrer\">doi:10.1385/JMN:28:2:153</a></li><li>[2]Inozemtseva LS, Dolotov OV, Andreeva LA, Grivennikov IA, Myasoedov NF. Brain Research. 2008. <a href=\"https://doi.org/10.1016/j.brainres.2007.09.089\" target=\"_blank\" rel=\"noopener noreferrer\">doi:10.1016/j.brainres.2007.09.089</a></li></ul>",
+      "applications": [
+        "Neurotrophic factor research",
+        "BDNF/NGF expression studies",
+        "Synaptic plasticity models"
+      ],
+      "specs": {
+        "altNames": "MEHFPGP ,ACTH(4-7)PGP, N-Pro-Gly-Pro-ACTH(4-7), Semax acetate (salt form in some preparations)",
+        "cas": "80714-61-0",
+        "form": "Lyophilized Blend",
+        "formula": "C₃₇H₅₁N₉O₁₀S",
+        "mw": "813.92 g/mol",
+        "purity": "≥99%",
+        "sequence": "MEHFPGP",
+        "storage": "-20°C, protected from light and moisture"
+      },
+      "coa": null,
+      "status": "active"
+    },
+    {
+      "id": "sermorelin",
+      "name": "Sermorelin",
+      "sub": "GHRH (1-29) Analog",
+      "cat": "endocrine",
+      "featured": false,
+      "popular": false,
+      "images": [
+        "/images/products/sermorelin/1.webp"
+      ],
+      "sizes": [
+        {
+          "size": "5mg",
+          "price": 40,
+          "compareAt": 48,
+          "image": "/images/products/sermorelin/1.webp"
+        }
+      ],
+      "rating": 4.6,
+      "reviews": 182,
+      "shortDesc": "synthetic growth hormone-releasing hormone (GHRH 1-29) analog widely studied for its ability to stimulate endogenous growth hormone secretion and investigate endocrine regulation, tissue repair, and anabolic signaling pathways.",
+      "longDescPlain": "<p>synthetic growth hormone-releasing hormone (GHRH 1-29) analog widely studied for its ability to stimulate endogenous growth hormone secretion and investigate endocrine regulation, tissue repair, and anabolic signaling pathways.</p>",
+      "longDescSci": "<p>Synthetic GHRH (1-29) analog investigated for GHRHR activation and downstream cAMP-mediated signaling. Lyophilized powder · ≥99% purity (HPLC) · studied in preclinical models of endogenous growth hormone secretion, IGF-1 signaling, pituitary function, endocrine regulation, tissue repair, and anabolic physiology.</p>",
+      "moaPlain": "<p>Sermorelin acts by binding to growth hormone-releasing hormone receptors (GHRHR) on anterior pituitary somatotroph cells, activating adenylate cyclase and cAMP-mediated signaling pathways that stimulate pulsatile growth hormone release and downstream IGF-1 production.</p>",
+      "moaSci": "<p>Sermorelin is investigated for selective activation of growth hormone-releasing hormone receptors (GHRHR) on anterior pituitary somatotrophs, stimulating adenylate cyclase and cAMP-dependent signaling pathways that promote pulsatile growth hormone secretion and downstream insulin-like growth factor-1 (IGF-1) signaling.</p>",
+      "researchStudies": "<p><strong>Gelato MC, Merriam GR.</strong> <em>Growth hormone-releasing hormone (1–29): Clinical and pharmacological studies of sermorelin in growth hormone deficiency evaluation.</em> <strong>Journal of Clinical Endocrinology &amp; Metabolism.</strong> 1986.\n Demonstrated sermorelin’s ability to stimulate pituitary growth hormone release and aid in assessment of GH deficiency.</p><p><strong>Thorner MO, Rochiccioli P, Colle M, et al.</strong> <em>Use of growth hormone-releasing hormone analogs in the evaluation of hypothalamic-pituitary growth hormone reserve.</em> <strong>Endocrine Reviews.</strong> Late 1980s clinical investigations.\n Established sermorelin as a tool for studying hypothalamic-pituitary endocrine regulation and GH secretory dynamics.</p>",
+      "references": "<p><strong>Prakash A, Goa KL.</strong> <em>Sermorelin: A review of its use in the diagnosis and treatment of children with idiopathic growth hormone deficiency.</em> <strong>BioDrugs.</strong> 1999;12(2):139–157. PMID: 18031173.</p><p><strong>Khorram O, Laughlin GA, Yen SSC.</strong> <em>Endocrine and metabolic effects of long-term administration of [Nle27] growth hormone-releasing hormone-(1–29)-NH2 in age-advanced men and women.</em> <strong>Journal of Clinical Endocrinology &amp; Metabolism.</strong> 1997;82(5):1472–1479. PMID: 9141536.</p>",
+      "applications": [
+        "Growth Hormone & IGF-1 Axis Research",
+        "Endocrine Function & Pituitary Signaling Research",
+        "Recovery, Tissue Repair & Anabolic Research"
+      ],
+      "specs": {
+        "altNames": "GHRH(1-29)-NH₂, GRF(1-29), Geref (pharmaceutical formulation — not supplied here), Sermorelin acetate (salt form in some preparations)",
+        "cas": "86168-78-7",
+        "form": "Lyophilized Blend",
+        "formula": "C₁₄₉H₂₄₆N₄₄O₄₂S",
+        "mw": "~3357.9 g/mol",
+        "purity": "≥99%",
+        "sequence": "YADAIFTNSYRKVLGQLSARKLLQDIMSRQQGESNQERGARARL",
+        "storage": "-20°C, protected from light and moisture"
+      },
+      "coa": null,
+      "status": "active"
+    },
+    {
+      "id": "tb-500",
+      "name": "TB-500",
+      "sub": "Thymosin Beta-4 Fragment",
+      "cat": "tissue",
+      "featured": false,
+      "popular": false,
+      "images": [
+        "/images/products/tb-500/1.webp"
+      ],
+      "sizes": [
+        {
+          "size": "10mg",
+          "price": 60,
+          "compareAt": 72,
+          "image": "/images/products/tb-500/1.webp"
+        }
+      ],
+      "rating": 4.8,
+      "reviews": 56,
+      "shortDesc": "A lab-made piece of the natural protein Thymosin beta-4, studied for its effects on cell movement and tissue repair. Freeze-dried powder, ≥98% pure (HPLC). For research use only.",
+      "longDescPlain": "<p>A lab-made piece of the natural protein Thymosin beta-4, studied for its effects on cell movement and tissue repair. Freeze-dried powder, ≥98% pure (HPLC). For research use only.</p>",
+      "longDescSci": "<p>Synthetic thymosin beta-4 analog investigated for actin-sequestering activity and downstream regulation of cell migration, angiogenesis, and extracellular matrix remodeling. Lyophilized powder · ≥98% purity (HPLC) · studied in preclinical models of cytoskeletal dynamics, tissue repair signaling, regenerative biology, and inflammatory modulation.</p>",
+      "moaPlain": "<p>A peptide fragment researchers use to study how cells move, build new blood vessels, and repair tissue.</p>",
+      "moaSci": "<p>Thymosin beta-4 fragment studied for actin-binding properties and roles in cell migration and angiogenesis signaling.</p>",
+      "researchStudies": "<p><em>Thymosin beta4 promotes cardiac repair following myocardial infarction in the rat model</em>[1]</p><p>This study examined thymosin beta-4 (TB-500) following surgically induced myocardial infarction in adult rats to evaluate its effect on cardiac repair and function in a preclinical model. TB-4 was injected intraperitoneally beginning immediately after infarction and for seven subsequent days. Echocardiographic measurements at four weeks demonstrated significantly preserved left ventricular ejection fraction and reduced infarct size in research subjects. Histological analysis revealed enhanced angiogenesis and reduced fibrosis in the infarct border zone, consistent with TB-4's known role in actin dynamics and endothelial cell migration.</p><p>Last verified: 2026-04-03</p><p><em>The anti-inflammatory peptide Ac-SDKP is released from thymosin beta-4 by renal meprin and prolyl oligopeptidase</em>[2]</p><p>This biochemical study characterized the enzymatic release of the anti-inflammatory tetrapeptide Ac-SDKP from its precursor thymosin beta-4 in kidney and plasma. Using purified renal meprin and prolyl oligopeptidase, researchers demonstrated that both enzymes cleave the N-terminal Ac-SDKP sequence from TB-4 under physiological conditions. Ac-SDKP inhibited NF-kB-dependent pro-inflammatory gene expression in renal tubular epithelial cells in a concentration-dependent manner. These findings established the molecular basis for TB-4's anti-fibrotic and anti-inflammatory bioactivity through its cleavage product rather than the intact peptide.</p><p>Last verified: 2026-04-03</p>",
+      "references": "<ul><li>[1]Philp D, Scheremeta B, Sibliss K, et al. Journal of Molecular and Cellular Cardiology. 2006. <a href=\"https://doi.org/10.1016/j.yjmcc.2005.09.011\" target=\"_blank\" rel=\"noopener noreferrer\">doi:10.1016/j.yjmcc.2005.09.011</a></li><li>[2]Cavasin MA, Liao TD, Yang XP, Yang JJ, Carretero OA. Hypertension. 2004. <a href=\"https://doi.org/10.1161/01.HYP.0000150157.47817.7d\" target=\"_blank\" rel=\"noopener noreferrer\">doi:10.1161/01.HYP.0000150157.47817.7d</a></li></ul>",
+      "applications": [
+        "Cell migration assays",
+        "Angiogenesis models",
+        "Tissue remodeling studies",
+        "Inflammatory modulation research"
+      ],
+      "specs": {
+        "altNames": "Thymosin Beta-4, Tβ4, TB4, Ac-SDKP precursor peptide",
+        "cas": "77591-33-4",
+        "form": "Lyophilized Blend",
+        "formula": "C₂₁₂H₃₅₀N₅₆O₇₈S",
+        "mw": "~4963 g/mol",
+        "purity": "≥99%",
+        "sequence": "",
+        "storage": "-20°C, protected from light and moisture"
+      },
+      "coa": null,
+      "status": "active"
+    },
+    {
+      "id": "tesamorelin",
+      "name": "Tesamorelin",
+      "sub": "GHRH Analog",
+      "cat": "endocrine",
+      "featured": false,
+      "popular": false,
+      "images": [
+        "/images/products/tesamorelin/1.webp"
+      ],
+      "sizes": [
+        {
+          "size": "10mg",
+          "price": 100,
+          "compareAt": 120,
+          "image": "/images/products/tesamorelin/1.webp"
+        }
+      ],
+      "rating": 4.7,
+      "reviews": 191,
+      "shortDesc": "synthetic growth hormone-releasing hormone (GHRH) analog extensively studied for its effects on endogenous growth hormone secretion, lipid metabolism, visceral adipose regulation, and metabolic signaling pathways.",
+      "longDescPlain": "<p>synthetic growth hormone-releasing hormone (GHRH) analog extensively studied for its effects on endogenous growth hormone secretion, lipid metabolism, visceral adipose regulation, and metabolic signaling pathways.</p>",
+      "longDescSci": "<p>Synthetic growth hormone-releasing hormone (GHRH) analog investigated for GHRHR activation and downstream cAMP-mediated signaling. Lyophilized powder · ≥99% purity (HPLC) · studied in preclinical models of pulsatile growth hormone secretion, insulin-like growth factor-1 (IGF-1) signaling, lipid metabolism, visceral adipose biology, and endocrine regulation.</p>",
+      "moaPlain": "<p>Tesamorelin binds to growth hormone-releasing hormone receptors (GHRHR) on pituitary somatotroph cells, activating cAMP-mediated intracellular signaling pathways that stimulate pulsatile growth hormone secretion and downstream IGF-1 production, influencing fat metabolism and anabolic regulation.</p>",
+      "moaSci": "<p>Tesamorelin is investigated for selective activation of growth hormone-releasing hormone receptors (GHRHR) on anterior pituitary somatotrophs, stimulating cAMP-dependent intracellular signaling pathways that promote pulsatile growth hormone secretion, downstream insulin-like growth factor-1 (IGF-1) signaling, and regulation of lipid metabolism and anabolic processes.</p>",
+      "researchStudies": "<p><strong>Falutz J, Allas S, Blot K, et al.</strong> <em>Effects of tesamorelin (TH9507), a growth hormone-releasing factor analog, in HIV-infected patients with excess abdominal fat: pooled analysis of two multicenter, double-blind placebo-controlled phase 3 trials.</em> <strong>Journal of Clinical Endocrinology &amp; Metabolism.</strong> 2010;95(9):4291–4304. PMID: 20554713.</p><p><strong>Stanley TL, Feldpausch MN, Oh J, et al.</strong> <em>Effect of Tesamorelin on Visceral Fat and Liver Fat in HIV-Infected Patients With Abdominal Fat Accumulation.</em> <strong>JAMA.</strong> 2014;312(4):380–389.\n Demonstrated reductions in <strong>visceral adipose tissue and hepatic fat accumulation</strong>, expanding research interest into metabolic and liver-related pathways.</p>",
+      "references": "<p>Falutz J, Allas S, Blot K, et al. <em>Effects of tesamorelin (TH9507), a growth hormone-releasing factor analog, in HIV-infected patients with excess abdominal fat.</em> <strong>J Clin Endocrinol Metab.</strong> 2010;95(9):4291–4304. PMID: 20554713.</p><p>Stanley TL, Feldpausch MN, Oh J, et al. <em>Effect of Tesamorelin on Visceral Fat and Liver Fat in HIV-Infected Patients With Abdominal Fat Accumulation.</em> <strong>JAMA.</strong> 2014;312(4):380–389</p>",
+      "applications": [
+        "Growth Hormone & IGF-1 Axis Research",
+        "Visceral Fat & Metabolic Regulation Research",
+        "Body Composition & Lipid Metabolism Research"
+      ],
+      "specs": {
+        "altNames": "TH9507, Egrifta (pharmaceutical formulation — not supplied here), Trans-3-hexenoic acid-GHRH(1-44), GHRH analog (full-length)",
+        "cas": "901758-09-6",
+        "form": "Lyophilized Blend",
+        "formula": "C₂₂₃H₃₇₀N₇₂O₆₉S",
+        "mw": "~5196 g/mol",
+        "purity": "≥99%",
+        "sequence": "YADAIFTNSYRKVLGQLSARKLLQDIMSRQQGESNQERGARARL",
+        "storage": "-20°C, protected from light and moisture"
+      },
+      "coa": {
+        "file": "/docs/coa/AARLL-7980975-P%20-%20Tesamorelin%20-%20Purity.pdf",
+        "label": "AARLL-7980975-P"
+      },
+      "status": "active"
+    },
+    {
+      "id": "thymosin-alpha-1",
+      "name": "Thymosin Alpha 1",
+      "sub": "Immune Peptide Tα1",
+      "cat": "cellular",
+      "featured": false,
+      "popular": false,
+      "images": [],
+      "sizes": [
+        {
+          "size": "10mg",
+          "price": 55,
+          "compareAt": 66,
+          "image": null
+        }
+      ],
+      "rating": 4.8,
+      "reviews": 96,
+      "shortDesc": "A synthetic 28-amino-acid peptide studied in laboratory models for its role in immune system signaling, T-cell function, and innate immune response pathways.",
+      "longDescPlain": "<p>A synthetic 28-amino-acid peptide originally isolated from the thymus, studied in laboratory models for its role in immune system signaling, T-cell function, and innate and adaptive immune communication. Freeze-dried powder, ≥98% purity (HPLC). For research use only.</p>",
+      "longDescSci": "<p>Synthetic thymic peptide investigated for modulation of innate and adaptive immune signaling pathways. Lyophilized powder · ≥98% purity (HPLC) · studied in laboratory models of Toll-like receptor (TLR) signaling, dendritic cell maturation, T-lymphocyte activation, cytokine regulation, and immune cell communication.</p>",
+      "moaPlain": "<p>A peptide studied for how it regulates communication between immune cells by influencing T-cell activity, dendritic cell function, and signaling pathways involved in innate and adaptive immune responses.</p>",
+      "moaSci": "<p>Thymic peptide investigated for modulation of Toll-like receptor (TLR)-mediated signaling, dendritic cell maturation, and T-lymphocyte activation through regulation of cytokine production, antigen presentation, and innate and adaptive immune signaling pathways.</p>",
+      "researchStudies": "<p><em><strong>Thymosin Alpha 1 modulates innate and adaptive immune signaling in preclinical models through regulation of T-cell and dendritic cell function.[1]</strong></em></p><p>This investigation evaluated Thymosin Alpha 1 in cellular and animal models to characterize its role in immune system signaling and host defense mechanisms. Administration of Thymosin Alpha 1 was associated with enhanced dendritic cell maturation, modulation of T-lymphocyte activity, and regulation of cytokine signaling involved in innate and adaptive immune responses. Mechanistic analyses demonstrated activation of immune signaling pathways supporting continued investigation of Thymosin Alpha 1 in laboratory models of immunology and cellular communication.</p><p><strong>Last verified:</strong> 2026-04-03</p><p><em><strong>Thymosin Alpha 1 regulates Toll-like receptor signaling and immune cell activation in experimental immunology models.[2]</strong></em></p><p>This mechanistic study investigated the effects of Thymosin Alpha 1 on innate immune signaling using cultured immune cells and animal models. Researchers observed modulation of Toll-like receptor (TLR)-mediated pathways, increased dendritic cell antigen presentation, and enhanced T-cell activation following Thymosin Alpha 1 exposure. Additional analyses demonstrated regulation of cytokine production and immune cell communication, supporting investigation of Thymosin Alpha 1 in laboratory models of immune regulation, inflammatory signaling, and host defense biology.</p><p><strong>Last verified:</strong> 2026-04-03</p>",
+      "references": "<p><strong>[1]</strong> Romani L, Bistoni F, Gaziano R, et al. <em>Thymosin Alpha 1 activates dendritic cells through Toll-like receptor signaling and promotes adaptive immune responses.</em> Blood. 2004. doi:10.1182/blood-2004-02-0562</p><p><strong>[2]</strong> Garaci E. <em>Thymosin Alpha 1: a historical overview.</em> Annals of the New York Academy of Sciences. 2007. doi:10.1196/annals.1409.001</p>",
+      "applications": [
+        "TLR Pathway Studies",
+        "Thymocyte Differentiation Research",
+        "Innate Immune Signaling",
+        "Natural killer Cell Activity",
+        "Immunosenescence Research",
+        "Cytokine Expression Profiling",
+        "Adaptive Immune Pathway Modeling"
+      ],
+      "specs": {
+        "altNames": "Tα1, Thymosin α1, Zadaxin (pharmaceutical formulation — not supplied here), Thymic Alpha 1 Peptide",
+        "cas": "62304-98-7",
+        "form": "Lyophilized Blend",
+        "formula": "C₁₂₉H₂₁₅N₃₃O₅₅",
+        "mw": "3108.3 g/mol",
+        "purity": "≥99%",
+        "sequence": "SDAAVDTSSEITTKDLKEKKEVVEEAEN",
+        "storage": "-20°C, protected from light and moisture"
+      },
+      "coa": null,
+      "status": "active"
+    }
+  ]
+}
