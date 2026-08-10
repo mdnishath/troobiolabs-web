@@ -103,6 +103,7 @@ async function main() {
     const payload = {
       name: p.name,
       slug: p.id,
+      sku: p.id,
       type: "variable",
       status: p.status === "active" ? "publish" : "draft",
       featured: p.featured,
@@ -151,6 +152,7 @@ async function main() {
 
     for (const s of p.sizes) {
       const vPayload = {
+        sku: `${p.id}-${s.size}`,
         regular_price: String(s.compareAt ?? s.price),
         sale_price: s.compareAt ? String(s.price) : undefined,
         attributes: [{ name: "Size", option: s.size }],

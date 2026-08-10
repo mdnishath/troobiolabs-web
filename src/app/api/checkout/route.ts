@@ -63,9 +63,8 @@ export async function POST(req: Request) {
             : { method_id: "flat_rate", method_title: "Standard Shipping", total: "8.95" },
         ],
         line_items: body.items.map((i) => ({
-          name: `${i.name} — ${i.size}`,
+          sku: `${i.productId}-${i.size}`,
           quantity: i.qty,
-          total: (i.price * i.qty).toFixed(2),
         })),
         meta_data: [{ key: "research_use_acknowledged", value: "yes" }],
       }),

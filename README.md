@@ -52,7 +52,16 @@ WordPress/WooCommerce backend:
    ```
 3. Set `NEXT_PUBLIC_DATA_SOURCE=woo` — the data provider
    (`src/lib/api/provider.ts`) switches to the WooCommerce REST API, and
-   `/api/checkout` creates real orders (status: pending payment).
+   `/api/checkout` creates real orders (status: pending payment) referencing
+   the seeded variation SKUs (`<handle>-<size>`).
+
+> **Local dev note:** on a plain-HTTP Local site (e.g.
+> `http://wp-connector.local`), WooCommerce rejects ck_/cs_ Basic auth, so use
+> a WordPress **application password** as the key/secret pair instead
+> (`WC_CONSUMER_KEY=<wp-user>`, `WC_CONSUMER_SECRET=<application password>`) —
+> works because `WP_ENVIRONMENT_TYPE=local`. `scripts/wp.ps1` wraps WP-CLI for
+> the Local site. In woo mode, `npm run build` needs the WordPress site
+> running (shop/lab-reports prerender from it).
 
 ## Structure
 
