@@ -103,6 +103,37 @@ body {
   animation: troo-drift 18s ease-in-out infinite alternate-reverse;
 }
 
+/* Rich-text blocks converted from the Shopify metafield JSON */
+.rich-text p {
+  margin: 0 0 14px;
+}
+.rich-text p:last-child {
+  margin-bottom: 0;
+}
+.rich-text ul,
+.rich-text ol {
+  margin: 0 0 14px;
+  padding-left: 22px;
+}
+.rich-text li {
+  margin-bottom: 6px;
+}
+.rich-text a {
+  color: #1486c9;
+}
+.rich-text a:hover {
+  color: #d9368a;
+}
+.rich-text h1,
+.rich-text h2,
+.rich-text h3,
+.rich-text h4 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 18px 0 8px;
+  color: #151515;
+}
+
 @layer utilities {
   /* 5-color brand rule / bars */
   .bg-gradient-brand {
