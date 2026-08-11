@@ -15,7 +15,7 @@ import {
 import type { Category, Product } from "@/lib/types";
 import { useCart } from "@/store/cart";
 import { useUi } from "@/store/ui";
-import { fmt } from "@/lib/utils";
+import { cn, fmt } from "@/lib/utils";
 import { Chromatogram } from "./Chromatogram";
 import { Reveal } from "@/components/motion/Reveal";
 
@@ -85,8 +85,10 @@ export function ProductDetail({
   const cur = p.sizes.find((v) => v.size === size) ?? p.sizes[0];
   const galleryImg =
     cur?.image ?? p.images[0] ?? null;
+  const available = p.inStock && cur.inStock;
 
   const doAdd = () => {
+    if (!available) return;
     add(
       {
         productId: p.id,
@@ -114,10 +116,19 @@ export function ProductDetail({
     },
     { title: "Research Studies", html: p.researchStudies },
     { title: "References", html: p.references },
+    {
+      title: "Additional Notes",
+      html: p.additionalNotes
+        ? p.additionalNotes.startsWith("<")
+          ? p.additionalNotes
+          : `<p>${p.additionalNotes}</p>`
+        : "",
+    },
   ].filter((a) => a.html);
 
   const specs: [string, string][] = (
     [
+      ["Brand", p.vendor],
       ["Form", p.specs.form || "Lyophilized Powder"],
       ["Purity", p.specs.purity ? `${p.specs.purity} (Batch Verified)` : ""],
       ["Molecular Formula", p.specs.formula],
@@ -278,11 +289,21 @@ export function ProductDetail({
               </div>
               <button
                 onClick={doAdd}
-                className="inline-flex min-w-[260px] flex-1 cursor-pointer items-center justify-center gap-3 rounded-full bg-gradient-cta px-[30px] py-4 text-sm font-semibold uppercase tracking-[1.5px] text-white shadow-[0_10px_24px_rgba(20,134,201,.25)] hover:brightness-[1.06]"
+                disabled={!available}
+                className={cn(
+                  "inline-flex min-w-[260px] flex-1 items-center justify-center gap-3 rounded-full bg-gradient-cta px-[30px] py-4 text-sm font-semibold uppercase tracking-[1.5px] text-white shadow-[0_10px_24px_rgba(20,134,201,.25)]",
+                  available
+                    ? "cursor-pointer hover:brightness-[1.06]"
+                    : "cursor-not-allowed opacity-45",
+                )}
               >
                 <ShoppingCart size={17} strokeWidth={2} />
-                <span>Add to Cart — {fmt(cur.price * qty)}</span>
-                {cur.compareAt && (
+                <span>
+                  {available
+                    ? `Add to Cart — ${fmt(cur.price * qty)}`
+                    : "Out of Stock"}
+                </span>
+                {available && cur.compareAt && (
                   <span className="font-semibold line-through opacity-65">
                     {fmt(cur.compareAt * qty)}
                   </span>
@@ -295,10 +316,16 @@ export function ProductDetail({
                 <span className="font-semibold text-brand-green">✓</span>
                 Purity {p.specs.purity || "≥98%"} (batch verified)
               </span>
-              <span className="inline-flex items-center gap-[7px]">
-                <span className="font-semibold text-brand-green">✓</span>
-                In stock — ships same day
-              </span>
+              {available ? (
+                <span className="inline-flex items-center gap-[7px]">
+                  <span className="font-semibold text-brand-green">✓</span>
+                  In stock — ships same day
+                </span>
+              ) : (
+                <span className="inline-flex items-center gap-[7px] text-brand-pink">
+                  ✕ Currently out of stock
+                </span>
+              )}
               <a
                 href={p.coa?.file ?? "/lab-reports"}
                 target={p.coa ? "_blank" : undefined}

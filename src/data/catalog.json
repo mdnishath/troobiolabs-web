@@ -42,9 +42,11 @@
       "id": "wolverine-blend-bpc-157-tb-500",
       "name": "WOLVERINE Blend (BPC-157 + TB-500)",
       "sub": "BPC-157 + TB-500",
+      "vendor": "TrooPeptides",
       "cat": "tissue",
       "featured": true,
       "popular": true,
+      "inStock": true,
       "images": [
         "/images/products/wolverine-blend-bpc-157-tb-500/1.webp"
       ],
@@ -53,18 +55,23 @@
           "size": "10mg",
           "price": 55,
           "compareAt": 70,
-          "image": "/images/products/wolverine-blend-bpc-157-tb-500/1.webp"
+          "image": "/images/products/wolverine-blend-bpc-157-tb-500/1.webp",
+          "inStock": true
         },
         {
           "size": "20mg",
           "price": 90,
           "compareAt": 115,
-          "image": null
+          "image": null,
+          "inStock": true
         }
       ],
       "rating": 4.6,
       "reviews": 210,
       "shortDesc": "Two well-studied peptides, BPC-157 and TB-500, pre-mixed in fixed amounts and freeze-dried into one vial so labs don't have to combine them by hand. ≥98% pure (HPLC). For research use only.",
+      "seoTitle": "",
+      "seoDesc": "",
+      "additionalNotes": "",
       "longDescPlain": "<p>Two well-studied peptides, BPC-157 and TB-500, pre-mixed in fixed amounts and</p><p>freeze-dried into one vial so labs don't have to combine them by hand. ≥98% pure</p><p>(HPLC). For research use only.</p>",
       "longDescSci": "<p>Research-grade lyophilized peptide blend containing BPC-157 and TB-500, investigated for complementary modulation of growth factor signaling, actin-mediated cell migration, angiogenesis, and extracellular matrix remodeling. Lyophilized blend · ≥98% purity (HPLC) · studied in preclinical models of tissue repair signaling, regenerative biology, collagen remodeling, vascular biology, and coordinated cellular repair pathways.</p>",
       "moaPlain": "<p>A ready-made blend of two repair-signaling peptides — BPC-157 and TB-500 — for</p><p>studies that look at how they work together.</p>",
@@ -96,21 +103,27 @@
       "id": "acetic-acid-0-6",
       "name": "Acetic Acid 0.6%",
       "sub": "0.6% Sterile Solution",
+      "vendor": "Troo Bio-Labs",
       "cat": "supplies",
       "featured": false,
       "popular": false,
+      "inStock": true,
       "images": [],
       "sizes": [
         {
           "size": "10mg",
           "price": 15,
           "compareAt": 18,
-          "image": null
+          "image": null,
+          "inStock": true
         }
       ],
       "rating": 4.8,
       "reviews": 77,
       "shortDesc": "A sterile 0.6% acetic acid solution used in laboratory protocols for peptide preparation, solubilization, and pH adjustment.",
+      "seoTitle": "",
+      "seoDesc": "",
+      "additionalNotes": "",
       "longDescPlain": "<p>A sterile 0.6% acetic acid solution commonly used in laboratory settings for peptide solubilization, pH adjustment, and preparation of research compounds. Suitable for use in compatible laboratory protocols requiring a mildly acidic aqueous solution. For research use only.</p>",
       "longDescSci": "<p>Sterile 0.6% (v/v) acetic acid solution intended for laboratory applications including peptide solubilization, pH adjustment, and preparation of compatible research materials. Prepared as a dilute acidic aqueous reagent for research use only.</p>",
       "moaPlain": "<p>Provides a mildly acidic environment that helps dissolve and stabilize certain research compounds during laboratory preparation and reconstitution procedures.</p>",
@@ -135,9 +148,11 @@
       "id": "aod-9604",
       "name": "AOD-9604",
       "sub": "hGH Fragment 176-191",
+      "vendor": "Troo Bio-Labs",
       "cat": "metabolic",
       "featured": false,
       "popular": false,
+      "inStock": true,
       "images": [
         "/images/products/aod-9604/1.webp"
       ],
@@ -146,12 +161,16 @@
           "size": "5mg",
           "price": 50,
           "compareAt": 60,
-          "image": "/images/products/aod-9604/1.webp"
+          "image": "/images/products/aod-9604/1.webp",
+          "inStock": true
         }
       ],
       "rating": 4.6,
       "reviews": 18,
       "shortDesc": "A small piece of human growth hormone (residues 177–191), studied in the lab for fat-metabolism signaling. Freeze-dried powder, ≥98% pure (HPLC). For research use only",
+      "seoTitle": "",
+      "seoDesc": "",
+      "additionalNotes": "",
       "longDescPlain": "<p>A small piece of human growth hormone (residues 177–191), studied in the lab for fat-metabolism signaling. Freeze-dried powder, ≥98% pure (HPLC). For research use only.</p>",
       "longDescSci": "<p>Synthetic C-terminal human growth hormone fragment (residues 176–191) investigated for modulation of lipid metabolism independent of full-length growth hormone activity. Lyophilized powder · ≥98% purity (HPLC) · studied in preclinical models of adipocyte biology, lipolytic signaling, metabolic homeostasis, cartilage metabolism, and growth hormone fragment pharmacology.</p>",
       "moaPlain": "<p>A growth-hormone fragment studied for its effect on lipid metabolism without raising IGF-1.</p>",
@@ -180,33 +199,41 @@
       "id": "bacteriostatic-water",
       "name": "Bacteriostatic Water",
       "sub": "Reconstitution Solvent",
+      "vendor": "Troo Bio-Labs",
       "cat": "supplies",
       "featured": false,
       "popular": false,
+      "inStock": true,
       "images": [],
       "sizes": [
         {
           "size": "3ml",
           "price": 8,
           "compareAt": 10,
-          "image": null
+          "image": null,
+          "inStock": true
         },
         {
           "size": "10ml",
           "price": 15,
           "compareAt": 18,
-          "image": null
+          "image": null,
+          "inStock": true
         },
         {
           "size": "30ml",
           "price": 25,
           "compareAt": 30,
-          "image": null
+          "image": null,
+          "inStock": true
         }
       ],
       "rating": 4.8,
       "reviews": 149,
       "shortDesc": "Bacteriostatic water for laboratory reconstitution — Hospira 10mL multi-dose vial, USP-grade, preserved with 0.9% benzyl alcohol. Sold as a single or a 5-pack; one bottle is included free with qualifying orders.",
+      "seoTitle": "",
+      "seoDesc": "",
+      "additionalNotes": "",
       "longDescPlain": "<p>A sterile, non-pyrogenic water solution containing 0.9% benzyl alcohol as a bacteriostatic preservative. Commonly used in laboratory settings for the reconstitution and dilution of lyophilized research compounds when multiple withdrawals from the same vial are required. For research use only.</p>",
       "longDescSci": "<p>Sterile Water for Injection, USP, containing 0.9% (9 mg/mL) benzyl alcohol as a bacteriostatic preservative · intended for laboratory reconstitution and dilution of lyophilized research materials · multiple-dose formulation · research use only.</p>",
       "moaPlain": "<p>Provides a sterile aqueous vehicle for dissolving and diluting compatible lyophilized research compounds. The benzyl alcohol preservative helps inhibit bacterial growth within the solution during repeated laboratory withdrawals.</p>",
@@ -231,9 +258,11 @@
       "id": "bpc-157",
       "name": "BPC-157 (Body Protection Compound)",
       "sub": "Body Protection Compound",
+      "vendor": "Troo Bio-Labs",
       "cat": "tissue",
       "featured": false,
       "popular": true,
+      "inStock": true,
       "images": [
         "/images/products/bpc-157/1.webp",
         "/images/products/bpc-157/2.webp"
@@ -243,18 +272,23 @@
           "size": "5mg",
           "price": 30,
           "compareAt": 36,
-          "image": "/images/products/bpc-157/1.webp"
+          "image": "/images/products/bpc-157/1.webp",
+          "inStock": true
         },
         {
           "size": "10mg",
           "price": 55,
           "compareAt": 66,
-          "image": "/images/products/bpc-157/2.webp"
+          "image": "/images/products/bpc-157/2.webp",
+          "inStock": true
         }
       ],
       "rating": 4.8,
       "reviews": 213,
       "shortDesc": "A short peptide originally identified in stomach fluid, used in the lab to study how it affects tissue repair. Freeze-dried powder, ≥98% pure (HPLC). For research use only.",
+      "seoTitle": "",
+      "seoDesc": "",
+      "additionalNotes": "",
       "longDescPlain": "<p>A synthetic 15-amino-acid peptide originally derived from a naturally occurring gastric protein, studied in laboratory models for its role in tissue repair, angiogenesis, extracellular matrix remodeling, and cellular signaling. Freeze-dried powder, ≥98% purity (HPLC). For research use only.</p>",
       "longDescSci": "<p>Synthetic pentadecapeptide investigated for regulation of growth factor signaling, angiogenesis, and extracellular matrix remodeling. Lyophilized powder · ≥98% purity (HPLC) · studied in laboratory models of VEGF and EGF signaling, fibroblast activity, cell migration, cytoprotection, and regenerative biology.</p>",
       "moaPlain": "<p>A peptide studied for how it influences cellular repair processes by supporting growth factor signaling, blood vessel formation, and communication between cells involved in tissue maintenance and regeneration.</p>",
@@ -287,9 +321,11 @@
       "id": "cagrilintide",
       "name": "Cagrilintide",
       "sub": "Long-Acting Amylin Analog",
+      "vendor": "Troo Bio-Labs",
       "cat": "metabolic",
       "featured": false,
       "popular": false,
+      "inStock": true,
       "images": [
         "/images/products/cagrilintide/1.webp"
       ],
@@ -298,12 +334,16 @@
           "size": "10mg",
           "price": 70,
           "compareAt": 84,
-          "image": "/images/products/cagrilintide/1.webp"
+          "image": "/images/products/cagrilintide/1.webp",
+          "inStock": true
         }
       ],
       "rating": 4.8,
       "reviews": 129,
       "shortDesc": "Cagrilintide is the first long-acting amylin analogue being investigated for weight management as a once-weekly treatment",
+      "seoTitle": "",
+      "seoDesc": "",
+      "additionalNotes": "",
       "longDescPlain": "<p>Cagrilintide is the first long-acting amylin analogue being investigated for weight management as a once-weekly treatment, typically studied in combination with semaglutide. </p>",
       "longDescSci": "<p>Synthetic amylin receptor agonist investigated for modulation of amylin (AMYR) and calcitonin receptor (CTR) signaling through receptor activity-modifying protein (RAMP)-associated complexes. Lyophilized powder · ≥99% purity (HPLC) · studied in preclinical models of metabolic regulation, glucose-dependent endocrine signaling, energy balance, receptor pharmacology, and pancreatic hormone biology.</p>",
       "moaPlain": "<p>Cagrilintide acts as a nonselective agonist at amylin receptors (AMYR) and the calcitonin receptor (CTR).</p>",
@@ -332,9 +372,11 @@
       "id": "cjc-1295-no-dac-plus-ipamorelin",
       "name": "CJC-1295 (NO DAC) + Ipamorelin",
       "sub": "GHRH + GHRP Blend",
+      "vendor": "Troo Bio-Labs",
       "cat": "endocrine",
       "featured": false,
       "popular": true,
+      "inStock": true,
       "images": [
         "/images/products/cjc-1295-no-dac-plus-ipamorelin/1.webp"
       ],
@@ -343,12 +385,16 @@
           "size": "10mg",
           "price": 50,
           "compareAt": 60,
-          "image": "/images/products/cjc-1295-no-dac-plus-ipamorelin/1.webp"
+          "image": "/images/products/cjc-1295-no-dac-plus-ipamorelin/1.webp",
+          "inStock": true
         }
       ],
       "rating": 4.7,
       "reviews": 131,
       "shortDesc": "Two growth-hormone-axis peptides, CJC-1295 (No-DAC) and Ipamorelin, combined in one freeze-dried vial since research often studies this pairing together. For research use only; not for human consumption.",
+      "seoTitle": "",
+      "seoDesc": "",
+      "additionalNotes": "",
       "longDescPlain": "<p>Two growth-hormone-axis peptides, CJC-1295 (No-DAC) and Ipamorelin, combined in one freeze-dried vial since research often studies this pairing together. For research use only; not for human consumption.</p>",
       "longDescSci": "<p>Research-grade lyophilized peptide blend combining CJC-1295 (No DAC), a growth hormone-releasing hormone (GHRH) analog, and Ipamorelin, a selective growth hormone secretagogue receptor (GHS-R1a) agonist. Lyophilized blend · ≥98% purity (HPLC) · studied in laboratory models of pulsatile growth hormone secretion, growth hormone-releasing hormone receptor (GHRHR) and ghrelin receptor signaling, insulin-like growth factor-1 (IGF-1) regulation, pituitary physiology, and endocrine signaling pathways.</p>",
       "moaPlain": "<p>A two-peptide blend — CJC-1295 plus Ipamorelin — for studying how the growth-hormone system responds when both are used together.</p>",
@@ -381,21 +427,27 @@
       "id": "dsip",
       "name": "DSIP - (Delta Sleep Inducing Peptide)",
       "sub": "Delta Sleep-Inducing Peptide",
+      "vendor": "Troo Bio-Labs",
       "cat": "neural",
       "featured": false,
       "popular": false,
+      "inStock": true,
       "images": [],
       "sizes": [
         {
           "size": "10mg",
           "price": 35,
           "compareAt": 42,
-          "image": null
+          "image": null,
+          "inStock": true
         }
       ],
       "rating": 4.8,
       "reviews": 200,
       "shortDesc": "A naturally occurring neuropeptide investigated in laboratory models for its role in sleep regulation, stress-response signaling, and central nervous system pathways.",
+      "seoTitle": "",
+      "seoDesc": "",
+      "additionalNotes": "",
       "longDescPlain": "<p>A naturally occurring nonapeptide studied in laboratory models for its role in neuroendocrine signaling, neurotransmitter regulation, stress-response pathways, and central nervous system physiology. Lyophilized powder · ≥98% purity (HPLC). For research use only.</p>",
       "longDescSci": "<p>Naturally occurring nonapeptide investigated for modulation of neuroendocrine signaling and central nervous system communication. Lyophilized powder · ≥98% purity (HPLC) · studied in laboratory models of hypothalamic-pituitary axis regulation, neurotransmitter signaling, stress-response pathways, neuronal communication, and neurophysiology.</p>",
       "moaPlain": "<p><strong>A neuropeptide studied for how it influences communication between the brain and endocrine system by regulating neurotransmitter activity, stress-response signaling, and neuroendocrine pathways.</strong></p>",
@@ -427,9 +479,11 @@
       "id": "ghk-cu",
       "name": "GHK-Cu",
       "sub": "Copper Tripeptide-1",
+      "vendor": "Troo Bio-Labs",
       "cat": "tissue",
       "featured": false,
       "popular": false,
+      "inStock": true,
       "images": [
         "/images/products/ghk-cu/1.webp",
         "/images/products/ghk-cu/2.webp"
@@ -439,18 +493,23 @@
           "size": "50mg",
           "price": 60,
           "compareAt": 72,
-          "image": "/images/products/ghk-cu/1.webp"
+          "image": "/images/products/ghk-cu/1.webp",
+          "inStock": true
         },
         {
           "size": "100mg",
           "price": 110,
           "compareAt": 132,
-          "image": "/images/products/ghk-cu/2.webp"
+          "image": "/images/products/ghk-cu/2.webp",
+          "inStock": true
         }
       ],
       "rating": 4.7,
       "reviews": 23,
       "shortDesc": "A small peptide bound to copper, first found in human plasma, studied for how it affects collagen and the extracellular matrix. Freeze-dried powder, ≥98% pure (HPLC). For research use only.",
+      "seoTitle": "",
+      "seoDesc": "",
+      "additionalNotes": "",
       "longDescPlain": "<p>A small peptide bound to copper, first found in human plasma, studied for how it affects collagen and the extracellular matrix. Freeze-dried powder, ≥98% pure (HPLC). For research use only.</p>",
       "longDescSci": "<p>Copper-binding tripeptide (Gly-His-Lys:Cu²⁺) investigated for modulation of extracellular matrix signaling and copper-dependent biological pathways. Lyophilized powder · ≥98% purity (HPLC) · studied in preclinical models of collagen synthesis, fibroblast activity, angiogenesis, antioxidant defense, tissue remodeling, and regenerative biology.</p>",
       "moaPlain": "<p>A copper-carrying peptide studied for its role in collagen production and rebuilding the support structure around cells.</p>",
@@ -482,9 +541,11 @@
       "id": "glow-blend",
       "name": "GLOW Blend (GHK-Cu + BPC-157 + TB-500)",
       "sub": "GHK-Cu + BPC-157 + TB-500",
+      "vendor": "Troo Bio-Labs",
       "cat": "tissue",
       "featured": false,
       "popular": false,
+      "inStock": true,
       "images": [
         "/images/products/glow-blend/1.webp"
       ],
@@ -493,12 +554,16 @@
           "size": "70mg",
           "price": 120,
           "compareAt": 144,
-          "image": "/images/products/glow-blend/1.webp"
+          "image": "/images/products/glow-blend/1.webp",
+          "inStock": true
         }
       ],
       "rating": 4.7,
       "reviews": 51,
       "shortDesc": "Three of the most-studied repair peptides — GHK-Cu, BPC-157, and TB-500 — combined in a single freeze-dried vial for regenerative-biology research. For research use only; not for human consumption.",
+      "seoTitle": "",
+      "seoDesc": "",
+      "additionalNotes": "",
       "longDescPlain": "<p>Three of the most-studied repair peptides — GHK-Cu, BPC-157, and TB-500 — combined in a single freeze-dried vial for regenerative-biology research. For research use only; not for human consumption.</p>",
       "longDescSci": "<p>Research-grade lyophilized peptide blend combining GHK-Cu, BPC-157, and TB-500, investigated for complementary activity across extracellular matrix remodeling, angiogenesis, cytoskeletal organization, and tissue repair signaling pathways. Lyophilized blend · ≥98% purity (HPLC) · studied in laboratory models of collagen synthesis, cell migration, regenerative biology, wound repair, and multi-pathway tissue remodeling.</p>",
       "moaPlain": "<p>A three-peptide blend — GHK-Cu, BPC-157, and TB-500 — for studies on tissue repair, blood-vessel growth, and collagen signaling.</p>",
@@ -531,9 +596,11 @@
       "id": "glp-1-s",
       "name": "GLP-1 (S)",
       "sub": "GLP-1 Receptor Agonist",
+      "vendor": "Troo Bio-Labs",
       "cat": "metabolic",
       "featured": false,
       "popular": true,
+      "inStock": true,
       "images": [
         "/images/products/glp-1-s/1.webp",
         "/images/products/glp-1-s/2.webp"
@@ -543,18 +610,23 @@
           "size": "5mg",
           "price": 50,
           "compareAt": 60,
-          "image": "/images/products/glp-1-s/1.webp"
+          "image": "/images/products/glp-1-s/1.webp",
+          "inStock": true
         },
         {
           "size": "10mg",
           "price": 90,
           "compareAt": 108,
-          "image": "/images/products/glp-1-s/2.webp"
+          "image": "/images/products/glp-1-s/2.webp",
+          "inStock": true
         }
       ],
       "rating": 4.7,
       "reviews": 103,
       "shortDesc": "Biologically active form of glucagon-like peptide-1 (residues 7–36, amidated) · lyophilized powder · ≥98% purity (HPLC) · MW 3297.68 Da.",
+      "seoTitle": "",
+      "seoDesc": "",
+      "additionalNotes": "",
       "longDescPlain": "<p>The active form of glucagon-like peptide-1, a natural 'incretin' hormone, studied for its role in glucose-dependent insulin signaling. Freeze-dried powder, ≥98% pure (HPLC). For research use only.</p>",
       "longDescSci": "<p>Biologically active glucagon-like peptide-1 (GLP-1) receptor agonist investigated for selective activation of glucagon-like peptide-1 receptors (GLP-1R). Lyophilized powder · ≥98% purity (HPLC) · studied in laboratory models of incretin signaling, glucose-dependent insulin secretion, pancreatic islet biology, metabolic regulation, and energy homeostasis.</p>",
       "moaPlain": "<p>A natural gut hormone studied for how it triggers insulin release in response to glucose.</p>",
@@ -583,9 +655,11 @@
       "id": "glp-1-gip-t",
       "name": "GLP-1 / GIP (T)",
       "sub": "GIP / GLP-1 Dual Agonist",
+      "vendor": "Troo Bio-Labs",
       "cat": "metabolic",
       "featured": false,
       "popular": true,
+      "inStock": true,
       "images": [
         "/images/products/glp-1-gip-t/1.webp",
         "/images/products/glp-1-gip-t/2.webp",
@@ -597,24 +671,30 @@
           "size": "10mg",
           "price": 75,
           "compareAt": 90,
-          "image": "/images/products/glp-1-gip-t/1.webp"
+          "image": "/images/products/glp-1-gip-t/1.webp",
+          "inStock": true
         },
         {
           "size": "15mg",
           "price": 95,
           "compareAt": 114,
-          "image": "/images/products/glp-1-gip-t/2.webp"
+          "image": "/images/products/glp-1-gip-t/2.webp",
+          "inStock": true
         },
         {
           "size": "30mg",
           "price": 140,
           "compareAt": 168,
-          "image": "/images/products/glp-1-gip-t/3.webp"
+          "image": "/images/products/glp-1-gip-t/3.webp",
+          "inStock": true
         }
       ],
       "rating": 4.8,
       "reviews": 177,
       "shortDesc": "A 33-amino-acid peptide made by cells in the gut, studied for its role in intestinal-lining signaling. Freeze-dried powder, ≥98% pure (HPLC). For research use only.",
+      "seoTitle": "",
+      "seoDesc": "",
+      "additionalNotes": "",
       "longDescPlain": "<p>A dual incretin receptor agonist studied in laboratory models for its role in GLP-1 and GIP receptor signaling, metabolic regulation, and glucose-dependent endocrine pathways. Freeze-dried powder, ≥98% purity (HPLC). For research use only.</p>",
       "longDescSci": "<p>Synthetic dual incretin receptor agonist peptide investigated for simultaneous activation of glucagon-like peptide-1 (GLP-1R) and glucose-dependent insulinotropic polypeptide (GIPR) receptors. Lyophilized powder · ≥98% purity (HPLC) · studied in laboratory models of incretin signaling, glucose-dependent insulin secretion, pancreatic islet biology, metabolic regulation, and energy homeostasis.</p>",
       "moaPlain": "<p>A dual-incretin peptide studied for how it activates both GLP-1 and GIP receptors to investigate metabolic signaling, insulin secretion, and energy regulation.</p>",
@@ -646,9 +726,11 @@
       "id": "glp-3-r",
       "name": "GLP-3 (R)",
       "sub": "Triple Receptor Agonist",
+      "vendor": "Troo Bio-Labs",
       "cat": "metabolic",
       "featured": false,
       "popular": false,
+      "inStock": true,
       "images": [
         "/images/products/glp-3-r/1.webp",
         "/images/products/glp-3-r/2.webp",
@@ -659,24 +741,30 @@
           "size": "10mg",
           "price": 95,
           "compareAt": 114,
-          "image": "/images/products/glp-3-r/1.webp"
+          "image": "/images/products/glp-3-r/1.webp",
+          "inStock": true
         },
         {
           "size": "15mg",
           "price": 135,
           "compareAt": 162,
-          "image": "/images/products/glp-3-r/2.webp"
+          "image": "/images/products/glp-3-r/2.webp",
+          "inStock": true
         },
         {
           "size": "30mg",
           "price": 180,
           "compareAt": 216,
-          "image": "/images/products/glp-3-r/3.webp"
+          "image": "/images/products/glp-3-r/3.webp",
+          "inStock": true
         }
       ],
       "rating": 4.8,
       "reviews": 24,
       "shortDesc": "A 'triple agonist' peptide that engages the GLP-1, GIP, and glucagon receptors together, studied in metabolic research. Freeze-dried powder, ≥98% pure (HPLC). For research use only.",
+      "seoTitle": "",
+      "seoDesc": "",
+      "additionalNotes": "",
       "longDescPlain": "<p>A 'triple agonist' peptide that engages the GLP-1, GIP, and glucagon receptors together, studied in metabolic research. Freeze-dried powder, ≥98% pure (HPLC). For research use only.</p>",
       "longDescSci": "<p>Synthetic triple receptor agonist peptide investigated for simultaneous activation of glucagon-like peptide-1 (GLP-1R), glucose-dependent insulinotropic polypeptide (GIPR), and glucagon (GCGR) receptors. Lyophilized powder · ≥98% purity (HPLC) · studied in laboratory models of incretin receptor signaling, glucose metabolism, energy homeostasis, pancreatic islet biology, and metabolic regulation.</p>",
       "moaPlain": "<p>A peptide studied for engaging three metabolic receptors at once — GLP-1, GIP, and glucagon</p>",
@@ -708,9 +796,11 @@
       "id": "hexarelin",
       "name": "Hexarelin",
       "sub": "GH Secretagogue",
+      "vendor": "Troo Bio-Labs",
       "cat": "endocrine",
       "featured": false,
       "popular": false,
+      "inStock": true,
       "images": [
         "/images/products/hexarelin/1.webp"
       ],
@@ -719,12 +809,16 @@
           "size": "10mg",
           "price": 100,
           "compareAt": 120,
-          "image": "/images/products/hexarelin/1.webp"
+          "image": "/images/products/hexarelin/1.webp",
+          "inStock": true
         }
       ],
       "rating": 4.6,
       "reviews": 194,
       "shortDesc": "Primarily in research for studying growth hormone release, ghrelin receptor (GHS-R1a) signaling",
+      "seoTitle": "",
+      "seoDesc": "",
+      "additionalNotes": "",
       "longDescPlain": "<p>Primarily in research for studying growth hormone release, ghrelin receptor (GHS-R1a) signaling</p>",
       "longDescSci": "<p>Synthetic hexapeptide growth hormone secretagogue investigated for selective activation of the growth hormone secretagogue receptor (GHS-R1a). Lyophilized powder · ≥98% purity (HPLC) · studied in laboratory models of ghrelin receptor pharmacology, pulsatile growth hormone secretion, pituitary signaling, insulin-like growth factor-1 (IGF-1) regulation, and endocrine physiology.</p>",
       "moaPlain": "<p>acts by binding to and activating the growth hormone secretagogue receptor (GHS-R1a), stimulating pituitary growth hormone release while modulating ghrelin-mediated signaling pathways involved in IGF-1 production, tissue repair, and cellular metabolic regulation.</p>",
@@ -756,9 +850,11 @@
       "id": "ipamorelin",
       "name": "Ipamorelin",
       "sub": "Selective GH Secretagogue",
+      "vendor": "Troo Bio-Labs",
       "cat": "endocrine",
       "featured": false,
       "popular": false,
+      "inStock": true,
       "images": [
         "/images/products/ipamorelin/1.webp"
       ],
@@ -767,12 +863,16 @@
           "size": "10mg",
           "price": 70,
           "compareAt": 84,
-          "image": "/images/products/ipamorelin/1.webp"
+          "image": "/images/products/ipamorelin/1.webp",
+          "inStock": true
         }
       ],
       "rating": 4.8,
       "reviews": 100,
       "shortDesc": "A five-amino-acid peptide that selectively switches on the ghrelin receptor, studied for triggering growth-hormone release with few off-target hormone effects. For research use only.",
+      "seoTitle": "",
+      "seoDesc": "",
+      "additionalNotes": "",
       "longDescPlain": "<p>A five-amino-acid peptide that selectively switches on the ghrelin receptor, studied for triggering growth-hormone release with few off-target hormone effects. For research use only.</p>",
       "longDescSci": "<p>Synthetic pentapeptide growth hormone secretagogue investigated for selective activation of the growth hormone secretagogue receptor (GHS-R1a). Lyophilized powder · ≥98% purity (HPLC) · studied in laboratory models of growth hormone secretion, ghrelin receptor pharmacology, pituitary signaling, insulin-like growth factor-1 (IGF-1) regulation, and endocrine physiology.</p>",
       "moaPlain": "<p>A peptide studied for prompting growth-hormone release while leaving other hormones like cortisol largely untouched.</p>",
@@ -801,9 +901,11 @@
       "id": "kisspeptin",
       "name": "Kisspeptin",
       "sub": "KISS1 Neuropeptide",
+      "vendor": "Troo Bio-Labs",
       "cat": "endocrine",
       "featured": false,
       "popular": false,
+      "inStock": true,
       "images": [
         "/images/products/kisspeptin/1.webp"
       ],
@@ -812,12 +914,16 @@
           "size": "10mg",
           "price": 65,
           "compareAt": 78,
-          "image": "/images/products/kisspeptin/1.webp"
+          "image": "/images/products/kisspeptin/1.webp",
+          "inStock": true
         }
       ],
       "rating": 4.6,
       "reviews": 62,
       "shortDesc": "A peptide made from the KISS1 gene, studied for its role in activating the neurons that drive the reproductive hormone system. For research use only.",
+      "seoTitle": "",
+      "seoDesc": "",
+      "additionalNotes": "",
       "longDescPlain": "<p>A peptide made from the KISS1 gene, studied for its role in activating the neurons that drive the reproductive hormone system. For research use only.</p>",
       "longDescSci": "<p>Synthetic kisspeptin peptide investigated for activation of the G protein-coupled kisspeptin receptor (KISS1R/GPR54) and downstream neuroendocrine signaling. Lyophilized powder · ≥98% purity (HPLC) · studied in laboratory models of hypothalamic-pituitary-gonadal (HPG) axis regulation, gonadotropin-releasing hormone (GnRH) secretion, reproductive endocrinology, and neuroendocrine signaling pathways.</p>",
       "moaPlain": "<p>A signaling peptide studied for how it switches on the brain circuits that control reproductive hormones.</p>",
@@ -849,9 +955,11 @@
       "id": "klow-blend",
       "name": "KLOW Blend (GHK-Cu + TB-500 + BPC-157 + KPV)",
       "sub": "GHK-Cu + TB-500 + BPC-157 + KPV",
+      "vendor": "Troo Bio-Labs",
       "cat": "tissue",
       "featured": false,
       "popular": false,
+      "inStock": true,
       "images": [
         "/images/products/klow-blend/1.webp"
       ],
@@ -860,12 +968,16 @@
           "size": "80mg",
           "price": 135,
           "compareAt": 162,
-          "image": "/images/products/klow-blend/1.webp"
+          "image": "/images/products/klow-blend/1.webp",
+          "inStock": true
         }
       ],
       "rating": 4.7,
       "reviews": 31,
       "shortDesc": "The three-peptide Glow blend with a fourth peptide, KPV, added for inflammation-pathway research — four well-studied peptides in one freeze-dried vial. For research use only; not for human consumption.",
+      "seoTitle": "",
+      "seoDesc": "",
+      "additionalNotes": "",
       "longDescPlain": "<p>A research-grade blend combining GHK-Cu, TB-500, BPC-157, and KPV, studied in laboratory models for complementary roles in tissue repair signaling, extracellular matrix remodeling, inflammatory pathways, angiogenesis, and cellular communication. Lyophilized blend · ≥98% purity (HPLC). For research use only.</p>",
       "longDescSci": "<p>Research-grade lyophilized peptide blend combining GHK-Cu, TB-500, BPC-157, and KPV, investigated for complementary modulation of extracellular matrix remodeling, growth factor signaling, actin-mediated cell migration, angiogenesis, inflammatory signaling, and epithelial biology. Lyophilized blend · ≥98% purity (HPLC) · studied in laboratory models of regenerative biology, collagen synthesis, cytokine regulation, wound repair signaling, and multi-mechanism tissue remodeling.</p>",
       "moaPlain": "<p>A four-peptide blend studied for how multiple signaling pathways work together to regulate tissue repair, collagen production, blood vessel formation, inflammatory signaling, and communication between cells involved in tissue maintenance and regeneration.</p>",
@@ -900,21 +1012,27 @@
       "id": "kpv",
       "name": "KPV",
       "sub": "α-MSH Fragment (Lys-Pro-Val)",
+      "vendor": "Troo Bio-Labs",
       "cat": "tissue",
       "featured": false,
       "popular": false,
+      "inStock": true,
       "images": [],
       "sizes": [
         {
           "size": "10mg",
           "price": 45,
           "compareAt": 54,
-          "image": null
+          "image": null,
+          "inStock": true
         }
       ],
       "rating": 4.7,
       "reviews": 35,
       "shortDesc": "A naturally occurring tripeptide fragment of alpha-melanocyte-stimulating hormone (α-MSH) studied for its role in inflammatory signaling, immune response pathways, and epithelial biology.",
+      "seoTitle": "",
+      "seoDesc": "",
+      "additionalNotes": "",
       "longDescPlain": "<p>A naturally occurring tripeptide fragment of alpha-melanocyte-stimulating hormone (α-MSH), studied in laboratory models for its role in inflammatory signaling, immune regulation, epithelial biology, and cellular communication. Freeze-dried powder, ≥98% purity (HPLC). For research use only.</p>",
       "longDescSci": "<p>Synthetic α-melanocyte-stimulating hormone (α-MSH)-derived tripeptide investigated for modulation of inflammatory signaling and immune regulatory pathways. Lyophilized powder · ≥98% purity (HPLC) · studied in laboratory models of cytokine regulation, NF-κB signaling, epithelial barrier biology, innate immune communication, and cellular inflammatory responses.</p>",
       "moaPlain": "<p>A tripeptide studied for how it influences inflammatory signaling by regulating communication between immune and epithelial cells and supporting balanced cytokine activity during laboratory investigations.</p>",
@@ -946,21 +1064,27 @@
       "id": "l-glutathione",
       "name": "L-Glutathione",
       "sub": "Reduced Glutathione (GSH)",
+      "vendor": "Troo Bio-Labs",
       "cat": "cellular",
       "featured": false,
       "popular": false,
+      "inStock": true,
       "images": [],
       "sizes": [
         {
           "size": "500mg",
           "price": 45,
           "compareAt": 54,
-          "image": null
+          "image": null,
+          "inStock": true
         }
       ],
       "rating": 4.7,
       "reviews": 39,
       "shortDesc": "A naturally occurring tripeptide composed of glutamine, cysteine, and glycine, studied for its role in antioxidant defense, cellular redox balance, and detoxification pathways.",
+      "seoTitle": "",
+      "seoDesc": "",
+      "additionalNotes": "",
       "longDescPlain": "<p>A naturally occurring tripeptide composed of glutamate, cysteine, and glycine, studied in laboratory models for its role in antioxidant defense, cellular redox balance, detoxification pathways, and mitochondrial function. Freeze-dried powder, ≥98% purity (HPLC). For research use only.</p>",
       "longDescSci": "<p>Naturally occurring tripeptide investigated for regulation of cellular redox homeostasis and antioxidant defense mechanisms. Lyophilized powder · ≥98% purity (HPLC) · studied in laboratory models of glutathione-dependent enzymatic activity, reactive oxygen species (ROS) regulation, mitochondrial function, detoxification pathways, and cellular metabolism.</p>",
       "moaPlain": "<p>A naturally occurring antioxidant peptide studied for how it helps maintain cellular redox balance by neutralizing reactive oxygen species and supporting antioxidant enzyme systems involved in cellular protection and metabolism.</p>",
@@ -992,21 +1116,27 @@
       "id": "melanotan-ii",
       "name": "Melanotan II",
       "sub": "Melanocortin Agonist",
+      "vendor": "Troo Bio-Labs",
       "cat": "endocrine",
       "featured": false,
       "popular": false,
+      "inStock": true,
       "images": [],
       "sizes": [
         {
           "size": "10mg",
           "price": 50,
           "compareAt": 60,
-          "image": null
+          "image": null,
+          "inStock": true
         }
       ],
       "rating": 4.8,
       "reviews": 20,
       "shortDesc": "A synthetic cyclic analog of alpha-MSH. Studied for non-selective agonist activity at multiple melanocortin receptor subtypes (MC1R through MC5R) and downstream cAMP signaling.",
+      "seoTitle": "",
+      "seoDesc": "",
+      "additionalNotes": "",
       "longDescPlain": "<p>A synthetic cyclic analog of alpha-MSH. Studied for non-selective agonist activity at multiple melanocortin receptor subtypes (MC1R through MC5R) and downstream cAMP signaling.</p>",
       "longDescSci": "<p>Synthetic cyclic alpha-melanocyte-stimulating hormone (α-MSH) analog investigated for non-selective activation of melanocortin receptor subtypes (MC1R–MC5R). Lyophilized powder · ≥98% purity (HPLC) · studied in laboratory models of melanocortin receptor pharmacology, cAMP-mediated intracellular signaling, neuroendocrine regulation, pigmentation biology, energy homeostasis, and central nervous system signaling.</p>",
       "moaPlain": "<p>A peptide studied for how it binds the whole family of melanocortin receptors, including the one tied to pigment signaling.</p>",
@@ -1035,9 +1165,11 @@
       "id": "mots-c",
       "name": "MOTS-c",
       "sub": "Mitochondrial-Derived Peptide",
+      "vendor": "Troo Bio-Labs",
       "cat": "cellular",
       "featured": false,
       "popular": false,
+      "inStock": true,
       "images": [
         "/images/products/mots-c/1.webp"
       ],
@@ -1046,12 +1178,16 @@
           "size": "10mg",
           "price": 70,
           "compareAt": 84,
-          "image": "/images/products/mots-c/1.webp"
+          "image": "/images/products/mots-c/1.webp",
+          "inStock": true
         }
       ],
       "rating": 4.8,
       "reviews": 73,
       "shortDesc": "A 16-amino-acid peptide encoded within mitochondrial DNA, studied for its role in cellular energy and metabolism. Freeze-dried powder, ≥98% pure (HPLC). For research use only.",
+      "seoTitle": "",
+      "seoDesc": "",
+      "additionalNotes": "",
       "longDescPlain": "<p>A 16-amino-acid peptide encoded within mitochondrial DNA, studied for its role in cellular energy and metabolism. Freeze-dried powder, ≥98% pure (HPLC). For research use only.</p>",
       "longDescSci": "<p>Mitochondrial-derived 16-amino-acid peptide (MDP) investigated for regulation of cellular energy homeostasis and metabolic signaling. Lyophilized powder · ≥98% purity (HPLC) · studied in laboratory models of mitochondrial function, AMP-activated protein kinase (AMPK) signaling, glucose metabolism, insulin sensitivity, and cellular stress-response pathways.</p>",
       "moaPlain": "<p>A peptide made inside mitochondria, studied for how it switches on AMPK — a key cellular energy-and-metabolism sensor.</p>",
@@ -1080,9 +1216,11 @@
       "id": "nad-plus",
       "name": "NAD+",
       "sub": "Nicotinamide Adenine Dinucleotide",
+      "vendor": "Troo Bio-Labs",
       "cat": "cellular",
       "featured": false,
       "popular": false,
+      "inStock": true,
       "images": [
         "/images/products/nad-plus/1.webp",
         "/images/products/nad-plus/2.webp"
@@ -1092,18 +1230,23 @@
           "size": "500mg",
           "price": 110,
           "compareAt": 132,
-          "image": "/images/products/nad-plus/1.webp"
+          "image": "/images/products/nad-plus/1.webp",
+          "inStock": true
         },
         {
           "size": "1000mg",
           "price": 180,
           "compareAt": 216,
-          "image": "/images/products/nad-plus/2.webp"
+          "image": "/images/products/nad-plus/2.webp",
+          "inStock": true
         }
       ],
       "rating": 4.8,
       "reviews": 152,
       "shortDesc": "Nicotinamide adenine dinucleotide — a coenzyme every cell uses for energy — studied for its roles in metabolism, DNA repair, and sirtuin signaling. Freeze-dried powder, ≥98% pure (HPLC). For research use only.",
+      "seoTitle": "",
+      "seoDesc": "",
+      "additionalNotes": "",
       "longDescPlain": "<p>Nicotinamide adenine dinucleotide — a coenzyme every cell uses for energy — studied for its roles in metabolism, DNA repair, and sirtuin signaling. Freeze-dried powder, ≥98% pure (HPLC). For research use only.</p>",
       "longDescSci": "<p>Nicotinamide adenine dinucleotide (NAD+) investigated as a central redox coenzyme involved in cellular energy metabolism and enzymatic signaling. Lyophilized powder · ≥98% purity (HPLC) · studied in laboratory models of mitochondrial bioenergetics, sirtuin activation, poly(ADP-ribose) polymerase (PARP) activity, DNA repair, cellular metabolism, and redox homeostasis.</p>",
       "moaPlain": "<p>A core cellular molecule studied for its part in energy production, DNA repair, and 'longevity' enzyme (sirtuin) activity.</p>",
@@ -1135,9 +1278,11 @@
       "id": "oxytocin",
       "name": "Oxytocin",
       "sub": "Nonapeptide Hormone",
+      "vendor": "Troo Bio-Labs",
       "cat": "neural",
       "featured": false,
       "popular": false,
+      "inStock": true,
       "images": [
         "/images/products/oxytocin/1.webp"
       ],
@@ -1146,12 +1291,16 @@
           "size": "5mg",
           "price": 90,
           "compareAt": 108,
-          "image": "/images/products/oxytocin/1.webp"
+          "image": "/images/products/oxytocin/1.webp",
+          "inStock": true
         }
       ],
       "rating": 4.7,
       "reviews": 215,
       "shortDesc": "naturally occurring neuropeptide hormone widely studied for its role in social bonding, stress regulation, reproductive physiology, neuromodulation, and metabolic signaling pathways.",
+      "seoTitle": "",
+      "seoDesc": "",
+      "additionalNotes": "",
       "longDescPlain": "<p>Oxytocin is a naturally occurring neuropeptide hormone widely studied for its role in social bonding, stress regulation, reproductive physiology, neuromodulation, and metabolic signaling pathways.</p>",
       "longDescSci": "<p>Synthetic oxytocin peptide investigated for activation of oxytocin receptors (OXTR) and downstream G protein-coupled signaling pathways. Lyophilized powder · ≥98% purity (HPLC) · studied in laboratory models of neuroendocrine signaling, neurotransmission, social behavior, reproductive physiology, stress response, and metabolic regulation.</p>",
       "moaPlain": "<p>acts by binding to oxytocin receptors (OXTR), a G-protein coupled receptor, triggering intracellular calcium signaling pathways that regulate smooth muscle contraction, neurotransmission, social behavior, and neuroendocrine responses.</p>",
@@ -1180,9 +1329,11 @@
       "id": "pt-141",
       "name": "PT-141",
       "sub": "Bremelanotide",
+      "vendor": "Troo Bio-Labs",
       "cat": "endocrine",
       "featured": false,
       "popular": false,
+      "inStock": true,
       "images": [
         "/images/products/pt-141/1.webp"
       ],
@@ -1191,12 +1342,16 @@
           "size": "10mg",
           "price": 55,
           "compareAt": 66,
-          "image": "/images/products/pt-141/1.webp"
+          "image": "/images/products/pt-141/1.webp",
+          "inStock": true
         }
       ],
       "rating": 4.7,
       "reviews": 111,
       "shortDesc": "A small cyclic peptide that acts on the MC3R and MC4R melanocortin receptors, studied for its effects on central-nervous-system signaling. For research use only.",
+      "seoTitle": "",
+      "seoDesc": "",
+      "additionalNotes": "",
       "longDescPlain": "<p>A small cyclic peptide that acts on the MC3R and MC4R melanocortin receptors, studied for its effects on central-nervous-system signaling. For research use only.</p>",
       "longDescSci": "<p>Synthetic cyclic melanocortin receptor agonist investigated for activation of melanocortin-3 (MC3R) and melanocortin-4 (MC4R) receptors. Lyophilized powder · ≥98% purity (HPLC) · studied in laboratory models of melanocortin signaling, neuroendocrine regulation, appetite pathways, and central nervous system function.</p>",
       "moaPlain": "<p>A peptide studied for how it activates melanocortin signaling pathways in the central nervous system.</p>",
@@ -1228,9 +1383,11 @@
       "id": "selank",
       "name": "Selank",
       "sub": "Anxiolytic Heptapeptide",
+      "vendor": "Troo Bio-Labs",
       "cat": "neural",
       "featured": false,
       "popular": false,
+      "inStock": true,
       "images": [
         "/images/products/selank/1.webp"
       ],
@@ -1239,12 +1396,16 @@
           "size": "10mg",
           "price": 45,
           "compareAt": 54,
-          "image": "/images/products/selank/1.webp"
+          "image": "/images/products/selank/1.webp",
+          "inStock": true
         }
       ],
       "rating": 4.6,
       "reviews": 166,
       "shortDesc": "A lab-made, longer-lasting version of the natural peptide tuftsin, studied for its effects on neurotransmitters and brain-growth signaling (BDNF). For research use only.",
+      "seoTitle": "",
+      "seoDesc": "",
+      "additionalNotes": "",
       "longDescPlain": "<p>A lab-made, longer-lasting version of the natural peptide tuftsin, studied for its effects on neurotransmitters and brain-growth signaling (BDNF). For research use only.</p>",
       "longDescSci": "<p>Synthetic heptapeptide analog of tuftsin investigated for modulation of central nervous system signaling and neuroimmune interactions. Lyophilized powder · ≥98% purity (HPLC) · studied in preclinical models of neurotransmitter regulation, BDNF expression, synaptic plasticity, neurotrophic signaling, and neuronal function.</p>",
       "moaPlain": "<p>A peptide studied in behavior models for calming-type effects and its influence on brain messengers and BDNF.</p>",
@@ -1276,9 +1437,11 @@
       "id": "semax",
       "name": "Semax",
       "sub": "Nootropic Heptapeptide",
+      "vendor": "Troo Bio-Labs",
       "cat": "neural",
       "featured": false,
       "popular": false,
+      "inStock": true,
       "images": [
         "/images/products/semax/1.webp"
       ],
@@ -1287,12 +1450,16 @@
           "size": "10mg",
           "price": 45,
           "compareAt": 54,
-          "image": "/images/products/semax/1.webp"
+          "image": "/images/products/semax/1.webp",
+          "inStock": true
         }
       ],
       "rating": 4.8,
       "reviews": 100,
       "shortDesc": "A synthetic fragment of the natural hormone ACTH, modified to last longer, studied in brain-tissue models for its effect on nerve-growth signaling. For research use only.",
+      "seoTitle": "",
+      "seoDesc": "",
+      "additionalNotes": "",
       "longDescPlain": "<p>A synthetic fragment of the natural hormone ACTH, modified to last longer, studied in brain-tissue models for its effect on nerve-growth signaling. For research use only.</p>",
       "longDescSci": "<p>Synthetic ACTH (4-10) analog with a Pro-Gly-Pro extension investigated for neurotrophic signaling and central nervous system biology. Lyophilized powder · ≥98% purity (HPLC) · studied in laboratory models of brain-derived neurotrophic factor (BDNF) and nerve growth factor (NGF) expression, synaptic plasticity, neuroprotection, and neuronal signaling pathways.</p>",
       "moaPlain": "<p>A peptide studied for nerve-supporting activity, including its effect on the brain growth factors BDNF and NGF.</p>",
@@ -1321,9 +1488,11 @@
       "id": "sermorelin",
       "name": "Sermorelin",
       "sub": "GHRH (1-29) Analog",
+      "vendor": "Troo Bio-Labs",
       "cat": "endocrine",
       "featured": false,
       "popular": false,
+      "inStock": true,
       "images": [
         "/images/products/sermorelin/1.webp"
       ],
@@ -1332,12 +1501,16 @@
           "size": "5mg",
           "price": 40,
           "compareAt": 48,
-          "image": "/images/products/sermorelin/1.webp"
+          "image": "/images/products/sermorelin/1.webp",
+          "inStock": true
         }
       ],
       "rating": 4.6,
       "reviews": 182,
       "shortDesc": "synthetic growth hormone-releasing hormone (GHRH 1-29) analog widely studied for its ability to stimulate endogenous growth hormone secretion and investigate endocrine regulation, tissue repair, and anabolic signaling pathways.",
+      "seoTitle": "",
+      "seoDesc": "",
+      "additionalNotes": "",
       "longDescPlain": "<p>synthetic growth hormone-releasing hormone (GHRH 1-29) analog widely studied for its ability to stimulate endogenous growth hormone secretion and investigate endocrine regulation, tissue repair, and anabolic signaling pathways.</p>",
       "longDescSci": "<p>Synthetic GHRH (1-29) analog investigated for GHRHR activation and downstream cAMP-mediated signaling. Lyophilized powder · ≥99% purity (HPLC) · studied in preclinical models of endogenous growth hormone secretion, IGF-1 signaling, pituitary function, endocrine regulation, tissue repair, and anabolic physiology.</p>",
       "moaPlain": "<p>Sermorelin acts by binding to growth hormone-releasing hormone receptors (GHRHR) on anterior pituitary somatotroph cells, activating adenylate cyclase and cAMP-mediated signaling pathways that stimulate pulsatile growth hormone release and downstream IGF-1 production.</p>",
@@ -1366,9 +1539,11 @@
       "id": "tb-500",
       "name": "TB-500",
       "sub": "Thymosin Beta-4 Fragment",
+      "vendor": "Troo Bio-Labs",
       "cat": "tissue",
       "featured": false,
       "popular": false,
+      "inStock": true,
       "images": [
         "/images/products/tb-500/1.webp"
       ],
@@ -1377,12 +1552,16 @@
           "size": "10mg",
           "price": 60,
           "compareAt": 72,
-          "image": "/images/products/tb-500/1.webp"
+          "image": "/images/products/tb-500/1.webp",
+          "inStock": true
         }
       ],
       "rating": 4.8,
       "reviews": 56,
       "shortDesc": "A lab-made piece of the natural protein Thymosin beta-4, studied for its effects on cell movement and tissue repair. Freeze-dried powder, ≥98% pure (HPLC). For research use only.",
+      "seoTitle": "",
+      "seoDesc": "",
+      "additionalNotes": "",
       "longDescPlain": "<p>A lab-made piece of the natural protein Thymosin beta-4, studied for its effects on cell movement and tissue repair. Freeze-dried powder, ≥98% pure (HPLC). For research use only.</p>",
       "longDescSci": "<p>Synthetic thymosin beta-4 analog investigated for actin-sequestering activity and downstream regulation of cell migration, angiogenesis, and extracellular matrix remodeling. Lyophilized powder · ≥98% purity (HPLC) · studied in preclinical models of cytoskeletal dynamics, tissue repair signaling, regenerative biology, and inflammatory modulation.</p>",
       "moaPlain": "<p>A peptide fragment researchers use to study how cells move, build new blood vessels, and repair tissue.</p>",
@@ -1412,9 +1591,11 @@
       "id": "tesamorelin",
       "name": "Tesamorelin",
       "sub": "GHRH Analog",
+      "vendor": "Troo Bio-Labs",
       "cat": "endocrine",
       "featured": false,
       "popular": false,
+      "inStock": true,
       "images": [
         "/images/products/tesamorelin/1.webp"
       ],
@@ -1423,12 +1604,16 @@
           "size": "10mg",
           "price": 100,
           "compareAt": 120,
-          "image": "/images/products/tesamorelin/1.webp"
+          "image": "/images/products/tesamorelin/1.webp",
+          "inStock": true
         }
       ],
       "rating": 4.7,
       "reviews": 191,
       "shortDesc": "synthetic growth hormone-releasing hormone (GHRH) analog extensively studied for its effects on endogenous growth hormone secretion, lipid metabolism, visceral adipose regulation, and metabolic signaling pathways.",
+      "seoTitle": "",
+      "seoDesc": "",
+      "additionalNotes": "",
       "longDescPlain": "<p>synthetic growth hormone-releasing hormone (GHRH) analog extensively studied for its effects on endogenous growth hormone secretion, lipid metabolism, visceral adipose regulation, and metabolic signaling pathways.</p>",
       "longDescSci": "<p>Synthetic growth hormone-releasing hormone (GHRH) analog investigated for GHRHR activation and downstream cAMP-mediated signaling. Lyophilized powder · ≥99% purity (HPLC) · studied in preclinical models of pulsatile growth hormone secretion, insulin-like growth factor-1 (IGF-1) signaling, lipid metabolism, visceral adipose biology, and endocrine regulation.</p>",
       "moaPlain": "<p>Tesamorelin binds to growth hormone-releasing hormone receptors (GHRHR) on pituitary somatotroph cells, activating cAMP-mediated intracellular signaling pathways that stimulate pulsatile growth hormone secretion and downstream IGF-1 production, influencing fat metabolism and anabolic regulation.</p>",
@@ -1460,21 +1645,27 @@
       "id": "thymosin-alpha-1",
       "name": "Thymosin Alpha 1",
       "sub": "Immune Peptide Tα1",
+      "vendor": "Troo Bio-Labs",
       "cat": "cellular",
       "featured": false,
       "popular": false,
+      "inStock": true,
       "images": [],
       "sizes": [
         {
           "size": "10mg",
           "price": 55,
           "compareAt": 66,
-          "image": null
+          "image": null,
+          "inStock": true
         }
       ],
       "rating": 4.8,
       "reviews": 96,
       "shortDesc": "A synthetic 28-amino-acid peptide studied in laboratory models for its role in immune system signaling, T-cell function, and innate immune response pathways.",
+      "seoTitle": "",
+      "seoDesc": "",
+      "additionalNotes": "",
       "longDescPlain": "<p>A synthetic 28-amino-acid peptide originally isolated from the thymus, studied in laboratory models for its role in immune system signaling, T-cell function, and innate and adaptive immune communication. Freeze-dried powder, ≥98% purity (HPLC). For research use only.</p>",
       "longDescSci": "<p>Synthetic thymic peptide investigated for modulation of innate and adaptive immune signaling pathways. Lyophilized powder · ≥98% purity (HPLC) · studied in laboratory models of Toll-like receptor (TLR) signaling, dendritic cell maturation, T-lymphocyte activation, cytokine regulation, and immune cell communication.</p>",
       "moaPlain": "<p>A peptide studied for how it regulates communication between immune cells by influencing T-cell activity, dendritic cell function, and signaling pathways involved in innate and adaptive immune responses.</p>",

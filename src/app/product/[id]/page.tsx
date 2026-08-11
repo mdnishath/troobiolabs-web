@@ -19,8 +19,9 @@ export async function generateMetadata({
   const p = await provider.getProduct(id);
   if (!p) return { title: "Product not found" };
   return {
-    title: p.name,
-    description: p.shortDesc || `${p.name} — research-grade compound.`,
+    title: p.seoTitle || p.name,
+    description:
+      p.seoDesc || p.shortDesc || `${p.name} — research-grade compound.`,
   };
 }
 

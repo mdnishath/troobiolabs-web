@@ -40,6 +40,7 @@ add_action( 'acf/init', function () {
 			'fields'   => [
 				$tab( 'general', 'General' ),
 				$text( 'sub_title', 'sub_title', 'Subtitle', [ 'instructions' => 'Short compound subtitle shown under the product name, e.g. "BPC-157 + TB-500".' ] ),
+				$text( 'vendor', 'vendor', 'Vendor / Brand', [ 'placeholder' => 'Troo Bio-Labs' ] ),
 				[
 					'key'           => 'field_troo_popular',
 					'name'          => 'popular',
@@ -56,6 +57,14 @@ add_action( 'acf/init', function () {
 				$wysiwyg( 'long_sci', 'long_description_scientific', 'Long Description — Scientific' ),
 				$wysiwyg( 'moa_plain', 'mechanism_of_action_plain', 'Mechanism of Action — Plain English' ),
 				$wysiwyg( 'moa_sci', 'mechanism_of_action_scientific', 'Mechanism of Action — Scientific' ),
+				[
+					'key'          => 'field_troo_additional_notes',
+					'name'         => 'additional_notes',
+					'label'        => 'Additional Notes',
+					'type'         => 'textarea',
+					'rows'         => 4,
+					'instructions' => 'Optional extra notes shown in their own accordion on the product page.',
+				],
 
 				$tab( 'research', 'Research' ),
 				[
@@ -79,6 +88,17 @@ add_action( 'acf/init', function () {
 				$text( 'sequence', 'sequence', 'Sequence' ),
 				$text( 'storage', 'storage_conditions', 'Storage Conditions', [ 'placeholder' => '-20°C, protected from light and moisture' ] ),
 
+				$tab( 'seo', 'SEO' ),
+				$text( 'seo_title', 'seo_title', 'SEO Title', [ 'instructions' => 'Browser-tab / search-result title. Falls back to the product name.' ] ),
+				[
+					'key'          => 'field_troo_seo_description',
+					'name'         => 'seo_description',
+					'label'        => 'SEO Description',
+					'type'         => 'textarea',
+					'rows'         => 3,
+					'instructions' => 'Meta description for search results. Falls back to the short description.',
+				],
+
 				$tab( 'coa', 'Lab Report (COA)' ),
 				$text( 'coa_label', 'coa_label', 'COA Lot Label', [ 'instructions' => 'Lot number shown on the site, e.g. AARLL-3548854-P.' ] ),
 				[
@@ -96,8 +116,8 @@ add_action( 'acf/init', function () {
 /* Expose the plain meta keys in the wp/v2 REST responses too (wc/v3 already returns meta_data). */
 add_action( 'init', function () {
 	$keys = [
-		'sub_title', 'popular', 'display_rating', 'display_reviews',
-		'long_description_scientific',
+		'sub_title', 'vendor', 'popular', 'display_rating', 'display_reviews',
+		'long_description_scientific', 'additional_notes', 'seo_title', 'seo_description',
 		'mechanism_of_action_plain', 'mechanism_of_action_scientific',
 		'research_applications', 'research_studies', 'references',
 		'alternate_names_synonyms', 'cas_number', 'form', 'molecular_formula',

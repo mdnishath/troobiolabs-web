@@ -250,20 +250,26 @@ interface Variant {
   price: number;
   compareAt: number | null;
   image: string | null;
+  inStock: boolean;
 }
 
 interface Product {
   id: string;
   name: string;
   sub: string;
+  vendor: string;
   cat: string;
   featured: boolean;
   popular: boolean;
+  inStock: boolean;
   images: string[];
   sizes: Variant[];
   rating: number;
   reviews: number;
   shortDesc: string;
+  seoTitle: string;
+  seoDesc: string;
+  additionalNotes: string;
   longDescPlain: string;
   longDescSci: string;
   moaPlain: string;
@@ -341,7 +347,11 @@ for (const [handle, rows] of byHandle) {
       price: Number(r["Variant Price"]) || 0,
       compareAt: Number(r["Variant Compare At Price"]) || null,
       image: images[i] ?? null,
+      inStock: true,
     }));
+
+  /* extra columns only present in the products_export(1) sheet */
+  const secHead = secondaryByHandle.get(handle)?.[0];
 
   // ---- COA ------------------------------------------------------------------
   let coa: Product["coa"] = null;
@@ -358,14 +368,19 @@ for (const [handle, rows] of byHandle) {
     id: handle,
     name,
     sub: SUB_MAP[handle] ?? "",
+    vendor: str(head["Vendor"]) || (secHead ? str(secHead["Vendor"]) : "") || "Troo Bio-Labs",
     cat,
     featured: FEATURED.has(handle),
     popular: POPULAR.has(handle),
+    inStock: true,
     images,
     sizes,
     rating,
     reviews,
     shortDesc: col(head, "Short Product Description"),
+    seoTitle: (secHead ? col(secHead, "SEO Title") : "") || "",
+    seoDesc: col(head, "SEO Description") || (secHead ? col(secHead, "SEO Description") : "") || "",
+    additionalNotes: (secHead ? col(secHead, "Additional Notes") : "") || "",
     longDescPlain: richTextToHtml(col(head, "Long Product Description - Plain English")),
     longDescSci: richTextToHtml(col(head, "Long Product Description - Scientific")),
     moaPlain: richTextToHtml(col(head, "Mechanism of Action (plain english)")),

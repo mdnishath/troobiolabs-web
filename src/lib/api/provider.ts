@@ -49,6 +49,7 @@ interface WooProduct {
   status: string;
   type: string;
   featured: boolean;
+  stock_status: string;
   average_rating: string;
   rating_count: number;
   description: string;
@@ -64,6 +65,7 @@ interface WooVariation {
   price: string;
   regular_price: string;
   sale_price: string;
+  stock_status: string;
   attributes: { option: string }[];
   image?: { src: string } | null;
 }
@@ -128,6 +130,7 @@ function toProduct(p: WooProduct, variations: WooVariation[]): Product {
         ? parseFloat(v.regular_price) || null
         : null,
     image: v.image?.src ?? null,
+    inStock: v.stock_status !== "outofstock",
   }));
 
   const applications = meta(p, "research_applications")
@@ -142,15 +145,25 @@ function toProduct(p: WooProduct, variations: WooVariation[]): Product {
     id: p.slug,
     name: p.name,
     sub: meta(p, "sub_title"),
+    vendor: meta(p, "vendor") || "Troo Bio-Labs",
     cat:
       p.categories?.map((c) => c.slug).find((s) => KNOWN_CATS.has(s)) ??
       "cellular",
     featured: p.featured,
     popular: truthy(meta(p, "popular")),
+    inStock: p.stock_status !== "outofstock",
     images: p.images?.map((i) => i.src) ?? [],
     sizes: sizes.length
       ? sizes
-      : [{ size: "", price: 0, compareAt: null, image: null }],
+      : [
+          {
+            size: "",
+            price: 0,
+            compareAt: null,
+            image: null,
+            inStock: p.stock_status !== "outofstock",
+          },
+        ],
     rating: hasReviews
       ? parseFloat(p.average_rating) || 4.8
       : parseFloat(meta(p, "display_rating")) || 4.8,
@@ -158,6 +171,9 @@ function toProduct(p: WooProduct, variations: WooVariation[]): Product {
       ? p.rating_count
       : parseInt(meta(p, "display_reviews"), 10) || 24,
     shortDesc: stripTags(p.short_description ?? ""),
+    seoTitle: meta(p, "seo_title"),
+    seoDesc: meta(p, "seo_description"),
+    additionalNotes: meta(p, "additional_notes"),
     longDescPlain: p.description ?? "",
     longDescSci: meta(p, "long_description_scientific"),
     moaPlain: meta(p, "mechanism_of_action_plain"),

@@ -19,6 +19,7 @@ export function ProductCard({
   const showToast = useUi((s) => s.showToast);
 
   const doAdd = () => {
+    if (!p.inStock) return;
     const cheapest = p.sizes.reduce((a, b) => (b.price < a.price ? b : a));
     add({
       productId: p.id,
@@ -93,9 +94,14 @@ export function ProductCard({
           </span>
           <button
             onClick={doAdd}
-            className="cursor-pointer rounded-full border-none bg-gradient-cta-70 px-[22px] py-[11px] text-[11px] font-semibold uppercase tracking-[1.5px] text-white hover:brightness-[1.08]"
+            disabled={!p.inStock}
+            className={
+              p.inStock
+                ? "cursor-pointer rounded-full border-none bg-gradient-cta-70 px-[22px] py-[11px] text-[11px] font-semibold uppercase tracking-[1.5px] text-white hover:brightness-[1.08]"
+                : "cursor-not-allowed rounded-full border-none bg-gradient-cta-70 px-[22px] py-[11px] text-[11px] font-semibold uppercase tracking-[1.5px] text-white opacity-45"
+            }
           >
-            Add
+            {p.inStock ? "Add" : "Sold Out"}
           </button>
         </div>
       </div>

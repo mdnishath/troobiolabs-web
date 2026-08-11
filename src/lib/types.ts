@@ -3,6 +3,7 @@ export interface Variant {
   price: number;
   compareAt: number | null;
   image: string | null;
+  inStock: boolean;
 }
 
 export interface ProductSpecs {
@@ -20,14 +21,19 @@ export interface Product {
   id: string;
   name: string;
   sub: string;
+  vendor: string;
   cat: string;
   featured: boolean;
   popular: boolean;
+  inStock: boolean;
   images: string[];
   sizes: Variant[];
   rating: number;
   reviews: number;
   shortDesc: string;
+  seoTitle: string;
+  seoDesc: string;
+  additionalNotes: string;
   longDescPlain: string;
   longDescSci: string;
   moaPlain: string;

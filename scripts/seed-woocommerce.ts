@@ -29,10 +29,14 @@ const catalog = JSON.parse(
     name: string;
     sub: string;
     cat: string;
+    vendor: string;
     featured: boolean;
     popular: boolean;
     rating: number;
     reviews: number;
+    seoTitle: string;
+    seoDesc: string;
+    additionalNotes: string;
     images: string[];
     sizes: { size: string; price: number; compareAt: number | null }[];
     shortDesc: string;
@@ -123,9 +127,13 @@ async function main() {
       ],
       meta_data: [
         { key: "sub_title", value: p.sub },
+        { key: "vendor", value: p.vendor },
         { key: "popular", value: p.popular ? "1" : "0" },
         { key: "display_rating", value: String(p.rating) },
         { key: "display_reviews", value: String(p.reviews) },
+        { key: "seo_title", value: p.seoTitle },
+        { key: "seo_description", value: p.seoDesc },
+        { key: "additional_notes", value: p.additionalNotes },
         { key: "long_description_scientific", value: p.longDescSci },
         { key: "mechanism_of_action_plain", value: p.moaPlain },
         { key: "mechanism_of_action_scientific", value: p.moaSci },

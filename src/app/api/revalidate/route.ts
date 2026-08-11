@@ -14,7 +14,9 @@ export async function POST(req: Request) {
   if (!secret || url.searchParams.get("secret") !== secret) {
     return NextResponse.json({ error: "Invalid secret" }, { status: 401 });
   }
-  revalidateTag("catalog", "max");
+  /* immediate expiry: the next request blocks on fresh data (webhook-driven,
+     so wp-admin edits are visible right away, not stale-while-revalidate) */
+  revalidateTag("catalog", { expire: 0 });
   return NextResponse.json({ revalidated: true, at: Date.now() });
 }
 
