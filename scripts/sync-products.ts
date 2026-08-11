@@ -39,7 +39,7 @@ if (!BASE || !KEY || !SECRET) {
 
 const AUTH = "Basic " + Buffer.from(`${KEY}:${SECRET}`).toString("base64");
 
-async function withRetry<T>(fn: () => Promise<T>, _label: string): Promise<T> {
+async function withRetry<T>(fn: () => Promise<T>): Promise<T> {
   for (let attempt = 1; ; attempt++) {
     try {
       return await fn();
@@ -61,7 +61,7 @@ async function api<T>(method: string, route: string, body?: unknown): Promise<T>
       throw new Error(`${method} ${route} -> ${res.status}: ${(await res.text()).slice(0, 200)}`);
     }
     return res.json() as Promise<T>;
-  }, `${method} ${route}`);
+  });
 }
 
 /* ------------------------------- catalog types ------------------------------- */
@@ -176,7 +176,7 @@ async function ensureMedia(local: string): Promise<Media> {
     });
     if (!res.ok) throw new Error(`media ${slug} -> ${res.status}`);
     return res.json() as Promise<Media>;
-  }, `upload ${slug}`);
+  });
 }
 
 /* --------------------------------- payloads ---------------------------------- */
