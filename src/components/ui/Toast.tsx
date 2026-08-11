@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useUi } from "@/store/ui";
@@ -9,6 +8,7 @@ import { useUi } from "@/store/ui";
 export function Toast() {
   const toast = useUi((s) => s.toast);
   const hideToast = useUi((s) => s.hideToast);
+  const openCart = useUi((s) => s.openCart);
 
   useEffect(() => {
     if (!toast) return;
@@ -27,12 +27,15 @@ export function Toast() {
         >
           <span className="font-semibold text-brand-green">✓</span>
           <span className="text-[13px] font-semibold">{toast}</span>
-          <Link
-            href="/cart"
-            className="text-xs font-semibold uppercase tracking-[1px] text-brand-sky no-underline"
+          <button
+            onClick={() => {
+              hideToast();
+              openCart();
+            }}
+            className="cursor-pointer text-xs font-semibold uppercase tracking-[1px] text-brand-sky"
           >
             View Cart
-          </Link>
+          </button>
         </motion.div>
       )}
     </AnimatePresence>

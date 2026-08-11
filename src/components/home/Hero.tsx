@@ -18,7 +18,7 @@ export function Hero() {
   const [sel, setSel] = useState(0);
   const [touched, setTouched] = useState(false);
   const add = useCart((s) => s.add);
-  const showToast = useUi((s) => s.showToast);
+  const openCart = useUi((s) => s.openCart);
 
   useEffect(() => {
     if (touched) return;
@@ -37,7 +37,7 @@ export function Hero() {
       price: cur.addPrice,
       img: cur.img,
     });
-    showToast("Added to cart");
+    openCart();
   };
 
   return (

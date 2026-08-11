@@ -26,7 +26,7 @@ export function Collection({ products }: { products: Product[] }) {
   const [active, setActive] = useState(0);
   const [added, setAdded] = useState<Record<string, boolean>>({});
   const add = useCart((s) => s.add);
-  const showToast = useUi((s) => s.showToast);
+  const openCart = useUi((s) => s.openCart);
   const N = products.length;
 
   const tap = (p: Product) => {
@@ -40,7 +40,7 @@ export function Collection({ products }: { products: Product[] }) {
       img: p.images[0] ?? null,
     });
     setAdded((a) => ({ ...a, [p.id]: true }));
-    showToast("Added to cart");
+    openCart();
   };
 
   const navBtn = (on: boolean) =>

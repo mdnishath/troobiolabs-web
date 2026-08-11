@@ -16,7 +16,7 @@ export function ProductCard({
   category?: Category;
 }) {
   const add = useCart((s) => s.add);
-  const showToast = useUi((s) => s.showToast);
+  const openCart = useUi((s) => s.openCart);
 
   const doAdd = () => {
     if (!p.inStock) return;
@@ -29,7 +29,7 @@ export function ProductCard({
       price: cheapest.price,
       img: p.images[0] ?? null,
     });
-    showToast("Added to cart");
+    openCart();
   };
 
   const badge = p.featured ? "Featured" : p.popular ? "Popular" : "";

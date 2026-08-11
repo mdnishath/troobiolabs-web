@@ -80,7 +80,7 @@ export function ProductDetail({
   const [qty, setQty] = useState(1);
   const [acc, setAcc] = useState<Record<number, boolean>>({ 0: true });
   const add = useCart((s) => s.add);
-  const showToast = useUi((s) => s.showToast);
+  const openCart = useUi((s) => s.openCart);
 
   const cur = p.sizes.find((v) => v.size === size) ?? p.sizes[0];
   const galleryImg =
@@ -100,7 +100,7 @@ export function ProductDetail({
       },
       qty,
     );
-    showToast("Added to cart");
+    openCart();
   };
 
   const accordions = [
