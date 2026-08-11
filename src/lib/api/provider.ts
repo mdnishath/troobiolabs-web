@@ -92,14 +92,22 @@ function wooAuth() {
 
 async function wooGet<T>(route: string): Promise<T> {
   const { base, headers } = wooAuth();
-  const res = await fetch(`${base}/wp-json/wc/v3${route}`, {
-    headers,
-    next: { revalidate: REVALIDATE, tags: ["catalog"] },
-  });
-  if (!res.ok) {
-    throw new Error(`WooCommerce fetch ${route} failed: ${res.status}`);
+  /* retry transient connection drops (local nginx under prerender bursts) */
+  for (let attempt = 1; ; attempt++) {
+    try {
+      const res = await fetch(`${base}/wp-json/wc/v3${route}`, {
+        headers,
+        next: { revalidate: REVALIDATE, tags: ["catalog"] },
+      });
+      if (!res.ok) {
+        throw new Error(`WooCommerce fetch ${route} failed: ${res.status}`);
+      }
+      return (await res.json()) as T;
+    } catch (e) {
+      if (attempt >= 3) throw e;
+      await new Promise((r) => setTimeout(r, 500 * attempt));
+    }
   }
-  return res.json() as Promise<T>;
 }
 
 const meta = (p: WooProduct, key: string): string => {

@@ -3,11 +3,11 @@ import { RuoBanner } from "@/components/ui/RuoBanner";
 import { Reveal } from "@/components/motion/Reveal";
 
 const THUMBS = [
-  "/images/products/wolverine-blend-bpc-157-tb-500/1.webp",
-  "/images/products/glp-1-s/1.webp",
-  "/images/products/tb-500/1.webp",
-  "/images/products/klow-blend/1.webp",
-  "/images/products/bpc-157/1.webp",
+  "/images/products/wolverine-blend-bpc-157-tb-500/troo-wolverine-transparent.webp",
+  "/images/products/glp-1-s/troo-gpl1-s-transparent.webp",
+  "/images/products/tb-500/troo-tb500-transparent.webp",
+  "/images/products/klow-blend/troo-klow-transparent.webp",
+  "/images/products/bpc-157/troo-bpc157-5mg-transparent.webp",
 ];
 
 export function Outro() {

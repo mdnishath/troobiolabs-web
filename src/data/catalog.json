@@ -48,14 +48,14 @@
       "popular": true,
       "inStock": true,
       "images": [
-        "/images/products/wolverine-blend-bpc-157-tb-500/1.webp"
+        "/images/products/wolverine-blend-bpc-157-tb-500/troo-wolverine-transparent.webp"
       ],
       "sizes": [
         {
           "size": "10mg",
           "price": 55,
           "compareAt": 70,
-          "image": "/images/products/wolverine-blend-bpc-157-tb-500/1.webp",
+          "image": "/images/products/wolverine-blend-bpc-157-tb-500/troo-wolverine-transparent.webp",
           "inStock": true
         },
         {
@@ -154,14 +154,14 @@
       "popular": false,
       "inStock": true,
       "images": [
-        "/images/products/aod-9604/1.webp"
+        "/images/products/aod-9604/troo-aod9604-transparent.webp"
       ],
       "sizes": [
         {
           "size": "5mg",
           "price": 50,
           "compareAt": 60,
-          "image": "/images/products/aod-9604/1.webp",
+          "image": "/images/products/aod-9604/troo-aod9604-transparent.webp",
           "inStock": true
         }
       ],
@@ -264,22 +264,22 @@
       "popular": true,
       "inStock": true,
       "images": [
-        "/images/products/bpc-157/1.webp",
-        "/images/products/bpc-157/2.webp"
+        "/images/products/bpc-157/troo-bpc157-5mg-transparent.webp",
+        "/images/products/bpc-157/troo-bpc157-10mg-transparent.webp"
       ],
       "sizes": [
         {
           "size": "5mg",
           "price": 30,
           "compareAt": 36,
-          "image": "/images/products/bpc-157/1.webp",
+          "image": "/images/products/bpc-157/troo-bpc157-5mg-transparent.webp",
           "inStock": true
         },
         {
           "size": "10mg",
           "price": 55,
           "compareAt": 66,
-          "image": "/images/products/bpc-157/2.webp",
+          "image": "/images/products/bpc-157/troo-bpc157-10mg-transparent.webp",
           "inStock": true
         }
       ],
@@ -327,14 +327,14 @@
       "popular": false,
       "inStock": true,
       "images": [
-        "/images/products/cagrilintide/1.webp"
+        "/images/products/cagrilintide/troo-cagrilintide-transparent.webp"
       ],
       "sizes": [
         {
           "size": "10mg",
           "price": 70,
           "compareAt": 84,
-          "image": "/images/products/cagrilintide/1.webp",
+          "image": "/images/products/cagrilintide/troo-cagrilintide-transparent.webp",
           "inStock": true
         }
       ],
@@ -344,10 +344,10 @@
       "seoTitle": "",
       "seoDesc": "",
       "additionalNotes": "",
-      "longDescPlain": "<p>Cagrilintide is the first long-acting amylin analogue being investigated for weight management as a once-weekly treatment, typically studied in combination with semaglutide. </p>",
+      "longDescPlain": "<p>Cagrilintide is the first long-acting amylin analogue being investigated for weight management as a once-weekly treatment, typically studied in combination with semaglutide. </p>",
       "longDescSci": "<p>Synthetic amylin receptor agonist investigated for modulation of amylin (AMYR) and calcitonin receptor (CTR) signaling through receptor activity-modifying protein (RAMP)-associated complexes. Lyophilized powder · ≥99% purity (HPLC) · studied in preclinical models of metabolic regulation, glucose-dependent endocrine signaling, energy balance, receptor pharmacology, and pancreatic hormone biology.</p>",
       "moaPlain": "<p>Cagrilintide acts as a nonselective agonist at amylin receptors (AMYR) and the calcitonin receptor (CTR).</p>",
-      "moaSci": "<p>Cagrilintide acts as a nonselective agonist at amylin receptors (AMYR) and the calcitonin receptor (CTR). It mimics natural amylin, a hormone normally co-secreted with insulin from pancreatic beta cells, which signals satiety through both the body's basic hunger-regulation centers and reward-related brain regions. </p>",
+      "moaSci": "<p>Cagrilintide acts as a nonselective agonist at amylin receptors (AMYR) and the calcitonin receptor (CTR). It mimics natural amylin, a hormone normally co-secreted with insulin from pancreatic beta cells, which signals satiety through both the body's basic hunger-regulation centers and reward-related brain regions. </p>",
       "researchStudies": "<p><em><strong>Long-acting amylin analog Cagrilintide demonstrates sustained amylin receptor activation and metabolic signaling in preclinical research models.[1]</strong></em></p><p>This preclinical investigation evaluated Cagrilintide in rodent models to characterize its pharmacological activity at amylin receptor complexes and its effects on metabolic signaling. Compared with native amylin, the modified peptide demonstrated prolonged receptor engagement and extended biological activity resulting from structural modifications that enhance stability. Investigators observed sustained activation of amylin receptor pathways involved in energy homeostasis, glucose regulation, and neuroendocrine signaling, supporting its use as a research tool for studying long-acting amylin receptor agonism.</p><p><strong>Last verified:</strong> 2026-04-03</p><p><em><strong>Combined amylin and GLP-1 receptor agonism produces complementary metabolic signaling in preclinical obesity models.[2]</strong></em></p><p>This mechanistic study examined the interaction between long-acting amylin receptor agonism and GLP-1 receptor activation in diet-induced obesity models. Dual pathway activation produced greater improvements in glucose-dependent metabolic signaling and energy homeostasis than either pathway alone. Molecular analyses demonstrated complementary engagement of central and peripheral signaling networks regulating appetite, pancreatic hormone secretion, and metabolic physiology, supporting investigation of combination incretin-amylin receptor agonism in metabolic research.</p><p><strong>Last verified:</strong> 2026-04-03</p>",
       "references": "<p><strong>[1]</strong> Lau DCW, Erichsen L, Francisco AM, et al. <em>A randomized, phase 1 study of the long-acting amylin analogue cagrilintide: pharmacokinetics, pharmacodynamics, safety, and tolerability.</em> Clinical Pharmacology in Drug Development. 2021.</p><p><strong>[2]</strong> Enebo LB, Berthelsen KK, Kankam M, et al. <em>Safety, tolerability, pharmacokinetics, and pharmacodynamics of the long-acting amylin analogue cagrilintide alone and in combination with semaglutide in adults with overweight or obesity.</em> The Lancet. 2021. doi:10.1016/S2213-8587(21)00181-9</p>",
       "applications": [
@@ -378,14 +378,14 @@
       "popular": true,
       "inStock": true,
       "images": [
-        "/images/products/cjc-1295-no-dac-plus-ipamorelin/1.webp"
+        "/images/products/cjc-1295-no-dac-plus-ipamorelin/troo-cjc1295-ipamorelin-transparent.webp"
       ],
       "sizes": [
         {
           "size": "10mg",
           "price": 50,
           "compareAt": 60,
-          "image": "/images/products/cjc-1295-no-dac-plus-ipamorelin/1.webp",
+          "image": "/images/products/cjc-1295-no-dac-plus-ipamorelin/troo-cjc1295-ipamorelin-transparent.webp",
           "inStock": true
         }
       ],
@@ -485,22 +485,22 @@
       "popular": false,
       "inStock": true,
       "images": [
-        "/images/products/ghk-cu/1.webp",
-        "/images/products/ghk-cu/2.webp"
+        "/images/products/ghk-cu/troo-ghkcu-50mg-transparent.webp",
+        "/images/products/ghk-cu/troo-ghkcu-100mg-transparent.webp"
       ],
       "sizes": [
         {
           "size": "50mg",
           "price": 60,
           "compareAt": 72,
-          "image": "/images/products/ghk-cu/1.webp",
+          "image": "/images/products/ghk-cu/troo-ghkcu-50mg-transparent.webp",
           "inStock": true
         },
         {
           "size": "100mg",
           "price": 110,
           "compareAt": 132,
-          "image": "/images/products/ghk-cu/2.webp",
+          "image": "/images/products/ghk-cu/troo-ghkcu-100mg-transparent.webp",
           "inStock": true
         }
       ],
@@ -547,14 +547,14 @@
       "popular": false,
       "inStock": true,
       "images": [
-        "/images/products/glow-blend/1.webp"
+        "/images/products/glow-blend/troo-glow-transparent.webp"
       ],
       "sizes": [
         {
           "size": "70mg",
           "price": 120,
           "compareAt": 144,
-          "image": "/images/products/glow-blend/1.webp",
+          "image": "/images/products/glow-blend/troo-glow-transparent.webp",
           "inStock": true
         }
       ],
@@ -602,22 +602,22 @@
       "popular": true,
       "inStock": true,
       "images": [
-        "/images/products/glp-1-s/1.webp",
-        "/images/products/glp-1-s/2.webp"
+        "/images/products/glp-1-s/troo-gpl1-s-transparent.webp",
+        "/images/products/glp-1-s/troo-gpl1-s-10mg-transparent.webp"
       ],
       "sizes": [
         {
           "size": "5mg",
           "price": 50,
           "compareAt": 60,
-          "image": "/images/products/glp-1-s/1.webp",
+          "image": "/images/products/glp-1-s/troo-gpl1-s-transparent.webp",
           "inStock": true
         },
         {
           "size": "10mg",
           "price": 90,
           "compareAt": 108,
-          "image": "/images/products/glp-1-s/2.webp",
+          "image": "/images/products/glp-1-s/troo-gpl1-s-10mg-transparent.webp",
           "inStock": true
         }
       ],
@@ -661,31 +661,30 @@
       "popular": true,
       "inStock": true,
       "images": [
-        "/images/products/glp-1-gip-t/1.webp",
-        "/images/products/glp-1-gip-t/2.webp",
-        "/images/products/glp-1-gip-t/3.webp",
-        "/images/products/glp-1-gip-t/4.webp"
+        "/images/products/glp-1-gip-t/troo-gpl2-t-10mg-transparent.webp",
+        "/images/products/glp-1-gip-t/troo-gpl2-t-15mg-transparent.webp",
+        "/images/products/glp-1-gip-t/troo-gpl2-t-30mg-transparent.webp"
       ],
       "sizes": [
         {
           "size": "10mg",
           "price": 75,
           "compareAt": 90,
-          "image": "/images/products/glp-1-gip-t/1.webp",
+          "image": "/images/products/glp-1-gip-t/troo-gpl2-t-10mg-transparent.webp",
           "inStock": true
         },
         {
           "size": "15mg",
           "price": 95,
           "compareAt": 114,
-          "image": "/images/products/glp-1-gip-t/2.webp",
+          "image": "/images/products/glp-1-gip-t/troo-gpl2-t-15mg-transparent.webp",
           "inStock": true
         },
         {
           "size": "30mg",
           "price": 140,
           "compareAt": 168,
-          "image": "/images/products/glp-1-gip-t/3.webp",
+          "image": "/images/products/glp-1-gip-t/troo-gpl2-t-30mg-transparent.webp",
           "inStock": true
         }
       ],
@@ -732,30 +731,30 @@
       "popular": false,
       "inStock": true,
       "images": [
-        "/images/products/glp-3-r/1.webp",
-        "/images/products/glp-3-r/2.webp",
-        "/images/products/glp-3-r/3.webp"
+        "/images/products/glp-3-r/troo-gpl3-r-10mg-transparent.webp",
+        "/images/products/glp-3-r/troo-gpl3-r-15mg-transparent.webp",
+        "/images/products/glp-3-r/troo-gpl3-r-30mg-transparent.webp"
       ],
       "sizes": [
         {
           "size": "10mg",
           "price": 95,
           "compareAt": 114,
-          "image": "/images/products/glp-3-r/1.webp",
+          "image": "/images/products/glp-3-r/troo-gpl3-r-10mg-transparent.webp",
           "inStock": true
         },
         {
           "size": "15mg",
           "price": 135,
           "compareAt": 162,
-          "image": "/images/products/glp-3-r/2.webp",
+          "image": "/images/products/glp-3-r/troo-gpl3-r-15mg-transparent.webp",
           "inStock": true
         },
         {
           "size": "30mg",
           "price": 180,
           "compareAt": 216,
-          "image": "/images/products/glp-3-r/3.webp",
+          "image": "/images/products/glp-3-r/troo-gpl3-r-30mg-transparent.webp",
           "inStock": true
         }
       ],
@@ -802,14 +801,14 @@
       "popular": false,
       "inStock": true,
       "images": [
-        "/images/products/hexarelin/1.webp"
+        "/images/products/hexarelin/troo-hexarelin-transparent.webp"
       ],
       "sizes": [
         {
           "size": "10mg",
           "price": 100,
           "compareAt": 120,
-          "image": "/images/products/hexarelin/1.webp",
+          "image": "/images/products/hexarelin/troo-hexarelin-transparent.webp",
           "inStock": true
         }
       ],
@@ -856,14 +855,14 @@
       "popular": false,
       "inStock": true,
       "images": [
-        "/images/products/ipamorelin/1.webp"
+        "/images/products/ipamorelin/troo-ipamorelin-transparent.webp"
       ],
       "sizes": [
         {
           "size": "10mg",
           "price": 70,
           "compareAt": 84,
-          "image": "/images/products/ipamorelin/1.webp",
+          "image": "/images/products/ipamorelin/troo-ipamorelin-transparent.webp",
           "inStock": true
         }
       ],
@@ -907,14 +906,14 @@
       "popular": false,
       "inStock": true,
       "images": [
-        "/images/products/kisspeptin/1.webp"
+        "/images/products/kisspeptin/troo-kisspeptin-transparent.webp"
       ],
       "sizes": [
         {
           "size": "10mg",
           "price": 65,
           "compareAt": 78,
-          "image": "/images/products/kisspeptin/1.webp",
+          "image": "/images/products/kisspeptin/troo-kisspeptin-transparent.webp",
           "inStock": true
         }
       ],
@@ -961,14 +960,14 @@
       "popular": false,
       "inStock": true,
       "images": [
-        "/images/products/klow-blend/1.webp"
+        "/images/products/klow-blend/troo-klow-transparent.webp"
       ],
       "sizes": [
         {
           "size": "80mg",
           "price": 135,
           "compareAt": 162,
-          "image": "/images/products/klow-blend/1.webp",
+          "image": "/images/products/klow-blend/troo-klow-transparent.webp",
           "inStock": true
         }
       ],
@@ -1171,14 +1170,14 @@
       "popular": false,
       "inStock": true,
       "images": [
-        "/images/products/mots-c/1.webp"
+        "/images/products/mots-c/troo-mots-c-10mg-transparent.webp"
       ],
       "sizes": [
         {
           "size": "10mg",
           "price": 70,
           "compareAt": 84,
-          "image": "/images/products/mots-c/1.webp",
+          "image": "/images/products/mots-c/troo-mots-c-10mg-transparent.webp",
           "inStock": true
         }
       ],
@@ -1222,22 +1221,22 @@
       "popular": false,
       "inStock": true,
       "images": [
-        "/images/products/nad-plus/1.webp",
-        "/images/products/nad-plus/2.webp"
+        "/images/products/nad-plus/troo-nad+-500mg-transparent.webp",
+        "/images/products/nad-plus/troo-nad+-1000mg-transparent.webp"
       ],
       "sizes": [
         {
           "size": "500mg",
           "price": 110,
           "compareAt": 132,
-          "image": "/images/products/nad-plus/1.webp",
+          "image": "/images/products/nad-plus/troo-nad+-500mg-transparent.webp",
           "inStock": true
         },
         {
           "size": "1000mg",
           "price": 180,
           "compareAt": 216,
-          "image": "/images/products/nad-plus/2.webp",
+          "image": "/images/products/nad-plus/troo-nad+-1000mg-transparent.webp",
           "inStock": true
         }
       ],
@@ -1284,14 +1283,14 @@
       "popular": false,
       "inStock": true,
       "images": [
-        "/images/products/oxytocin/1.webp"
+        "/images/products/oxytocin/troo-oxytocin-5mg-transparent.webp"
       ],
       "sizes": [
         {
           "size": "5mg",
           "price": 90,
           "compareAt": 108,
-          "image": "/images/products/oxytocin/1.webp",
+          "image": "/images/products/oxytocin/troo-oxytocin-5mg-transparent.webp",
           "inStock": true
         }
       ],
@@ -1335,14 +1334,14 @@
       "popular": false,
       "inStock": true,
       "images": [
-        "/images/products/pt-141/1.webp"
+        "/images/products/pt-141/troo-pt141-transparent.webp"
       ],
       "sizes": [
         {
           "size": "10mg",
           "price": 55,
           "compareAt": 66,
-          "image": "/images/products/pt-141/1.webp",
+          "image": "/images/products/pt-141/troo-pt141-transparent.webp",
           "inStock": true
         }
       ],
@@ -1389,14 +1388,14 @@
       "popular": false,
       "inStock": true,
       "images": [
-        "/images/products/selank/1.webp"
+        "/images/products/selank/troo-selank-10mg-transparent.webp"
       ],
       "sizes": [
         {
           "size": "10mg",
           "price": 45,
           "compareAt": 54,
-          "image": "/images/products/selank/1.webp",
+          "image": "/images/products/selank/troo-selank-10mg-transparent.webp",
           "inStock": true
         }
       ],
@@ -1443,14 +1442,14 @@
       "popular": false,
       "inStock": true,
       "images": [
-        "/images/products/semax/1.webp"
+        "/images/products/semax/troo-semax-10mg-transparent.webp"
       ],
       "sizes": [
         {
           "size": "10mg",
           "price": 45,
           "compareAt": 54,
-          "image": "/images/products/semax/1.webp",
+          "image": "/images/products/semax/troo-semax-10mg-transparent.webp",
           "inStock": true
         }
       ],
@@ -1494,14 +1493,14 @@
       "popular": false,
       "inStock": true,
       "images": [
-        "/images/products/sermorelin/1.webp"
+        "/images/products/sermorelin/troo-sermorelin-transparent.webp"
       ],
       "sizes": [
         {
           "size": "5mg",
           "price": 40,
           "compareAt": 48,
-          "image": "/images/products/sermorelin/1.webp",
+          "image": "/images/products/sermorelin/troo-sermorelin-transparent.webp",
           "inStock": true
         }
       ],
@@ -1545,14 +1544,14 @@
       "popular": false,
       "inStock": true,
       "images": [
-        "/images/products/tb-500/1.webp"
+        "/images/products/tb-500/troo-tb500-transparent.webp"
       ],
       "sizes": [
         {
           "size": "10mg",
           "price": 60,
           "compareAt": 72,
-          "image": "/images/products/tb-500/1.webp",
+          "image": "/images/products/tb-500/troo-tb500-transparent.webp",
           "inStock": true
         }
       ],
@@ -1597,14 +1596,14 @@
       "popular": false,
       "inStock": true,
       "images": [
-        "/images/products/tesamorelin/1.webp"
+        "/images/products/tesamorelin/troo-tesamorelin-transparent.webp"
       ],
       "sizes": [
         {
           "size": "10mg",
           "price": 100,
           "compareAt": 120,
-          "image": "/images/products/tesamorelin/1.webp",
+          "image": "/images/products/tesamorelin/troo-tesamorelin-transparent.webp",
           "inStock": true
         }
       ],

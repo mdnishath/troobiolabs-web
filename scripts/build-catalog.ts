@@ -1,11 +1,10 @@
 /**
- * Build the product catalog from the client's Shopify Excel exports.
+ * Build the product catalog from the client's Excel export.
  *
  * Sources (../ relative to the app):
- *  - "Troo Bio-Labs Products & Descriptions.xlsx"  (primary: rich descriptions)
- *  - "products_export(1).xlsx"                      (secondary: extra metadata)
- *  - "Product Images/<Category>/*.webp|png"         (5 category folders)
- *  - "pdf/*.pdf"                                    (COAs / purity reports)
+ *  - "All Products.xlsx"                             (single source of truth)
+ *  - "Product Images/<Category>/webp-transparent/*"  (optimized webp images)
+ *  - "pdf/*.pdf"                                     (COAs / purity reports)
  *
  * Output:
  *  - src/data/catalog.json
@@ -114,54 +113,42 @@ const CAT_BY_FOLDER: Record<string, string> = {
   Tissue: "tissue",
 };
 
-/** handle -> ordered local design images "<Folder>/<file>" (webp preferred). */
+/** handle -> ordered optimized webp images "<Category>/webp-transparent/<file>". */
+const W = (cat: string, name: string) =>
+  `${cat}/webp-transparent/troo-${name}-transparent.webp`;
+
 const IMAGE_MAP: Record<string, string[]> = {
-  "wolverine-blend-bpc-157-tb-500": ["Tissue/troo-biolabs-peptide-tissue-photo-wolverine.webp"],
-  "klow-blend": ["Tissue/troo-biolabs-peptide-tissue-photo-klow.webp"],
-  "glow-blend": ["Tissue/troo-biolabs-peptide-tissue-photo-glow.webp"],
-  "bpc-157": [
-    "Tissue/troo-biolabs-peptide-tissue-photo-bpc157-5mg.webp",
-    "Tissue/troo-biolabs-peptide-tissue-photo-bpc157-10mg.webp",
-  ],
-  "tb-500": ["Tissue/troo-biolabs-peptide-tissue-photo-tb500.webp"],
-  "ghk-cu": [
-    "Tissue/troo-biolabs-peptide-tissue-photo-ghkcu-50mg.webp",
-    "Tissue/troo-biolabs-peptide-tissue-photo-ghkcu-100mg.webp",
-  ],
-  "aod-9604": ["Metabolic/troo-biolabs-peptide-metabolic-photo-aod9604.webp"],
-  cagrilintide: ["Metabolic/troo-biolabs-peptide-metabolic-photo-cagrilintide.webp"],
-  "glp-1-s": [
-    "Metabolic/troo-biolabs-peptide-metabolic-photo-gpl1-s.webp",
-    "Metabolic/troo-biolabs-peptide-metabolic-photo-gpl1-s-10mg.webp",
-  ],
+  "wolverine-blend-bpc-157-tb-500": [W("Tissue", "wolverine")],
+  "klow-blend": [W("Tissue", "klow")],
+  "glow-blend": [W("Tissue", "glow")],
+  "bpc-157": [W("Tissue", "bpc157-5mg"), W("Tissue", "bpc157-10mg")],
+  "tb-500": [W("Tissue", "tb500")],
+  "ghk-cu": [W("Tissue", "ghkcu-50mg"), W("Tissue", "ghkcu-100mg")],
+  "aod-9604": [W("Metabolic", "aod9604")],
+  cagrilintide: [W("Metabolic", "cagrilintide")],
+  "glp-1-s": [W("Metabolic", "gpl1-s"), W("Metabolic", "gpl1-s-10mg")],
   "glp-1-gip-t": [
-    "Metabolic/troo-biolabs-peptide-metabolic-photo-gpl1-gipT.webp",
-    "Metabolic/troo-biolabs-peptide-metabolic-photo-gpl2-t-10mg.webp",
-    "Metabolic/troo-biolabs-peptide-metabolic-photo-gpl2-t-15mg.webp",
-    "Metabolic/troo-biolabs-peptide-metabolic-photo-gpl2-t-30mg.webp",
+    W("Metabolic", "gpl2-t-10mg"),
+    W("Metabolic", "gpl2-t-15mg"),
+    W("Metabolic", "gpl2-t-30mg"),
   ],
   "glp-3-r": [
-    "Metabolic/troo-biolabs-peptide-metabolic-photo-gpl3-r-10mg.webp",
-    "Metabolic/troo-biolabs-peptide-metabolic-photo-gpl3-r-15mg.webp",
-    "Metabolic/troo-biolabs-peptide-metabolic-photo-gpl3-r-30mg.webp",
+    W("Metabolic", "gpl3-r-10mg"),
+    W("Metabolic", "gpl3-r-15mg"),
+    W("Metabolic", "gpl3-r-30mg"),
   ],
-  "cjc-1295-no-dac-plus-ipamorelin": [
-    "Endocrine/troo-biolabs-peptide-endocrine-photo-cjc1295-ipamorelin.webp",
-  ],
-  hexarelin: ["Endocrine/troo-biolabs-peptide-endocrine-photo-hexarelin.webp"],
-  ipamorelin: ["Endocrine/troo-biolabs-peptide-endocrine-photo-ipamorelin.webp"],
-  kisspeptin: ["Endocrine/troo-biolabs-peptide-endocrine-photo-kisspeptin.webp"],
-  "pt-141": ["Endocrine/troo-biolabs-peptide-endocrine-photo-pt141.webp"],
-  sermorelin: ["Endocrine/troo-biolabs-peptide-endocrine-photo-sermorelin.webp"],
-  tesamorelin: ["Endocrine/troo-biolabs-peptide-endocrine-photo-tesamorelin.webp"],
-  "mots-c": ["Cellular/troo-biolabs-peptide-cellular-photo-mots-c-10mg.webp"],
-  "nad-plus": [
-    "Cellular/troo-biolabs-peptide-cellular-photo-nad+-500mg.webp",
-    "Cellular/troo-biolabs-peptide-cellular-photo-nad+-1000mg-.webp",
-  ],
-  oxytocin: ["Neural/troo-biolabs-peptide-neural-photo-oxytocin-5mg.webp"],
-  selank: ["Neural/troo-biolabs-peptide-neural-photo-selank-10mg.webp"],
-  semax: ["Neural/troo-biolabs-peptide-neural-photo-semax-10mg.webp"],
+  "cjc-1295-no-dac-plus-ipamorelin": [W("Endocrine", "cjc1295-ipamorelin")],
+  hexarelin: [W("Endocrine", "hexarelin")],
+  ipamorelin: [W("Endocrine", "ipamorelin")],
+  kisspeptin: [W("Endocrine", "kisspeptin")],
+  "pt-141": [W("Endocrine", "pt141")],
+  sermorelin: [W("Endocrine", "sermorelin")],
+  tesamorelin: [W("Endocrine", "tesamorelin")],
+  "mots-c": [W("Cellular", "mots-c-10mg")],
+  "nad-plus": [W("Cellular", "nad+-500mg"), W("Cellular", "nad+-1000mg")],
+  oxytocin: [W("Neural", "oxytocin-5mg")],
+  selank: [W("Neural", "selank-10mg")],
+  semax: [W("Neural", "semax-10mg")],
 };
 
 /** Category for products with no image folder signal. */
@@ -237,8 +224,7 @@ const COA_MAP: Record<string, string> = {
 
 /* ----------------------------------- build ----------------------------------- */
 
-const primary = sheetRows(path.join(ROOT, "Troo Bio-Labs Products & Descriptions.xlsx"));
-const secondary = sheetRows(path.join(ROOT, "products_export(1).xlsx"));
+const primary = sheetRows(path.join(ROOT, "All Products.xlsx"));
 
 const col = (row: Row, prefix: string): string => {
   const key = Object.keys(row).find((k) => k.startsWith(prefix));
@@ -300,14 +286,6 @@ for (const row of primary) {
   byHandle.get(handle)!.push(row);
 }
 
-const secondaryByHandle = new Map<string, Row[]>();
-for (const row of secondary) {
-  const handle = str(row["Handle"]);
-  if (!handle) continue;
-  if (!secondaryByHandle.has(handle)) secondaryByHandle.set(handle, []);
-  secondaryByHandle.get(handle)!.push(row);
-}
-
 fs.mkdirSync(path.dirname(OUT_JSON), { recursive: true });
 fs.mkdirSync(OUT_IMG, { recursive: true });
 fs.mkdirSync(OUT_PDF, { recursive: true });
@@ -323,7 +301,7 @@ for (const [handle, rows] of byHandle) {
   const sources = IMAGE_MAP[handle] ?? [];
   const images: string[] = [];
   let cat = CAT_OVERRIDES[handle] ?? "";
-  sources.forEach((rel, i) => {
+  sources.forEach((rel) => {
     const [folder] = rel.split("/");
     if (!cat) cat = CAT_BY_FOLDER[folder] ?? "";
     const src = path.join(IMAGES_DIR, rel);
@@ -333,7 +311,8 @@ for (const [handle, rows] of byHandle) {
     }
     const destDir = path.join(OUT_IMG, handle);
     fs.mkdirSync(destDir, { recursive: true });
-    const destName = `${i + 1}${path.extname(rel)}`;
+    /* keep the original descriptive filename — it doubles as the WP media slug */
+    const destName = path.basename(rel);
     fs.copyFileSync(src, path.join(destDir, destName));
     images.push(`/images/products/${handle}/${destName}`);
   });
@@ -350,9 +329,6 @@ for (const [handle, rows] of byHandle) {
       inStock: true,
     }));
 
-  /* extra columns only present in the products_export(1) sheet */
-  const secHead = secondaryByHandle.get(handle)?.[0];
-
   // ---- COA ------------------------------------------------------------------
   let coa: Product["coa"] = null;
   const coaFile = COA_MAP[handle];
@@ -368,7 +344,7 @@ for (const [handle, rows] of byHandle) {
     id: handle,
     name,
     sub: SUB_MAP[handle] ?? "",
-    vendor: str(head["Vendor"]) || (secHead ? str(secHead["Vendor"]) : "") || "Troo Bio-Labs",
+    vendor: str(head["Vendor"]) || "Troo Bio-Labs",
     cat,
     featured: FEATURED.has(handle),
     popular: POPULAR.has(handle),
@@ -378,9 +354,9 @@ for (const [handle, rows] of byHandle) {
     rating,
     reviews,
     shortDesc: col(head, "Short Product Description"),
-    seoTitle: (secHead ? col(secHead, "SEO Title") : "") || "",
-    seoDesc: col(head, "SEO Description") || (secHead ? col(secHead, "SEO Description") : "") || "",
-    additionalNotes: (secHead ? col(secHead, "Additional Notes") : "") || "",
+    seoTitle: "",
+    seoDesc: col(head, "SEO Description"),
+    additionalNotes: "",
     longDescPlain: richTextToHtml(col(head, "Long Product Description - Plain English")),
     longDescSci: richTextToHtml(col(head, "Long Product Description - Scientific")),
     moaPlain: richTextToHtml(col(head, "Mechanism of Action (plain english)")),

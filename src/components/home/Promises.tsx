@@ -83,7 +83,7 @@ export function Promises() {
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/images/products/klow-blend/1.webp"
+                  src="/images/products/klow-blend/troo-klow-transparent.webp"
                   alt="KLOW Blend vial"
                   className="h-full w-full object-contain"
                 />

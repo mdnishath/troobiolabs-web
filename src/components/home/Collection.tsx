@@ -74,7 +74,7 @@ export function Collection({ products }: { products: Product[] }) {
                   <Link
                     href={`/product/${p.id}`}
                     className="relative z-[2] block h-full max-w-full"
-                    style={{ aspectRatio: "201/382" }}
+                    
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
