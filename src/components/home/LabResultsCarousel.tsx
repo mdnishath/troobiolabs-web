@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
-import { LAB_BATCHES, TINTS } from "@/lib/home-data";
+import { TINTS } from "@/lib/home-data";
+import type { LabBatchItem } from "@/lib/home-live";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const ROWS = "flex items-baseline gap-3 py-3";
@@ -14,10 +14,12 @@ const RVAL = "text-[12.5px] font-semibold tracking-[.5px]";
 const NAVBTN =
   "flex h-[42px] w-[42px] cursor-pointer items-center justify-center rounded-full border border-line bg-white pb-[2px] text-[19px] leading-none text-ink transition-colors hover:border-[#9B8FE8] hover:text-brand-purple";
 
-export function LabResultsCarousel() {
+export function LabResultsCarousel({ batches }: { batches: LabBatchItem[] }) {
   const [idx, setIdx] = useState(0);
-  const L = LAB_BATCHES[idx];
+  if (!batches.length) return null;
+  const L = batches[idx % batches.length];
   const t = TINTS[L.color] ?? TINTS["#8D43B8"];
+  const purityNum = L.purity.replace(/%$/, "");
 
   return (
     <div className="mt-[clamp(64px,8vw,96px)]">
@@ -80,7 +82,7 @@ export function LabResultsCarousel() {
             </div>
             <div className="mt-4 flex items-baseline gap-[6px]">
               <span className="text-[clamp(44px,5vw,62px)] font-light leading-none tracking-[-1px]">
-                ≥{L.purity}
+                {purityNum}
               </span>
               <span className="text-xl font-semibold" style={{ color: L.color }}>
                 %
@@ -98,7 +100,7 @@ export function LabResultsCarousel() {
               <div className={`${ROWS} border-b border-[#F1F4F7]`}>
                 <span className={RLBL}>Purity</span>
                 <span className={DOTFILL} />
-                <span className={RVAL}>≥{L.purity}% · Batch Verified</span>
+                <span className={RVAL}>{L.purity} · Batch Verified</span>
               </div>
               <div className={`${ROWS} border-b border-[#F1F4F7]`}>
                 <span className={RLBL}>Tested By</span>
@@ -106,24 +108,28 @@ export function LabResultsCarousel() {
                 <span className={RVAL}>Independent 3rd-party lab</span>
               </div>
               <div className={ROWS}>
-                <span className={RLBL}>Report Date</span>
+                <span className={RLBL}>MS Identity</span>
                 <span className={DOTFILL} />
-                <span className={RVAL}>{L.date}</span>
+                <span className={RVAL}>Confirmed ✓</span>
               </div>
             </div>
             <div className="mt-[18px] flex flex-wrap gap-6">
-              <Link
-                href="/lab-reports"
+              <a
+                href={L.file}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-xs font-semibold text-brand-blue underline underline-offset-4"
               >
                 View full certificate →
-              </Link>
-              <Link
-                href="/lab-reports"
+              </a>
+              <a
+                href={L.file}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-xs font-semibold text-brand-blue underline underline-offset-4"
               >
                 Download PDF
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -131,14 +137,14 @@ export function LabResultsCarousel() {
 
       <div className="mt-[30px] flex items-center justify-center gap-5">
         <button
-          onClick={() => setIdx((i) => (i - 1 + LAB_BATCHES.length) % LAB_BATCHES.length)}
+          onClick={() => setIdx((i) => (i - 1 + batches.length) % batches.length)}
           aria-label="Previous batch"
           className={NAVBTN}
         >
           ‹
         </button>
         <div className="flex items-center gap-[7px]">
-          {LAB_BATCHES.map((b, i) => (
+          {batches.map((b, i) => (
             <button
               key={b.lot}
               onClick={() => setIdx(i)}
@@ -156,7 +162,7 @@ export function LabResultsCarousel() {
           ))}
         </div>
         <button
-          onClick={() => setIdx((i) => (i + 1) % LAB_BATCHES.length)}
+          onClick={() => setIdx((i) => (i + 1) % batches.length)}
           aria-label="Next batch"
           className={NAVBTN}
         >
@@ -164,12 +170,12 @@ export function LabResultsCarousel() {
         </button>
       </div>
       <div className="mt-[18px] flex justify-center">
-        <Link
+        <a
           href="/lab-reports"
           className="text-[11px] font-semibold uppercase tracking-[1.8px] text-brand-blue no-underline"
         >
           Browse Every Batch&apos;s Lab Report →
-        </Link>
+        </a>
       </div>
     </div>
   );

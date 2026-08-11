@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { getSession } from "@/lib/session";
 
 interface CheckoutBody {
   email: string;
@@ -104,10 +105,14 @@ export async function POST(req: Request) {
         lineItems.push(line);
       }
 
+      /* link the order to the signed-in customer so it shows in My Account */
+      const session = await getSession();
+
       const order = await wc<{ id: number }>("/orders", {
         method: "POST",
         body: JSON.stringify({
           status: "pending",
+          customer_id: session?.uid ?? 0,
           billing: {
             first_name: body.firstName,
             last_name: body.lastName,

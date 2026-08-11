@@ -35,7 +35,7 @@ const PROMISES = [
   },
 ];
 
-export function Promises() {
+export function Promises({ img }: { img: string | null }) {
   return (
     <section className="mt-[clamp(56px,7vw,84px)] bg-surface px-6 py-[clamp(48px,6vw,72px)]">
       <div className="mx-auto max-w-[1440px]">
@@ -83,8 +83,8 @@ export function Promises() {
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/images/products/klow-blend/troo-klow-transparent.webp"
-                  alt="KLOW Blend vial"
+                  src={img ?? "/images/sections/tissue.png"}
+                  alt="TROO product vial"
                   className="h-full w-full object-contain"
                 />
               </span>

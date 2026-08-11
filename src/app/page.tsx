@@ -1,5 +1,6 @@
 import { provider } from "@/lib/api/provider";
 import { AREAS } from "@/lib/home-data";
+import { buildHomeData } from "@/lib/home-live";
 import { Hero } from "@/components/home/Hero";
 import { Collection } from "@/components/home/Collection";
 import { AreaCard } from "@/components/home/AreaCard";
@@ -17,7 +18,10 @@ import Link from "next/link";
 export const revalidate = 300;
 
 export default async function Home() {
-  const products = await provider.getProducts();
+  const [products, categories] = await Promise.all([
+    provider.getProducts(),
+    provider.getCategories(),
+  ]);
   /* the full catalog in the carousel — products with photos lead */
   const active = products.filter((p) => p.status === "active");
   const collection = [
@@ -25,10 +29,11 @@ export default async function Home() {
     ...active.filter((p) => p.images.length === 0),
   ];
   const compoundCount = active.filter((p) => p.cat !== "supplies").length;
+  const live = buildHomeData(products, categories);
 
   return (
     <main>
-      <Hero />
+      <Hero products={live.hero} />
       <Collection products={collection} />
 
       {/* Five research disciplines, with the lab-results carousel inset after the first */}
@@ -47,19 +52,19 @@ export default async function Home() {
           </Link>
         </div>
         <AreaCard area={AREAS[0]} />
-        <LabResultsCarousel />
+        <LabResultsCarousel batches={live.labBatches} />
         {AREAS.slice(1).map((a) => (
           <AreaCard key={a.key} area={a} />
         ))}
       </section>
 
-      <Promises />
-      <LatestCoas compoundCount={compoundCount} />
+      <Promises img={live.promoImg} />
+      <LatestCoas compoundCount={compoundCount} items={live.latestCoas} />
       <CoaPanel />
       <TraceLot />
       <Logistics />
       <HomeFaq />
-      <Outro />
+      <Outro thumbs={live.thumbs} />
     </main>
   );
 }

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { HERO_PRODUCTS } from "@/lib/home-data";
+import type { HeroItem } from "@/lib/home-live";
 import { useCart } from "@/store/cart";
 import { useUi } from "@/store/ui";
 
@@ -14,19 +14,20 @@ const CHIPS: { mark: string; color: string; label: string }[] = [
   { mark: "✓", color: "#73B84A", label: "≥98% Batch-Verified Purity Floor" },
 ];
 
-export function Hero() {
+export function Hero({ products }: { products: HeroItem[] }) {
   const [sel, setSel] = useState(0);
   const [touched, setTouched] = useState(false);
   const add = useCart((s) => s.add);
   const openCart = useUi((s) => s.openCart);
+  const N = products.length;
 
   useEffect(() => {
-    if (touched) return;
-    const t = setInterval(() => setSel((s) => (s + 1) % 5), 4500);
+    if (touched || N < 2) return;
+    const t = setInterval(() => setSel((s) => (s + 1) % N), 4500);
     return () => clearInterval(t);
-  }, [touched]);
+  }, [touched, N]);
 
-  const cur = HERO_PRODUCTS[sel];
+  const cur = products[sel % N];
 
   const doAdd = () => {
     add({
@@ -100,9 +101,9 @@ export function Hero() {
             }}
           />
           <div className="relative min-h-[clamp(300px,34vw,390px)]">
-            {HERO_PRODUCTS.map((p, i) => {
-              const d = (i - sel + 5) % 5;
-              const pos = d === 0 ? "c" : d === 1 ? "r" : d === 4 ? "l" : "h";
+            {products.map((p, i) => {
+              const d = (i - sel + N) % N;
+              const pos = d === 0 ? "c" : d === 1 ? "r" : d === N - 1 ? "l" : "h";
               const selOn = pos === "c";
               const vis = pos !== "h";
               return (
@@ -153,7 +154,7 @@ export function Hero() {
               className="inline-block text-[11px] font-semibold uppercase tracking-[3px]"
               style={{ color: cur.color }}
             >
-              {cur.cat}
+              {cur.catName}
             </span>
             <div className="text-gradient-brand mt-[14px] text-[clamp(24px,2.9vw,32px)] font-normal leading-[1.15] tracking-[-.5px]">
               {cur.name}
@@ -162,7 +163,7 @@ export function Hero() {
               {cur.sub}
             </div>
             <div className="mt-[10px] text-[10.5px] font-semibold uppercase tracking-[1.5px] text-faint">
-              Lot {cur.lot} · Purity {cur.purity} · In Stock
+              {cur.lotText}
             </div>
             <div className="mt-[18px] flex flex-wrap items-center justify-center gap-x-[22px] gap-y-3">
               <span className="text-xl font-semibold text-ink">{cur.price}</span>

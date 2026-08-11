@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Lock, Check } from "lucide-react";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import { useCart, cartSubtotal } from "@/store/cart";
 import { useMounted } from "@/hooks/useMounted";
 import { fmt, FREE_SHIP_THRESHOLD, SHIP_COST, cn } from "@/lib/utils";
@@ -35,6 +35,39 @@ export function CheckoutClient() {
   const [coupon, setCoupon] = useState("");
   const [couponMsg, setCouponMsg] = useState<string | null>(null);
   const [placed, setPlaced] = useState<{ orderId: string; email: string } | null>(null);
+
+  /* prefill from the signed-in customer's saved details */
+  const me = useQuery({
+    queryKey: ["me"],
+    queryFn: async () => {
+      const res = await fetch("/api/auth/me");
+      if (!res.ok) return null;
+      return res.json() as Promise<{
+        email: string;
+        firstName: string;
+        lastName: string;
+        billing: Record<string, string> | null;
+      }>;
+    },
+    retry: false,
+  });
+
+  /* one-time prefill, applied during render when the profile arrives */
+  const [prefilled, setPrefilled] = useState(false);
+  if (me.data && !prefilled) {
+    setPrefilled(true);
+    const m = me.data;
+    setForm((f) => ({
+      email: f.email || m.email || "",
+      firstName: f.firstName || m.firstName || "",
+      lastName: f.lastName || m.lastName || "",
+      organization: f.organization || m.billing?.company || "",
+      address: f.address || m.billing?.address_1 || "",
+      city: f.city || m.billing?.city || "",
+      state: f.state || m.billing?.state || "",
+      zip: f.zip || m.billing?.postcode || "",
+    }));
+  }
 
   const raw = mounted ? items : [];
   const sub = cartSubtotal(raw);

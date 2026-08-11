@@ -1,30 +1,8 @@
 /**
- * Static homepage content transcribed from the design bundle (index.dc.html),
- * remapped onto the real catalog handles. Batch numbers/dates are the design's
- * placeholder values until real per-batch data is wired from WooCommerce.
+ * Static homepage content transcribed from the design bundle (index.dc.html).
+ * All product data (hero, lab results, COAs, thumbnails) is derived live from
+ * the catalog in src/app/page.tsx — only design copy lives here.
  */
-
-export interface HeroProduct {
-  id: string;
-  name: string;
-  sub: string;
-  img: string;
-  cat: string;
-  color: string;
-  purity: string;
-  lot: string;
-  price: string;
-  addSize: string;
-  addPrice: number;
-}
-
-export const HERO_PRODUCTS: HeroProduct[] = [
-  { id: "mots-c", name: "MOTS-c", sub: "Mitochondrial-derived peptide · 10mg vial", img: "/images/sections/cellular.png", cat: "Cellular & Longevity", color: "#F47B2A", purity: "98.7%", lot: "NH-2607-F-063", price: "$70.00", addSize: "10mg", addPrice: 70 },
-  { id: "cjc-1295-no-dac-plus-ipamorelin", name: "CJC-1295 / Ipamorelin", sub: "GHRH + GHRP blend · 10mg vial", img: "/images/sections/endocrine.png", cat: "Endocrine & GH", color: "#73B84A", purity: "98.9%", lot: "NH-2606-F-046", price: "$50.00", addSize: "10mg", addPrice: 50 },
-  { id: "aod-9604", name: "AOD-9604", sub: "hGH fragment 176-191 · 5mg vial", img: "/images/sections/metabolic.png", cat: "Metabolic & GLP-1", color: "#1486C9", purity: "98.9%", lot: "NH-2607-B-030", price: "$50.00", addSize: "5mg", addPrice: 50 },
-  { id: "oxytocin", name: "Oxytocin", sub: "Nonapeptide hormone · 5mg vial", img: "/images/sections/neural.png", cat: "Neural & Cognitive", color: "#8D43B8", purity: "99.3%", lot: "NH-2606-I-050", price: "$90.00", addSize: "5mg", addPrice: 90 },
-  { id: "bpc-157", name: "BPC-157", sub: "Body Protection Compound · 5mg / 10mg vial", img: "/images/sections/tissue.png", cat: "Tissue Repair & Recovery", color: "#D9368A", purity: "99.4%", lot: "NH-2606-A-012", price: "From $30.00", addSize: "5mg", addPrice: 30 },
-];
 
 export const TINTS: Record<string, [string, string, string]> = {
   "#8D43B8": ["#F5F4FC", "#EFEEFA", "#E2E0F4"],
@@ -106,29 +84,6 @@ export const AREAS: Area[] = [
     ],
     comps: ["BPC-157", "TB-500", "GHK-Cu", "KPV", "Wolverine", "GLOW", "KLOW"],
   },
-];
-
-export interface LabBatch {
-  name: string;
-  img: string;
-  color: string;
-  purity: string;
-  lot: string;
-  date: string;
-}
-
-export const LAB_BATCHES: LabBatch[] = [
-  { name: "MOTS-c · 10mg", img: "/images/sections/cellular.png", color: "#F47B2A", purity: "98.7", lot: "NH-2607-F-063", date: "Jul 07, 2026" },
-  { name: "CJC-1295 / Ipamorelin · 10mg", img: "/images/sections/endocrine.png", color: "#73B84A", purity: "98.9", lot: "NH-2606-F-046", date: "Jun 26, 2026" },
-  { name: "AOD-9604 · 5mg", img: "/images/sections/metabolic.png", color: "#1486C9", purity: "98.9", lot: "NH-2607-B-030", date: "Jul 05, 2026" },
-  { name: "Oxytocin · 5mg", img: "/images/sections/neural.png", color: "#8D43B8", purity: "99.3", lot: "NH-2606-I-050", date: "Jun 23, 2026" },
-  { name: "BPC-157 · 5mg", img: "/images/sections/tissue.png", color: "#D9368A", purity: "99.4", lot: "NH-2606-A-012", date: "Jun 22, 2026" },
-];
-
-export const LATEST_COAS = [
-  { name: "Wolverine Blend · 10mg", lot: "NH-2607-A-018", purity: "99.2%", date: "Jul 11, 2026", pdf: "/docs/coa/AARLL-2917829-P%20-%20BPC-157%20%2B%20TB-500%20-%20Purity.pdf" },
-  { name: "GLP-1 (S) · 10mg", lot: "NH-2607-A-007", purity: "99.3%", date: "Jul 09, 2026", pdf: null },
-  { name: "NAD+ · 500mg", lot: "NH-2607-E-060", purity: "99.5%", date: "Jul 08, 2026", pdf: "/docs/coa/AARLL-4407912-P%20-%20NAD%2B%20-%20Purity.pdf" },
 ];
 
 export const COA_PANEL = [

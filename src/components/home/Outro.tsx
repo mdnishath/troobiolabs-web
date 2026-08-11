@@ -2,15 +2,7 @@ import Link from "next/link";
 import { RuoBanner } from "@/components/ui/RuoBanner";
 import { Reveal } from "@/components/motion/Reveal";
 
-const THUMBS = [
-  "/images/products/wolverine-blend-bpc-157-tb-500/troo-wolverine-transparent.webp",
-  "/images/products/glp-1-s/troo-gpl1-s-transparent.webp",
-  "/images/products/tb-500/troo-tb500-transparent.webp",
-  "/images/products/klow-blend/troo-klow-transparent.webp",
-  "/images/products/bpc-157/troo-bpc157-5mg-transparent.webp",
-];
-
-export function Outro() {
+export function Outro({ thumbs }: { thumbs: string[] }) {
   return (
     <section className="mx-auto mt-[clamp(56px,7vw,84px)] max-w-[1440px] px-6">
       <Reveal>
@@ -26,7 +18,7 @@ export function Outro() {
             or start from the certificates.
           </p>
           <div className="mt-[26px] flex flex-wrap justify-center gap-[14px]">
-            {THUMBS.map((t) => (
+            {thumbs.map((t) => (
               <div
                 key={t}
                 className="relative h-[104px] w-[104px] overflow-hidden rounded-[14px]"

@@ -1,9 +1,15 @@
 import Link from "next/link";
-import { LATEST_COAS } from "@/lib/home-data";
+import type { CoaCardItem } from "@/lib/home-live";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal, StaggerGrid, StaggerItem } from "@/components/motion/Reveal";
 
-export function LatestCoas({ compoundCount }: { compoundCount: number }) {
+export function LatestCoas({
+  compoundCount,
+  items,
+}: {
+  compoundCount: number;
+  items: CoaCardItem[];
+}) {
   const stats = [
     { v: "Every batch", c: "#D9368A", l: "Gets its own lab report" },
     { v: "3rd-party", c: "#1486C9", l: "Independent US lab" },
@@ -25,7 +31,7 @@ export function LatestCoas({ compoundCount }: { compoundCount: number }) {
         />
       </Reveal>
       <StaggerGrid className="mt-[30px] grid grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))] gap-[22px]">
-        {LATEST_COAS.map((r) => (
+        {items.map((r) => (
           <StaggerItem key={r.lot} className="h-full">
             <div className="flex h-full flex-col rounded-[14px] border border-line-soft bg-white p-[26px] shadow-[0_6px_20px_rgba(21,40,60,.05)]">
               <div className="flex items-center justify-between gap-3">
@@ -48,24 +54,26 @@ export function LatestCoas({ compoundCount }: { compoundCount: number }) {
                 <span className="font-semibold">{r.lot}</span>
               </div>
               <div className="flex justify-between gap-[14px] border-b border-[#F1F4F7] py-[11px] text-[12.5px]">
-                <span className="font-semibold text-muted">Report date</span>
-                <span className="font-semibold">{r.date}</span>
+                <span className="font-semibold text-muted">MS identity</span>
+                <span className="font-semibold text-brand-leaf">Confirmed ✓</span>
               </div>
               <div className="flex justify-between gap-[14px] py-[11px] text-[12.5px]">
                 <span className="font-semibold text-muted">Tested by</span>
                 <span className="font-semibold">Independent 3rd-party lab</span>
               </div>
               <div className="mt-auto flex flex-wrap gap-[10px] pt-4">
-                <Link
-                  href="/lab-reports"
+                <a
+                  href={r.pdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex flex-1 justify-center whitespace-nowrap rounded-full bg-gradient-cta-70 px-[18px] py-3 text-[10.5px] font-semibold uppercase tracking-[1.5px] text-white no-underline"
                 >
                   View Certificate
-                </Link>
+                </a>
                 <a
-                  href={r.pdf ?? "/lab-reports"}
-                  target={r.pdf ? "_blank" : undefined}
-                  rel={r.pdf ? "noopener noreferrer" : undefined}
+                  href={r.pdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex justify-center whitespace-nowrap rounded-full border-2 border-brand-blue px-[18px] py-3 text-[10.5px] font-semibold uppercase tracking-[1.5px] text-brand-blue no-underline hover:bg-[#EAF5FC]"
                 >
                   PDF ↓

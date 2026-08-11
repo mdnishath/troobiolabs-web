@@ -17,6 +17,7 @@ import { useCart } from "@/store/cart";
 import { useUi } from "@/store/ui";
 import { cn, fmt } from "@/lib/utils";
 import { Chromatogram } from "./Chromatogram";
+import { ZoomImage } from "./ZoomImage";
 import { Reveal } from "@/components/motion/Reveal";
 
 const REVIEWS = [
@@ -157,7 +158,7 @@ export function ProductDetail({
           {/* gallery */}
           <div>
             <div
-              className="relative flex min-h-[420px] items-center justify-center rounded-[18px] p-[clamp(28px,4vw,56px)]"
+              className="relative flex min-h-[560px] items-center justify-center rounded-[18px] p-[clamp(24px,3vw,44px)]"
               style={{ background: "linear-gradient(160deg,#F0F2F5,#E7EAEF)" }}
             >
               {p.featured && (
@@ -175,22 +176,15 @@ export function ProductDetail({
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.3 }}
-                  className="relative m-auto block max-w-[76%]"
+                  className="relative m-auto block max-w-[92%]"
                   style={{
-                    height: "min(58vw,400px)",
+                    height: "min(74vw,540px)",
                     aspectRatio: "203/386",
                     filter: "drop-shadow(0 24px 26px rgba(21,40,60,.2))",
                   }}
                 >
                   {galleryImg ? (
-                    <Image
-                      src={galleryImg}
-                      alt={p.name}
-                      fill
-                      sizes="400px"
-                      priority
-                      className="object-contain"
-                    />
+                    <ZoomImage src={galleryImg} alt={p.name} />
                   ) : (
                     <span className="flex h-full items-center justify-center">
                       <FlaskConical size={80} strokeWidth={1} className="text-icon" />
