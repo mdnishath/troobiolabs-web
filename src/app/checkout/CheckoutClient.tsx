@@ -4,7 +4,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Lock, Check } from "lucide-react";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { AuthGate } from "@/components/auth/AuthGate";
 import { useCart, cartSubtotal } from "@/store/cart";
 import { useMounted } from "@/hooks/useMounted";
 import { fmt, FREE_SHIP_THRESHOLD, SHIP_COST, cn } from "@/lib/utils";
@@ -19,6 +20,7 @@ const EXPRESS_COST = 24.95;
 
 export function CheckoutClient() {
   const mounted = useMounted();
+  const qc = useQueryClient();
   const { items, clear } = useCart();
   const [form, setForm] = useState({
     email: "",
@@ -97,6 +99,7 @@ export function CheckoutClient() {
 
   const valid =
     raw.length > 0 &&
+    !!me.data &&
     form.email.includes("@") &&
     form.firstName.trim() !== "" &&
     form.lastName.trim() !== "" &&
@@ -196,7 +199,25 @@ export function CheckoutClient() {
       <div className="mb-[30px] mt-4 h-1 w-[150px] rounded-[2px] bg-gradient-brand" />
 
       <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,360px),1fr))] items-start gap-7">
-        {/* form column */}
+        {/* form column — ordering requires a signed-in research account */}
+        {me.isLoading ? (
+          <div className="flex flex-col gap-4">
+            <div className="h-32 animate-pulse rounded-[14px] bg-surface-2" />
+            <div className="h-64 animate-pulse rounded-[14px] bg-surface-2" />
+          </div>
+        ) : !me.data ? (
+          <div>
+            <div className="mb-4 rounded-[14px] border border-[#EAEEF3] bg-surface px-5 py-4 text-[12.5px] leading-[1.7] text-body">
+              <strong>Sign in to place your order.</strong> A research account
+              is required for purchasing — your cart is saved and will be here
+              after you sign in.
+            </div>
+            <AuthGate
+              note="Ordering requires a registered research account. Your order history and COA documentation stay linked to it."
+              onDone={() => qc.invalidateQueries({ queryKey: ["me"] })}
+            />
+          </div>
+        ) : (
         <div className="flex flex-col gap-4">
           <div className={CARD}>
             <div className={HEAD}>
@@ -354,6 +375,7 @@ export function CheckoutClient() {
             </span>
           </button>
         </div>
+        )}
 
         {/* summary column */}
         <div className="w-full max-w-[460px] justify-self-end rounded-2xl border border-[#EAEEF3] bg-surface p-7">
@@ -434,7 +456,11 @@ export function CheckoutClient() {
               valid ? "cursor-pointer" : "cursor-not-allowed opacity-45",
             )}
           >
-            {placeOrder.isPending ? "Placing Order…" : "Place Order"}
+            {!me.data && !me.isLoading
+              ? "Sign In to Place Order"
+              : placeOrder.isPending
+                ? "Placing Order…"
+                : "Place Order"}
           </button>
           {placeOrder.isError && (
             <div className="mt-3 text-center text-xs font-semibold text-brand-pink">

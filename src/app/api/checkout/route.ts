@@ -46,6 +46,15 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Invalid order" }, { status: 400 });
   }
 
+  /* ordering requires a signed-in research account */
+  const session = await getSession();
+  if (!session) {
+    return NextResponse.json(
+      { error: "Please sign in to place your order." },
+      { status: 401 },
+    );
+  }
+
   const base = process.env.WC_API_URL?.replace(/\/$/, "");
   const key = process.env.WC_CONSUMER_KEY;
   const secret = process.env.WC_CONSUMER_SECRET;
@@ -113,9 +122,6 @@ export async function POST(req: Request) {
         lineItems.push(line);
       }
 
-      /* link the order to the signed-in customer so it shows in My Account */
-      const session = await getSession();
-
       const order = await wc<{ id: number }>("/orders", {
         method: "POST",
         body: JSON.stringify({
@@ -124,7 +130,7 @@ export async function POST(req: Request) {
             : "pending",
           payment_method: body.payment?.id ?? "",
           payment_method_title: body.payment?.title ?? "",
-          customer_id: session?.uid ?? 0,
+          customer_id: session.uid,
           billing: {
             first_name: body.firstName,
             last_name: body.lastName,
