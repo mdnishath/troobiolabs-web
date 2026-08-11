@@ -42,12 +42,14 @@ export function CheckoutClient() {
     queryFn: async () => {
       const res = await fetch("/api/auth/me");
       if (!res.ok) return null;
-      return res.json() as Promise<{
+      const data = (await res.json()) as {
+        id?: number;
         email: string;
         firstName: string;
         lastName: string;
         billing: Record<string, string> | null;
-      }>;
+      };
+      return data?.id ? data : null;
     },
     retry: false,
   });

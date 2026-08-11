@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useRef, useState } from "react";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 /**
  * Product image with a magnifier lens: hovering shows a circular lens with a
@@ -9,6 +10,7 @@ import { useRef, useState } from "react";
  */
 export function ZoomImage({ src, alt }: { src: string; alt: string }) {
   const box = useRef<HTMLDivElement>(null);
+  const canHover = useMediaQuery("(hover: hover)");
   const [lens, setLens] = useState<{
     x: number;
     y: number;
@@ -20,6 +22,7 @@ export function ZoomImage({ src, alt }: { src: string; alt: string }) {
   const ZOOM = 2.4;
 
   const onMove = (e: React.MouseEvent) => {
+    if (!canHover) return;
     const r = box.current?.getBoundingClientRect();
     if (!r) return;
     setLens({

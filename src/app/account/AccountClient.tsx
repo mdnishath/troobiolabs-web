@@ -196,9 +196,9 @@ export function AccountClient() {
     queryKey: ["me"],
     queryFn: async () => {
       const res = await fetch("/api/auth/me");
-      if (res.status === 401) return null;
       if (!res.ok) throw new Error("failed");
-      return res.json();
+      const data = await res.json();
+      return data?.id ? (data as Me) : null;
     },
     retry: false,
   });

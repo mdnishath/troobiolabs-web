@@ -7,6 +7,7 @@ import { minPrice, priceLabel } from "@/lib/types";
 import { useCart } from "@/store/cart";
 import { useUi } from "@/store/ui";
 import { useMounted } from "@/hooks/useMounted";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const EASE = "cubic-bezier(.22,.61,.36,1)";
@@ -25,10 +26,13 @@ const FALLBACK_BY_CAT: Record<string, string> = {
 
 export function Collection({ products }: { products: Product[] }) {
   const [active, setActive] = useState(0);
+  const [touchX, setTouchX] = useState<number | null>(null);
   const add = useCart((s) => s.add);
   const items = useCart((s) => s.items);
   const openCart = useUi((s) => s.openCart);
   const mounted = useMounted();
+  /* phones get wider spacing, center-only labels and a counter instead of 30 dots */
+  const mobile = useMediaQuery("(max-width: 640px)");
   const N = products.length;
 
   /* ✓ reflects the real cart — removing the item in the drawer flips it back to + */
@@ -58,21 +62,36 @@ export function Collection({ products }: { products: Product[] }) {
       </div>
 
       <div className="relative mb-[50px] mt-[50px]">
-        <div className="relative h-[clamp(330px,36vw,450px)] overflow-hidden">
+        <div
+          className="relative h-[clamp(330px,36vw,450px)] touch-pan-y overflow-hidden"
+          onTouchStart={(e) => setTouchX(e.touches[0].clientX)}
+          onTouchEnd={(e) => {
+            if (touchX === null) return;
+            const dx = e.changedTouches[0].clientX - touchX;
+            if (dx < -40) setActive((a) => Math.min(N - 1, a + 1));
+            if (dx > 40) setActive((a) => Math.max(0, a - 1));
+            setTouchX(null);
+          }}
+        >
           {products.map((p, i) => {
             const off = i - active;
             const ao = Math.abs(off);
-            const vis = ao <= 2;
+            const vis = ao <= (mobile ? 1 : 2);
             const s = [1, 0.86, 0.72][Math.min(ao, 2)];
             const isAdded = inCart(p.id);
+            const showLabels = !mobile || off === 0;
             return (
               <div
                 key={p.id}
                 className="absolute bottom-0 flex flex-col items-center text-ink"
                 style={{
-                  left: `${50 + off * 19}%`,
+                  left: `${50 + off * (mobile ? 40 : 19)}%`,
                   transform: "translateX(-50%)",
-                  width: `clamp(105px,${(24 * s).toFixed(1)}%,${Math.round(252 * s)}px)`,
+                  width: mobile
+                    ? off === 0
+                      ? "min(52vw,210px)"
+                      : "min(34vw,140px)"
+                    : `clamp(105px,${(24 * s).toFixed(1)}%,${Math.round(252 * s)}px)`,
                   zIndex: 10 - ao,
                   opacity: vis ? 1 : 0,
                   pointerEvents: vis ? "auto" : "none",
@@ -82,7 +101,9 @@ export function Collection({ products }: { products: Product[] }) {
                 <span
                   className="relative z-[2] flex w-full items-end justify-center"
                   style={{
-                    height: `calc(clamp(140px,20vw,288px) * ${s})`,
+                    height: mobile
+                      ? `calc(clamp(170px,48vw,240px) * ${off === 0 ? 1 : 0.72})`
+                      : `calc(clamp(140px,20vw,288px) * ${s})`,
                     transition: `height .6s ${EASE}`,
                   }}
                 >
@@ -121,31 +142,37 @@ export function Collection({ products }: { products: Product[] }) {
                 {/* pedestal */}
                 <span className="relative z-[1] -mt-[11px] flex w-[96%] flex-col">
                   <span
-                    className="block h-[15px]"
+                    className="block"
                     style={{
+                      height: mobile ? 10 : 15,
                       background: `linear-gradient(180deg,#FFFFFF,${T[0]})`,
                       clipPath: "polygon(6% 0,94% 0,100% 100%,0 100%)",
                       border: `1px solid ${T[2]}`,
                     }}
                   />
                   <span
-                    className="block h-[37px]"
+                    className="block"
                     style={{
+                      height: mobile ? 22 : 37,
                       background: `linear-gradient(180deg,${T[0]},${T[1]})`,
                       border: `1px solid ${T[2]}`,
                       boxShadow: "0 18px 30px rgba(96,90,180,.10)",
                     }}
                   />
                 </span>
-                <span className="mt-4 text-center text-[clamp(13px,1.3vw,16px)] font-medium leading-[1.3] tracking-[.2px]">
-                  {p.name}
-                </span>
-                <span
-                  className="mt-[9px] whitespace-nowrap rounded-full bg-white px-4 py-[7px] text-[12.5px] font-semibold text-slate"
-                  style={{ border: `1px solid ${T[2]}` }}
-                >
-                  {p.sizes.length > 1 ? priceLabel(p) : `$${minPrice(p).toFixed(2)}`}
-                </span>
+                {showLabels && (
+                  <>
+                    <span className="mt-4 line-clamp-2 max-w-full text-center text-[clamp(13px,1.3vw,16px)] font-medium leading-[1.3] tracking-[.2px]">
+                      {p.name}
+                    </span>
+                    <span
+                      className="mt-[9px] whitespace-nowrap rounded-full bg-white px-4 py-[7px] text-[12.5px] font-semibold text-slate"
+                      style={{ border: `1px solid ${T[2]}` }}
+                    >
+                      {p.sizes.length > 1 ? priceLabel(p) : `$${minPrice(p).toFixed(2)}`}
+                    </span>
+                  </>
+                )}
               </div>
             );
           })}
@@ -159,21 +186,27 @@ export function Collection({ products }: { products: Product[] }) {
           >
             ‹
           </button>
-          <div className="flex max-w-[60vw] flex-wrap items-center justify-center gap-[7px]">
-            {products.map((p, i) => (
-              <button
-                key={p.id}
-                onClick={() => setActive(i)}
-                aria-label={`Go to ${p.name}`}
-                className="cursor-pointer rounded-full border-none p-0 transition-[width,background] duration-300"
-                style={{
-                  width: i === active ? 22 : 7,
-                  height: 7,
-                  background: i === active ? "#9B8FE8" : "#D5DCE3",
-                }}
-              />
-            ))}
-          </div>
+          {mobile ? (
+            <span className="min-w-[64px] text-center text-[12.5px] font-semibold tracking-[1px] text-muted">
+              {active + 1} / {N}
+            </span>
+          ) : (
+            <div className="flex max-w-[60vw] flex-wrap items-center justify-center gap-[7px]">
+              {products.map((p, i) => (
+                <button
+                  key={p.id}
+                  onClick={() => setActive(i)}
+                  aria-label={`Go to ${p.name}`}
+                  className="cursor-pointer rounded-full border-none p-0 transition-[width,background] duration-300"
+                  style={{
+                    width: i === active ? 22 : 7,
+                    height: 7,
+                    background: i === active ? "#9B8FE8" : "#D5DCE3",
+                  }}
+                />
+              ))}
+            </div>
+          )}
           <button
             onClick={() => setActive((a) => Math.min(N - 1, a + 1))}
             aria-label="Next products"

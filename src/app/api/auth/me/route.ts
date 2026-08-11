@@ -14,7 +14,8 @@ interface WooCustomer {
 export async function GET() {
   const session = await getSession();
   if (!session) {
-    return NextResponse.json({ error: "Not signed in" }, { status: 401 });
+    /* logged-out is a normal state — 200 keeps browser consoles clean */
+    return NextResponse.json({ user: null });
   }
   /* address book from the WooCommerce customer record */
   const customer = await wpFetch<WooCustomer>(`/wc/v3/customers/${session.uid}`);
