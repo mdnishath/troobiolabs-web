@@ -48,21 +48,21 @@ export function Hero({ products }: { products: HeroItem[] }) {
       <div className="hero-blob-b pointer-events-none absolute -bottom-[150px] -right-[70px] h-[500px] w-[500px] rounded-full" />
 
       <div className="relative mx-auto grid min-h-[calc(100vh-160px)] max-w-[1440px] grid-cols-[repeat(auto-fit,minmax(min(100%,440px),1fr))] items-center gap-12 px-6 pb-[clamp(56px,8vw,100px)] pt-[clamp(36px,5vw,64px)]">
-        {/* Left column */}
-        <div>
+        {/* Left column — centered on phones, left-aligned from sm up */}
+        <div className="text-center sm:text-left">
           <div className="hero-rise text-[11px] uppercase tracking-[3px] text-brand-purple [animation-delay:.05s]">
             Troo Bio-Labs · Research Compounds
           </div>
-          <h1 className="text-gradient-brand hero-rise mb-0 mt-6 text-[clamp(38px,4.9vw,58px)] font-normal leading-[1.12] tracking-[-.5px] [animation-delay:.15s]">
+          <h1 className="text-gradient-brand hero-rise mb-0 mt-6 text-[clamp(28px,7.6vw,34px)] font-normal leading-[1.12] tracking-[-.5px] [animation-delay:.15s] sm:text-[clamp(38px,4.9vw,58px)]">
             Premium peptides.
             <br />
             Proven science.
           </h1>
-          <p className="hero-rise mb-0 mt-[22px] max-w-[460px] text-base leading-[1.75] text-body [animation-delay:.3s]">
+          <p className="hero-rise mx-auto mb-0 mt-[22px] max-w-[460px] text-base leading-[1.75] text-body [animation-delay:.3s] sm:mx-0">
             Every batch&apos;s third-party lab report is published before
             it&apos;s for sale. Look it up, read the numbers.
           </p>
-          <div className="hero-rise mt-7 flex flex-wrap gap-[10px] [animation-delay:.45s]">
+          <div className="hero-rise mt-7 flex flex-wrap justify-center gap-[10px] [animation-delay:.45s] sm:justify-start">
             {CHIPS.map((c) => (
               <span
                 key={c.label}
@@ -75,7 +75,7 @@ export function Hero({ products }: { products: HeroItem[] }) {
               </span>
             ))}
           </div>
-          <div className="hero-rise mt-[34px] flex flex-wrap items-center gap-x-[26px] gap-y-3 [animation-delay:.6s]">
+          <div className="hero-rise mt-[34px] flex flex-wrap items-center justify-center gap-x-[26px] gap-y-3 [animation-delay:.6s] sm:justify-start">
             <Link
               href="/shop"
               className="inline-flex items-center rounded-full bg-gradient-cta px-8 py-[15px] text-xs font-semibold uppercase tracking-[1.5px] text-white no-underline shadow-[0_10px_24px_rgba(20,134,201,.22)] transition-[transform,box-shadow,filter] duration-[250ms] hover:-translate-y-[3px] hover:brightness-[1.06] hover:shadow-[0_16px_32px_rgba(20,134,201,.32)]"
