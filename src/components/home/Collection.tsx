@@ -12,6 +12,16 @@ const EASE = "cubic-bezier(.22,.61,.36,1)";
 /* pedestal tint (design uses the purple family for every stand) */
 const T = ["#F5F4FC", "#EFEEFA", "#E2E0F4"];
 
+/* placeholder vial render for products without their own photo */
+const FALLBACK_BY_CAT: Record<string, string> = {
+  tissue: "/images/sections/tissue.png",
+  metabolic: "/images/sections/metabolic.png",
+  endocrine: "/images/sections/endocrine.png",
+  cellular: "/images/sections/cellular.png",
+  neural: "/images/sections/neural.png",
+  supplies: "/images/sections/cellular.png",
+};
+
 export function Collection({ products }: { products: Product[] }) {
   const [active, setActive] = useState(0);
   const [added, setAdded] = useState<Record<string, boolean>>({});
@@ -78,7 +88,11 @@ export function Collection({ products }: { products: Product[] }) {
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src={p.images[0] ?? "/images/sections/tissue.png"}
+                      src={
+                        p.images[0] ??
+                        FALLBACK_BY_CAT[p.cat] ??
+                        "/images/sections/tissue.png"
+                      }
                       alt={p.name}
                       className="h-full w-full object-contain"
                     />
@@ -140,7 +154,7 @@ export function Collection({ products }: { products: Product[] }) {
           >
             ‹
           </button>
-          <div className="flex items-center gap-[7px]">
+          <div className="flex max-w-[60vw] flex-wrap items-center justify-center gap-[7px]">
             {products.map((p, i) => (
               <button
                 key={p.id}

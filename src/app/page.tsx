@@ -14,29 +14,17 @@ import { Outro } from "@/components/home/Outro";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import Link from "next/link";
 
-const COLLECTION_IDS = [
-  "wolverine-blend-bpc-157-tb-500",
-  "glp-1-s",
-  "tb-500",
-  "klow-blend",
-  "bpc-157",
-  "glow-blend",
-  "ghk-cu",
-  "glp-3-r",
-  "nad-plus",
-  "cjc-1295-no-dac-plus-ipamorelin",
-];
-
 export const revalidate = 300;
 
 export default async function Home() {
   const products = await provider.getProducts();
-  const collection = COLLECTION_IDS.map((id) =>
-    products.find((p) => p.id === id),
-  ).filter((p): p is NonNullable<typeof p> => Boolean(p));
-  const compoundCount = products.filter(
-    (p) => p.status === "active" && p.cat !== "supplies",
-  ).length;
+  /* the full catalog in the carousel — products with photos lead */
+  const active = products.filter((p) => p.status === "active");
+  const collection = [
+    ...active.filter((p) => p.images.length > 0),
+    ...active.filter((p) => p.images.length === 0),
+  ];
+  const compoundCount = active.filter((p) => p.cat !== "supplies").length;
 
   return (
     <main>
