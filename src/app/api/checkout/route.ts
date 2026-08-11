@@ -11,8 +11,16 @@ interface CheckoutBody {
   state: string;
   zip: string;
   method: "standard" | "express";
+  payment?: { id: string; title: string };
   items: { productId: string; name: string; size: string; price: number; qty: number }[];
 }
+
+/* offline gateways get their conventional WooCommerce status */
+const STATUS_BY_GATEWAY: Record<string, string> = {
+  cod: "processing",
+  bacs: "on-hold",
+  cheque: "on-hold",
+};
 
 interface WooProductRef {
   id: number;
@@ -111,7 +119,11 @@ export async function POST(req: Request) {
       const order = await wc<{ id: number }>("/orders", {
         method: "POST",
         body: JSON.stringify({
-          status: "pending",
+          status: body.payment
+            ? (STATUS_BY_GATEWAY[body.payment.id] ?? "pending")
+            : "pending",
+          payment_method: body.payment?.id ?? "",
+          payment_method_title: body.payment?.title ?? "",
           customer_id: session?.uid ?? 0,
           billing: {
             first_name: body.firstName,

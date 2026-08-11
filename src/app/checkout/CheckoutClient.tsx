@@ -31,6 +31,7 @@ export function CheckoutClient() {
     zip: "",
   });
   const [method, setMethod] = useState<"standard" | "express">("standard");
+  const [payment, setPayment] = useState<string | null>(null);
   const [ack, setAck] = useState(false);
   const [coupon, setCoupon] = useState("");
   const [couponMsg, setCouponMsg] = useState<string | null>(null);
@@ -71,6 +72,21 @@ export function CheckoutClient() {
     }));
   }
 
+  /* enabled payment gateways straight from WooCommerce */
+  const gateways = useQuery({
+    queryKey: ["payment-methods"],
+    queryFn: async () => {
+      const res = await fetch("/api/payment-methods");
+      if (!res.ok) return { methods: [] as { id: string; title: string; description: string }[] };
+      return res.json() as Promise<{
+        methods: { id: string; title: string; description: string }[];
+      }>;
+    },
+  });
+  const methods = gateways.data?.methods ?? [];
+  const selectedPayment =
+    methods.find((m) => m.id === payment) ?? (methods.length === 1 ? methods[0] : undefined);
+
   const raw = mounted ? items : [];
   const sub = cartSubtotal(raw);
   const freeStd = sub >= FREE_SHIP_THRESHOLD;
@@ -88,6 +104,7 @@ export function CheckoutClient() {
     form.city.trim() !== "" &&
     form.state.trim() !== "" &&
     form.zip.trim() !== "" &&
+    (methods.length === 0 || !!selectedPayment) &&
     ack;
 
   const placeOrder = useMutation({
@@ -95,7 +112,14 @@ export function CheckoutClient() {
       const res = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, method, items: raw }),
+        body: JSON.stringify({
+          ...form,
+          method,
+          payment: selectedPayment
+            ? { id: selectedPayment.id, title: selectedPayment.title }
+            : undefined,
+          items: raw,
+        }),
       });
       if (!res.ok) throw new Error("Order failed");
       return res.json() as Promise<{ orderId: string }>;
@@ -259,15 +283,54 @@ export function CheckoutClient() {
                 256-bit SSL
               </span>
             </div>
-            <input placeholder="Card number" className={INPUT} autoComplete="off" />
-            <div className="mt-3 grid grid-cols-2 gap-3">
-              <input placeholder="MM / YY" className={INPUT} autoComplete="off" />
-              <input placeholder="CVC" className={INPUT} autoComplete="off" />
-            </div>
-            <p className="mb-0 mt-3 text-[11px] leading-[1.6] text-faint">
-              Payment is captured by the store&apos;s secure gateway when the
-              order is processed.
-            </p>
+            {gateways.isLoading ? (
+              <div className="flex flex-col gap-[10px]">
+                <div className="h-[52px] animate-pulse rounded-xl bg-surface-2" />
+                <div className="h-[52px] animate-pulse rounded-xl bg-surface-2" />
+              </div>
+            ) : methods.length === 0 ? (
+              <p className="mb-0 text-[12.5px] leading-[1.7] text-faint">
+                No online payment methods are enabled yet — the order will be
+                placed as pending and our team will contact you to arrange
+                payment.
+              </p>
+            ) : (
+              <div className="flex flex-col gap-[10px]">
+                {methods.map((m) => {
+                  const sel = selectedPayment?.id === m.id;
+                  return (
+                    <button
+                      key={m.id}
+                      onClick={() => setPayment(m.id)}
+                      className="flex w-full cursor-pointer items-center justify-between gap-[14px] rounded-xl px-[18px] py-[15px] text-left"
+                      style={{
+                        background: sel ? "#EAF5FC" : "#fff",
+                        border: sel ? "2px solid #1486C9" : "1.5px solid #DCE3EA",
+                      }}
+                    >
+                      <span className="flex items-center gap-3">
+                        <span
+                          className="inline-block h-[18px] w-[18px] flex-shrink-0 rounded-full bg-white"
+                          style={{
+                            border: sel ? "5px solid #1486C9" : "2px solid #C3CFDA",
+                          }}
+                        />
+                        <span>
+                          <span className="block text-[13.5px] font-semibold">
+                            {m.title}
+                          </span>
+                          {m.description && (
+                            <span className="mt-[2px] block text-[11px] font-semibold text-faint">
+                              {m.description}
+                            </span>
+                          )}
+                        </span>
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            )}
           </div>
 
           <button
