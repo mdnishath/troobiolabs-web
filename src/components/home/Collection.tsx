@@ -6,6 +6,7 @@ import type { Product } from "@/lib/types";
 import { minPrice, priceLabel } from "@/lib/types";
 import { useCart } from "@/store/cart";
 import { useUi } from "@/store/ui";
+import { useMounted } from "@/hooks/useMounted";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const EASE = "cubic-bezier(.22,.61,.36,1)";
@@ -24,10 +25,15 @@ const FALLBACK_BY_CAT: Record<string, string> = {
 
 export function Collection({ products }: { products: Product[] }) {
   const [active, setActive] = useState(0);
-  const [added, setAdded] = useState<Record<string, boolean>>({});
   const add = useCart((s) => s.add);
+  const items = useCart((s) => s.items);
   const openCart = useUi((s) => s.openCart);
+  const mounted = useMounted();
   const N = products.length;
+
+  /* ✓ reflects the real cart — removing the item in the drawer flips it back to + */
+  const inCart = (id: string) =>
+    mounted && items.some((i) => i.productId === id);
 
   const tap = (p: Product) => {
     const v = p.sizes[0];
@@ -39,7 +45,6 @@ export function Collection({ products }: { products: Product[] }) {
       price: v.price,
       img: p.images[0] ?? null,
     });
-    setAdded((a) => ({ ...a, [p.id]: true }));
     openCart();
   };
 
@@ -59,7 +64,7 @@ export function Collection({ products }: { products: Product[] }) {
             const ao = Math.abs(off);
             const vis = ao <= 2;
             const s = [1, 0.86, 0.72][Math.min(ao, 2)];
-            const isAdded = !!added[p.id];
+            const isAdded = inCart(p.id);
             return (
               <div
                 key={p.id}
