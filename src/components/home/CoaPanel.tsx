@@ -3,7 +3,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/motion/Reveal";
 
 const ROW =
-  "grid grid-cols-[minmax(150px,2fr)_1fr_1.1fr] items-center gap-[10px] px-[22px]";
+  "grid grid-cols-[minmax(0,1.5fr)_1fr_1.1fr] items-center gap-2 px-3 sm:grid-cols-[minmax(150px,2fr)_1fr_1.1fr] sm:gap-[10px] sm:px-[22px]";
 
 export function CoaPanel() {
   return (
@@ -19,14 +19,14 @@ export function CoaPanel() {
       <Reveal delay={0.1}>
         <div className="mt-[30px] overflow-hidden rounded-2xl border border-line-soft bg-white shadow-[0_6px_20px_rgba(21,40,60,.05)]">
           <div className={`${ROW} border-b border-line-soft bg-surface py-4`}>
-            <span className="text-[10px] font-semibold uppercase tracking-[1.8px] text-muted">
+            <span className="text-[9px] font-semibold uppercase tracking-[1px] text-muted sm:text-[10px] sm:tracking-[1.8px]">
               Test
             </span>
-            <span className="text-center text-[10px] font-semibold uppercase tracking-[1.8px] text-muted">
+            <span className="text-center text-[9px] font-semibold uppercase tracking-[1px] text-muted sm:text-[10px] sm:tracking-[1.8px]">
               Typical COA
             </span>
             <span className="text-center">
-              <span className="inline-block whitespace-nowrap rounded-full bg-gradient-brand px-[14px] py-[6px] text-[10px] font-semibold uppercase tracking-[1.8px] text-white">
+              <span className="inline-block whitespace-nowrap rounded-full bg-gradient-brand px-[8px] py-[5px] text-[9px] font-semibold uppercase tracking-[.4px] text-white sm:px-[14px] sm:py-[6px] sm:text-[10px] sm:tracking-[1.8px]">
                 Troo COA
               </span>
             </span>
@@ -34,13 +34,15 @@ export function CoaPanel() {
           {COA_PANEL.map((t) => (
             <div key={t.name} className={`${ROW} border-b border-[#F1F4F7] py-[15px]`}>
               <span>
-                <span className="block text-[13.5px] font-semibold">{t.name}</span>
-                <span className="mt-[3px] block text-[11px] font-semibold text-faint">
+                <span className="block text-[12.5px] font-semibold sm:text-[13.5px]">
+                  {t.name}
+                </span>
+                <span className="mt-[3px] block text-[10px] font-semibold text-faint sm:text-[11px]">
                   {t.method}
                 </span>
               </span>
               <span
-                className="whitespace-nowrap text-center text-xs font-semibold"
+                className="text-center text-[11px] font-semibold sm:whitespace-nowrap sm:text-xs"
                 style={{
                   color: t.ok
                     ? "#4E8A2C"
@@ -51,19 +53,19 @@ export function CoaPanel() {
               >
                 {t.typ}
               </span>
-              <span className="whitespace-nowrap text-center text-xs font-semibold text-brand-leaf">
+              <span className="text-center text-[11px] font-semibold text-brand-leaf sm:whitespace-nowrap sm:text-xs">
                 Reported ✓
               </span>
             </div>
           ))}
           <div className={`${ROW} bg-surface py-4`}>
-            <span className="text-xs font-semibold uppercase tracking-[1px]">
+            <span className="text-[11px] font-semibold uppercase tracking-[.6px] sm:text-xs sm:tracking-[1px]">
               What you get
             </span>
-            <span className="text-center text-[12.5px] font-semibold text-faint">
+            <span className="text-center text-[11.5px] font-semibold text-faint sm:text-[12.5px]">
               1 of 6
             </span>
-            <span className="text-center text-[12.5px] font-semibold text-brand-blue">
+            <span className="text-center text-[11.5px] font-semibold text-brand-blue sm:text-[12.5px]">
               6 of 6
             </span>
           </div>
