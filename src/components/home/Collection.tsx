@@ -112,7 +112,7 @@ export function Collection({ products }: { products: Product[] }) {
                 key={p.id}
                 className="absolute bottom-0 flex flex-col items-center text-ink"
                 style={{
-                  left: `${50 + off * (mobile ? 40 : 19)}%`,
+                  left: `${50 + off * (mobile ? 33 : 19)}%`,
                   transformOrigin: "bottom center",
                   transform:
                     "translateX(-50%)" +
@@ -121,10 +121,12 @@ export function Collection({ products }: { products: Product[] }) {
                         ? " translateY(-10px)"
                         : ` rotate(${off < 0 ? -7 : 7}deg)`
                       : ""),
+                  /* phone widths hug the vial itself (images are 4:5), so the
+                     add button sits on the glass and nothing hits the edge */
                   width: mobile
                     ? off === 0
-                      ? "min(52vw,210px)"
-                      : "min(34vw,140px)"
+                      ? "clamp(120px,33.6vw,168px)"
+                      : "clamp(82px,22.9vw,114px)"
                     : `clamp(105px,${(24 * s).toFixed(1)}%,${Math.round(252 * s)}px)`,
                   zIndex: 10 - ao,
                   opacity: vis ? (mobile && off !== 0 ? 0.92 : 1) : 0,
@@ -136,7 +138,7 @@ export function Collection({ products }: { products: Product[] }) {
                   className="relative z-[2] flex w-full items-end justify-center"
                   style={{
                     height: mobile
-                      ? `calc(clamp(170px,48vw,240px) * ${off === 0 ? 1 : 0.72})`
+                      ? `calc(clamp(150px,42vw,210px) * ${off === 0 ? 1 : 0.68})`
                       : `calc(clamp(140px,20vw,288px) * ${s})`,
                     transition: `height .6s ${EASE}`,
                   }}
