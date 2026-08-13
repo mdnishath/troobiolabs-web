@@ -144,7 +144,15 @@ export function Footer() {
       <div className="bg-surface-3 px-6 py-[18px]">
         <div className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-between gap-[14px]">
           <span className="text-xs text-muted">
-            © 2026 TrooBioLabs.Org — All rights reserved.
+            © 2026 TrooBioLabs.Org — All rights reserved. Designed by{" "}
+            <a
+              href="https://mdnishath.com/"
+              target="_blank"
+              rel="noopener"
+              className="text-muted underline hover:text-brand-pink"
+            >
+              Md Nishath
+            </a>
           </span>
           <span className="whitespace-nowrap rounded-full border-[1.5px] border-brand-pink px-[14px] py-[6px] text-[9px] font-semibold uppercase tracking-[1.8px] text-brand-pink">
             Research Use Only
