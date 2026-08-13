@@ -90,26 +90,50 @@ function wooAuth() {
   };
 }
 
+/* WP Engine answers a single request in ~0.4s but 504s under a burst, and
+   `next build` prerenders 60 pages at once — enough to fail a deploy. Keep a
+   few requests in flight per process and let the rest queue. */
+const MAX_IN_FLIGHT = 3;
+let inFlight = 0;
+const waiting: (() => void)[] = [];
+
+async function throttled<T>(fn: () => Promise<T>): Promise<T> {
+  if (inFlight >= MAX_IN_FLIGHT) {
+    await new Promise<void>((resolve) => waiting.push(resolve));
+  }
+  inFlight++;
+  try {
+    return await fn();
+  } finally {
+    inFlight--;
+    waiting.shift()?.();
+  }
+}
+
 async function wooGet<T>(route: string): Promise<T> {
   const { base, headers } = wooAuth();
-  /* retry transient connection drops — WP Engine/Cloudflare drops the odd
-     request when `next build` prerenders 30 product pages at once, and one
-     dropped fetch fails the whole build */
-  for (let attempt = 1; ; attempt++) {
-    try {
-      const res = await fetch(`${base}/wp-json/wc/v3${route}`, {
-        headers,
-        next: { revalidate: REVALIDATE, tags: ["catalog"] },
-      });
-      if (!res.ok) {
-        throw new Error(`WooCommerce fetch ${route} failed: ${res.status}`);
+  return throttled(async () => {
+    /* retry the odd 504/dropped connection rather than failing the build */
+    for (let attempt = 1; ; attempt++) {
+      try {
+        const res = await fetch(`${base}/wp-json/wc/v3${route}`, {
+          headers,
+          next: { revalidate: REVALIDATE, tags: ["catalog"] },
+        });
+        if (!res.ok) {
+          throw new Error(`WooCommerce fetch ${route} failed: ${res.status}`);
+        }
+        return (await res.json()) as T;
+      } catch (e) {
+        if (attempt >= 5) throw e;
+        /* a cold WP can take longer than the gateway's own timeout, so back
+           off far enough for it to finish and warm its cache: 1.5s → 10s */
+        await new Promise((r) =>
+          setTimeout(r, Math.min(1500 * 2 ** (attempt - 1), 10_000)),
+        );
       }
-      return (await res.json()) as T;
-    } catch (e) {
-      if (attempt >= 4) throw e;
-      await new Promise((r) => setTimeout(r, 600 * attempt));
     }
-  }
+  });
 }
 
 const meta = (p: WooProduct, key: string): string => {

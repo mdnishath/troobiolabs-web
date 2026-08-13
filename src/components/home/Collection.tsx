@@ -71,8 +71,10 @@ export function Collection({ products }: { products: Product[] }) {
     p.sizes.length > 1 ? priceLabel(p) : `$${minPrice(p).toFixed(2)}`;
 
   return (
-    <section className="mx-auto mt-[clamp(56px,7vw,84px)] max-w-[1440px] px-6">
-      <div className="flex flex-wrap items-end justify-between gap-5">
+    /* px-0 so the vial strip runs edge to edge; the text blocks keep their own
+       px-6 gutter */
+    <section className="mx-auto mt-[clamp(56px,7vw,84px)] max-w-[1440px] px-0">
+      <div className="flex flex-wrap items-end justify-between gap-5 px-6">
         <SectionHeading kicker="Selected Works" title="The Troo Collection" />
       </div>
 
@@ -125,8 +127,8 @@ export function Collection({ products }: { products: Product[] }) {
                      add button sits on the glass and nothing hits the edge */
                   width: mobile
                     ? off === 0
-                      ? "clamp(120px,33.6vw,168px)"
-                      : "clamp(82px,22.9vw,114px)"
+                      ? "clamp(136px,38.4vw,192px)"
+                      : "clamp(92px,26.1vw,131px)"
                     : `clamp(105px,${(24 * s).toFixed(1)}%,${Math.round(252 * s)}px)`,
                   zIndex: 10 - ao,
                   opacity: vis ? (mobile && off !== 0 ? 0.92 : 1) : 0,
@@ -138,7 +140,7 @@ export function Collection({ products }: { products: Product[] }) {
                   className="relative z-[2] flex w-full items-end justify-center"
                   style={{
                     height: mobile
-                      ? `calc(clamp(150px,42vw,210px) * ${off === 0 ? 1 : 0.68})`
+                      ? `calc(clamp(170px,48vw,240px) * ${off === 0 ? 1 : 0.68})`
                       : `calc(clamp(140px,20vw,288px) * ${s})`,
                     transition: `height .6s ${EASE}`,
                   }}
@@ -218,7 +220,7 @@ export function Collection({ products }: { products: Product[] }) {
         </div>
 
         {mobile && cur && (
-          <div key={cur.id} className="hero-swap mt-[26px] text-center">
+          <div key={cur.id} className="hero-swap mt-[26px] px-6 text-center">
             <Link
               href={`/product/${cur.id}`}
               className="text-gradient-brand block text-[clamp(20px,5.4vw,26px)] font-normal leading-[1.2] tracking-[-.3px] no-underline"
@@ -237,7 +239,7 @@ export function Collection({ products }: { products: Product[] }) {
           </div>
         )}
 
-        <div className="mt-[26px] flex items-center justify-center gap-5 sm:mt-[34px]">
+        <div className="mt-[26px] flex items-center justify-center gap-5 px-6 sm:mt-[34px]">
           <button
             onClick={() => step(-1)}
             aria-label="Previous products"
@@ -257,7 +259,7 @@ export function Collection({ products }: { products: Product[] }) {
           </button>
         </div>
 
-        <div className="mt-5 flex justify-end">
+        <div className="mt-5 flex justify-end px-6">
           <Link
             href="/shop"
             className="text-xs font-semibold uppercase tracking-[1.8px] text-brand-blue no-underline"
