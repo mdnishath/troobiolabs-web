@@ -16,6 +16,7 @@
 import * as XLSX from "xlsx";
 import * as fs from "node:fs";
 import * as path from "node:path";
+import { COA_REPORTS, coaPublicPath } from "./coa-map";
 
 const APP = path.resolve(__dirname, "..");
 const ROOT = path.resolve(APP, "..");
@@ -205,23 +206,6 @@ const POPULAR = new Set([
   "glp-1-gip-t",
 ]);
 
-/** handle -> COA purity PDF in ../pdf */
-const COA_MAP: Record<string, string> = {
-  "wolverine-blend-bpc-157-tb-500": "AARLL-2917829-P - BPC-157 + TB-500 - Purity.pdf",
-  "bpc-157": "AARLL-3548854-P - BPC-157 - Purity.pdf",
-  "ghk-cu": "AARLL-6057169-P - GHK-Cu - Purity.pdf",
-  "cjc-1295-no-dac-plus-ipamorelin": "AARLL-4328886-P - Ipamorelin + CJC-1295 - Purity.pdf",
-  "nad-plus": "AARLL-4407912-P - NAD+ - Purity.pdf",
-  "klow-blend": "AARLL-4436937-P - KLOW - Purity.pdf",
-  "glow-blend": "AARLL-9004218-P - GLOW - Purity.pdf",
-  "glp-3-r": "AARLL-9759917-P - Retatrutide - Purity.pdf",
-  "glp-1-gip-t": "AARLL-8597576-P - Tirzepatide - Purity.pdf",
-  "pt-141": "AARLL-6170177-P - PT-141 - Purity.pdf",
-  hexarelin: "AARLL-7132129-P - Hexarelin - Purity.pdf",
-  tesamorelin: "AARLL-7980975-P - Tesamorelin - Purity.pdf",
-  selank: "AARLL-8583052-P - Selank - Purity.pdf",
-};
-
 /* ----------------------------------- build ----------------------------------- */
 
 const primary = sheetRows(path.join(ROOT, "All Products.xlsx"));
@@ -274,6 +258,13 @@ interface Product {
     storage: string;
   };
   coa: { file: string; label: string } | null;
+  coas: {
+    lot: string;
+    file: string;
+    purity: string;
+    identity: "confirmed" | "unconfirmed";
+    note: string;
+  }[];
   status: string;
 }
 
@@ -329,14 +320,25 @@ for (const [handle, rows] of byHandle) {
       inStock: true,
     }));
 
-  // ---- COA ------------------------------------------------------------------
-  let coa: Product["coa"] = null;
-  const coaFile = COA_MAP[handle];
-  if (coaFile && fs.existsSync(path.join(PDF_DIR, coaFile))) {
-    const lot = coaFile.split(" - ")[0];
-    fs.copyFileSync(path.join(PDF_DIR, coaFile), path.join(OUT_PDF, coaFile));
-    coa = { file: `/docs/coa/${encodeURIComponent(coaFile)}`, label: lot };
+  // ---- COAs -----------------------------------------------------------------
+  const coas: Product["coas"] = [];
+  for (const r of COA_REPORTS[handle] ?? []) {
+    if (!fs.existsSync(path.join(PDF_DIR, r.pdf))) {
+      console.warn(`  ! missing COA pdf for ${handle}: ${r.pdf}`);
+      continue;
+    }
+    fs.copyFileSync(path.join(PDF_DIR, r.pdf), path.join(OUT_PDF, r.pdf));
+    coas.push({
+      lot: r.lot,
+      file: coaPublicPath(r.pdf),
+      purity: r.purity,
+      identity: r.identity,
+      note: r.note ?? "",
+    });
   }
+  const coa: Product["coa"] = coas.length
+    ? { file: coas[0].file, label: coas[0].lot }
+    : null;
 
   const { rating, reviews } = seeded(handle);
 
@@ -375,6 +377,7 @@ for (const [handle, rows] of byHandle) {
       storage: col(head, "Storage Conditions"),
     },
     coa,
+    coas,
     status: str(head["Status"]) || "active",
   });
 }
@@ -395,7 +398,7 @@ console.log(
   products
     .map(
       (p) =>
-        `  ${p.id}  [${p.cat}]  ${p.sizes.map((s) => s.size).join("/")}  imgs:${p.images.length}  coa:${p.coa ? "y" : "-"}`,
+        `  ${p.id}  [${p.cat}]  ${p.sizes.map((s) => s.size).join("/")}  imgs:${p.images.length}  coa:${p.coas.length || "-"}`,
     )
     .join("\n"),
 );

@@ -17,6 +17,20 @@ export interface ProductSpecs {
   storage: string;
 }
 
+/** One published Certificate of Analysis. */
+export interface CoaReport {
+  /** Batch / lot number as printed on the report. */
+  lot: string;
+  /** PDF URL — WordPress media in woo mode, /docs/coa/… in local mode. */
+  file: string;
+  /** Measured purity from the report, e.g. "99.24%". Empty if not published. */
+  purity: string;
+  /** Whether the report's identity (MS) test conformed. */
+  identity: "confirmed" | "unconfirmed";
+  /** Optional qualifier shown next to the lot, e.g. the vial size tested. */
+  note: string;
+}
+
 export interface Product {
   id: string;
   name: string;
@@ -42,7 +56,10 @@ export interface Product {
   references: string;
   applications: string[];
   specs: ProductSpecs;
+  /** Primary (most recent) report — kept for the product page header. */
   coa: { file: string; label: string } | null;
+  /** Every report published for this compound, newest first. */
+  coas: CoaReport[];
   status: string;
 }
 

@@ -455,6 +455,25 @@ export function ProductDetail({
                 All Lab Reports
               </Link>
             </div>
+            {p.coas.length > 1 && (
+              <div className="mt-[18px] flex flex-wrap items-center gap-x-4 gap-y-2 text-[12.5px]">
+                <span className="font-semibold uppercase tracking-[1.2px] text-icon">
+                  Other lots
+                </span>
+                {p.coas.slice(1).map((c) => (
+                  <a
+                    key={c.file}
+                    href={c.file}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-brand-blue no-underline hover:underline"
+                  >
+                    {c.lot}
+                    {c.note ? ` · ${c.note}` : ""}
+                  </a>
+                ))}
+              </div>
+            )}
           </Reveal>
           <Reveal delay={0.12}>
             <div className="rounded-[14px] border border-line-soft bg-white p-[clamp(18px,2.5vw,28px)] shadow-[0_10px_30px_rgba(21,40,60,.06)]">

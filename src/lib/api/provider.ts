@@ -9,7 +9,7 @@
  * scripts/upload-media.ts, editable in wp-admin via the ACF field group).
  */
 import "server-only";
-import type { Catalog, Category, Product } from "@/lib/types";
+import type { Catalog, Category, CoaReport, Product } from "@/lib/types";
 import catalogJson from "@/data/catalog.json";
 
 export interface CatalogProvider {
@@ -129,6 +129,25 @@ const KNOWN_CATS = new Set(
 
 const truthy = (v: string) => v === "1" || v === "yes" || v === "true";
 
+/**
+ * `coa_reports` meta holds one report per line, pipe-separated:
+ *   LOT | PDF URL | PURITY | IDENTITY (confirmed|unconfirmed) | NOTE
+ * Only lot + URL are required; the rest may be blank.
+ */
+function parseCoaReports(raw: string): CoaReport[] {
+  return raw
+    .split(/\r?\n/)
+    .map((line) => line.split("|").map((c) => c.trim()))
+    .filter((c) => c.length >= 2 && c[0] && /^https?:\/\/|^\//.test(c[1]))
+    .map((c) => ({
+      lot: c[0],
+      file: c[1],
+      purity: c[2] ?? "",
+      identity: c[3] === "unconfirmed" ? "unconfirmed" : "confirmed",
+      note: c[4] ?? "",
+    }));
+}
+
 function toProduct(p: WooProduct, variations: WooVariation[]): Product {
   const sizes = variations.map((v) => ({
     size: v.attributes[0]?.option ?? "",
@@ -148,6 +167,18 @@ function toProduct(p: WooProduct, variations: WooVariation[]): Product {
 
   const hasReviews = p.rating_count > 0;
   const coaFile = meta(p, "coa_file");
+  const coaLabel = meta(p, "coa_label");
+  /* multi-report list, falling back to the single legacy coa_file/coa_label */
+  const coas = parseCoaReports(meta(p, "coa_reports"));
+  if (!coas.length && coaFile) {
+    coas.push({
+      lot: coaLabel,
+      file: coaFile,
+      purity: "",
+      identity: "confirmed",
+      note: "",
+    });
+  }
 
   return {
     id: p.slug,
@@ -199,7 +230,8 @@ function toProduct(p: WooProduct, variations: WooVariation[]): Product {
       sequence: meta(p, "sequence"),
       storage: meta(p, "storage_conditions"),
     },
-    coa: coaFile ? { file: coaFile, label: meta(p, "coa_label") } : null,
+    coa: coas.length ? { file: coas[0].file, label: coas[0].lot } : null,
+    coas,
     status: p.status === "publish" ? "active" : "draft",
   };
 }

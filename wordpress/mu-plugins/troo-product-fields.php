@@ -99,14 +99,27 @@ add_action( 'acf/init', function () {
 					'instructions' => 'Meta description for search results. Falls back to the short description.',
 				],
 
-				$tab( 'coa', 'Lab Report (COA)' ),
-				$text( 'coa_label', 'coa_label', 'COA Lot Label', [ 'instructions' => 'Lot number shown on the site, e.g. AARLL-3548854-P.' ] ),
+				$tab( 'coa', 'Lab Reports (COA)' ),
+				[
+					'key'          => 'field_troo_coa_reports',
+					'name'         => 'coa_reports',
+					'label'        => 'Lab Reports (one per line)',
+					'type'         => 'textarea',
+					'rows'         => 6,
+					'instructions' => 'One report per line, newest first:<br><code>LOT | PDF URL | PURITY | IDENTITY | NOTE</code><br>'
+						. 'Upload the PDF to the Media Library first and paste its file URL. '
+						. 'IDENTITY is <code>confirmed</code> or <code>unconfirmed</code> (use unconfirmed when the report\'s identity test did not conform). '
+						. 'NOTE is optional, e.g. the vial size tested. Example:<br>'
+						. '<code>110122 | https://…/12974_AARL_BPC-157.pdf | 99.64% | confirmed | 10 mg</code><br>'
+						. 'Every line becomes its own row on the Lab Reports page; the first line is the product page\'s primary COA.',
+				],
+				$text( 'coa_label', 'coa_label', 'Primary COA Lot (legacy)', [ 'instructions' => 'Filled automatically from the first line above. Only used if Lab Reports is empty.' ] ),
 				[
 					'key'           => 'field_troo_coa_file',
 					'name'          => 'coa_file',
-					'label'         => 'COA PDF URL',
+					'label'         => 'Primary COA PDF URL (legacy)',
 					'type'          => 'url',
-					'instructions'  => 'Upload the PDF to the Media Library, then paste its file URL here.',
+					'instructions'  => 'Filled automatically from the first line above. Only used if Lab Reports is empty.',
 				],
 			],
 		]
@@ -122,7 +135,7 @@ add_action( 'init', function () {
 		'research_applications', 'research_studies', 'references',
 		'alternate_names_synonyms', 'cas_number', 'form', 'molecular_formula',
 		'molecular_weight_mw', 'purity', 'sequence', 'storage_conditions',
-		'coa_label', 'coa_file',
+		'coa_label', 'coa_file', 'coa_reports',
 	];
 	foreach ( $keys as $key ) {
 		register_post_meta( 'product', $key, [ 'show_in_rest' => true, 'single' => true, 'type' => 'string' ] );

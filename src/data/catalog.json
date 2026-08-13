@@ -94,9 +94,32 @@
         "storage": "-20°C, protected from light and moisture"
       },
       "coa": {
-        "file": "/docs/coa/AARLL-2917829-P%20-%20BPC-157%20%2B%20TB-500%20-%20Purity.pdf",
-        "label": "AARLL-2917829-P"
+        "file": "/docs/coa/12988_AARL_Wolverine.pdf",
+        "label": "WO1001"
       },
+      "coas": [
+        {
+          "lot": "WO1001",
+          "file": "/docs/coa/12988_AARL_Wolverine.pdf",
+          "purity": "99.36%",
+          "identity": "confirmed",
+          "note": ""
+        },
+        {
+          "lot": "AARLL-2917829-P",
+          "file": "/docs/coa/AARLL-2917829-P%20-%20BPC-157%20%2B%20TB-500%20-%20Purity.pdf",
+          "purity": "99.26%",
+          "identity": "confirmed",
+          "note": ""
+        },
+        {
+          "lot": "ARRLL-7454331",
+          "file": "/docs/coa/ARRLL-7454331%20-%20BPC-157%20%2B%20TB-500%20-%20Purity.pdf",
+          "purity": "99.36%",
+          "identity": "confirmed",
+          "note": ""
+        }
+      ],
       "status": "active"
     },
     {
@@ -142,6 +165,7 @@
         "storage": "Room Temperature"
       },
       "coa": null,
+      "coas": [],
       "status": "active"
     },
     {
@@ -193,6 +217,7 @@
         "storage": "-20°C, protected from light and moisture"
       },
       "coa": null,
+      "coas": [],
       "status": "active"
     },
     {
@@ -252,6 +277,7 @@
         "storage": "Room Temperature"
       },
       "coa": null,
+      "coas": [],
       "status": "active"
     },
     {
@@ -312,9 +338,25 @@
         "storage": "-20°C, protected from light and moisture"
       },
       "coa": {
-        "file": "/docs/coa/AARLL-3548854-P%20-%20BPC-157%20-%20Purity.pdf",
-        "label": "AARLL-3548854-P"
+        "file": "/docs/coa/12974_AARL_BPC-157.pdf",
+        "label": "110122"
       },
+      "coas": [
+        {
+          "lot": "110122",
+          "file": "/docs/coa/12974_AARL_BPC-157.pdf",
+          "purity": "99.64%",
+          "identity": "confirmed",
+          "note": ""
+        },
+        {
+          "lot": "AARLL-3548854-P",
+          "file": "/docs/coa/AARLL-3548854-P%20-%20BPC-157%20-%20Purity.pdf",
+          "purity": "99.24%",
+          "identity": "confirmed",
+          "note": ""
+        }
+      ],
       "status": "active"
     },
     {
@@ -366,6 +408,7 @@
         "storage": "-20°C, protected from light and moisture"
       },
       "coa": null,
+      "coas": [],
       "status": "active"
     },
     {
@@ -421,6 +464,29 @@
         "file": "/docs/coa/AARLL-4328886-P%20-%20Ipamorelin%20%2B%20CJC-1295%20-%20Purity.pdf",
         "label": "AARLL-4328886-P"
       },
+      "coas": [
+        {
+          "lot": "AARLL-4328886-P",
+          "file": "/docs/coa/AARLL-4328886-P%20-%20Ipamorelin%20%2B%20CJC-1295%20-%20Purity.pdf",
+          "purity": "99.31%",
+          "identity": "confirmed",
+          "note": ""
+        },
+        {
+          "lot": "117812",
+          "file": "/docs/coa/12977_AARL_CJC-1295noDAC.pdf",
+          "purity": "99.29%",
+          "identity": "confirmed",
+          "note": "CJC-1295 no DAC"
+        },
+        {
+          "lot": "121497",
+          "file": "/docs/coa/12980_AARL_Ipamorelin.pdf",
+          "purity": "99.53%",
+          "identity": "confirmed",
+          "note": "Ipamorelin"
+        }
+      ],
       "status": "active"
     },
     {
@@ -473,6 +539,7 @@
         "storage": "-20°C, protected from light and moisture"
       },
       "coa": null,
+      "coas": [],
       "status": "active"
     },
     {
@@ -532,9 +599,32 @@
         "storage": "-20°C, protected from light and moisture"
       },
       "coa": {
-        "file": "/docs/coa/AARLL-6057169-P%20-%20GHK-Cu%20-%20Purity.pdf",
-        "label": "AARLL-6057169-P"
+        "file": "/docs/coa/12976_AARL_GHK-Cu.pdf",
+        "label": "WO1001"
       },
+      "coas": [
+        {
+          "lot": "WO1001",
+          "file": "/docs/coa/12976_AARL_GHK-Cu.pdf",
+          "purity": "99.53%",
+          "identity": "confirmed",
+          "note": ""
+        },
+        {
+          "lot": "AARLL-6057169-P",
+          "file": "/docs/coa/AARLL-6057169-P%20-%20GHK-Cu%20-%20Purity.pdf",
+          "purity": "99.43%",
+          "identity": "confirmed",
+          "note": ""
+        },
+        {
+          "lot": "AARLL-7751103-P",
+          "file": "/docs/coa/AARLL-7751103-P%20-%20GHK-Cu%20-%20Purity.pdf",
+          "purity": "99.47%",
+          "identity": "confirmed",
+          "note": ""
+        }
+      ],
       "status": "active"
     },
     {
@@ -587,9 +677,32 @@
         "storage": "-20°C, protected from light and moisture"
       },
       "coa": {
-        "file": "/docs/coa/AARLL-9004218-P%20-%20GLOW%20-%20Purity.pdf",
-        "label": "AARLL-9004218-P"
+        "file": "/docs/coa/12991_AARL_GLOW.pdf",
+        "label": "174036"
       },
+      "coas": [
+        {
+          "lot": "174036",
+          "file": "/docs/coa/12991_AARL_GLOW.pdf",
+          "purity": "99.63%",
+          "identity": "confirmed",
+          "note": "50 mg"
+        },
+        {
+          "lot": "AARLL-9004218-P",
+          "file": "/docs/coa/AARLL-9004218-P%20-%20GLOW%20-%20Purity.pdf",
+          "purity": "99.26%",
+          "identity": "confirmed",
+          "note": ""
+        },
+        {
+          "lot": "AARLL-9377026-P",
+          "file": "/docs/coa/AARLL-9377026-P%20-%20GLOW%20-%20Purity.pdf",
+          "purity": "99.45%",
+          "identity": "confirmed",
+          "note": ""
+        }
+      ],
       "status": "active"
     },
     {
@@ -649,6 +762,7 @@
         "storage": "-20°C, protected from light and moisture"
       },
       "coa": null,
+      "coas": [],
       "status": "active"
     },
     {
@@ -716,9 +830,39 @@
         "storage": "-20°C, protected from light and moisture"
       },
       "coa": {
-        "file": "/docs/coa/AARLL-8597576-P%20-%20Tirzepatide%20-%20Purity.pdf",
-        "label": "AARLL-8597576-P"
+        "file": "/docs/coa/12972_AARL_Tirzepatide_30mg.pdf",
+        "label": "166120"
       },
+      "coas": [
+        {
+          "lot": "166120",
+          "file": "/docs/coa/12972_AARL_Tirzepatide_30mg.pdf",
+          "purity": "99.54%",
+          "identity": "confirmed",
+          "note": "30 mg"
+        },
+        {
+          "lot": "W01001",
+          "file": "/docs/coa/12973_AARL_Tirzepatide_40mg.pdf",
+          "purity": "99.68%",
+          "identity": "confirmed",
+          "note": "40 mg"
+        },
+        {
+          "lot": "AARLL-8597576-P",
+          "file": "/docs/coa/AARLL-8597576-P%20-%20Tirzepatide%20-%20Purity.pdf",
+          "purity": "99.4%",
+          "identity": "confirmed",
+          "note": ""
+        },
+        {
+          "lot": "AARLL-9872072-P",
+          "file": "/docs/coa/AARLL-9872072-P%20-%20Tirzepatide%20-%20Purity.pdf",
+          "purity": "99.15%",
+          "identity": "confirmed",
+          "note": ""
+        }
+      ],
       "status": "active"
     },
     {
@@ -786,9 +930,53 @@
         "storage": "-20°C, protected from light and moisture"
       },
       "coa": {
-        "file": "/docs/coa/AARLL-9759917-P%20-%20Retatrutide%20-%20Purity.pdf",
-        "label": "AARLL-9759917-P"
+        "file": "/docs/coa/12969_AARL_Retatrutide_10mg.pdf",
+        "label": "166116"
       },
+      "coas": [
+        {
+          "lot": "166116",
+          "file": "/docs/coa/12969_AARL_Retatrutide_10mg.pdf",
+          "purity": "99.53%",
+          "identity": "confirmed",
+          "note": "10 mg"
+        },
+        {
+          "lot": "110147",
+          "file": "/docs/coa/12970_AARL_Retatrutide_20mg.pdf",
+          "purity": "99.51%",
+          "identity": "confirmed",
+          "note": "20 mg"
+        },
+        {
+          "lot": "110152",
+          "file": "/docs/coa/12971_AARL_Retatrutide_30mg.pdf",
+          "purity": "99.42%",
+          "identity": "confirmed",
+          "note": "30 mg"
+        },
+        {
+          "lot": "AARLL-9759917-P",
+          "file": "/docs/coa/AARLL-9759917-P%20-%20Retatrutide%20-%20Purity.pdf",
+          "purity": "99.3%",
+          "identity": "confirmed",
+          "note": ""
+        },
+        {
+          "lot": "AARLL-5564474-P",
+          "file": "/docs/coa/AARLL-5564474-P%20-%20Retatrutide%20-%20Purity.pdf",
+          "purity": "99.32%",
+          "identity": "confirmed",
+          "note": ""
+        },
+        {
+          "lot": "AARLL-1106202-P",
+          "file": "/docs/coa/AARLL-1106202-P%20-%20Retatrutide%20-%20Purity.pdf",
+          "purity": "99.38%",
+          "identity": "confirmed",
+          "note": ""
+        }
+      ],
       "status": "active"
     },
     {
@@ -843,6 +1031,15 @@
         "file": "/docs/coa/AARLL-7132129-P%20-%20Hexarelin%20-%20Purity.pdf",
         "label": "AARLL-7132129-P"
       },
+      "coas": [
+        {
+          "lot": "AARLL-7132129-P",
+          "file": "/docs/coa/AARLL-7132129-P%20-%20Hexarelin%20-%20Purity.pdf",
+          "purity": "99.19%",
+          "identity": "confirmed",
+          "note": ""
+        }
+      ],
       "status": "active"
     },
     {
@@ -893,7 +1090,19 @@
         "sequence": "Aib-His-D-2-Nal-D-Phe-Lys-NH₂",
         "storage": "-20°C, protected from light and moisture"
       },
-      "coa": null,
+      "coa": {
+        "file": "/docs/coa/12980_AARL_Ipamorelin.pdf",
+        "label": "121497"
+      },
+      "coas": [
+        {
+          "lot": "121497",
+          "file": "/docs/coa/12980_AARL_Ipamorelin.pdf",
+          "purity": "99.53%",
+          "identity": "confirmed",
+          "note": ""
+        }
+      ],
       "status": "active"
     },
     {
@@ -948,6 +1157,7 @@
         "storage": "-20°C, protected from light and moisture"
       },
       "coa": null,
+      "coas": [],
       "status": "active"
     },
     {
@@ -1005,6 +1215,15 @@
         "file": "/docs/coa/AARLL-4436937-P%20-%20KLOW%20-%20Purity.pdf",
         "label": "AARLL-4436937-P"
       },
+      "coas": [
+        {
+          "lot": "AARLL-4436937-P",
+          "file": "/docs/coa/AARLL-4436937-P%20-%20KLOW%20-%20Purity.pdf",
+          "purity": "99.36%",
+          "identity": "confirmed",
+          "note": ""
+        }
+      ],
       "status": "active"
     },
     {
@@ -1057,6 +1276,7 @@
         "storage": "-20°C, protected from light and moisture"
       },
       "coa": null,
+      "coas": [],
       "status": "active"
     },
     {
@@ -1108,7 +1328,19 @@
         "sequence": "ECG",
         "storage": "-20°C, protected from light and moisture"
       },
-      "coa": null,
+      "coa": {
+        "file": "/docs/coa/12986_AARL_Glutathione.pdf",
+        "label": "WO1001"
+      },
+      "coas": [
+        {
+          "lot": "WO1001",
+          "file": "/docs/coa/12986_AARL_Glutathione.pdf",
+          "purity": "99.63%",
+          "identity": "confirmed",
+          "note": ""
+        }
+      ],
       "status": "active"
     },
     {
@@ -1157,7 +1389,19 @@
         "sequence": "Ac-Nle-c[Asp-His-D-Phe-Arg-Trp-Lys]-NH₂",
         "storage": "-20°C, protected from light and moisture"
       },
-      "coa": null,
+      "coa": {
+        "file": "/docs/coa/12982_AARL_Melanotan_II.pdf",
+        "label": "122215"
+      },
+      "coas": [
+        {
+          "lot": "122215",
+          "file": "/docs/coa/12982_AARL_Melanotan_II.pdf",
+          "purity": "99.6%",
+          "identity": "unconfirmed",
+          "note": ""
+        }
+      ],
       "status": "active"
     },
     {
@@ -1208,7 +1452,19 @@
         "sequence": "MRWQEMGYIFYPRKLR",
         "storage": "-20°C, protected from light and moisture"
       },
-      "coa": null,
+      "coa": {
+        "file": "/docs/coa/12978_AARL_MOTS-c.pdf",
+        "label": "110027"
+      },
+      "coas": [
+        {
+          "lot": "110027",
+          "file": "/docs/coa/12978_AARL_MOTS-c.pdf",
+          "purity": "99.68%",
+          "identity": "confirmed",
+          "note": ""
+        }
+      ],
       "status": "active"
     },
     {
@@ -1268,9 +1524,25 @@
         "storage": "-20°C, protected from light and moisture, desiccated"
       },
       "coa": {
-        "file": "/docs/coa/AARLL-4407912-P%20-%20NAD%2B%20-%20Purity.pdf",
-        "label": "AARLL-4407912-P"
+        "file": "/docs/coa/12981_AARL_NAD%2B.pdf",
+        "label": "NA1001"
       },
+      "coas": [
+        {
+          "lot": "NA1001",
+          "file": "/docs/coa/12981_AARL_NAD%2B.pdf",
+          "purity": "99.59%",
+          "identity": "confirmed",
+          "note": ""
+        },
+        {
+          "lot": "AARLL-4407912-P",
+          "file": "/docs/coa/AARLL-4407912-P%20-%20NAD%2B%20-%20Purity.pdf",
+          "purity": "99.56%",
+          "identity": "confirmed",
+          "note": ""
+        }
+      ],
       "status": "active"
     },
     {
@@ -1322,6 +1594,7 @@
         "storage": "-20°C, protected from light and moisture"
       },
       "coa": null,
+      "coas": [],
       "status": "active"
     },
     {
@@ -1376,6 +1649,15 @@
         "file": "/docs/coa/AARLL-6170177-P%20-%20PT-141%20-%20Purity.pdf",
         "label": "AARLL-6170177-P"
       },
+      "coas": [
+        {
+          "lot": "AARLL-6170177-P",
+          "file": "/docs/coa/AARLL-6170177-P%20-%20PT-141%20-%20Purity.pdf",
+          "purity": "99.35%",
+          "identity": "confirmed",
+          "note": ""
+        }
+      ],
       "status": "active"
     },
     {
@@ -1430,6 +1712,15 @@
         "file": "/docs/coa/AARLL-8583052-P%20-%20Selank%20-%20Purity.pdf",
         "label": "AARLL-8583052-P"
       },
+      "coas": [
+        {
+          "lot": "AARLL-8583052-P",
+          "file": "/docs/coa/AARLL-8583052-P%20-%20Selank%20-%20Purity.pdf",
+          "purity": "99.45%",
+          "identity": "confirmed",
+          "note": ""
+        }
+      ],
       "status": "active"
     },
     {
@@ -1481,6 +1772,7 @@
         "storage": "-20°C, protected from light and moisture"
       },
       "coa": null,
+      "coas": [],
       "status": "active"
     },
     {
@@ -1531,7 +1823,19 @@
         "sequence": "YADAIFTNSYRKVLGQLSARKLLQDIMSRQQGESNQERGARARL",
         "storage": "-20°C, protected from light and moisture"
       },
-      "coa": null,
+      "coa": {
+        "file": "/docs/coa/12987_AARL_Sermorelin.pdf",
+        "label": "SM1001"
+      },
+      "coas": [
+        {
+          "lot": "SM1001",
+          "file": "/docs/coa/12987_AARL_Sermorelin.pdf",
+          "purity": "99.48%",
+          "identity": "confirmed",
+          "note": ""
+        }
+      ],
       "status": "active"
     },
     {
@@ -1583,7 +1887,19 @@
         "sequence": "",
         "storage": "-20°C, protected from light and moisture"
       },
-      "coa": null,
+      "coa": {
+        "file": "/docs/coa/12975_AARL_TB-500.pdf",
+        "label": "4511114"
+      },
+      "coas": [
+        {
+          "lot": "4511114",
+          "file": "/docs/coa/12975_AARL_TB-500.pdf",
+          "purity": "99.59%",
+          "identity": "confirmed",
+          "note": ""
+        }
+      ],
       "status": "active"
     },
     {
@@ -1635,9 +1951,25 @@
         "storage": "-20°C, protected from light and moisture"
       },
       "coa": {
-        "file": "/docs/coa/AARLL-7980975-P%20-%20Tesamorelin%20-%20Purity.pdf",
-        "label": "AARLL-7980975-P"
+        "file": "/docs/coa/12979_AARL_Tesamorelin.pdf",
+        "label": "110148"
       },
+      "coas": [
+        {
+          "lot": "110148",
+          "file": "/docs/coa/12979_AARL_Tesamorelin.pdf",
+          "purity": "99.51%",
+          "identity": "confirmed",
+          "note": ""
+        },
+        {
+          "lot": "AARLL-7980975-P",
+          "file": "/docs/coa/AARLL-7980975-P%20-%20Tesamorelin%20-%20Purity.pdf",
+          "purity": "99.19%",
+          "identity": "confirmed",
+          "note": ""
+        }
+      ],
       "status": "active"
     },
     {
@@ -1691,6 +2023,7 @@
         "storage": "-20°C, protected from light and moisture"
       },
       "coa": null,
+      "coas": [],
       "status": "active"
     }
   ]
