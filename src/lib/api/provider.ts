@@ -92,7 +92,9 @@ function wooAuth() {
 
 async function wooGet<T>(route: string): Promise<T> {
   const { base, headers } = wooAuth();
-  /* retry transient connection drops (local nginx under prerender bursts) */
+  /* retry transient connection drops — WP Engine/Cloudflare drops the odd
+     request when `next build` prerenders 30 product pages at once, and one
+     dropped fetch fails the whole build */
   for (let attempt = 1; ; attempt++) {
     try {
       const res = await fetch(`${base}/wp-json/wc/v3${route}`, {
@@ -104,8 +106,8 @@ async function wooGet<T>(route: string): Promise<T> {
       }
       return (await res.json()) as T;
     } catch (e) {
-      if (attempt >= 3) throw e;
-      await new Promise((r) => setTimeout(r, 500 * attempt));
+      if (attempt >= 4) throw e;
+      await new Promise((r) => setTimeout(r, 600 * attempt));
     }
   }
 }

@@ -42,6 +42,13 @@ const nextConfig: NextConfig = {
     remotePatterns,
     ...(wpIsLocal ? { dangerouslyAllowLocalIP: true } : {}),
   },
+  /* Prerendering 60 pages across 11 workers made WP Engine return the odd 504,
+     which failed the whole build. Fewer workers ease the burst, and a page-level
+     retry covers the one that still slips through. */
+  experimental: {
+    staticGenerationMinPagesPerWorker: 30,
+    staticGenerationRetryCount: 2,
+  },
 };
 
 export default nextConfig;
