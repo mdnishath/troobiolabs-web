@@ -35,6 +35,17 @@ export function Collection({ products }: { products: Product[] }) {
   const mobile = useMediaQuery("(max-width: 640px)");
   const N = products.length;
 
+  /* the strip wraps, so the first and last slides still have a neighbour on
+     each side instead of an empty half */
+  const step = (d: number) => setActive((a) => (a + d + N) % N);
+  /* shortest signed distance from the active card, e.g. 29 -> -1 when N = 30 */
+  const offset = (i: number) => {
+    const d = i - active;
+    if (d > N / 2) return d - N;
+    if (d < -N / 2) return d + N;
+    return d;
+  };
+
   /* ✓ reflects the real cart — removing the item in the drawer flips it back to + */
   const inCart = (id: string) =>
     mounted && items.some((i) => i.productId === id);
@@ -52,8 +63,8 @@ export function Collection({ products }: { products: Product[] }) {
     openCart();
   };
 
-  const navBtn = (on: boolean) =>
-    `flex h-[42px] w-[42px] items-center justify-center rounded-full border border-line bg-white pb-[2px] text-[19px] leading-none text-ink transition-colors hover:border-[#9B8FE8] hover:text-brand-purple ${on ? "cursor-pointer" : "cursor-default opacity-35"}`;
+  const navBtn =
+    "flex h-[42px] w-[42px] cursor-pointer items-center justify-center rounded-full border border-line bg-white pb-[2px] text-[19px] leading-none text-ink transition-colors hover:border-[#9B8FE8] hover:text-brand-purple";
 
   return (
     <section className="mx-auto mt-[clamp(56px,7vw,84px)] max-w-[1440px] px-6">
@@ -68,13 +79,13 @@ export function Collection({ products }: { products: Product[] }) {
           onTouchEnd={(e) => {
             if (touchX === null) return;
             const dx = e.changedTouches[0].clientX - touchX;
-            if (dx < -40) setActive((a) => Math.min(N - 1, a + 1));
-            if (dx > 40) setActive((a) => Math.max(0, a - 1));
+            if (dx < -40) step(1);
+            if (dx > 40) step(-1);
             setTouchX(null);
           }}
         >
           {products.map((p, i) => {
-            const off = i - active;
+            const off = offset(i);
             const ao = Math.abs(off);
             const vis = ao <= (mobile ? 1 : 2);
             const s = [1, 0.86, 0.72][Math.min(ao, 2)];
@@ -180,9 +191,9 @@ export function Collection({ products }: { products: Product[] }) {
 
         <div className="mt-[34px] flex items-center justify-center gap-5">
           <button
-            onClick={() => setActive((a) => Math.max(0, a - 1))}
+            onClick={() => step(-1)}
             aria-label="Previous products"
-            className={navBtn(active > 0)}
+            className={navBtn}
           >
             ‹
           </button>
@@ -208,9 +219,9 @@ export function Collection({ products }: { products: Product[] }) {
             </div>
           )}
           <button
-            onClick={() => setActive((a) => Math.min(N - 1, a + 1))}
+            onClick={() => step(1)}
             aria-label="Next products"
-            className={navBtn(active < N - 1)}
+            className={navBtn}
           >
             ›
           </button>
