@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
+import { randomBytes } from "node:crypto";
 import { getSession } from "@/lib/session";
+import { isZelleGateway, MAX_PROOF_BYTES, type ZelleProof } from "@/lib/zelle";
 
 interface CheckoutBody {
   email: string;
@@ -13,6 +15,8 @@ interface CheckoutBody {
   method: "standard" | "express";
   payment?: { id: string; title: string };
   items: { productId: string; name: string; size: string; price: number; qty: number }[];
+  /** required when paying with Zelle — collected before the order is created */
+  zelle?: ZelleProof;
 }
 
 /* offline gateways get their conventional WooCommerce status */
@@ -44,6 +48,24 @@ export async function POST(req: Request) {
 
   if (!body.items?.length || !body.email?.includes("@")) {
     return NextResponse.json({ error: "Invalid order" }, { status: 400 });
+  }
+
+  /* Zelle: no proof, no order */
+  const zelle = body.payment && isZelleGateway(body.payment);
+  if (zelle) {
+    const z = body.zelle;
+    if (!z?.senderName?.trim() || !z.screenshot?.startsWith("data:image/")) {
+      return NextResponse.json(
+        { error: "Please add the sender name and a screenshot of your Zelle payment." },
+        { status: 400 },
+      );
+    }
+    if (z.screenshot.length > MAX_PROOF_BYTES) {
+      return NextResponse.json(
+        { error: "Payment screenshot is too large." },
+        { status: 413 },
+      );
+    }
   }
 
   /* ordering requires a signed-in research account */
@@ -122,12 +144,17 @@ export async function POST(req: Request) {
         lineItems.push(line);
       }
 
+      /* one-time token lets the proof endpoint trust this order's upload */
+      const proofToken = zelle ? randomBytes(24).toString("hex") : null;
+
       const order = await wc<{ id: number }>("/orders", {
         method: "POST",
         body: JSON.stringify({
-          status: body.payment
-            ? (STATUS_BY_GATEWAY[body.payment.id] ?? "pending")
-            : "pending",
+          status: zelle
+            ? "on-hold"
+            : body.payment
+              ? (STATUS_BY_GATEWAY[body.payment.id] ?? "pending")
+              : "pending",
           payment_method: body.payment?.id ?? "",
           payment_method_title: body.payment?.title ?? "",
           customer_id: session.uid,
@@ -157,10 +184,44 @@ export async function POST(req: Request) {
               : { method_id: "flat_rate", method_title: "Standard Shipping", total: "8.95" },
           ],
           line_items: lineItems,
-          meta_data: [{ key: "research_use_acknowledged", value: "yes" }],
+          meta_data: [
+            { key: "research_use_acknowledged", value: "yes" },
+            { key: "terms_accepted", value: "yes" },
+            ...(proofToken ? [{ key: "_troo_proof_token", value: proofToken }] : []),
+          ],
         }),
       });
-      return NextResponse.json({ orderId: `Order TROO-${order.id}` });
+
+      /* attach the Zelle screenshot + sender details to the order in WordPress */
+      if (zelle && body.zelle && proofToken) {
+        const proofRes = await fetch(`${base}/wp-json/troo/v1/zelle-proof`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          cache: "no-store",
+          body: JSON.stringify({
+            order_id: order.id,
+            token: proofToken,
+            sender_name: body.zelle.senderName.trim(),
+            reference: body.zelle.reference?.trim() ?? "",
+            screenshot: body.zelle.screenshot,
+          }),
+        }).catch(() => null);
+
+        if (!proofRes?.ok) {
+          /* keep the order, but make the missing proof obvious to staff */
+          await wc(`/orders/${order.id}/notes`, {
+            method: "POST",
+            body: JSON.stringify({
+              note: `Zelle proof upload FAILED (${proofRes?.status ?? "network"}). Sender: ${body.zelle.senderName.trim()}${body.zelle.reference ? ` · Ref: ${body.zelle.reference.trim()}` : ""}. Ask the customer to email the screenshot.`,
+            }),
+          }).catch(() => null);
+        }
+      }
+
+      return NextResponse.json({
+        orderId: `Order TROO-${order.id}`,
+        awaitingVerification: !!zelle,
+      });
     } catch (e) {
       return NextResponse.json(
         { error: e instanceof Error ? e.message : "Order failed" },
@@ -171,5 +232,5 @@ export async function POST(req: Request) {
 
   /* local fallback — matches the design prototype's confirmation */
   const id = `TROO-26-${Math.floor(1000 + Math.random() * 9000)}`;
-  return NextResponse.json({ orderId: `Order ${id}` });
+  return NextResponse.json({ orderId: `Order ${id}`, awaitingVerification: !!zelle });
 }

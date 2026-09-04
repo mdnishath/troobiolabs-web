@@ -7,6 +7,8 @@ import { Lock, Check } from "lucide-react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { AuthGate } from "@/components/auth/AuthGate";
 import { CardBrands } from "@/components/ui/CardBrands";
+import { ZellePayment } from "@/components/checkout/ZellePayment";
+import { isZelleGateway, type ZelleDetails, type ZelleProof } from "@/lib/zelle";
 import { useCart, cartSubtotal } from "@/store/cart";
 import { useMounted } from "@/hooks/useMounted";
 import { fmt, FREE_SHIP_THRESHOLD, SHIP_COST, cn } from "@/lib/utils";
@@ -18,6 +20,13 @@ const CARD =
 const HEAD = "mb-4 text-[13px] font-semibold uppercase tracking-[1.5px]";
 
 const EXPRESS_COST = 24.95;
+
+interface PaymentMethod {
+  id: string;
+  title: string;
+  description: string;
+  zelle?: ZelleDetails | null;
+}
 
 export function CheckoutClient() {
   const mounted = useMounted();
@@ -39,7 +48,13 @@ export function CheckoutClient() {
   const [terms, setTerms] = useState(false);
   const [coupon, setCoupon] = useState("");
   const [couponMsg, setCouponMsg] = useState<string | null>(null);
-  const [placed, setPlaced] = useState<{ orderId: string; email: string } | null>(null);
+  const [placed, setPlaced] = useState<{
+    orderId: string;
+    email: string;
+    awaitingVerification: boolean;
+  } | null>(null);
+  /* Zelle collects sender details + a screenshot before the order is created */
+  const [zelleStep, setZelleStep] = useState(false);
 
   /* prefill from the signed-in customer's saved details */
   const me = useQuery({
@@ -81,15 +96,14 @@ export function CheckoutClient() {
     queryKey: ["payment-methods"],
     queryFn: async () => {
       const res = await fetch("/api/payment-methods");
-      if (!res.ok) return { methods: [] as { id: string; title: string; description: string }[] };
-      return res.json() as Promise<{
-        methods: { id: string; title: string; description: string }[];
-      }>;
+      if (!res.ok) return { methods: [] as PaymentMethod[] };
+      return res.json() as Promise<{ methods: PaymentMethod[] }>;
     },
   });
   const methods = gateways.data?.methods ?? [];
   const selectedPayment =
     methods.find((m) => m.id === payment) ?? (methods.length === 1 ? methods[0] : undefined);
+  const payingWithZelle = !!selectedPayment && isZelleGateway(selectedPayment);
 
   const raw = mounted ? items : [];
   const sub = cartSubtotal(raw);
@@ -114,7 +128,7 @@ export function CheckoutClient() {
     terms;
 
   const placeOrder = useMutation({
-    mutationFn: async () => {
+    mutationFn: async (zelle?: ZelleProof) => {
       const res = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -125,17 +139,29 @@ export function CheckoutClient() {
             ? { id: selectedPayment.id, title: selectedPayment.title }
             : undefined,
           items: raw,
+          zelle,
         }),
       });
-      if (!res.ok) throw new Error("Order failed");
-      return res.json() as Promise<{ orderId: string }>;
+      const data = (await res.json().catch(() => ({}))) as {
+        orderId?: string;
+        awaitingVerification?: boolean;
+        error?: string;
+      };
+      if (!res.ok || !data.orderId) throw new Error(data.error ?? "Order failed");
+      return data as { orderId: string; awaitingVerification?: boolean };
     },
     onSuccess: (data) => {
-      setPlaced({ orderId: data.orderId, email: form.email });
+      setPlaced({
+        orderId: data.orderId,
+        email: form.email,
+        awaitingVerification: !!data.awaitingVerification,
+      });
       clear();
       window.scrollTo(0, 0);
     },
   });
+
+  const total = sub + (raw.length ? shipCost : 0);
 
   if (placed) {
     return (
@@ -155,16 +181,26 @@ export function CheckoutClient() {
             <Check size={40} strokeWidth={2.6} className="text-white" />
           </div>
           <h1 className="text-gradient-brand mb-0 mt-7 text-[clamp(26px,4vw,38px)] font-light tracking-[-.5px]">
-            Order Confirmed
+            {placed.awaitingVerification ? "Order Received" : "Order Confirmed"}
           </h1>
           <div className="mt-[14px] inline-block rounded-full border-[1.5px] border-[#BFDCEF] px-5 py-[9px] text-[13px] font-semibold tracking-[1.5px] text-brand-blue">
             {placed.orderId}
           </div>
-          <p className="mb-0 mt-5 text-[14.5px] leading-[1.8] text-body">
-            A confirmation is on its way to <strong>{placed.email}</strong>.
-            Your order ships from our USA lab within 24 hours, with
-            batch-specific COA documents included.
-          </p>
+          {placed.awaitingVerification ? (
+            <p className="mb-0 mt-5 text-[14.5px] leading-[1.8] text-body">
+              Thanks — your Zelle payment proof has been submitted and your
+              order is <strong>on hold pending verification</strong>. We&apos;ll
+              email <strong>{placed.email}</strong> as soon as the payment is
+              confirmed, and your order ships from our USA lab within 24 hours
+              after that.
+            </p>
+          ) : (
+            <p className="mb-0 mt-5 text-[14.5px] leading-[1.8] text-body">
+              A confirmation is on its way to <strong>{placed.email}</strong>.
+              Your order ships from our USA lab within 24 hours, with
+              batch-specific COA documents included.
+            </p>
+          )}
           <div className="mx-auto my-[26px] h-1 w-[150px] rounded-[2px] bg-gradient-brand" />
           <div className="flex flex-wrap justify-center gap-[14px]">
             <Link
@@ -424,6 +460,20 @@ export function CheckoutClient() {
               .
             </span>
           </button>
+
+          {zelleStep && payingWithZelle && (
+            <div id="zelle-step" className="scroll-mt-6">
+              <ZellePayment
+                amount={fmt(total)}
+                details={selectedPayment?.zelle ?? null}
+                email={form.email}
+                busy={placeOrder.isPending}
+                error={placeOrder.isError ? placeOrder.error?.message ?? null : null}
+                onBack={() => setZelleStep(false)}
+                onSubmit={(proof) => placeOrder.mutate(proof)}
+              />
+            </div>
+          )}
         </div>
         )}
 
@@ -499,22 +549,40 @@ export function CheckoutClient() {
             </span>
           </div>
           <button
-            onClick={() => valid && placeOrder.mutate()}
-            disabled={!valid || placeOrder.isPending}
+            onClick={() => {
+              if (!valid) return;
+              if (payingWithZelle) {
+                setZelleStep(true);
+                setTimeout(
+                  () =>
+                    document
+                      .getElementById("zelle-step")
+                      ?.scrollIntoView({ behavior: "smooth", block: "start" }),
+                  50,
+                );
+                return;
+              }
+              placeOrder.mutate(undefined);
+            }}
+            disabled={!valid || placeOrder.isPending || zelleStep}
             className={cn(
               "mt-5 block w-full rounded-full bg-gradient-cta px-[30px] py-4 text-[13px] font-semibold uppercase tracking-[2px] text-white shadow-[0_10px_24px_rgba(20,134,201,.25)]",
-              valid ? "cursor-pointer" : "cursor-not-allowed opacity-45",
+              valid && !zelleStep ? "cursor-pointer" : "cursor-not-allowed opacity-45",
             )}
           >
             {!me.data && !me.isLoading
               ? "Sign In to Place Order"
               : placeOrder.isPending
                 ? "Placing Order…"
-                : "Place Order"}
+                : payingWithZelle
+                  ? zelleStep
+                    ? "Complete Zelle Payment Above"
+                    : "Continue to Zelle Payment"
+                  : "Place Order"}
           </button>
-          {placeOrder.isError && (
+          {placeOrder.isError && !zelleStep && (
             <div className="mt-3 text-center text-xs font-semibold text-brand-pink">
-              Something went wrong placing the order — please try again.
+              {placeOrder.error?.message || "Something went wrong placing the order — please try again."}
             </div>
           )}
           <p className="mb-0 mt-4 text-center text-[11px] leading-[1.7] text-faint">
