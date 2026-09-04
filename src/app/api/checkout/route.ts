@@ -144,17 +144,20 @@ export async function POST(req: Request) {
         lineItems.push(line);
       }
 
-      /* one-time token lets the proof endpoint trust this order's upload */
+      /*
+       * Zelle: the order is created Pending with a one-time token; the TROO
+       * Zelle Gateway plugin's proof endpoint verifies the token, stores the
+       * screenshot and moves the order to Processing. No proof, no
+       * confirmation.
+       */
       const proofToken = zelle ? randomBytes(24).toString("hex") : null;
 
       const order = await wc<{ id: number }>("/orders", {
         method: "POST",
         body: JSON.stringify({
-          status: zelle
-            ? "on-hold"
-            : body.payment
-              ? (STATUS_BY_GATEWAY[body.payment.id] ?? "pending")
-              : "pending",
+          status: body.payment && !zelle
+            ? (STATUS_BY_GATEWAY[body.payment.id] ?? "pending")
+            : "pending",
           payment_method: body.payment?.id ?? "",
           payment_method_title: body.payment?.title ?? "",
           customer_id: session.uid,
@@ -187,32 +190,34 @@ export async function POST(req: Request) {
           meta_data: [
             { key: "research_use_acknowledged", value: "yes" },
             { key: "terms_accepted", value: "yes" },
-            ...(proofToken ? [{ key: "_troo_proof_token", value: proofToken }] : []),
+            ...(proofToken ? [{ key: "_troo_zelle_token", value: proofToken }] : []),
           ],
         }),
       });
 
-      /* attach the Zelle screenshot + sender details to the order in WordPress */
+      /* hand the Zelle screenshot + sender details to the gateway plugin */
+      let zelleProofSaved = false;
       if (zelle && body.zelle && proofToken) {
-        const proofRes = await fetch(`${base}/wp-json/troo/v1/zelle-proof`, {
+        const proofRes = await fetch(`${base}/wp-json/troo/v1/zelle/proof`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           cache: "no-store",
           body: JSON.stringify({
             order_id: order.id,
             token: proofToken,
-            sender_name: body.zelle.senderName.trim(),
+            sender: body.zelle.senderName.trim(),
             reference: body.zelle.reference?.trim() ?? "",
             screenshot: body.zelle.screenshot,
           }),
         }).catch(() => null);
+        zelleProofSaved = !!proofRes?.ok;
 
-        if (!proofRes?.ok) {
-          /* keep the order, but make the missing proof obvious to staff */
+        if (!zelleProofSaved) {
+          /* order stays Pending; make the missing proof obvious to staff */
           await wc(`/orders/${order.id}/notes`, {
             method: "POST",
             body: JSON.stringify({
-              note: `Zelle proof upload FAILED (${proofRes?.status ?? "network"}). Sender: ${body.zelle.senderName.trim()}${body.zelle.reference ? ` · Ref: ${body.zelle.reference.trim()}` : ""}. Ask the customer to email the screenshot.`,
+              note: `Zelle proof upload FAILED (${proofRes?.status ?? "network"}) — is the TROO Zelle Gateway plugin v1.1+ active? Sender: ${body.zelle.senderName.trim()}${body.zelle.reference ? ` · Ref: ${body.zelle.reference.trim()}` : ""}. Ask the customer to email the screenshot.`,
             }),
           }).catch(() => null);
         }
@@ -220,7 +225,7 @@ export async function POST(req: Request) {
 
       return NextResponse.json({
         orderId: `Order TROO-${order.id}`,
-        awaitingVerification: !!zelle,
+        zelle: zelle ? (zelleProofSaved ? "confirmed" : "proof-failed") : undefined,
       });
     } catch (e) {
       return NextResponse.json(
@@ -232,5 +237,8 @@ export async function POST(req: Request) {
 
   /* local fallback — matches the design prototype's confirmation */
   const id = `TROO-26-${Math.floor(1000 + Math.random() * 9000)}`;
-  return NextResponse.json({ orderId: `Order ${id}`, awaitingVerification: !!zelle });
+  return NextResponse.json({
+    orderId: `Order ${id}`,
+    zelle: zelle ? "confirmed" : undefined,
+  });
 }

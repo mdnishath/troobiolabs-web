@@ -114,8 +114,8 @@ export function ZellePayment({
       <p className="mb-0 mt-2 text-[12.5px] leading-[1.7] text-body">
         Send the exact order total from your bank&apos;s Zelle to the
         recipient below, then upload a screenshot of the completed transfer.
-        Your order is placed on hold and confirmed once our team verifies the
-        payment.
+        Your order is confirmed as soon as the proof is submitted; our team
+        verifies the transfer before shipping.
       </p>
 
       {/* amount + recipient */}

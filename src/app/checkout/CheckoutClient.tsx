@@ -51,7 +51,7 @@ export function CheckoutClient() {
   const [placed, setPlaced] = useState<{
     orderId: string;
     email: string;
-    awaitingVerification: boolean;
+    zelle?: "confirmed" | "proof-failed";
   } | null>(null);
   /* Zelle collects sender details + a screenshot before the order is created */
   const [zelleStep, setZelleStep] = useState(false);
@@ -144,18 +144,14 @@ export function CheckoutClient() {
       });
       const data = (await res.json().catch(() => ({}))) as {
         orderId?: string;
-        awaitingVerification?: boolean;
+        zelle?: "confirmed" | "proof-failed";
         error?: string;
       };
       if (!res.ok || !data.orderId) throw new Error(data.error ?? "Order failed");
-      return data as { orderId: string; awaitingVerification?: boolean };
+      return data as { orderId: string; zelle?: "confirmed" | "proof-failed" };
     },
     onSuccess: (data) => {
-      setPlaced({
-        orderId: data.orderId,
-        email: form.email,
-        awaitingVerification: !!data.awaitingVerification,
-      });
+      setPlaced({ orderId: data.orderId, email: form.email, zelle: data.zelle });
       clear();
       window.scrollTo(0, 0);
     },
@@ -181,18 +177,24 @@ export function CheckoutClient() {
             <Check size={40} strokeWidth={2.6} className="text-white" />
           </div>
           <h1 className="text-gradient-brand mb-0 mt-7 text-[clamp(26px,4vw,38px)] font-light tracking-[-.5px]">
-            {placed.awaitingVerification ? "Order Received" : "Order Confirmed"}
+            {placed.zelle === "proof-failed" ? "Order Received" : "Order Confirmed"}
           </h1>
           <div className="mt-[14px] inline-block rounded-full border-[1.5px] border-[#BFDCEF] px-5 py-[9px] text-[13px] font-semibold tracking-[1.5px] text-brand-blue">
             {placed.orderId}
           </div>
-          {placed.awaitingVerification ? (
+          {placed.zelle === "confirmed" ? (
             <p className="mb-0 mt-5 text-[14.5px] leading-[1.8] text-body">
-              Thanks — your Zelle payment proof has been submitted and your
-              order is <strong>on hold pending verification</strong>. We&apos;ll
-              email <strong>{placed.email}</strong> as soon as the payment is
-              confirmed, and your order ships from our USA lab within 24 hours
-              after that.
+              Thanks — your Zelle payment proof has been received. A
+              confirmation is on its way to <strong>{placed.email}</strong>.
+              We verify the transfer, then your order ships from our USA lab
+              within 24 hours with batch-specific COA documents included.
+            </p>
+          ) : placed.zelle === "proof-failed" ? (
+            <p className="mb-0 mt-5 text-[14.5px] leading-[1.8] text-body">
+              Your order was created but we couldn&apos;t attach your payment
+              screenshot. Please email it to{" "}
+              <a href="mailto:support@troobiolabs.org">support@troobiolabs.org</a>{" "}
+              quoting your order number so we can confirm the order.
             </p>
           ) : (
             <p className="mb-0 mt-5 text-[14.5px] leading-[1.8] text-body">

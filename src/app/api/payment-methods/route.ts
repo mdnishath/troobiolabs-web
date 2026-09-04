@@ -11,18 +11,24 @@ interface WooGateway {
   settings?: Record<string, { id: string; label: string; value: string }>;
 }
 
-/* Settings keys vary between Zelle plugins, so match on the field label instead. */
+/*
+ * The TROO Zelle Gateway plugin (wordpress/plugins/troo-zelle) keeps the
+ * option keys of the older "Checkout with Zelle" plugin. Read those first and
+ * fall back to matching on field labels for any other Zelle gateway.
+ */
 function zelleFromSettings(
   settings: WooGateway["settings"] | undefined,
 ): ZelleDetails | null {
   if (!settings) return null;
-  const find = (re: RegExp) =>
-    Object.values(settings).find((f) => re.test(f.label) || re.test(f.id));
-  const name = find(/name/i)?.value?.trim() ?? "";
-  const email = find(/email/i)?.value?.trim() ?? "";
-  const phone = find(/phone/i)?.value?.trim() ?? "";
-  const qrEnabled = find(/^qr\s*code$|qr.*(enable|show)/i)?.value;
-  const qrUrl = find(/qr.*(url|image)/i)?.value?.trim() ?? "";
+  const byKey = (key: string) => settings[key]?.value?.trim();
+  const byLabel = (re: RegExp) =>
+    Object.values(settings).find((f) => re.test(f.label))?.value?.trim();
+
+  const name = byKey("ReceiverZelleOwner") ?? byLabel(/name/i) ?? "";
+  const email = byKey("ReceiverZELLEEmail") ?? byLabel(/email/i) ?? "";
+  const phone = byKey("ReceiverZELLENo") ?? byLabel(/phone/i) ?? "";
+  const qrEnabled = byKey("enableQRCode") ?? byLabel(/^qr\s*code$/i);
+  const qrUrl = byKey("ZelleQRCode") ?? byLabel(/qr.*(url|image)/i) ?? "";
   if (!name && !email && !phone) return null;
   return {
     name,
