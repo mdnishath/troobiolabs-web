@@ -3,11 +3,21 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Mail, MessageCircle, FileText, Check } from "lucide-react";
+import { Mail, MessageCircle, FileText, Check, Phone, MapPin } from "lucide-react";
 import { useHash } from "@/hooks/useHash";
 
 const INPUT =
   "rounded-[10px] border-[1.5px] border-line px-[18px] py-[13px] text-[13.5px] text-ink outline-none placeholder:text-icon focus:border-brand-blue";
+
+const CONTACT_LINK =
+  "font-semibold text-ink no-underline hover:text-brand-blue";
+
+const PHONE = "213-654-2038";
+const PHONE_TEL = "+12136542038";
+const ADDRESS = "1791 Blount Rd, Unit 814, Pompano Beach, FL 33069";
+const ADDRESS_MAP_URL =
+  "https://www.google.com/maps/search/?api=1&query=" +
+  encodeURIComponent(ADDRESS);
 
 const TOPICS = [
   "General inquiry",
@@ -81,7 +91,41 @@ export function ContactClient() {
     }, 900);
   };
 
-  const infoCards = [
+  const infoCards: {
+    icon: typeof Mail;
+    color: string;
+    title: string;
+    body: React.ReactNode;
+    action?: () => void;
+  }[] = [
+    {
+      icon: Phone,
+      color: "#D9368A",
+      title: "Customer Service",
+      body: (
+        <>
+          <a href={`tel:${PHONE_TEL}`} className={CONTACT_LINK}>
+            {PHONE}
+          </a>
+          {" — Mon–Fri, 9am–5pm ET."}
+        </>
+      ),
+    },
+    {
+      icon: MapPin,
+      color: "#F47B2A",
+      title: "Business Address",
+      body: (
+        <a
+          href={ADDRESS_MAP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={CONTACT_LINK}
+        >
+          {ADDRESS}
+        </a>
+      ),
+    },
     {
       icon: Mail,
       color: "#1486C9",
