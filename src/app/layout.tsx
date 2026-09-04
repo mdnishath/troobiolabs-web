@@ -5,6 +5,7 @@ import { Providers } from "@/components/providers";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Toast } from "@/components/ui/Toast";
+import { AgeGate } from "@/components/ui/AgeGate";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <div className="flex-1">{children}</div>
           <Footer />
           <Toast />
+          <AgeGate />
         </Providers>
       </body>
     </html>
