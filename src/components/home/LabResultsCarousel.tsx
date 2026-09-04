@@ -146,7 +146,7 @@ export function LabResultsCarousel({ batches }: { batches: LabBatchItem[] }) {
         <div className="flex items-center gap-[7px]">
           {batches.map((b, i) => (
             <button
-              key={b.lot}
+              key={`${b.lot}-${i}`}
               onClick={() => setIdx(i)}
               aria-label={`Go to batch ${b.lot}`}
               className="cursor-pointer rounded-full border-none p-0 transition-[width] duration-300"

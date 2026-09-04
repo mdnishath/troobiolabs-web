@@ -31,8 +31,8 @@ export function LatestCoas({
         />
       </Reveal>
       <StaggerGrid className="mt-[30px] grid grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))] gap-[22px]">
-        {items.map((r) => (
-          <StaggerItem key={r.lot} className="h-full">
+        {items.map((r, i) => (
+          <StaggerItem key={`${r.lot}-${i}`} className="h-full">
             <div className="flex h-full flex-col rounded-[14px] border border-line-soft bg-white p-[26px] shadow-[0_6px_20px_rgba(21,40,60,.05)]">
               <div className="flex items-center justify-between gap-3">
                 <div className="text-base font-semibold">{r.name}</div>
