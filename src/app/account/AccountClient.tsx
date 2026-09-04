@@ -38,6 +38,7 @@ interface OrderRow {
   items: string;
   total: string;
   status: string;
+  payUrl?: string | null;
 }
 
 const STATUS_COLORS: Record<string, string> = {
@@ -346,6 +347,14 @@ export function AccountClient() {
                     <span style={chip(STATUS_COLORS[o.status] ?? "#1486C9")}>
                       {o.status}
                     </span>
+                    {o.payUrl && (
+                      <Link
+                        href={o.payUrl}
+                        className="whitespace-nowrap rounded-full bg-gradient-cta px-4 py-2 text-center text-[10px] font-semibold uppercase tracking-[1.5px] text-white no-underline"
+                      >
+                        Complete Zelle Payment
+                      </Link>
+                    )}
                   </div>
                 ))}
               </div>

@@ -48,7 +48,7 @@ export function ZellePayment({
   email: string;
   busy: boolean;
   error: string | null;
-  onBack: () => void;
+  onBack?: () => void;
   onSubmit: (proof: ZelleProof) => void;
 }) {
   const [senderName, setSenderName] = useState("");
@@ -101,15 +101,19 @@ export function ZellePayment({
       animate={{ opacity: 1, y: 0 }}
       className="rounded-[14px] border border-line-soft bg-white p-6 shadow-[0_4px_14px_rgba(21,40,60,.04)]"
     >
-      <button
-        onClick={onBack}
-        className="mb-4 inline-flex cursor-pointer items-center gap-2 text-[10.5px] font-semibold uppercase tracking-[1.5px] text-brand-blue"
-      >
-        <ArrowLeft size={14} /> Back to details
-      </button>
+      {onBack && (
+        <button
+          onClick={onBack}
+          className="mb-4 inline-flex cursor-pointer items-center gap-2 text-[10.5px] font-semibold uppercase tracking-[1.5px] text-brand-blue"
+        >
+          <ArrowLeft size={14} /> Back to details
+        </button>
+      )}
 
       <div className="text-[13px] font-semibold uppercase tracking-[1.5px]">
-        <span className="text-brand-blue">05</span> · Pay with Zelle
+        <span className="text-brand-blue">Step 1</span> · Send the payment
+        &nbsp;·&nbsp; <span className="text-brand-blue">Step 2</span> · Upload
+        proof
       </div>
       <p className="mb-0 mt-2 text-[12.5px] leading-[1.7] text-body">
         Send the exact order total from your bank&apos;s Zelle to the

@@ -1,12 +1,15 @@
 import { NextResponse } from "next/server";
 import { getSession } from "@/lib/session";
 import { wpFetch } from "@/lib/api/wp";
+import { isZelleGateway } from "@/lib/zelle";
 
 interface WooOrder {
   id: number;
   status: string;
   date_created: string;
   total: string;
+  payment_method: string;
+  payment_method_title: string;
   line_items: { name: string; quantity: number }[];
 }
 
@@ -34,6 +37,12 @@ export async function GET() {
         .join(" · "),
       total: `$${Number(o.total).toFixed(2)}`,
       status: o.status,
+      /* pending Zelle orders can still be paid from the account page */
+      payUrl:
+        o.status === "pending" &&
+        isZelleGateway({ id: o.payment_method, title: o.payment_method_title })
+          ? `/checkout/zelle/${o.id}`
+          : null,
     })),
   });
 }

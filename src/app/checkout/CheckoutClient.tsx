@@ -1,14 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { Lock, Check } from "lucide-react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { AuthGate } from "@/components/auth/AuthGate";
 import { CardBrands } from "@/components/ui/CardBrands";
-import { ZellePayment } from "@/components/checkout/ZellePayment";
-import { isZelleGateway, type ZelleDetails, type ZelleProof } from "@/lib/zelle";
+import { OrderConfirmed } from "@/components/checkout/OrderConfirmed";
 import { useCart, cartSubtotal } from "@/store/cart";
 import { useMounted } from "@/hooks/useMounted";
 import { fmt, FREE_SHIP_THRESHOLD, SHIP_COST, cn } from "@/lib/utils";
@@ -25,11 +24,13 @@ interface PaymentMethod {
   id: string;
   title: string;
   description: string;
-  zelle?: ZelleDetails | null;
+  /** Zelle continues on /checkout/zelle/<order> after the order is placed */
+  zelle?: boolean;
 }
 
 export function CheckoutClient() {
   const mounted = useMounted();
+  const router = useRouter();
   const qc = useQueryClient();
   const { items, clear } = useCart();
   const [form, setForm] = useState({
@@ -48,13 +49,9 @@ export function CheckoutClient() {
   const [terms, setTerms] = useState(false);
   const [coupon, setCoupon] = useState("");
   const [couponMsg, setCouponMsg] = useState<string | null>(null);
-  const [placed, setPlaced] = useState<{
-    orderId: string;
-    email: string;
-    zelle?: "confirmed" | "proof-failed";
-  } | null>(null);
-  /* Zelle collects sender details + a screenshot before the order is created */
-  const [zelleStep, setZelleStep] = useState(false);
+  const [placed, setPlaced] = useState<{ orderId: string; email: string } | null>(null);
+  /* set while we hand off to the Zelle payment page, so the button stays busy */
+  const [redirecting, setRedirecting] = useState(false);
 
   /* prefill from the signed-in customer's saved details */
   const me = useQuery({
@@ -103,7 +100,7 @@ export function CheckoutClient() {
   const methods = gateways.data?.methods ?? [];
   const selectedPayment =
     methods.find((m) => m.id === payment) ?? (methods.length === 1 ? methods[0] : undefined);
-  const payingWithZelle = !!selectedPayment && isZelleGateway(selectedPayment);
+  const payingWithZelle = !!selectedPayment?.zelle;
 
   const raw = mounted ? items : [];
   const sub = cartSubtotal(raw);
@@ -128,7 +125,7 @@ export function CheckoutClient() {
     terms;
 
   const placeOrder = useMutation({
-    mutationFn: async (zelle?: ZelleProof) => {
+    mutationFn: async () => {
       const res = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -139,88 +136,31 @@ export function CheckoutClient() {
             ? { id: selectedPayment.id, title: selectedPayment.title }
             : undefined,
           items: raw,
-          zelle,
         }),
       });
       const data = (await res.json().catch(() => ({}))) as {
         orderId?: string;
-        zelle?: "confirmed" | "proof-failed";
+        payUrl?: string;
         error?: string;
       };
       if (!res.ok || !data.orderId) throw new Error(data.error ?? "Order failed");
-      return data as { orderId: string; zelle?: "confirmed" | "proof-failed" };
+      return data as { orderId: string; payUrl?: string };
     },
     onSuccess: (data) => {
-      setPlaced({ orderId: data.orderId, email: form.email, zelle: data.zelle });
       clear();
+      if (data.payUrl) {
+        /* Zelle: pay + upload proof on its own page */
+        setRedirecting(true);
+        router.push(data.payUrl);
+        return;
+      }
+      setPlaced({ orderId: data.orderId, email: form.email });
       window.scrollTo(0, 0);
     },
   });
 
-  const total = sub + (raw.length ? shipCost : 0);
-
   if (placed) {
-    return (
-      <main className="mx-auto max-w-[1440px] px-6 pt-[clamp(30px,4vw,52px)]">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="mx-auto max-w-[620px] pb-[10px] pt-10 text-center"
-        >
-          <div
-            className="mx-auto flex h-[92px] w-[92px] items-center justify-center rounded-full shadow-[0_16px_40px_rgba(20,134,201,.3)]"
-            style={{
-              background: "linear-gradient(120deg,#14B8C9,#1486C9 60%,#2E5BD7)",
-            }}
-          >
-            <Check size={40} strokeWidth={2.6} className="text-white" />
-          </div>
-          <h1 className="text-gradient-brand mb-0 mt-7 text-[clamp(26px,4vw,38px)] font-light tracking-[-.5px]">
-            {placed.zelle === "proof-failed" ? "Order Received" : "Order Confirmed"}
-          </h1>
-          <div className="mt-[14px] inline-block rounded-full border-[1.5px] border-[#BFDCEF] px-5 py-[9px] text-[13px] font-semibold tracking-[1.5px] text-brand-blue">
-            {placed.orderId}
-          </div>
-          {placed.zelle === "confirmed" ? (
-            <p className="mb-0 mt-5 text-[14.5px] leading-[1.8] text-body">
-              Thanks — your Zelle payment proof has been received. A
-              confirmation is on its way to <strong>{placed.email}</strong>.
-              We verify the transfer, then your order ships from our USA lab
-              within 24 hours with batch-specific COA documents included.
-            </p>
-          ) : placed.zelle === "proof-failed" ? (
-            <p className="mb-0 mt-5 text-[14.5px] leading-[1.8] text-body">
-              Your order was created but we couldn&apos;t attach your payment
-              screenshot. Please email it to{" "}
-              <a href="mailto:support@troobiolabs.org">support@troobiolabs.org</a>{" "}
-              quoting your order number so we can confirm the order.
-            </p>
-          ) : (
-            <p className="mb-0 mt-5 text-[14.5px] leading-[1.8] text-body">
-              A confirmation is on its way to <strong>{placed.email}</strong>.
-              Your order ships from our USA lab within 24 hours, with
-              batch-specific COA documents included.
-            </p>
-          )}
-          <div className="mx-auto my-[26px] h-1 w-[150px] rounded-[2px] bg-gradient-brand" />
-          <div className="flex flex-wrap justify-center gap-[14px]">
-            <Link
-              href="/account"
-              className="inline-flex rounded-full bg-gradient-cta px-[30px] py-[14px] text-xs font-semibold uppercase tracking-[1.8px] text-white no-underline"
-            >
-              Track in My Account
-            </Link>
-            <Link
-              href="/shop"
-              className="inline-flex rounded-full border-2 border-brand-blue px-[30px] py-[14px] text-xs font-semibold uppercase tracking-[1.8px] text-brand-blue no-underline"
-            >
-              Continue Shopping
-            </Link>
-          </div>
-        </motion.div>
-      </main>
-    );
+    return <OrderConfirmed orderId={placed.orderId} email={placed.email} />;
   }
 
   return (
@@ -462,20 +402,6 @@ export function CheckoutClient() {
               .
             </span>
           </button>
-
-          {zelleStep && payingWithZelle && (
-            <div id="zelle-step" className="scroll-mt-6">
-              <ZellePayment
-                amount={fmt(total)}
-                details={selectedPayment?.zelle ?? null}
-                email={form.email}
-                busy={placeOrder.isPending}
-                error={placeOrder.isError ? placeOrder.error?.message ?? null : null}
-                onBack={() => setZelleStep(false)}
-                onSubmit={(proof) => placeOrder.mutate(proof)}
-              />
-            </div>
-          )}
         </div>
         )}
 
@@ -551,38 +477,28 @@ export function CheckoutClient() {
             </span>
           </div>
           <button
-            onClick={() => {
-              if (!valid) return;
-              if (payingWithZelle) {
-                setZelleStep(true);
-                setTimeout(
-                  () =>
-                    document
-                      .getElementById("zelle-step")
-                      ?.scrollIntoView({ behavior: "smooth", block: "start" }),
-                  50,
-                );
-                return;
-              }
-              placeOrder.mutate(undefined);
-            }}
-            disabled={!valid || placeOrder.isPending || zelleStep}
+            onClick={() => valid && placeOrder.mutate()}
+            disabled={!valid || placeOrder.isPending || redirecting}
             className={cn(
               "mt-5 block w-full rounded-full bg-gradient-cta px-[30px] py-4 text-[13px] font-semibold uppercase tracking-[2px] text-white shadow-[0_10px_24px_rgba(20,134,201,.25)]",
-              valid && !zelleStep ? "cursor-pointer" : "cursor-not-allowed opacity-45",
+              valid && !redirecting ? "cursor-pointer" : "cursor-not-allowed opacity-45",
             )}
           >
             {!me.data && !me.isLoading
               ? "Sign In to Place Order"
-              : placeOrder.isPending
+              : placeOrder.isPending || redirecting
                 ? "Placing Order…"
                 : payingWithZelle
-                  ? zelleStep
-                    ? "Complete Zelle Payment Above"
-                    : "Continue to Zelle Payment"
+                  ? "Place Order & Pay with Zelle"
                   : "Place Order"}
           </button>
-          {placeOrder.isError && !zelleStep && (
+          {payingWithZelle && !redirecting && (
+            <p className="mb-0 mt-3 text-center text-[11px] leading-[1.7] text-faint">
+              You&apos;ll see the Zelle payment details and upload your proof
+              of payment on the next page.
+            </p>
+          )}
+          {placeOrder.isError && (
             <div className="mt-3 text-center text-xs font-semibold text-brand-pink">
               {placeOrder.error?.message || "Something went wrong placing the order — please try again."}
             </div>
