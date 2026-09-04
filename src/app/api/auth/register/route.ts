@@ -11,13 +11,15 @@ interface WpUser {
 }
 
 export async function POST(req: Request) {
-  const { email, password, firstName, lastName } = (await req.json()) as {
-    email?: string;
-    password?: string;
-    firstName?: string;
-    lastName?: string;
-  };
-  if (!email || !password || !firstName || !lastName) {
+  const { email, password, firstName, lastName, company } =
+    (await req.json()) as {
+      email?: string;
+      password?: string;
+      firstName?: string;
+      lastName?: string;
+      company?: string;
+    };
+  if (!email || !password || !firstName || !lastName || !company?.trim()) {
     return NextResponse.json(
       { error: "All fields are required." },
       { status: 400 },
@@ -30,6 +32,7 @@ export async function POST(req: Request) {
       password,
       first_name: firstName,
       last_name: lastName,
+      company: company.trim(),
     },
   });
   if (!res.ok) {

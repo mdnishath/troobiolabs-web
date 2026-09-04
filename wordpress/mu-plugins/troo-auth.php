@@ -38,12 +38,16 @@ add_action( 'rest_api_init', function () {
 			$password   = (string) $req->get_param( 'password' );
 			$first_name = sanitize_text_field( $req->get_param( 'first_name' ) );
 			$last_name  = sanitize_text_field( $req->get_param( 'last_name' ) );
+			$company    = sanitize_text_field( $req->get_param( 'company' ) );
 
 			if ( ! is_email( $email ) ) {
 				return new WP_Error( 'troo_email', 'A valid email address is required.', [ 'status' => 400 ] );
 			}
 			if ( strlen( $password ) < 8 ) {
 				return new WP_Error( 'troo_password', 'Password must be at least 8 characters.', [ 'status' => 400 ] );
+			}
+			if ( '' === $company ) {
+				return new WP_Error( 'troo_company', 'Business / Organization is required.', [ 'status' => 400 ] );
 			}
 			if ( email_exists( $email ) ) {
 				return new WP_Error( 'troo_exists', 'An account with this email already exists.', [ 'status' => 409 ] );
@@ -60,6 +64,9 @@ add_action( 'rest_api_init', function () {
 			if ( is_wp_error( $user_id ) ) {
 				return new WP_Error( 'troo_register', $user_id->get_error_message(), [ 'status' => 400 ] );
 			}
+			// Stored as the WooCommerce billing company so it shows on the customer record and pre-fills checkout.
+			update_user_meta( $user_id, 'billing_company', $company );
+			update_user_meta( $user_id, 'troo_organization', $company );
 			return [
 				'id'         => $user_id,
 				'email'      => $email,

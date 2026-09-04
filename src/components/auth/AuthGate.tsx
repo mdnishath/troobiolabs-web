@@ -19,6 +19,7 @@ export function AuthGate({
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
+    company: "",
     email: "",
     password: "",
   });
@@ -32,7 +33,8 @@ export function AuthGate({
   const valid =
     form.email.includes("@") &&
     form.password.length >= (mode === "signup" ? 8 : 1) &&
-    (mode === "login" || (form.firstName.trim() && form.lastName.trim()));
+    (mode === "login" ||
+      (form.firstName.trim() && form.lastName.trim() && form.company.trim()));
 
   const submit = async () => {
     if (!valid || busy) return;
@@ -84,10 +86,19 @@ export function AuthGate({
 
         <div className="mt-6 flex flex-col gap-3">
           {mode === "signup" && (
-            <div className="grid grid-cols-2 gap-3">
-              <input placeholder="First name *" value={form.firstName} onChange={set("firstName")} className={INPUT} />
-              <input placeholder="Last name *" value={form.lastName} onChange={set("lastName")} className={INPUT} />
-            </div>
+            <>
+              <div className="grid grid-cols-2 gap-3">
+                <input placeholder="First name *" value={form.firstName} onChange={set("firstName")} className={INPUT} />
+                <input placeholder="Last name *" value={form.lastName} onChange={set("lastName")} className={INPUT} />
+              </div>
+              <input
+                placeholder="Business / Organization *"
+                value={form.company}
+                onChange={set("company")}
+                autoComplete="organization"
+                className={INPUT}
+              />
+            </>
           )}
           <input
             type="email"
