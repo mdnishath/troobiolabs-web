@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Check } from "lucide-react";
 import { Logo } from "./Logo";
+import { CardBrands } from "@/components/ui/CardBrands";
 import { CATEGORIES } from "@/lib/categories";
 
 const COL = "min-w-40 flex-1";
@@ -161,6 +162,7 @@ export function Footer() {
             All products are intended solely for laboratory and in-vitro
             research and are not for human or veterinary use.
           </span>
+          <CardBrands height={24} />
         </div>
       </div>
     </footer>

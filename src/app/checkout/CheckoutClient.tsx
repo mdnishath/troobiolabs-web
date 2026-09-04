@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { Lock, Check } from "lucide-react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { AuthGate } from "@/components/auth/AuthGate";
+import { CardBrands } from "@/components/ui/CardBrands";
 import { useCart, cartSubtotal } from "@/store/cart";
 import { useMounted } from "@/hooks/useMounted";
 import { fmt, FREE_SHIP_THRESHOLD, SHIP_COST, cn } from "@/lib/utils";
@@ -35,6 +36,7 @@ export function CheckoutClient() {
   const [method, setMethod] = useState<"standard" | "express">("standard");
   const [payment, setPayment] = useState<string | null>(null);
   const [ack, setAck] = useState(false);
+  const [terms, setTerms] = useState(false);
   const [coupon, setCoupon] = useState("");
   const [couponMsg, setCouponMsg] = useState<string | null>(null);
   const [placed, setPlaced] = useState<{ orderId: string; email: string } | null>(null);
@@ -108,7 +110,8 @@ export function CheckoutClient() {
     form.state.trim() !== "" &&
     form.zip.trim() !== "" &&
     (methods.length === 0 || !!selectedPayment) &&
-    ack;
+    ack &&
+    terms;
 
   const placeOrder = useMutation({
     mutationFn: async () => {
@@ -374,6 +377,53 @@ export function CheckoutClient() {
               them.
             </span>
           </button>
+
+          <button
+            onClick={() => setTerms((t) => !t)}
+            aria-pressed={terms}
+            className="flex cursor-pointer items-start gap-[14px] rounded-[14px] border-[1.5px] border-[#EAEEF3] bg-surface px-5 py-[18px] text-left"
+          >
+            <span
+              className="inline-flex h-[22px] w-[22px] flex-shrink-0 items-center justify-center rounded-[6px]"
+              style={{
+                background: terms ? "#1486C9" : "#fff",
+                border: terms ? "2px solid #1486C9" : "2px solid #C3CFDA",
+              }}
+            >
+              {terms && <Check size={12} strokeWidth={3.5} className="text-white" />}
+            </span>
+            <span className="text-xs leading-[1.7] text-slate">
+              <strong>Terms &amp; Conditions (required).</strong> I have read
+              and agree to the{" "}
+              <Link
+                href="/policies#terms"
+                target="_blank"
+                onClick={(e) => e.stopPropagation()}
+                className="font-semibold text-brand-blue"
+              >
+                Terms &amp; Conditions
+              </Link>
+              ,{" "}
+              <Link
+                href="/policies#privacy"
+                target="_blank"
+                onClick={(e) => e.stopPropagation()}
+                className="font-semibold text-brand-blue"
+              >
+                Privacy Policy
+              </Link>{" "}
+              and{" "}
+              <Link
+                href="/policies#returns"
+                target="_blank"
+                onClick={(e) => e.stopPropagation()}
+                className="font-semibold text-brand-blue"
+              >
+                Returns Policy
+              </Link>
+              .
+            </span>
+          </button>
         </div>
         )}
 
@@ -471,6 +521,12 @@ export function CheckoutClient() {
             Every shipment includes batch COAs and cold-chain packaging where
             required.
           </p>
+          <div className="mt-4 flex flex-col items-center gap-2">
+            <span className="text-[9.5px] font-semibold uppercase tracking-[1.8px] text-ghost">
+              We Accept
+            </span>
+            <CardBrands />
+          </div>
         </div>
       </div>
     </main>
