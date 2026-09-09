@@ -35,18 +35,18 @@ export function ProductCard({
   const badge = p.featured ? "Featured" : p.popular ? "Popular" : "";
 
   return (
-    <div className="flex flex-col overflow-hidden rounded-[14px] border border-line-soft bg-white shadow-[0_6px_20px_rgba(21,40,60,.05)] transition-shadow duration-300 hover:shadow-[0_14px_32px_rgba(21,40,60,.12)]">
+    <div className="flex h-full flex-col overflow-hidden rounded-[14px] border border-line-soft bg-white shadow-[0_6px_20px_rgba(21,40,60,.05)] transition-shadow duration-300 hover:shadow-[0_14px_32px_rgba(21,40,60,.12)]">
       <div className="h-[5px] bg-gradient-brand" />
       <Link
         href={`/product/${p.id}`}
-        className="relative mx-4 mt-4 block h-[200px] overflow-hidden rounded-[10px] bg-surface-2"
+        className="relative mx-3 mt-3 block h-[150px] overflow-hidden rounded-[10px] bg-surface-2 sm:mx-4 sm:mt-4 sm:h-[200px]"
       >
         {p.images[0] ? (
           <Image
             src={p.images[0]}
             alt={p.name}
             fill
-            sizes="(max-width: 640px) 100vw, 245px"
+            sizes="(max-width: 640px) 50vw, 245px"
             className="object-contain p-[10px]"
           />
         ) : (
@@ -63,7 +63,7 @@ export function ProductCard({
           </span>
         )}
       </Link>
-      <div className="flex flex-1 flex-col px-[18px] pb-5 pt-4">
+      <div className="flex flex-1 flex-col px-3 pb-4 pt-3 sm:px-[18px] sm:pb-5 sm:pt-4">
         <span
           className="text-[9.5px] font-semibold uppercase tracking-[1.6px]"
           style={{ color: category?.color ?? "#5A6572" }}
@@ -72,7 +72,7 @@ export function ProductCard({
         </span>
         <Link
           href={`/product/${p.id}`}
-          className="mt-[10px] text-base font-semibold leading-[1.35] text-ink no-underline"
+          className="mt-[10px] text-[14px] font-semibold leading-[1.35] text-ink no-underline sm:text-base"
         >
           {p.name}
         </Link>
@@ -83,7 +83,7 @@ export function ProductCard({
             {p.rating.toFixed(1)} ({p.reviews})
           </span>
         </div>
-        <div className="mt-auto flex items-center justify-between gap-[10px] pt-4">
+        <div className="mt-auto flex flex-col items-start gap-[10px] pt-4 sm:flex-row sm:items-center sm:justify-between">
           <span>
             <span className="block text-[9.5px] font-semibold uppercase tracking-[1.2px] text-faint">
               {p.sizes.map((s) => s.size).join(" / ")}
@@ -97,8 +97,8 @@ export function ProductCard({
             disabled={!p.inStock}
             className={
               p.inStock
-                ? "cursor-pointer rounded-full border-none bg-gradient-cta-70 px-[22px] py-[11px] text-[11px] font-semibold uppercase tracking-[1.5px] text-white hover:brightness-[1.08]"
-                : "cursor-not-allowed rounded-full border-none bg-gradient-cta-70 px-[22px] py-[11px] text-[11px] font-semibold uppercase tracking-[1.5px] text-white opacity-45"
+                ? "w-full cursor-pointer rounded-full border-none bg-gradient-cta-70 px-[22px] py-[11px] text-[11px] font-semibold uppercase tracking-[1.5px] text-white hover:brightness-[1.08] sm:w-auto"
+                : "w-full cursor-not-allowed rounded-full border-none bg-gradient-cta-70 px-[22px] py-[11px] text-[11px] font-semibold uppercase tracking-[1.5px] text-white opacity-45 sm:w-auto"
             }
           >
             {p.inStock ? "Add" : "Sold Out"}

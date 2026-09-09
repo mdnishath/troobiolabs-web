@@ -58,14 +58,15 @@ export function ShopClient({ initialData }: { initialData?: CatalogResponse }) {
 
       {/* chips + sort */}
       <div className="flex flex-wrap items-center justify-between gap-4">
-        <div className="flex flex-wrap gap-[9px]">
+        {/* two per row on phones — one pill per line wasted most of the width */}
+        <div className="grid w-full grid-cols-2 gap-[9px] sm:flex sm:w-auto sm:flex-wrap">
           {chips.map((c) => {
             const selected = cat === c.id;
             return (
               <button
                 key={c.id}
                 onClick={() => pick(c.id)}
-                className="cursor-pointer rounded-full border-[1.5px] px-[19px] py-[10px] text-[10.5px] font-semibold uppercase tracking-[1.4px] transition-colors"
+                className="cursor-pointer rounded-full border-[1.5px] px-1.5 py-[10px] text-[9.5px] font-semibold uppercase leading-[1.35] tracking-[.4px] transition-colors sm:px-[19px] sm:text-[10.5px] sm:tracking-[1.4px]"
                 style={
                   selected
                     ? {
@@ -117,11 +118,12 @@ export function ShopClient({ initialData }: { initialData?: CatalogResponse }) {
             hidden: {},
             visible: { transition: { staggerChildren: 0.045 } },
           }}
-          className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,245px),1fr))] gap-[22px]"
+          className="grid grid-cols-2 gap-[14px] sm:grid-cols-[repeat(auto-fit,minmax(min(100%,245px),1fr))] sm:gap-[22px]"
         >
           {list.map((p) => (
             <motion.div
               key={p.id}
+              className="h-full"
               variants={{
                 hidden: { opacity: 0, y: 18 },
                 visible: {
