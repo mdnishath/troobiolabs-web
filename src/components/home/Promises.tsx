@@ -35,7 +35,7 @@ const PROMISES = [
   },
 ];
 
-export function Promises({ img }: { img: string | null }) {
+export function Promises() {
   return (
     <section className="mt-[clamp(56px,7vw,84px)] bg-surface px-6 py-[clamp(48px,6vw,72px)]">
       <div className="mx-auto max-w-[1440px]">
@@ -48,8 +48,8 @@ export function Promises({ img }: { img: string | null }) {
             body="Pure, tested, safe — anyone can claim it. Each TROO promise is backed by a document you can read before you order."
           />
         </Reveal>
-        <div className="mt-[34px] grid grid-cols-[repeat(auto-fit,minmax(min(100%,420px),1fr))] items-stretch gap-7">
-          <StaggerGrid className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,200px),1fr))] gap-4">
+        <div className="mt-[34px]">
+          <StaggerGrid className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {PROMISES.map((p) => (
               <StaggerItem key={p.n}>
                 <div className="h-full rounded-[14px] border border-line-soft bg-white p-6">
@@ -69,30 +69,6 @@ export function Promises({ img }: { img: string | null }) {
               </StaggerItem>
             ))}
           </StaggerGrid>
-          <Reveal delay={0.15}>
-            <div className="relative flex min-h-[340px] items-center justify-center rounded-[18px] p-[clamp(24px,3vw,44px)]"
-              style={{ background: "linear-gradient(160deg,#F0F2F5,#E7EAEF)" }}
-            >
-              <span
-                className="relative m-auto block max-w-[80%] self-center"
-                style={{
-                  height: "min(60vw,330px)",
-                  aspectRatio: "201/382",
-                  filter: "drop-shadow(0 22px 24px rgba(21,40,60,.22))",
-                }}
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={img ?? "/images/sections/tissue.png"}
-                  alt="TROO product vial"
-                  className="h-full w-full object-contain"
-                />
-              </span>
-              <span className="absolute bottom-[22px] right-[22px] rounded-full border border-[#E2E8EE] bg-white px-[14px] py-[7px] text-[9.5px] font-semibold uppercase tracking-[1.8px] text-muted">
-                The Guarantee, Executed
-              </span>
-            </div>
-          </Reveal>
         </div>
       </div>
     </section>

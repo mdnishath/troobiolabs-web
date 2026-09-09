@@ -58,7 +58,7 @@ export default async function Home() {
         ))}
       </section>
 
-      <Promises img={live.promoImg} />
+      <Promises />
       <LatestCoas compoundCount={compoundCount} items={live.latestCoas} />
       <CoaPanel />
       <TraceLot />

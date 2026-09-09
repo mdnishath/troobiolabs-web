@@ -37,7 +37,6 @@ export interface HomeLiveData {
   labBatches: LabBatchItem[];
   latestCoas: CoaCardItem[];
   thumbs: string[];
-  promoImg: string | null;
 }
 
 const HERO_CAT_ORDER = ["cellular", "endocrine", "metabolic", "neural", "tissue"];
@@ -100,13 +99,11 @@ export function buildHomeData(
       pdf: p.coa!.file,
     }));
 
-  /* outro thumbnails + promises visual */
-  const withImages = active.filter((p) => p.images.length);
-  const thumbs = withImages.slice(0, 5).map((p) => p.images[0]);
-  const promo =
-    withImages.find((p) => p.id === "klow-blend") ??
-    withImages.find((p) => p.featured) ??
-    withImages[0];
+  /* outro thumbnails */
+  const thumbs = active
+    .filter((p) => p.images.length)
+    .slice(0, 5)
+    .map((p) => p.images[0]);
 
-  return { hero, labBatches, latestCoas, thumbs, promoImg: promo?.images[0] ?? null };
+  return { hero, labBatches, latestCoas, thumbs };
 }
