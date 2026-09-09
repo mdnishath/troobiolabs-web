@@ -9,11 +9,11 @@ export const metadata: Metadata = {
 };
 
 const AREAS = [
-  { cat: "tissue", bar: "#D9368A", title: "Tissue Repair & Recovery", copy: "BPC-157, TB-500, GHK-Cu and KPV in wound-healing, angiogenesis and inflammation models." },
-  { cat: "metabolic", bar: "#1486C9", title: "Metabolic & Incretin", copy: "GLP-1, GIP and glucagon-receptor agonists as model systems for glycemic and appetite research." },
-  { cat: "endocrine", bar: "#F47B2A", title: "Growth-Hormone Axis", copy: "GHRH analogs and secretagogues for pulsatility, receptor selectivity and endocrine studies." },
-  { cat: "cellular", bar: "#73B84A", title: "Longevity & Mitochondria", copy: "NAD+, L-Glutathione and MOTS-c in cellular-senescence, redox and energy-metabolism research." },
-  { cat: "neural", bar: "#5A55D6", title: "Neuro & Behavior", copy: "Selank, semax and oxytocin in cognition, stress-response and social-behavior models." },
+  { cat: "tissue", bar: "#D9368A", title: "Tissue Research", copy: "BPC-157, TB-500, GHK-Cu and KPV in wound-healing, angiogenesis and inflammation models." },
+  { cat: "metabolic", bar: "#1486C9", title: "Metabolic Research", copy: "GLP-1, GIP and glucagon-receptor agonists as model systems for glycemic and appetite research." },
+  { cat: "endocrine", bar: "#F47B2A", title: "Endocrine Research", copy: "GHRH analogs and secretagogues for pulsatility, receptor selectivity and endocrine studies." },
+  { cat: "cellular", bar: "#73B84A", title: "Cellular Research", copy: "NAD+, L-Glutathione and MOTS-c in cellular-senescence, redox and energy-metabolism research." },
+  { cat: "neural", bar: "#5A55D6", title: "Neural Research", copy: "Selank, semax and oxytocin in cognition, stress-response and social-behavior models." },
   { cat: "tissue", bar: "gradient", title: "Combined Protocols", copy: "Fixed-ratio blends like Wolverine and KLOW for multi-pathway repair studies in one vial." },
 ];
 

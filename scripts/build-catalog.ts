@@ -384,11 +384,11 @@ for (const [handle, rows] of byHandle) {
 
 /* categories written alongside products so the API layer has one source */
 const categories = [
-  { id: "tissue", name: "Tissue Repair & Recovery", color: "#D9368A", blurb: "Compounds studied in wound-healing, angiogenesis and recovery models." },
-  { id: "metabolic", name: "Metabolic & GLP-1", color: "#1486C9", blurb: "Incretin analogs studied in metabolic, glycemic and appetite research." },
-  { id: "endocrine", name: "Endocrine & GH", color: "#F47B2A", blurb: "GHRH analogs and secretagogues for endocrine-axis research." },
-  { id: "cellular", name: "Cellular & Longevity", color: "#73B84A", blurb: "Compounds studied in cellular aging and mitochondrial models." },
-  { id: "neural", name: "Neural & Cognitive", color: "#8D43B8", blurb: "Neuropeptides studied in cognition and stress-response models." },
+  { id: "tissue", name: "Tissue Research", color: "#D9368A", blurb: "Compounds studied in wound-healing, angiogenesis and recovery models." },
+  { id: "metabolic", name: "Metabolic Research", color: "#1486C9", blurb: "Incretin analogs studied in metabolic, glycemic and appetite research." },
+  { id: "endocrine", name: "Endocrine Research", color: "#F47B2A", blurb: "GHRH analogs and secretagogues for endocrine-axis research." },
+  { id: "cellular", name: "Cellular Research", color: "#73B84A", blurb: "Compounds studied in cellular aging and mitochondrial models." },
+  { id: "neural", name: "Neural Research", color: "#8D43B8", blurb: "Neuropeptides studied in cognition and stress-response models." },
   { id: "supplies", name: "Lab Supplies", color: "#5A55D6", blurb: "Solvents and consumables for reconstitution and lab protocols." },
 ];
 

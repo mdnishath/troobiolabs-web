@@ -108,7 +108,7 @@ export function AreaCard({ area }: { area: Area }) {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={area.img}
-              alt={`${area.title} research vial`}
+              alt={`${area.title} vial`}
               className="h-full w-full object-contain object-bottom"
             />
           </span>

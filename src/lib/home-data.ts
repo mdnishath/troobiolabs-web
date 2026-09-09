@@ -30,7 +30,7 @@ export interface Area {
 
 export const AREAS: Area[] = [
   {
-    key: "01", folder: "Cellular", title: "Cellular & Longevity", catId: "cellular", color: "#F47B2A",
+    key: "01", folder: "Cellular", title: "Cellular Research", catId: "cellular", color: "#F47B2A",
     img: "/images/sections/cellular.png", ar: "361/674", flip: false, dark: false,
     blurb: "Compounds central to cellular-energy, senescence and mitochondrial research programs worldwide.",
     points: [
@@ -41,7 +41,7 @@ export const AREAS: Area[] = [
     comps: ["MOTS-c", "NAD+", "L-Glutathione", "Thymosin Alpha-1"],
   },
   {
-    key: "02", folder: "Endocrine", title: "Endocrine & Growth Hormone", catId: "endocrine", color: "#73B84A",
+    key: "02", folder: "Endocrine", title: "Endocrine Research", catId: "endocrine", color: "#73B84A",
     img: "/images/sections/endocrine.png", ar: "351/658", flip: true, dark: false,
     blurb: "GHRH analogs and secretagogues for GH-axis pulsatility, receptor-selectivity and neuroendocrine research.",
     points: [
@@ -52,7 +52,7 @@ export const AREAS: Area[] = [
     comps: ["CJC-1295 / Ipamorelin", "Sermorelin", "Tesamorelin", "Hexarelin", "Kisspeptin", "PT-141"],
   },
   {
-    key: "03", folder: "Metabolic", title: "Metabolic & GLP-1", catId: "metabolic", color: "#1486C9",
+    key: "03", folder: "Metabolic", title: "Metabolic Research", catId: "metabolic", color: "#1486C9",
     img: "/images/sections/metabolic.png", ar: "359/672", flip: false, dark: false,
     blurb: "Incretin-receptor agonists as model systems for glycemic control, appetite regulation and energy-balance research.",
     points: [
@@ -63,7 +63,7 @@ export const AREAS: Area[] = [
     comps: ["AOD-9604", "GLP-1 (S)", "GLP-1/GIP (T)", "GLP-3 (R)", "Cagrilintide"],
   },
   {
-    key: "04", folder: "Neural", title: "Neural & Cognitive", catId: "neural", color: "#8D43B8",
+    key: "04", folder: "Neural", title: "Neural Research", catId: "neural", color: "#8D43B8",
     img: "/images/sections/neural.png", ar: "355/666", flip: true, dark: true,
     blurb: "Neuropeptides studied in cognition, stress-response and social-behavior models — every lot batch verified before release.",
     points: [
@@ -74,7 +74,7 @@ export const AREAS: Area[] = [
     comps: ["Oxytocin", "Selank", "Semax", "DSIP"],
   },
   {
-    key: "05", folder: "Tissue", title: "Tissue Repair & Recovery", catId: "tissue", color: "#D9368A",
+    key: "05", folder: "Tissue", title: "Tissue Research", catId: "tissue", color: "#D9368A",
     img: "/images/sections/tissue.png", ar: "357/670", flip: false, dark: false,
     blurb: "Peptides studied in wound-healing, tendon, ligament and gut-integrity models — the most requested research area in the catalog.",
     points: [
