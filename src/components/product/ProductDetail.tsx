@@ -509,40 +509,40 @@ export function ProductDetail({
           Our most popular compounds
         </p>
         <div className="mb-[30px] mt-4 h-1 w-[150px] rounded-[2px] bg-gradient-brand" />
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,235px),1fr))] gap-[22px]">
+        <div className="grid grid-cols-2 gap-[14px] sm:grid-cols-[repeat(auto-fit,minmax(min(100%,235px),1fr))] sm:gap-[22px]">
           {related.map((r) => (
             <Link
               key={r.id}
               href={`/product/${r.id}`}
-              className="block overflow-hidden rounded-[14px] border border-line-soft bg-white text-ink no-underline shadow-[0_6px_20px_rgba(21,40,60,.05)] transition-shadow hover:shadow-[0_14px_32px_rgba(21,40,60,.12)]"
+              className="flex h-full flex-col overflow-hidden rounded-[14px] border border-line-soft bg-white text-ink no-underline shadow-[0_6px_20px_rgba(21,40,60,.05)] transition-shadow hover:shadow-[0_14px_32px_rgba(21,40,60,.12)]"
             >
               <div className="h-[5px] bg-gradient-brand" />
-              <div className="relative mx-4 mt-4 flex h-[190px] items-center justify-center overflow-hidden rounded-[10px] bg-surface-2">
+              <div className="relative mx-3 mt-3 flex h-[150px] items-center justify-center overflow-hidden rounded-[10px] bg-surface-2 sm:mx-4 sm:mt-4 sm:h-[190px]">
                 {r.images[0] ? (
                   <Image
                     src={r.images[0]}
                     alt={r.name}
                     fill
-                    sizes="235px"
+                    sizes="(max-width: 640px) 50vw, 235px"
                     className="object-contain p-[10px]"
                   />
                 ) : (
                   <FlaskConical size={40} strokeWidth={1.2} className="text-icon" />
                 )}
               </div>
-              <div className="px-[18px] pb-5 pt-4">
-                <div className="text-base font-semibold leading-[1.35]">
+              <div className="flex flex-1 flex-col px-3 pb-4 pt-3 sm:px-[18px] sm:pb-5 sm:pt-4">
+                <div className="text-[14px] font-semibold leading-[1.35] sm:text-base">
                   {r.name}
                 </div>
                 <div className="mt-1 text-xs font-semibold text-muted">
                   {r.sub}
                 </div>
-                <div className="mt-[14px] flex items-center justify-between gap-[10px]">
+                <div className="mt-auto flex items-center justify-between gap-2 pt-[14px] sm:gap-[10px]">
                   <span className="text-[15px] font-semibold text-brand-blue">
                     {r.sizes.length > 1 ? "From " : ""}$
                     {Math.min(...r.sizes.map((s) => s.price)).toFixed(2)}
                   </span>
-                  <span className="rounded-full border-[1.5px] border-[#BFDCEF] px-[14px] py-[6px] text-[10.5px] font-semibold uppercase tracking-[1.5px] text-brand-blue">
+                  <span className="whitespace-nowrap rounded-full border-[1.5px] border-[#BFDCEF] px-[10px] py-[6px] text-[10.5px] font-semibold uppercase tracking-[1.2px] text-brand-blue sm:px-[14px] sm:tracking-[1.5px]">
                     View
                   </span>
                 </div>
