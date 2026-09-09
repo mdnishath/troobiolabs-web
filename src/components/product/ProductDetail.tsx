@@ -158,11 +158,13 @@ export function ProductDetail({
           {/* gallery */}
           <div>
             <div
-              className="relative flex min-h-[560px] items-center justify-center rounded-[18px] p-[clamp(24px,3vw,44px)]"
+              /* square on phones — a 560px-tall well left the vial floating
+                 in empty space; from sm up the tall well is the design */
+              className="relative flex aspect-square items-center justify-center rounded-[18px] p-4 sm:aspect-auto sm:min-h-[560px] sm:p-[clamp(24px,3vw,44px)]"
               style={{ background: "linear-gradient(160deg,#F0F2F5,#E7EAEF)" }}
             >
               {p.featured && (
-                <div className="absolute left-6 top-6 flex items-center gap-[10px]">
+                <div className="absolute left-4 top-4 flex items-center gap-[10px] sm:left-6 sm:top-6">
                   <span className="h-[22px] w-1 rounded-[2px] bg-brand-pink" />
                   <span className="text-[11px] font-semibold uppercase tracking-[2.5px] text-brand-pink">
                     Featured
@@ -176,10 +178,8 @@ export function ProductDetail({
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.3 }}
-                  className="relative m-auto block max-w-[92%]"
+                  className="relative m-auto block h-full max-h-full w-auto max-w-full aspect-[4/5] sm:aspect-[203/386] sm:h-[min(74vw,540px)] sm:max-w-[92%]"
                   style={{
-                    height: "min(74vw,540px)",
-                    aspectRatio: "203/386",
                     filter: "drop-shadow(0 24px 26px rgba(21,40,60,.2))",
                   }}
                 >
@@ -192,7 +192,7 @@ export function ProductDetail({
                   )}
                 </motion.span>
               </AnimatePresence>
-              <span className="absolute bottom-6 right-6 rounded-full border border-[#E2E8EE] bg-white px-[14px] py-[7px] text-[10px] font-semibold uppercase tracking-[1.5px] text-muted">
+              <span className="absolute bottom-4 right-4 rounded-full border border-[#E2E8EE] bg-white px-[14px] py-[7px] text-[10px] font-semibold uppercase tracking-[1.5px] text-muted sm:bottom-6 sm:right-6">
                 {p.coa ? `Lot ${p.coa.label}` : "Batch Verified"}
               </span>
             </div>
