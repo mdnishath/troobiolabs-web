@@ -63,6 +63,21 @@ WordPress/WooCommerce backend:
 > the Local site. In woo mode, `npm run build` needs the WordPress site
 > running (shop/lab-reports prerender from it).
 
+### Coupons
+
+Coupons come from **WooCommerce → Marketing → Coupons** — nothing is defined in
+this repo, so whatever the client creates there works at checkout. Applying a
+code posts the cart to `/api/coupons`, which reads the coupon from the store
+and previews the discount (`src/lib/api/coupons.ts` mirrors Woo's rules:
+percent / fixed cart / fixed product, expiry, usage limit, minimum and maximum
+spend, email restrictions, product and category restrictions, sale-item
+exclusion, free shipping). The order is then created with `coupon_lines`, so
+WooCommerce re-validates the code, computes the discount itself and records the
+usage — a code Woo rejects fails the order rather than being silently ignored.
+
+Coupons need WooCommerce credentials; without them the field reports that
+coupons are unavailable rather than pretending to accept a code.
+
 ### Fully WP-managed products
 
 In woo mode **everything** on the storefront is served live from WordPress —

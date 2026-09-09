@@ -20,6 +20,15 @@ const HEAD = "mb-4 text-[13px] font-semibold uppercase tracking-[1.5px]";
 
 const EXPRESS_COST = 24.95;
 
+/** A WooCommerce coupon the store has accepted for this cart. */
+interface AppliedCoupon {
+  code: string;
+  discount: number;
+  freeShipping: boolean;
+  /** the cart the store priced this against */
+  cartKey: string;
+}
+
 interface PaymentMethod {
   id: string;
   title: string;
@@ -48,7 +57,7 @@ export function CheckoutClient() {
   const [ack, setAck] = useState(false);
   const [terms, setTerms] = useState(false);
   const [coupon, setCoupon] = useState("");
-  const [couponMsg, setCouponMsg] = useState<string | null>(null);
+  const [applied, setApplied] = useState<AppliedCoupon | null>(null);
   const [placed, setPlaced] = useState<{ orderId: string; email: string } | null>(null);
   /* set while we hand off to the Zelle payment page, so the button stays busy */
   const [redirecting, setRedirecting] = useState(false);
@@ -104,8 +113,39 @@ export function CheckoutClient() {
 
   const raw = mounted ? items : [];
   const sub = cartSubtotal(raw);
+  const cartKey = JSON.stringify(raw.map((i) => [i.productId, i.size, i.qty]));
+
+  /* the discount was priced against one cart — editing it means re-checking */
+  const active = applied && applied.cartKey === cartKey ? applied : null;
+
   const freeStd = sub >= FREE_SHIP_THRESHOLD;
-  const shipCost = method === "express" ? EXPRESS_COST : freeStd ? 0 : SHIP_COST;
+  const baseShip = method === "express" ? EXPRESS_COST : freeStd ? 0 : SHIP_COST;
+  const shipCost = active?.freeShipping ? 0 : baseShip;
+  const discount = Math.min(active?.discount ?? 0, sub);
+  const total = sub - discount + (raw.length ? shipCost : 0);
+
+  /* the store checks the code against this exact cart */
+  const checkCoupon = useMutation({
+    mutationFn: async (code: string) => {
+      const res = await fetch("/api/coupons", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ code, items: raw }),
+      });
+      const data = (await res.json().catch(() => ({}))) as Partial<AppliedCoupon> & {
+        error?: string;
+      };
+      if (!res.ok || !data.code) throw new Error(data.error ?? "Coupon failed");
+      return { ...(data as AppliedCoupon), cartKey };
+    },
+    onSuccess: setApplied,
+  });
+
+  const removeCoupon = () => {
+    setApplied(null);
+    setCoupon("");
+    checkCoupon.reset();
+  };
 
   const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement>) =>
     setForm((f) => ({ ...f, [k]: e.target.value }));
@@ -135,6 +175,8 @@ export function CheckoutClient() {
           payment: selectedPayment
             ? { id: selectedPayment.id, title: selectedPayment.title }
             : undefined,
+          coupon: active?.code,
+          freeShipping: active?.freeShipping,
           items: raw,
         }),
       });
@@ -430,33 +472,59 @@ export function CheckoutClient() {
             </div>
           )}
 
-          {/* coupon */}
-          <div className="mt-3 flex gap-2">
-            <input
-              value={coupon}
-              onChange={(e) => {
-                setCoupon(e.target.value);
-                setCouponMsg(null);
+          {/* coupon — checked against the store's own coupons */}
+          {active ? (
+            <div className="mt-3 flex items-center justify-between gap-2 rounded-full border-[1.5px] border-[#B9E3C6] bg-[#F1FAF3] px-4 py-[9px]">
+              <span className="flex min-w-0 items-center gap-2 text-[11px] font-semibold uppercase tracking-[1.2px] text-[#2F7D46]">
+                <Check size={14} strokeWidth={3} className="shrink-0" />
+                <span className="truncate">{active.code}</span>
+              </span>
+              <button
+                onClick={removeCoupon}
+                className="shrink-0 cursor-pointer border-none bg-transparent text-[10.5px] font-semibold uppercase tracking-[1.2px] text-muted underline"
+              >
+                Remove
+              </button>
+            </div>
+          ) : (
+            <form
+              className="mt-3 flex gap-2"
+              onSubmit={(e) => {
+                e.preventDefault();
+                if (coupon.trim() && raw.length) checkCoupon.mutate(coupon.trim());
               }}
-              placeholder="Coupon code"
-              className="min-w-0 flex-1 rounded-full border-[1.5px] border-line bg-white px-4 py-[10px] text-xs text-ink outline-none placeholder:text-icon"
-            />
-            <button
-              onClick={() =>
-                setCouponMsg(
-                  coupon.trim()
-                    ? "Coupon codes are validated at payment."
-                    : null,
-                )
-              }
-              className="cursor-pointer rounded-full border-2 border-brand-blue bg-white px-5 py-[10px] text-[10.5px] font-semibold uppercase tracking-[1.5px] text-brand-blue hover:bg-[#EAF5FC]"
             >
-              Apply
-            </button>
-          </div>
-          {couponMsg && (
+              <input
+                value={coupon}
+                onChange={(e) => {
+                  setCoupon(e.target.value);
+                  checkCoupon.reset();
+                }}
+                placeholder="Coupon code"
+                className="min-w-0 flex-1 rounded-full border-[1.5px] border-line bg-white px-4 py-[10px] text-xs text-ink outline-none placeholder:text-icon"
+              />
+              <button
+                type="submit"
+                disabled={checkCoupon.isPending || !coupon.trim() || !raw.length}
+                className={cn(
+                  "rounded-full border-2 border-brand-blue bg-white px-5 py-[10px] text-[10.5px] font-semibold uppercase tracking-[1.5px] text-brand-blue",
+                  checkCoupon.isPending || !coupon.trim() || !raw.length
+                    ? "cursor-not-allowed opacity-45"
+                    : "cursor-pointer hover:bg-[#EAF5FC]",
+                )}
+              >
+                {checkCoupon.isPending ? "Checking…" : "Apply"}
+              </button>
+            </form>
+          )}
+          {checkCoupon.isError && !active && (
+            <div className="mt-2 text-[11px] font-semibold text-brand-pink">
+              {checkCoupon.error?.message ?? "That coupon could not be applied."}
+            </div>
+          )}
+          {applied && !active && (
             <div className="mt-2 text-[11px] font-semibold text-faint">
-              {couponMsg}
+              Your cart changed — apply the code again to re-check it.
             </div>
           )}
 
@@ -464,6 +532,12 @@ export function CheckoutClient() {
             <span className="font-semibold text-muted">Subtotal</span>
             <span className="font-semibold">{fmt(sub)}</span>
           </div>
+          {discount > 0 && (
+            <div className="flex justify-between pt-[9px] text-[13.5px] text-[#2F7D46]">
+              <span className="font-semibold">Discount ({active?.code})</span>
+              <span className="font-semibold">−{fmt(discount)}</span>
+            </div>
+          )}
           <div className="flex justify-between border-b border-line-soft py-[9px] text-[13.5px]">
             <span className="font-semibold text-muted">Shipping</span>
             <span className="font-semibold">
@@ -472,9 +546,7 @@ export function CheckoutClient() {
           </div>
           <div className="flex justify-between pt-[14px] text-[17px]">
             <span className="font-semibold">Total</span>
-            <span className="font-semibold">
-              {fmt(sub + (raw.length ? shipCost : 0))}
-            </span>
+            <span className="font-semibold">{fmt(total)}</span>
           </div>
           <button
             onClick={() => valid && placeOrder.mutate()}

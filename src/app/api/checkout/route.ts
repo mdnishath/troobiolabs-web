@@ -14,6 +14,10 @@ interface CheckoutBody {
   zip: string;
   method: "standard" | "express";
   payment?: { id: string; title: string };
+  /** coupon code previewed at checkout — WooCommerce re-validates it */
+  coupon?: string;
+  /** set when that coupon grants free shipping */
+  freeShipping?: boolean;
   items: { productId: string; name: string; size: string; price: number; qty: number }[];
 }
 
@@ -81,7 +85,13 @@ export async function POST(req: Request) {
         cache: "no-store",
       });
       if (!res.ok) {
-        throw new Error(`WooCommerce ${route} -> ${res.status}`);
+        /* surface Woo's own wording — it explains a rejected coupon */
+        const detail = (await res
+          .json()
+          .catch(() => null)) as { message?: string } | null;
+        throw new Error(
+          detail?.message ?? `WooCommerce ${route} -> ${res.status}`,
+        );
       }
       return res.json() as Promise<T>;
     };
@@ -162,11 +172,16 @@ export async function POST(req: Request) {
             country: "US",
           },
           shipping_lines: [
-            body.method === "express"
-              ? { method_id: "flat_rate", method_title: "Express Cold-Chain", total: "24.95" }
-              : { method_id: "flat_rate", method_title: "Standard Shipping", total: "8.95" },
+            body.freeShipping
+              ? { method_id: "free_shipping", method_title: "Free Shipping", total: "0.00" }
+              : body.method === "express"
+                ? { method_id: "flat_rate", method_title: "Express Cold-Chain", total: "24.95" }
+                : { method_id: "flat_rate", method_title: "Standard Shipping", total: "8.95" },
           ],
           line_items: lineItems,
+          /* Woo validates the code and computes the discount itself — an
+             invalid one fails the order rather than being ignored */
+          ...(body.coupon ? { coupon_lines: [{ code: body.coupon }] } : {}),
           meta_data: [
             { key: "research_use_acknowledged", value: "yes" },
             { key: "terms_accepted", value: "yes" },
