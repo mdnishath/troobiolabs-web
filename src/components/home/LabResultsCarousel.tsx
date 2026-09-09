@@ -5,6 +5,7 @@ import { TINTS } from "@/lib/home-data";
 import type { LabBatchItem } from "@/lib/home-live";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { CarouselNav } from "@/components/ui/CarouselNav";
+import { VialImage } from "@/components/ui/VialImage";
 
 const ROWS = "flex items-baseline gap-3 py-3";
 const RLBL =
@@ -37,22 +38,15 @@ export function LabResultsCarousel({ batches }: { batches: LabBatchItem[] }) {
       <div key={idx} className="hero-swap">
         <div className="mt-[26px] flex flex-wrap items-stretch overflow-hidden rounded-[20px] border border-line-soft bg-white shadow-[0_10px_30px_rgba(21,40,60,.06)]">
           {/* image panel */}
+          {/* 340px so the shared vial box fits — this panel shows its product
+              at the same size as the five research-discipline cards */}
           <div
-            className="flex w-[min(100%,300px)] flex-none flex-col items-center justify-center gap-[18px] border-r border-line-faint p-[clamp(24px,3vw,36px)]"
+            className="flex w-[min(100%,340px)] flex-none flex-col items-center justify-center gap-[18px] border-r border-line-faint px-[clamp(20px,3vw,40px)] py-[clamp(24px,3vw,36px)]"
             style={{
               background: `linear-gradient(160deg,#FFFFFF,${t[0]} 60%,${t[1]})`,
             }}
           >
-            <div
-              className="h-[210px] w-full"
-              style={{
-                backgroundImage: `url('${L.img}')`,
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                filter: "drop-shadow(0 14px 18px rgba(21,40,60,.15))",
-              }}
-            />
+            <VialImage src={L.img} alt={`${L.name} vial`} art="catalog" />
             <div className="text-center">
               <div className="text-[9.5px] font-semibold uppercase tracking-[2px] text-ghost">
                 Batch

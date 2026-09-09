@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { TINTS, type Area } from "@/lib/home-data";
 import { Reveal } from "@/components/motion/Reveal";
+import { VialImage } from "@/components/ui/VialImage";
 
 export function AreaCard({ area }: { area: Area }) {
   const t = TINTS[area.color] ?? TINTS["#8D43B8"];
@@ -17,9 +18,12 @@ export function AreaCard({ area }: { area: Area }) {
           border: `1px solid ${dk ? "#7C36A8" : t[2]}`,
         }}
       >
+        {/* stacked (below md) the vial always leads, so it never jumps
+            between the top and the bottom of the card as you scroll */}
         <div
-          className="flex min-w-[min(100%,420px)] flex-[1.15] flex-col items-start p-[clamp(28px,4vw,52px)]"
-          style={{ order: area.flip ? 2 : 1 }}
+          className={`order-2 flex min-w-[min(100%,420px)] flex-[1.15] flex-col items-start p-[clamp(28px,4vw,52px)] ${
+            area.flip ? "md:order-2" : "md:order-1"
+          }`}
         >
           <div
             className="text-[10px] font-semibold uppercase tracking-[2.4px]"
@@ -87,31 +91,24 @@ export function AreaCard({ area }: { area: Area }) {
             Shop {area.folder} Research →
           </Link>
         </div>
+        {/* centred, not bottom-pinned — card heights vary with the copy, and
+            pinning left the vial sitting at a different height on every card */}
         <div
-          className="relative flex min-w-[min(100%,300px)] flex-[.85] items-end justify-center overflow-hidden px-[clamp(20px,3vw,40px)] pt-[clamp(24px,3vw,40px)]"
-          style={{ order: area.flip ? 1 : 2 }}
+          className={`relative order-1 flex min-w-[min(100%,300px)] flex-[.85] items-center justify-center overflow-hidden px-[clamp(20px,3vw,40px)] py-[clamp(24px,3vw,40px)] ${
+            area.flip ? "md:order-1" : "md:order-2"
+          }`}
         >
           <span
-            className="pointer-events-none absolute bottom-[-10%] left-1/2 w-[130%] -translate-x-1/2 rounded-full blur-[30px]"
+            className="pointer-events-none absolute left-1/2 top-1/2 aspect-square w-[130%] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[30px]"
             style={{
-              aspectRatio: "1",
               background: `radial-gradient(closest-side,${area.color}${dk ? "66" : "2E"},transparent 70%)`,
             }}
           />
-          <span
-            className="relative block w-[min(62%,240px)]"
-            style={{
-              aspectRatio: area.ar,
-              filter: `drop-shadow(0 24px 26px rgba(21,40,60,${dk ? ".35" : ".18"}))`,
-            }}
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={area.img}
-              alt={`${area.title} vial`}
-              className="h-full w-full object-contain object-bottom"
-            />
-          </span>
+          <VialImage
+            src={area.img}
+            alt={`${area.title} vial`}
+            shadow={dk ? ".35" : ".18"}
+          />
         </div>
       </div>
     </Reveal>

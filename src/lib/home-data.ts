@@ -20,7 +20,6 @@ export interface Area {
   catId: string;
   color: string;
   img: string;
-  ar: string;
   flip: boolean;
   dark: boolean;
   blurb: string;
@@ -31,7 +30,7 @@ export interface Area {
 export const AREAS: Area[] = [
   {
     key: "01", folder: "Cellular", title: "Cellular Research", catId: "cellular", color: "#F47B2A",
-    img: "/images/sections/cellular.png", ar: "361/674", flip: false, dark: false,
+    img: "/images/sections/cellular.png", flip: false, dark: false,
     blurb: "Compounds central to cellular-energy, senescence and mitochondrial research programs worldwide.",
     points: [
       ["Mitochondrial peptides", "MOTS-c in exercise and metabolic-homeostasis research."],
@@ -42,7 +41,7 @@ export const AREAS: Area[] = [
   },
   {
     key: "02", folder: "Endocrine", title: "Endocrine Research", catId: "endocrine", color: "#73B84A",
-    img: "/images/sections/endocrine.png", ar: "351/658", flip: true, dark: false,
+    img: "/images/sections/endocrine.png", flip: true, dark: false,
     blurb: "GHRH analogs and secretagogues for GH-axis pulsatility, receptor-selectivity and neuroendocrine research.",
     points: [
       ["GH-axis studies", "The classic CJC-1295 + Ipamorelin pulsatility pairing."],
@@ -53,7 +52,7 @@ export const AREAS: Area[] = [
   },
   {
     key: "03", folder: "Metabolic", title: "Metabolic Research", catId: "metabolic", color: "#1486C9",
-    img: "/images/sections/metabolic.png", ar: "359/672", flip: false, dark: false,
+    img: "/images/sections/metabolic.png", flip: false, dark: false,
     blurb: "Incretin-receptor agonists as model systems for glycemic control, appetite regulation and energy-balance research.",
     points: [
       ["Fragment research", "AOD-9604 — the hGH fragment 176-191 — in lipolysis models."],
@@ -64,7 +63,7 @@ export const AREAS: Area[] = [
   },
   {
     key: "04", folder: "Neural", title: "Neural Research", catId: "neural", color: "#8D43B8",
-    img: "/images/sections/neural.png", ar: "355/666", flip: true, dark: true,
+    img: "/images/sections/neural.png", flip: true, dark: true,
     blurb: "Neuropeptides studied in cognition, stress-response and social-behavior models — every lot batch verified before release.",
     points: [
       ["Social-behavior models", "Oxytocin nonapeptide neuroendocrine research."],
@@ -75,7 +74,7 @@ export const AREAS: Area[] = [
   },
   {
     key: "05", folder: "Tissue", title: "Tissue Research", catId: "tissue", color: "#D9368A",
-    img: "/images/sections/tissue.png", ar: "357/670", flip: false, dark: false,
+    img: "/images/sections/tissue.png", flip: false, dark: false,
     blurb: "Peptides studied in wound-healing, tendon, ligament and gut-integrity models — the most requested research area in the catalog.",
     points: [
       ["Wound-healing & tendon models", "BPC-157 and TB-500 in transection, migration and angiogenesis assays."],
