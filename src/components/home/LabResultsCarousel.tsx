@@ -4,6 +4,7 @@ import { useState } from "react";
 import { TINTS } from "@/lib/home-data";
 import type { LabBatchItem } from "@/lib/home-live";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { CarouselNav } from "@/components/ui/CarouselNav";
 
 const ROWS = "flex items-baseline gap-3 py-3";
 const RLBL =
@@ -11,8 +12,6 @@ const RLBL =
 const DOTFILL =
   "flex-1 -translate-y-[3px] border-b-2 border-dotted border-[#D5DCE3]";
 const RVAL = "text-[12.5px] font-semibold tracking-[.5px]";
-const NAVBTN =
-  "flex h-[42px] w-[42px] cursor-pointer items-center justify-center rounded-full border border-line bg-white pb-[2px] text-[19px] leading-none text-ink transition-colors hover:border-[#9B8FE8] hover:text-brand-purple";
 
 export function LabResultsCarousel({ batches }: { batches: LabBatchItem[] }) {
   const [idx, setIdx] = useState(0);
@@ -135,40 +134,13 @@ export function LabResultsCarousel({ batches }: { batches: LabBatchItem[] }) {
         </div>
       </div>
 
-      <div className="mt-[30px] flex items-center justify-center gap-5">
-        <button
-          onClick={() => setIdx((i) => (i - 1 + batches.length) % batches.length)}
-          aria-label="Previous batch"
-          className={NAVBTN}
-        >
-          ‹
-        </button>
-        <div className="flex items-center gap-[7px]">
-          {batches.map((b, i) => (
-            <button
-              key={`${b.lot}-${i}`}
-              onClick={() => setIdx(i)}
-              aria-label={`Go to batch ${b.lot}`}
-              className="cursor-pointer rounded-full border-none p-0 transition-[width] duration-300"
-              style={{
-                width: i === idx ? 22 : 8,
-                height: 8,
-                background:
-                  i === idx
-                    ? "linear-gradient(90deg,#D9368A,#8D43B8,#1486C9)"
-                    : "#D5DCE3",
-              }}
-            />
-          ))}
-        </div>
-        <button
-          onClick={() => setIdx((i) => (i + 1) % batches.length)}
-          aria-label="Next batch"
-          className={NAVBTN}
-        >
-          ›
-        </button>
-      </div>
+      <CarouselNav
+        labels={batches.map((b) => b.lot)}
+        index={idx}
+        onIndex={setIdx}
+        noun="batch"
+        className="mt-[30px]"
+      />
       <div className="mt-[18px] flex justify-center">
         <a
           href="/lab-reports"

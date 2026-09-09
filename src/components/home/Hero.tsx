@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { HeroItem } from "@/lib/home-live";
+import { CarouselNav } from "@/components/ui/CarouselNav";
 import { useCart } from "@/store/cart";
 import { useUi } from "@/store/ui";
 
@@ -28,6 +29,25 @@ export function Hero({ products }: { products: HeroItem[] }) {
   }, [touched, N]);
 
   const cur = products[sel % N];
+
+  /* any manual pick stops the auto-rotation so the visitor stays in control */
+  const goTo = (i: number) => {
+    setSel(((i % N) + N) % N);
+    setTouched(true);
+  };
+
+  /* swipe the vials on touch devices */
+  const swipeX = useRef<number | null>(null);
+  const onTouchStart = (e: React.TouchEvent) => {
+    swipeX.current = e.touches[0].clientX;
+  };
+  const onTouchEnd = (e: React.TouchEvent) => {
+    const from = swipeX.current;
+    swipeX.current = null;
+    if (from === null) return;
+    const dx = e.changedTouches[0].clientX - from;
+    if (Math.abs(dx) > 40) goTo(sel + (dx < 0 ? 1 : -1));
+  };
 
   const doAdd = () => {
     add({
@@ -100,7 +120,11 @@ export function Hero({ products }: { products: HeroItem[] }) {
                 "radial-gradient(closest-side,rgba(141,67,184,.16),rgba(20,134,201,.10),transparent 72%)",
             }}
           />
-          <div className="relative min-h-[clamp(300px,34vw,390px)]">
+          <div
+            className="relative min-h-[clamp(300px,34vw,390px)] touch-pan-y"
+            onTouchStart={onTouchStart}
+            onTouchEnd={onTouchEnd}
+          >
             {products.map((p, i) => {
               const d = (i - sel + N) % N;
               const pos = d === 0 ? "c" : d === 1 ? "r" : d === N - 1 ? "l" : "h";
@@ -109,12 +133,13 @@ export function Hero({ products }: { products: HeroItem[] }) {
               return (
                 <button
                   key={p.id}
-                  onClick={() => {
-                    setSel(i);
-                    setTouched(true);
-                  }}
+                  onClick={() => goTo(i)}
                   title={`${p.name} research vial`}
                   aria-label={`${p.name} research vial`}
+                  /* off-stage vials sit outside the section — keep focus off
+                     them or the hero scrolls sideways when tabbing */
+                  tabIndex={vis ? 0 : -1}
+                  aria-hidden={!vis}
                   className="absolute bottom-0 cursor-pointer border-none bg-transparent p-0"
                   style={{
                     transformOrigin: "bottom center",
@@ -148,8 +173,17 @@ export function Hero({ products }: { products: HeroItem[] }) {
             })}
           </div>
 
+          {/* Carousel controls — tells visitors the vials can be flipped through */}
+          <CarouselNav
+            labels={products.map((p) => p.name)}
+            index={sel}
+            onIndex={goTo}
+            noun="compound"
+            className="mt-[22px]"
+          />
+
           {/* Selected product info */}
-          <div key={sel} className="hero-swap mt-[30px] text-center">
+          <div key={sel} className="hero-swap mt-[22px] text-center">
             <span
               className="inline-block text-[11px] font-semibold uppercase tracking-[3px]"
               style={{ color: cur.color }}
